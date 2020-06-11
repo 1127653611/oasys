@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.user.AoaUserLoginRecordMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.user.AoaUserLoginRecord">
+    <id column="record_id" jdbcType="BIGINT" property="recordId" />
+    <result column="browser" jdbcType="VARCHAR" property="browser" />
+    <result column="ip_addr" jdbcType="VARCHAR" property="ipAddr" />
+    <result column="login_time" jdbcType="TIMESTAMP" property="loginTime" />
+    <result column="session_id" jdbcType="VARCHAR" property="sessionId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    record_id, browser, ip_addr, login_time, session_id, user_id
+  </sql>
+
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.user.AoaUserLoginRecord">
+    insert into aoa_user_login_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="recordId != null">
+        record_id,
+      </if>
+      <if test="browser != null">
+        browser,
+      </if>
+      <if test="ipAddr != null">
+        ip_addr,
+      </if>
+      <if test="loginTime != null">
+        login_time,
+      </if>
+      <if test="sessionId != null">
+        session_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="recordId != null">
+        #{recordId,jdbcType=BIGINT},
+      </if>
+      <if test="browser != null">
+        #{browser,jdbcType=VARCHAR},
+      </if>
+      <if test="ipAddr != null">
+        #{ipAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="loginTime != null">
+        #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sessionId != null">
+        #{sessionId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+
+</mapper>

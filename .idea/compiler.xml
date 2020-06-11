@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="oasys (1) (cn.gson)" />
+        <module name="oasysweb" />
         <module name="oasyseureka" />
       </profile>
     </annotationProcessing>
@@ -14,6 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="oasys" options="-parameters" />
       <module name="oasyseureka" options="-parameters" />
+      <module name="oasysweb" options="-parameters" />
     </option>
   </component>
 </project>
