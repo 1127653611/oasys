@@ -32,12 +32,46 @@
     <result column="superman" jdbcType="INTEGER" property="superman" />
     <result column="holiday" jdbcType="INTEGER" property="holiday" />
     <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+
+    <association property="role" javaType="cn.oasys.web.model.pojo.role.AoaRole" >
+      <id property="roleId" column="role_id" />
+      <result property="roleName" column="role_name" />
+      <result property="roleValue" column="role_value" />
+    </association>
+
+    <association property="dept" javaType="cn.oasys.web.model.pojo.user.AoaDept" >
+      <id property="deptId" column="dept_id" />
+      <result property="deptAddr" column="dept_addr" />
+      <result property="deptFax" column="dept_fax" />
+      <result property="deptName" column="dept_name" />
+      <result property="deptTel" column="dept_tel" />
+      <result property="email" column="email" />
+      <result property="deptmanager" column="deptmanager" />
+      <result property="endTime" column="end_time" />
+      <result property="startTime" column="start_time" />
+    </association>
+
+    <association property="position" javaType="cn.oasys.web.model.pojo.user.AoaPosition" >
+      <id property="positionId" column="position_id" />
+      <result property="level" column="level" />
+      <result property="name" column="name" />
+      <result property="describtion" column="describtion" />
+      <result property="deptid" column="deptid" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List">
     user_id, address, bank, birth, eamil, father_id, hire_time, user_idcard, img_path, 
     is_lock, last_login_ip, last_login_time, modify_time, modify_user_id, password, real_name, 
     salary, user_school, sex, theme_skin, user_edu, user_name, user_sign, user_tel, dept_id, 
     position_id, role_id, superman, holiday, pinyin
+  </sql>
+  <sql id="Base_Column_List1">
+    u.user_id, u.address, u.bank, u.birth, u.eamil, u.father_id, u.hire_time, u.user_idcard, u.img_path,
+    u.is_lock, u.last_login_ip, u.last_login_time, u.modify_time, u.modify_user_id, u.password, u.real_name,
+    u.salary, u.user_school, u.sex, u.theme_skin, u.user_edu, u.user_name, u.user_sign, u.user_tel, u.dept_id,
+    u.position_id, u.role_id, u.superman, u.holiday, u.pinyin, r.role_id, r.role_name, r.role_value, d.dept_id,
+    d.dept_addr, d.dept_fax, d.dept_name, d.dept_tel, d.email, d.deptmanager, d.end_time, d.start_time, p.position_id,
+    p.level, p.name, p.describtion, p.deptid
   </sql>
   <select id="findOneUserByname" resultType="AoaUser" parameterType="java.lang.String">
     select
@@ -46,10 +80,13 @@
     or user_tel=#{username}
     and password=#{password}
   </select>
-  <select id="findOneById" resultType="AoaUser" parameterType="java.lang.Long">
+  <select id="findOneById" resultMap="BaseResultMap" parameterType="java.lang.Long">
     select
-    <include refid="Base_Column_List" />
-    from aoa_user where user_id
+    <include refid="Base_Column_List1" />
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id
+    where u.user_id
     =#{id}
   </select>
 

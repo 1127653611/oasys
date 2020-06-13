@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.user;
 
+import cn.oasys.web.model.pojo.role.AoaRole;
+
 import java.util.Date;
 
 public class AoaUser {
@@ -62,6 +64,36 @@ public class AoaUser {
     private Integer holiday;
 
     private String pinyin;
+
+    private AoaRole role;
+
+    private AoaDept dept;
+
+    private AoaPosition position;
+
+    public AoaDept getDept() {
+        return dept;
+    }
+
+    public void setDept(AoaDept dept) {
+        this.dept = dept;
+    }
+
+    public AoaPosition getPosition() {
+        return position;
+    }
+
+    public void setPosition(AoaPosition position) {
+        this.position = position;
+    }
+
+    public AoaRole getRole() {
+        return role;
+    }
+
+    public void setRole(AoaRole role) {
+        this.role = role;
+    }
 
     public Long getUserId() {
         return userId;
@@ -303,6 +335,7 @@ public class AoaUser {
         this.pinyin = pinyin == null ? null : pinyin.trim();
     }
 
+
     @Override
     public String toString() {
         return "AoaUser{" +
@@ -336,6 +369,9 @@ public class AoaUser {
                 ", superman=" + superman +
                 ", holiday=" + holiday +
                 ", pinyin='" + pinyin + '\'' +
+                ", role=" + role +
+                ", dept=" + dept +
+                ", position=" + position +
                 '}';
     }
 }

@@ -79,7 +79,7 @@ public class LoginController {
             Version version = browser.getVersion(request.getHeader("User-Agent"));
             String info = browser.getName() + "/" + version.getVersion();
             String ip = InetAddress.getLocalHost().getHostAddress();
-            userLoginRecordService.save(new AoaUserLoginRecord(info, ip, new Date(), (String) sessionId, user.getUserId()));
+            userLoginRecordService.save(new AoaUserLoginRecord(info, ip, new Date(), null, user.getUserId()));
         }
         return "redirect:/index";
     }

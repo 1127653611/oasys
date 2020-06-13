@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.mail.AoaMailReciverMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.mail.AoaMailReciver">
+    <id column="pk_id" jdbcType="BIGINT" property="pkId" />
+    <result column="is_read" jdbcType="INTEGER" property="isRead" />
+    <result column="mail_id" jdbcType="BIGINT" property="mailId" />
+    <result column="mail_reciver_id" jdbcType="BIGINT" property="mailReciverId" />
+    <result column="is_star" jdbcType="INTEGER" property="isStar" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+
+    <collection property="aoaInMailLists" ofType="cn.oasys.web.model.pojo.mail.AoaInMailList">
+      <id column="mail_id" property="mailId" />
+      <result column="mail_create_time" property="mailCreateTime" />
+      <result column="mail_file_id" property="mailFileId" />
+      <result column="mail_title" property="mailTitle" />
+      <result column="mail_type" property="mailType" />
+      <result column="mail_in_push_user_id" property="mailInPushUserId" />
+      <result column="in_receiver" property="inReceiver" />
+      <result column="mail_status_id" property="mailStatusId" />
+      <result column="mail_number_id" property="mailNumberId" />
+      <result column="mail_del" property="mailDel" />
+      <result column="mail_push" property="mailPush" />
+      <result column="mail_star" property="mailStar" />
+      <result column="main_content" property="mailContent" />
+    </collection>
+  </resultMap>
+  <sql id="Base_Column_List">
+    m.pk_id, m.is_read, m.mail_id, m.mail_reciver_id, m.is_star, m.is_del,
+    l.mail_id, l.mail_create_time, l.mail_file_id, l.mail_title, l.mail_type, l.mail_in_push_user_id,
+    l.in_receiver, l.mail_status_id, l.mail_number_id, l.mail_del, l.mail_push, l.mail_star
+  </sql>
+  <select id="findByReadAndDelAndReciverId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_mail_reciver m left join aoa_in_mail_list l
+    on m.mail_id=l.mail_id
+    where m.is_read=#{read} and m.is_del=#{del} and m.mail_reciver_id=#{id}
+  </select>
+</mapper>

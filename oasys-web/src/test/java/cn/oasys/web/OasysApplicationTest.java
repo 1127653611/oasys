@@ -1,5 +1,8 @@
 package cn.oasys.web;
 
+import cn.oasys.web.model.dao.mail.AoaMailReciverMapper;
+import cn.oasys.web.model.dao.notice.AoaNoticeUserRelationMapper;
+import cn.oasys.web.model.dao.system.AoaSysMenuMapper;
 import cn.oasys.web.model.dao.user.AoaUserMapper;
 import org.junit.jupiter.api.Test;
 import org.mybatis.generator.api.MyBatisGenerator;
@@ -20,7 +23,13 @@ import java.util.List;
 @SpringBootTest
 public class OasysApplicationTest {
     @Autowired
+    private AoaNoticeUserRelationMapper aoaNoticeUserRelationMapper;
+    @Autowired
+    private AoaSysMenuMapper aoaSysMenuMapper;
+    @Autowired
     private AoaUserMapper aoaUserMapper;
+    @Autowired
+    private AoaMailReciverMapper aoaMailReciverMapper;
     @Test
     public void oasysytest() throws InterruptedException, SQLException, IOException, XMLParserException, InvalidConfigurationException {
         List<String> warnings = new ArrayList<String>();
@@ -34,6 +43,8 @@ public class OasysApplicationTest {
     }
     @Test
     public void userTset(){
-        System.out.println(aoaUserMapper.findOneUserByname("罗密欧","123456"));
+        System.out.println(aoaUserMapper.findOneById(1L));
+        System.out.println(aoaNoticeUserRelationMapper.findByReadAndUserId(false,1L));
+        System.out.println(aoaMailReciverMapper.findByReadAndDelAndReciverId(false,false,1L));
     }
 }

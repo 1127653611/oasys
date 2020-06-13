@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.system.AoaSysMenuMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.system.AoaSysMenu">
+    <id column="menu_id" jdbcType="BIGINT" property="menuId" />
+    <result column="is_show" jdbcType="INTEGER" property="isShow" />
+    <result column="menu_grade" jdbcType="INTEGER" property="menuGrade" />
+    <result column="menu_icon" jdbcType="VARCHAR" property="menuIcon" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+    <result column="menu_url" jdbcType="VARCHAR" property="menuUrl" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="sort_id" jdbcType="INTEGER" property="sortId" />
+
+    <association property="aoaRolePoweiList" javaType="cn.oasys.web.model.pojo.role.AoaRolePoweiList" >
+      <id property="pkId" column="pk_id" />
+      <result property="isShow" column="is_show" />
+      <result property="menuId" column="menu_id" />
+      <result property="roleId" column="role_id" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    m.menu_id, m.is_show, m.menu_grade, m.menu_icon, m.menu_name, m.menu_url, m.parent_id, m.sort_id, p.pk_id, p.is_show, p.menu_id,
+    p.role_id
+  </sql>
+  <select id="findbyparentxianall" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from aoa_sys_menu m LEFT JOIN aoa_role_power_list p ON m.menu_id=p.menu_id WHERE
+    m.parent_id=#{id} AND p.role_id=#{roleid} and m.is_show=#{bo} AND p.is_show=#{le} ORDER BY m.sort_id
+  </select>
+  <select id="findbyparentsxian" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from aoa_sys_menu m LEFT JOIN aoa_role_power_list p ON m.menu_id=p.menu_id WHERE
+    m.parent_id!=#{id} AND p.role_id=#{roleid} and m.is_show=#{bo} AND p.is_show=#{le} ORDER BY m.sort_id
+  </select>
+</mapper>
