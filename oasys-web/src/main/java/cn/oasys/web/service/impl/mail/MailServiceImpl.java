@@ -12,7 +12,7 @@ public class MailServiceImpl implements MailService {
     @Autowired
     private AoaMailReciverMapper aoaMailReciverMapper;
     @Override
-    public List<AoaMailReciver> findByReadAndDelAndReciverId(boolean isread, boolean isdel, long userid) {
+    public int findByReadAndDelAndReciverId(boolean isread, boolean isdel, long userid) {
         return aoaMailReciverMapper.findByReadAndDelAndReciverId(isread,isdel,userid);
     }
 }

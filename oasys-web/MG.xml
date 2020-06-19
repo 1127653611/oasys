@@ -40,17 +40,20 @@
 <!-- <table tableName="aoa_user_login_record" domainObjectName="AoaUserLoginRecord"></table>-->
 <!-- <table tableName="aoa_sys_menu" domainObjectName="AoaSysMenu"></table>-->
 <!-- <table tableName="aoa_role_" domainObjectName="AoaRole"></table>-->
-<!-- <table tableName="aoa_role_power_list" domainObjectName="AoaRolePoweiList"></table>-->
+<!-- <table tableName="aoa_role_power_list" domainObjectName="AoaRolePowerList"></table>-->
 <!-- <table tableName="aoa_schedule_list" domainObjectName="AoaScheduleList"></table>-->
 <!-- <table tableName="aoa_notice_user_relation" domainObjectName="AoaNoticeUserRelation"></table>-->
 <!-- <table tableName="aoa_dept" domainObjectName="AoaDept"></table>-->
 <!-- <table tableName="aoa_position" domainObjectName="AoaPosition"></table>-->
- <table tableName="aoa_mail_reciver" domainObjectName="AoaMailReciver"></table>
- <table tableName="aoa_notice_list" domainObjectName="AoaNoticeList"></table>
- <table tableName="aoa_in_mail_list" domainObjectName="AoaInMailList"></table>
- <table tableName="aoa_task_user" domainObjectName="AoaTaskUser"></table>
- <table tableName="aoa_task_list" domainObjectName="AoaTaskList"></table>
- <table tableName="aoa_user_log" domainObjectName="AoaUserLog"></table>
+<!-- <table tableName="aoa_mail_reciver" domainObjectName="AoaMailReciver"></table>-->
+<!-- <table tableName="aoa_notice_list" domainObjectName="AoaNoticeList"></table>-->
+<!-- <table tableName="aoa_in_mail_list" domainObjectName="AoaInMailList"></table>-->
+<!-- <table tableName="aoa_task_user" domainObjectName="AoaTaskUser"></table>-->
+<!-- <table tableName="aoa_task_list" domainObjectName="AoaTaskList"></table>-->
+<!-- <table tableName="aoa_user_log" domainObjectName="AoaUserLog"></table>-->
+<!-- <table tableName="aoa_type_list" domainObjectName="AoaTypeList"></table>-->
+<!-- <table tableName="aoa_status_list" domainObjectName="AoaStatusList"></table>-->
+ <table tableName="aoa_subject" domainObjectName="AoaSubject"></table>
 
 	</context>
 </generatorConfiguration>

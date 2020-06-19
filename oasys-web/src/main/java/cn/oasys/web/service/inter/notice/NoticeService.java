@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface NoticeService {
-    List<AoaNoticeUserRelation> findByReadAndUserId(Boolean read, Long id);
+    Integer findByReadAndUserId(Boolean read, Long id);
 }

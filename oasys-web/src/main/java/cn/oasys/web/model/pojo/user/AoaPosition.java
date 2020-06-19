@@ -11,6 +11,21 @@ public class AoaPosition {
 
     private Long deptid;
 
+    public AoaPosition() {
+    }
+
+    public AoaPosition(String name, Long deptid) {
+        this.name = name;
+        this.deptid = deptid;
+    }
+
+    public AoaPosition(Integer level, String name, String describtion, Long deptid) {
+        this.level = level;
+        this.name = name;
+        this.describtion = describtion;
+        this.deptid = deptid;
+    }
+
     public Long getPositionId() {
         return positionId;
     }

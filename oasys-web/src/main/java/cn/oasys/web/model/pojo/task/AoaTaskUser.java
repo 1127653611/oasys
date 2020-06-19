@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.task;
 
+import java.util.List;
+
 public class AoaTaskUser {
     private Long pkId;
 
@@ -8,6 +10,27 @@ public class AoaTaskUser {
     private Long taskId;
 
     private Long taskReciveUserId;
+
+    List<AoaTaskList> aoaTaskLists;
+
+    @Override
+    public String toString() {
+        return "AoaTaskUser{" +
+                "pkId=" + pkId +
+                ", statusId=" + statusId +
+                ", taskId=" + taskId +
+                ", taskReciveUserId=" + taskReciveUserId +
+                ", aoaTaskLists=" + aoaTaskLists +
+                '}';
+    }
+
+    public List<AoaTaskList> getAoaTaskLists() {
+        return aoaTaskLists;
+    }
+
+    public void setAoaTaskLists(List<AoaTaskList> aoaTaskLists) {
+        this.aoaTaskLists = aoaTaskLists;
+    }
 
     public Long getPkId() {
         return pkId;

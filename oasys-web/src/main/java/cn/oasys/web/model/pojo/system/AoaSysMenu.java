@@ -1,6 +1,6 @@
 package cn.oasys.web.model.pojo.system;
 
-import cn.oasys.web.model.pojo.role.AoaRolePoweiList;
+import cn.oasys.web.model.pojo.role.AoaRolePowerList;
 
 public class AoaSysMenu {
     private Long menuId;
@@ -18,7 +18,7 @@ public class AoaSysMenu {
     private Long parentId;
 
     private Integer sortId;
-    private AoaRolePoweiList aoaRolePoweiList;
+    private AoaRolePowerList aoaRolePowerList;
 
     @Override
     public String toString() {
@@ -31,16 +31,16 @@ public class AoaSysMenu {
                 ", menuUrl='" + menuUrl + '\'' +
                 ", parentId=" + parentId +
                 ", sortId=" + sortId +
-                ", aoaRolePoweiList=" + aoaRolePoweiList +
+                ", aoaRolePoweiList=" + aoaRolePowerList +
                 '}';
     }
 
-    public AoaRolePoweiList getAoaRolePoweiList() {
-        return aoaRolePoweiList;
+    public AoaRolePowerList getAoaRolePowerList() {
+        return aoaRolePowerList;
     }
 
-    public void setAoaRolePoweiList(AoaRolePoweiList aoaRolePoweiList) {
-        this.aoaRolePoweiList = aoaRolePoweiList;
+    public void setAoaRolePowerList(AoaRolePowerList aoaRolePowerList) {
+        this.aoaRolePowerList = aoaRolePowerList;
     }
 
     public Long getMenuId() {

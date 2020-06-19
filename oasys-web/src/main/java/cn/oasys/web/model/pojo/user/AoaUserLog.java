@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.user;
 
+
+
 import java.util.Date;
 
 public class AoaUserLog {

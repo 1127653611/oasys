@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.user;
 
+import org.apache.catalina.User;
+
 import java.util.Date;
 
 public class AoaUserLoginRecord {
@@ -14,6 +16,16 @@ public class AoaUserLoginRecord {
     private String sessionId;
 
     private Long userId;
+
+    private AoaUser aoaUser;
+
+    public AoaUser getAoaUser() {
+        return aoaUser;
+    }
+
+    public void setAoaUser(AoaUser aoaUser) {
+        this.aoaUser = aoaUser;
+    }
 
     public Long getRecordId() {
         return recordId;
@@ -84,6 +96,7 @@ public class AoaUserLoginRecord {
                 ", loginTime=" + loginTime +
                 ", sessionId='" + sessionId + '\'' +
                 ", userId=" + userId +
+                ", aoaUser=" + aoaUser +
                 '}';
     }
 }

@@ -12,7 +12,7 @@ public class NoticeServiceImpl implements NoticeService {
     @Autowired
     private AoaNoticeUserRelationMapper aoaNoticeUserRelationMapper;
     @Override
-    public List<AoaNoticeUserRelation> findByReadAndUserId(Boolean read, Long id) {
+    public Integer findByReadAndUserId(Boolean read, Long id) {
         return aoaNoticeUserRelationMapper.findByReadAndUserId(read,id);
     }
 }

@@ -9,6 +9,6 @@ import java.util.List;
 
 @Mapper
 public interface AoaNoticeUserRelationMapper {
-
-    List<AoaNoticeUserRelation> findByReadAndUserId(@Param("read") Boolean read, @Param("id") Long id);
+    @Select("select COUNT(relatin_id) from aoa_notice_user_relation where is_read=#{read} and relatin_user_id=#{id}")
+    Integer findByReadAndUserId(@Param("read") Boolean read, @Param("id") Long id);
 }

@@ -2,9 +2,9 @@ a:hover{
 	text-decoration: none;
 }
 .moredeep li .badge {
-	position: absolute;
+	/*position: absolute;*/
     margin-top: -29px;
-    margin-left: 10px;
+    margin-left: 1px;
     padding: 2px 4px;
 }
 .yellow-badge{

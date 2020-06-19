@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 public class recordInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("lanjie");
+//        System.out.println("lanjie");
         return true;
     }
 }

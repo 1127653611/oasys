@@ -30,11 +30,4 @@
     l.mail_id, l.mail_create_time, l.mail_file_id, l.mail_title, l.mail_type, l.mail_in_push_user_id,
     l.in_receiver, l.mail_status_id, l.mail_number_id, l.mail_del, l.mail_push, l.mail_star
   </sql>
-  <select id="findByReadAndDelAndReciverId" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List"></include>
-    from aoa_mail_reciver m left join aoa_in_mail_list l
-    on m.mail_id=l.mail_id
-    where m.is_read=#{read} and m.is_del=#{del} and m.mail_reciver_id=#{id}
-  </select>
 </mapper>

@@ -59,6 +59,38 @@
       <result property="deptid" column="deptid" />
     </association>
   </resultMap>
+  <resultMap id="BaseResultMap2" type="cn.oasys.web.model.pojo.user.AoaUser">
+  <id column="user_id" jdbcType="BIGINT" property="userId" />
+  <result column="address" jdbcType="VARCHAR" property="address" />
+  <result column="bank" jdbcType="VARCHAR" property="bank" />
+  <result column="birth" jdbcType="TIMESTAMP" property="birth" />
+  <result column="eamil" jdbcType="VARCHAR" property="eamil" />
+  <result column="father_id" jdbcType="BIGINT" property="fatherId" />
+  <result column="hire_time" jdbcType="TIMESTAMP" property="hireTime" />
+  <result column="user_idcard" jdbcType="VARCHAR" property="userIdcard" />
+  <result column="img_path" jdbcType="VARCHAR" property="imgPath" />
+  <result column="is_lock" jdbcType="INTEGER" property="isLock" />
+  <result column="last_login_ip" jdbcType="VARCHAR" property="lastLoginIp" />
+  <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
+  <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  <result column="modify_user_id" jdbcType="BIGINT" property="modifyUserId" />
+  <result column="password" jdbcType="VARCHAR" property="password" />
+  <result column="real_name" jdbcType="VARCHAR" property="realName" />
+  <result column="salary" jdbcType="REAL" property="salary" />
+  <result column="user_school" jdbcType="VARCHAR" property="userSchool" />
+  <result column="sex" jdbcType="VARCHAR" property="sex" />
+  <result column="theme_skin" jdbcType="VARCHAR" property="themeSkin" />
+  <result column="user_edu" jdbcType="VARCHAR" property="userEdu" />
+  <result column="user_name" jdbcType="VARCHAR" property="userName" />
+  <result column="user_sign" jdbcType="VARCHAR" property="userSign" />
+  <result column="user_tel" jdbcType="VARCHAR" property="userTel" />
+  <result column="dept_id" jdbcType="BIGINT" property="deptId" />
+  <result column="position_id" jdbcType="BIGINT" property="positionId" />
+  <result column="role_id" jdbcType="BIGINT" property="roleId" />
+  <result column="superman" jdbcType="INTEGER" property="superman" />
+  <result column="holiday" jdbcType="INTEGER" property="holiday" />
+  <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+  </resultMap>
   <sql id="Base_Column_List">
     user_id, address, bank, birth, eamil, father_id, hire_time, user_idcard, img_path, 
     is_lock, last_login_ip, last_login_time, modify_time, modify_user_id, password, real_name, 
@@ -73,6 +105,20 @@
     d.dept_addr, d.dept_fax, d.dept_name, d.dept_tel, d.email, d.deptmanager, d.end_time, d.start_time, p.position_id,
     p.level, p.name, p.describtion, p.deptid
   </sql>
+  <select id="findByPosition" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where u.position_id=#{id}
+  </select>
+  <select id="findByRole" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where u.role_id=#{roleid}
+  </select>
   <select id="findOneUserByname" resultType="AoaUser" parameterType="java.lang.String">
     select
     <include refid="Base_Column_List" />
@@ -89,5 +135,307 @@
     where u.user_id
     =#{id}
   </select>
+  <select id="findByDept" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where d.dept_id=#{id}
+  </select>
 
+  <select id="findByidLock" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where u.is_lock=#{islock} order by d.dept_id asc
+  </select>
+  <select id="findByidLockLike" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where u.is_lock=#{islock} and (d.dept_name like #{key}
+    or u.real_name like #{key} or u.user_name like #{key} or r.role_name like #{key} or u.user_tel like #{key}) order by d.dept_id asc
+  </select>
+  <insert id="sava" parameterType="cn.oasys.web.model.pojo.user.AoaUser">
+    insert into aoa_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="bank != null">
+        bank,
+      </if>
+      <if test="birth != null">
+        birth,
+      </if>
+      <if test="eamil != null">
+        eamil,
+      </if>
+      <if test="fatherId != null">
+        father_id,
+      </if>
+      <if test="hireTime != null">
+        hire_time,
+      </if>
+      <if test="userIdcard != null">
+        user_idcard,
+      </if>
+      <if test="imgPath != null">
+        img_path,
+      </if>
+      <if test="isLock != null">
+        is_lock,
+      </if>
+      <if test="lastLoginIp != null">
+        last_login_ip,
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="modifyUserId != null">
+        modify_user_id,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="salary != null">
+        salary,
+      </if>
+      <if test="userSchool != null">
+        user_school,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="themeSkin != null">
+        theme_skin,
+      </if>
+      <if test="userEdu != null">
+        user_edu,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userSign != null">
+        user_sign,
+      </if>
+      <if test="userTel != null">
+        user_tel,
+      </if>
+      <if test="deptId != null">
+        dept_id,
+      </if>
+      <if test="positionId != null">
+        position_id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="superman != null">
+        superman,
+      </if>
+      <if test="holiday != null">
+        holiday,
+      </if>
+      <if test="pinyin != null">
+        pinyin,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="bank != null">
+        #{bank,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null">
+        #{birth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="eamil != null">
+        #{eamil,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherId != null">
+        #{fatherId,jdbcType=BIGINT},
+      </if>
+      <if test="hireTime != null">
+        #{hireTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userIdcard != null">
+        #{userIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="imgPath != null">
+        #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="isLock != null">
+        #{isLock,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginIp != null">
+        #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null">
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUserId != null">
+        #{modifyUserId,jdbcType=BIGINT},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        #{salary,jdbcType=REAL},
+      </if>
+      <if test="userSchool != null">
+        #{userSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="themeSkin != null">
+        #{themeSkin,jdbcType=VARCHAR},
+      </if>
+      <if test="userEdu != null">
+        #{userEdu,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userSign != null">
+        #{userSign,jdbcType=VARCHAR},
+      </if>
+      <if test="userTel != null">
+        #{userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="positionId != null">
+        #{positionId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="superman != null">
+        #{superman,jdbcType=INTEGER},
+      </if>
+      <if test="holiday != null">
+        #{holiday,jdbcType=INTEGER},
+      </if>
+      <if test="pinyin != null">
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelective" parameterType="cn.oasys.web.model.pojo.user.AoaUser">
+    update aoa_user
+    <set>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="bank != null">
+        bank = #{bank,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null">
+        birth = #{birth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="eamil != null">
+        eamil = #{eamil,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherId != null">
+        father_id = #{fatherId,jdbcType=BIGINT},
+      </if>
+      <if test="hireTime != null">
+        hire_time = #{hireTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userIdcard != null">
+        user_idcard = #{userIdcard,jdbcType=VARCHAR},
+      </if>
+      <if test="imgPath != null">
+        img_path = #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="isLock != null">
+        is_lock = #{isLock,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginIp != null">
+        last_login_ip = #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null">
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUserId != null">
+        modify_user_id = #{modifyUserId,jdbcType=BIGINT},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="salary != null">
+        salary = #{salary,jdbcType=REAL},
+      </if>
+      <if test="userSchool != null">
+        user_school = #{userSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="themeSkin != null">
+        theme_skin = #{themeSkin,jdbcType=VARCHAR},
+      </if>
+      <if test="userEdu != null">
+        user_edu = #{userEdu,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userSign != null">
+        user_sign = #{userSign,jdbcType=VARCHAR},
+      </if>
+      <if test="userTel != null">
+        user_tel = #{userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="deptId != null">
+        dept_id = #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="positionId != null">
+        position_id = #{positionId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="superman != null">
+        superman = #{superman,jdbcType=INTEGER},
+      </if>
+      <if test="holiday != null">
+        holiday = #{holiday,jdbcType=INTEGER},
+      </if>
+      <if test="pinyin != null">
+        pinyin = #{pinyin,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=BIGINT}
+  </update>
 </mapper>

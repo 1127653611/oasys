@@ -17,7 +17,7 @@ maximum-scale=1, user-scalable=no">
 
     <script type="text/javascript">
 		$(function(){
-			var themeSkin='${user.themeSkin}';
+			var themeSkin='[[${user?.themeSkin}]]';
 			if(themeSkin=="blue"){
 				toblue();
 			}else if(themeSkin=="green"){

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class UserLoginRecordServiceImpl implements UserLoginRecordService {
@@ -16,4 +18,11 @@ public class UserLoginRecordServiceImpl implements UserLoginRecordService {
     public Integer save(AoaUserLoginRecord aoaUserLoginRecord) {
         return aoaUserLoginRecordMapper.insertSelective(aoaUserLoginRecord);
     }
+
+    @Override
+    public List<AoaUserLoginRecord> getAll(long userid) {
+        return aoaUserLoginRecordMapper.getAllById(userid);
+    }
+
+
 }
