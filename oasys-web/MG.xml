@@ -53,7 +53,19 @@
 <!-- <table tableName="aoa_user_log" domainObjectName="AoaUserLog"></table>-->
 <!-- <table tableName="aoa_type_list" domainObjectName="AoaTypeList"></table>-->
 <!-- <table tableName="aoa_status_list" domainObjectName="AoaStatusList"></table>-->
- <table tableName="aoa_subject" domainObjectName="AoaSubject"></table>
+<!-- <table tableName="aoa_subject" domainObjectName="AoaSubject"></table>-->
+<!-- <table tableName="aoa_detailsburse" domainObjectName="AoaDetailsburse"></table>-->
+<!-- <table tableName="aoa_bursement" domainObjectName="AoaBursement"></table>-->
+<!-- <table tableName="aoa_process_list" domainObjectName="AoaProcessList"></table>-->
+<!-- <table tableName="aoa_discuss_list" domainObjectName="AoaDiscussList"></table>
+ <table tableName="aoa_vote_list" domainObjectName="AoaVoteList"></table>
+ <table tableName="aoa_reply_list" domainObjectName="AoaReplyList"></table>-->
+<!-- <table tableName="aoa_vote_titles" domainObjectName="AoaVoteTitles"></table>-->
+<!-- <table tableName="aoa_comment_list" domainObjectName="AoaCommentList"></table>-->
+<!-- <table tableName="aoa_vote_title_user" domainObjectName="AoaVoteTitleUser"></table>-->
+ <table tableName="aoa_love_discuss_user" domainObjectName="AoaLoveDiscussUser"></table>
+ <table tableName="aoa_love_user" domainObjectName="AoaLoveUser"></table>
+
 
 	</context>
 </generatorConfiguration>

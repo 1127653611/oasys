@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.discuss.AoaDiscussListMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.discuss.AoaDiscussList">
+    <id column="discuss_id" jdbcType="BIGINT" property="discussId" />
+    <result column="attachment_id" jdbcType="INTEGER" property="attachmentId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="status_id" jdbcType="BIGINT" property="statusId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
+    <result column="visit_num" jdbcType="INTEGER" property="visitNum" />
+    <result column="discuss_user_id" jdbcType="BIGINT" property="discussUserId" />
+    <result column="vote_id" jdbcType="BIGINT" property="voteId" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.oasys.web.model.pojo.discuss.AoaDiscussList">
+    <result column="dcontent" jdbcType="LONGVARCHAR" property="content" />
+
+    <association property="aoaUser" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="{id=discuss_user_id}"></association>
+
+    <association property="aoaVoteList" javaType="cn.oasys.web.model.pojo.discuss.AoaVoteList" select="cn.oasys.web.model.dao.discuss.AoaVoteListMapper.findById" column="{id=vote_id}"></association>
+
+    <collection property="aoaReplyLists" select="cn.oasys.web.model.dao.discuss.AoaReplyListMapper.findByDiscussId" column="{id=discuss_id}"></collection>
+
+    <collection property="aoaLoveDiscussUsers" select="cn.oasys.web.model.dao.discuss.AoaLoveDiscussUserMapper.findUsersByDiscussId" column="discuss_id"></collection>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    discuss_id, attachment_id, create_time, status_id, title, type_id, visit_num, discuss_user_id, 
+    vote_id, modify_time
+  </sql>
+  <sql id="Blob_Column_List">
+    content dcontent
+  </sql>
+
+  <select id="findByTitleLike" resultMap="ResultMapWithBLOBs">
+      select
+      <include refid="Base_Column_List"></include>
+    ,
+      <include refid="Blob_Column_List"></include>
+    from aoa_discuss_list where title like #{tittle}
+  </select>
+  <select id="findAll" resultMap="ResultMapWithBLOBs">
+      select
+      <include refid="Base_Column_List"></include>
+    ,
+      <include refid="Blob_Column_List"></include>
+    from aoa_discuss_list
+  </select>
+  <select id="findByUserAndTitleLike" resultMap="ResultMapWithBLOBs">
+      select
+      <include refid="Base_Column_List"></include>
+    ,
+      <include refid="Blob_Column_List"></include>
+    from aoa_discuss_list where title like #{tittle} and #{userid}= discuss_user_id
+  </select>
+  <select id="findByUser" resultMap="ResultMapWithBLOBs">
+      select
+      <include refid="Base_Column_List"></include>
+    ,
+      <include refid="Blob_Column_List"></include>
+    from aoa_discuss_list where #{userid}= discuss_user_id
+  </select>
+  <select id="findOne"  resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List"></include>
+    ,
+    <include refid="Blob_Column_List"></include>
+    from aoa_discuss_list where discuss_id=#{id }
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.discuss.AoaDiscussList">
+    update aoa_discuss_list
+    <set>
+      <if test="attachmentId != null">
+        attachment_id = #{attachmentId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusId != null">
+        status_id = #{statusId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="visitNum != null">
+        visit_num = #{visitNum,jdbcType=INTEGER},
+      </if>
+      <if test="discussUserId != null">
+        discuss_user_id = #{discussUserId,jdbcType=BIGINT},
+      </if>
+      <if test="voteId != null">
+        vote_id = #{voteId,jdbcType=BIGINT},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where discuss_id = #{discussId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -35,19 +35,15 @@ color:blue;
 			
 			</i><i><img src="images/subject.gif"/></i> 费用科目</p>
 			<div class="one panel" >
-			<#list second as sub>
-			<p class="cur two" href="#one${sub.subjectId}" data-toggle="collapse" data-parent="#thisshow">
-				<i><img class="qie" src="images/Tplus.png" /></i><i><img src="images/subject.gif"/></i>${sub.name}
+			<div th:each="sub,status: ${second}">
+			<p class="cur two" th:href="@{'#one'+${sub?.subjectId}}" data-toggle="collapse" data-parent="#thisshow">
+				<i><img class="qie" src="images/Tplus.png" /></i><i><img src="images/subject.gif"/></i>[[${sub?.name}]]
 			</p>
-				<ul id="one${sub.subjectId}" class="panel-collapse collapse">
-					<#list sublist as list> 
-					<#if list.parentId==sub.subjectId>
-					<li class="cur" style="margin-bottom: 5px;padding-left: 54px; margin-left: -40px;"><i><img src="images/fangzi.gif" /></i>${list.name}</li>
-					</#if> 
-					</#list>
+				<ul th:id="@{'one'+${sub?.subjectId}}" class="panel-collapse collapse">
+					<li th:each="li,status: ${sublist}" class="cur" style="margin-bottom: 5px;padding-left: 54px; margin-left: -40px;"><i><img src="images/fangzi.gif" /></i>[[${li?.name}]]</li>
 
 				</ul>
-			</#list>
+			</div>
 			</div>
 			</div>
 			<div class="modal-footer">

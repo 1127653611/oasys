@@ -18,44 +18,30 @@
         </tr>
         </thead>
         <tbody>
-        <#list emplist as emp>
-        <tr class="row">
+        <tr th:each="emp,status: ${emplist}" class="row">
             <td class=" col-xs-1">
                 <span class="labels"><label><input name="id" type="checkbox"><i>✓</i></label></span>
             </td>
             <td class=" col-xs-1">
 													<span class="imgs center-block">
-														<#if emp.imgPath?? && emp.imgPath!=''  >
-														<img style="width: 30px;height: 30px;"
+														<img th:if="${not #strings.isEmpty(emp?.imgPath) && emp?.imgPath!=''}"
+                                                             style="width: 30px;height: 30px;"
                                                              class="profile-user-img img-responsive img-circle"
-                                                             src="/image/${emp.imgPath}"/>
-														<#else>
-														<img style="width: 30px;height: 30px;"
+                                                             th:src="@{'/images/'+${emp?.imgPath}}"/>
+
+														<img th:if="${#strings.isEmpty(emp?.imgPath) || emp?.imgPath==''}"
+                                                             style="width: 30px;height: 30px;"
                                                              class="profile-user-img img-responsive img-circle"
                                                              src="images/timg.jpg" alt="images"/>
-														
-														</#if>
                 </span>
             </td>
-            <#list deptlist as dept>
-            <#if emp.dept.deptId==dept.deptId>
-            <td class="col-xs-2">${dept.deptName}</td>
-        </
-        #if>
-        </
-        #list>
-        <td class=" col-xs-2">${emp.realName}</td>
-        <td class="col-xs-2 na">${emp.userName}</td>
-        <#list poslist as pos>
-        <#if emp.position.id==pos.id>
-        <td class=" col-xs-2">${pos.name}</td>
-    </
-    #if>
-</#list>
-<td class=" col-xs-2">${emp.userTel}</td>
+            <td th:if="${emp?.dept?.deptId==dept?.deptId}" th:each="dept,status: ${deptlist}" class="col-xs-2">[[${dept?.deptName}]]</td>
+        <td class=" col-xs-2">[[${emp?.realName}]]</td>
+        <td class="col-xs-2 na">[[${emp?.userName}]]</td>
 
+        <td th:if="${emp?.position?.positionId==pos?.positionId}" th:each="pos,status: ${poslist}" class=" col-xs-2">[[${pos?.name}]]</td>
+<td class=" col-xs-2">[[${emp?.userTel}]]</td>
 </tr>
-</#list>
 </tbody>
 </table>
 </div>

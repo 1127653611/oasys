@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.discuss.AoaCommentListMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.discuss.AoaCommentList">
+    <id column="comment_id" jdbcType="BIGINT" property="commentId" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="comment_user_id" jdbcType="BIGINT" property="commentUserId" />
+    <result column="reply_id" jdbcType="BIGINT" property="replyId" />
+
+    <association property="aoaUser" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="{id=comment_user_id}"></association>
+
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    comment_id, comment, time, comment_user_id, reply_id
+  </sql>
+  <select id="findComments" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_comment_list where reply_id in ${lon}
+  </select>
+</mapper>

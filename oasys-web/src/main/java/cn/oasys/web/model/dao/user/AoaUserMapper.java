@@ -13,7 +13,9 @@ import java.util.List;
 @Mapper
 public interface AoaUserMapper {
     public AoaUser findOneUserByname(@Param("username") String userName, @Param("password") String password);
-    public AoaUser findOneById(@Param("id")Long id);
+
+    public AoaUser findOneById(@Param("id") Long id);
+
     @Select("SELECT * from aoa_user_log where aoa_user_log.user_id=#{id} ORDER BY aoa_user_log.log_time DESC LIMIT 0,13")
     public List<AoaUserLog> findLogByUser(@Param("id") long userid);
 
@@ -34,4 +36,8 @@ public interface AoaUserMapper {
     List<AoaUser> findByidLockLike(@Param("islock") int islock, @Param("key") String Key);
 
     List<AoaUser> findByRole(@Param("roleid") long rolrid);
+
+    List<AoaUser> findAll();
+
+    List<AoaUser> findAllByLike(@Param("key") String key);
 }

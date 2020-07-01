@@ -26,4 +26,8 @@ public interface UserService {
     List<AoaUser> findByidLockLike(int islock,String key);
 
     List<AoaUser> findByRole(long rolrid);
+
+    List<AoaUser> findAll();
+
+    List<AoaUser> findAllByLike(String key);
 }

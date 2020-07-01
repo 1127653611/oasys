@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.discuss.AoaVoteListMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.discuss.AoaVoteList">
+    <id column="vote_id" jdbcType="BIGINT" property="voteId" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="selectone" jdbcType="INTEGER" property="selectone" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+
+    <collection property="aoaVoteTitles" select="cn.oasys.web.model.dao.discuss.AoaVoteTitlesMapper.findTitlesByVoteId" column="vote_id"></collection>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    vote_id, end_time, selectone, start_time
+  </sql>
+  <select id="findById" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_vote_list where vote_id=#{id}
+  </select>
+</mapper>

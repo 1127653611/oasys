@@ -40,4 +40,9 @@ public class StatusServiceImpl implements StatusService {
     public List<AoaStatusList> findByStatusNameLikeOrStatusModelLike(String name) {
         return aoaStatusListMapper.findByStatusNameLikeOrStatusModelLike(name);
     }
+
+    @Override
+    public List<AoaStatusList> findByStatusModel(String inform) {
+        return aoaStatusListMapper.findByStatusModel(inform);
+    }
 }

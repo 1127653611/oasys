@@ -14,4 +14,6 @@ public interface StatusService {
     void deleteStatus(Long statusId);
 
     List<AoaStatusList> findByStatusNameLikeOrStatusModelLike(String name);
+
+    List<AoaStatusList> findByStatusModel(String inform);
 }

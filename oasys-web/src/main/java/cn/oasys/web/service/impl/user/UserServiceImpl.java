@@ -99,5 +99,15 @@ public class UserServiceImpl implements UserService {
         return aoaUserMapper.findByRole(rolrid);
     }
 
+    @Override
+    public List<AoaUser> findAll() {
+        return aoaUserMapper.findAll();
+    }
+
+    @Override
+    public List<AoaUser> findAllByLike(String key) {
+        return aoaUserMapper.findAllByLike(key);
+    }
+
 
 }

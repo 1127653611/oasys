@@ -1,5 +1,6 @@
 package cn.oasys.web.model.dao.system;
 
+import cn.oasys.web.model.pojo.process.AoaProcessList;
 import cn.oasys.web.model.pojo.system.AoaTypeList;
 import org.apache.ibatis.annotations.*;
 
@@ -25,6 +26,10 @@ public interface AoaTypeListMapper {
     @Select("select type_id  , type_color  , type_model  , type_name ,sort_value  from aoa_type_list where type_name like #{name} or type_model like #{name} ")
     List<AoaTypeList> findByTypeNameLikeOrTypeModelLike(@Param("name") String name);
 
-    @Select("select type_id  , type_color  , type_model  , type_name ,sort_value  from aoa_type_list where type_model=${model} ")
-    List<AoaTypeList> findByTypeModel(@Param("model") String aoa_bursement);
+    @Select("select type_id  , type_color  , type_model  , type_name ,sort_value  from aoa_type_list where type_model=#{model}")
+    List<AoaTypeList> findByTypeModel(@Param("model") String model);
+
+    @Select("select type_name from aoa_type_list where  type_id = #{id}")
+    Object findname(@Param("id") Long typeId);
+
 }

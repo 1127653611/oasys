@@ -15,5 +15,5 @@ public interface TypeService {
 
     List<AoaTypeList> findByTypeNameLikeOrTypeModelLike(String name);
 
-    List<AoaTypeList> findByTypeModel(String aoa_bursement);
+    List<AoaTypeList> findByTypeModel(String model);
 }

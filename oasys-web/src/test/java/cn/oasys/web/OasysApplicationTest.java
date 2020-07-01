@@ -1,5 +1,6 @@
 package cn.oasys.web;
 
+import cn.oasys.web.model.dao.discuss.AoaDiscussListMapper;
 import cn.oasys.web.model.dao.mail.AoaMailReciverMapper;
 import cn.oasys.web.model.dao.notice.AoaNoticeUserRelationMapper;
 import cn.oasys.web.model.dao.system.AoaSysMenuMapper;
@@ -18,10 +19,14 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 public class OasysApplicationTest {
+    @Autowired
+    private AoaDiscussListMapper aoaDiscussListMapper;
     @Autowired
     private AoaNoticeUserRelationMapper aoaNoticeUserRelationMapper;
     @Autowired
@@ -30,6 +35,7 @@ public class OasysApplicationTest {
     private AoaUserMapper aoaUserMapper;
     @Autowired
     private AoaMailReciverMapper aoaMailReciverMapper;
+
     @Test
     public void oasysytest() throws InterruptedException, SQLException, IOException, XMLParserException, InvalidConfigurationException {
         List<String> warnings = new ArrayList<String>();
@@ -41,10 +47,9 @@ public class OasysApplicationTest {
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);
     }
+
     @Test
-    public void userTset(){
-        System.out.println(aoaUserMapper.findOneById(1L));
-        System.out.println(aoaNoticeUserRelationMapper.findByReadAndUserId(false,1L));
-        System.out.println(aoaMailReciverMapper.findByReadAndDelAndReciverId(false,false,1L));
+    public void userTset() {
+        System.out.println(aoaDiscussListMapper.findByTitleLike("%f%"));
     }
 }

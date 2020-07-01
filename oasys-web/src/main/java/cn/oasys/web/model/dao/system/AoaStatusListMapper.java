@@ -23,4 +23,13 @@ public interface AoaStatusListMapper {
 
     @Select("select status_id ,status_color , status_model , status_name , sort_precent , sort_value  from aoa_status_list  where status_name like #{name} or status_model like #{name}")
     List<AoaStatusList> findByStatusNameLikeOrStatusModelLike(@Param("name") String name);
+
+    @Select("select status_name from aoa_status_list where status_id=#{id}")
+    Object findname(@Param("id") Long statusId);
+
+    @Select("select status_color from aoa_status_list where status_id=#{id}")
+    Object findcolor(Long statusId);
+
+    @Select("select status_id ,status_color , status_model , status_name , sort_precent , sort_value  from aoa_status_list where status_model=#{model}")
+    List<AoaStatusList> findByStatusModel(@Param("model") String inform);
 }

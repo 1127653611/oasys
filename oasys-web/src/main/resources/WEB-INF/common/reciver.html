@@ -29,10 +29,12 @@
                       				追加接收人</a>
                   			</h4>
 
-												<div class="input-group">
-													<input type="text" class="form-control input-sm pull-right cha" placeholder="查找..." />
-													<div class="input-group-btn chazhao" style="top:-1px;">
-														<a class="btn btn-sm btn-default glyphicon glyphicon-search" style="height: 30px;" href="##"></a>
+												<div class="input-group" >
+													<input id="find" type="text" class="form-control input-sm baseKey"
+														   placeholder="查找..." />
+													<div class="input-group-btn">
+														<a class="btn btn-sm btn-default baseKeySubmit"><span
+																class="glyphicon glyphicon-search"></span></a>
 													</div>
 												</div>
 											</div>
@@ -47,8 +49,18 @@
 						</div>
 					</div>
 				</div>
-				<h2 class="mi" style="display:none;">${(qufen)!''}</h2>
+				<h2 class="mi" style="display:none;">[[${qufen}]]</h2>
 <script>
+$("#find").keydown(function () {
+     if (window.event.keyCode==13) {
+     $(".baseKeySubmit").trigger("click");
+   }
+});
+$('.baseKeySubmit').on('click',function(){
+		var baseKey=$('.baseKey').val();
+		var $qufen=$(".mi").text();
+		$("#myModal .thistable").load("names",{title:baseKey,qufen:$qufen});
+});
 $(function(){
 	
 	/* 分页插件按钮的点击事件 */

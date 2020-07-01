@@ -112,6 +112,21 @@
     left join aoa_dept d on u.dept_id=d.dept_id
     left join aoa_position p on u.position_id=p.position_id where u.position_id=#{id}
   </select>
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id
+  </select>
+  <select id="findAllByLike" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where  u.real_name like #{key} or u.user_name like #{key}
+    or u.user_tel like #{key} or d.dept_name like #{key} or p.name like #{key}
+  </select>
   <select id="findByRole" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List1"></include>
@@ -126,7 +141,7 @@
     or user_tel=#{username}
     and password=#{password}
   </select>
-  <select id="findOneById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+  <select id="findOneById" resultMap="BaseResultMap" >
     select
     <include refid="Base_Column_List1" />
     from aoa_user u left join aoa_role_ r on u.role_id=r.role_id

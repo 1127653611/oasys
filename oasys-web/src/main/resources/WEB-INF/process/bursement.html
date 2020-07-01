@@ -82,7 +82,7 @@ cursor: pointer;
 		<h1 style="font-size: 24px; margin: 0;" class="">费用报销</h1>
 	</div>
 	<div class="col-md-10 text-right">
-		<a href="##"><span class="glyphicon glyphicon-home"></span> 首页</a> > <a
+		<a target="_top" href="/index"><span class="glyphicon glyphicon-home"></span> 首页</a> > <a
 			disabled="disabled">费用报销</a>
 	</div>
 </div>
@@ -117,9 +117,7 @@ cursor: pointer;
 					<td class="title"><span >紧急程度</span></td>
 					<td colspan="6">
 						<select class="form-control inpu" name="proId.deeply">
-							<#list harrylist as harry>
-							<option value="${harry.typeId}">${harry.typeName}</option>
-							</#list>
+							<option th:each="harry,status: ${harrylist}" th:value="${harry?.typeId}">[[${harry?.typeName}]]</option>
 						</select>
 					</td>
 					
@@ -127,7 +125,7 @@ cursor: pointer;
 				<tr >
 					<td class="title" ><label class="control-label">提单人员</label></td>
 					<td  colspan="6"><input type="text" class="form-control inpu" 
-					readonly="readonly" style="background-color:#fff;" value="${username}"/></td>
+					readonly="readonly" style="background-color:#fff;" th:value="${username}"/></td>
 					<td class="title" ><label class="control-label">证明人</label></td>
 					<td  colspan="6"><input type="text" class="form-control inpu cheng" 
 					readonly="readonly" style="background-color:#fff;" name="namemoney"/>
@@ -144,9 +142,7 @@ cursor: pointer;
 					<td class="title" ><label class="control-label">报销方式</label></td>
 					<td colspan="6">
 					<select class="form-control inpu" name="typeId">
-					<#list uplist as list>
-					<option value="${list.typeId}">${list.typeName}</option>
-					</#list>
+					<option th:each="list,status: ${uplist}" th:value="${list?.typeId}">[[${list?.typeName}]]</option>
 					</select>
 					</td>
 				</tr>

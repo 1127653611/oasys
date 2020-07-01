@@ -44,7 +44,7 @@ public class TypeServiceImpl implements TypeService {
     }
 
     @Override
-    public List<AoaTypeList> findByTypeModel(String aoa_bursement) {
-        return aoaTypeListMapper.findByTypeModel(aoa_bursement);
+    public List<AoaTypeList> findByTypeModel(String model) {
+        return aoaTypeListMapper.findByTypeModel(model);
     }
 }

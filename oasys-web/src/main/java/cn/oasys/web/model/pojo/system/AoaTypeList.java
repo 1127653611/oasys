@@ -25,7 +25,7 @@ public class AoaTypeList {
     }
 
     public void setTypeColor(String typeColor) {
-        this.typeColor = typeColor == null ? null : typeColor.trim();
+        this.typeColor = typeColor;
     }
 
     public String getTypeModel() {
