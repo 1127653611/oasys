@@ -17,6 +17,17 @@ public class AoaCommentList {
 
     private AoaUser aoaUser;
 
+    public AoaCommentList(Long commentId, String comment, Date time, Long commentUserId, Long replyId) {
+        this.commentId = commentId;
+        this.comment = comment;
+        this.time = time;
+        this.commentUserId = commentUserId;
+        this.replyId = replyId;
+    }
+
+    public AoaCommentList() {
+    }
+
     public AoaUser getAoaUser() {
         return aoaUser;
     }

@@ -1,7 +1,8 @@
 package cn.oasys.web.model.pojo.discuss;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
+
 
 public class AoaVoteList {
     private Long voteId;
@@ -12,7 +13,7 @@ public class AoaVoteList {
 
     private Date startTime;
 
-    private Set<AoaVoteTitles> aoaVoteTitles;
+    private List<AoaVoteTitles> aoaVoteTitles;
 
     @Override
     public String toString() {
@@ -25,11 +26,11 @@ public class AoaVoteList {
                 '}';
     }
 
-    public Set<AoaVoteTitles> getAoaVoteTitles() {
+    public List<AoaVoteTitles> getAoaVoteTitles() {
         return aoaVoteTitles;
     }
 
-    public void setAoaVoteTitles(Set<AoaVoteTitles> aoaVoteTitles) {
+    public void setAoaVoteTitles(List<AoaVoteTitles> aoaVoteTitles) {
         this.aoaVoteTitles = aoaVoteTitles;
     }
 

@@ -5,7 +5,7 @@
     <result column="reply_id" jdbcType="BIGINT" property="replyId" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
 
-    <association property="aoaUser" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="{id=user_id}"></association>
+    <association property="aoaUser" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="user_id"></association>
 
   </resultMap>
 
@@ -17,4 +17,10 @@
     <include refid="Base_Column_List"></include>
     from aoa_love_user where reply_id=#{id}
   </select>
+  <delete id="deleteByReply">
+      delete from aoa_love_user where reply_id in
+    <foreach item="item" collection="lon" open="(" close=")" separator=",">
+      #{item}
+    </foreach>
+  </delete>
 </mapper>

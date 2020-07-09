@@ -1,5 +1,6 @@
 package cn.oasys.web.service.inter.system;
 
+import cn.oasys.web.model.pojo.process.AoaProcessList;
 import cn.oasys.web.model.pojo.system.AoaTypeList;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface TypeService {
     List<AoaTypeList> findByTypeNameLikeOrTypeModelLike(String name);
 
     List<AoaTypeList> findByTypeModel(String model);
+
+    AoaTypeList findOne(Long typeId);
 }

@@ -4,7 +4,6 @@ import cn.oasys.web.model.pojo.user.AoaUser;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 public class AoaDiscussList {
     private Long discussId;
@@ -31,6 +30,11 @@ public class AoaDiscussList {
 
     private AoaUser aoaUser;
 
+    private AoaVoteList aoaVoteList;
+
+    private List<AoaLoveDiscussUser> aoaLoveDiscussUsers;
+
+    private List<AoaReplyList> aoaReplyLists;
 
     public AoaUser getAoaUser() {
         return aoaUser;
@@ -48,17 +52,13 @@ public class AoaDiscussList {
         this.aoaVoteList = aoaVoteList;
     }
 
-    public Set<AoaReplyList> getAoaReplyLists() {
+    public List<AoaReplyList> getAoaReplyLists() {
         return aoaReplyLists;
     }
 
-    public void setAoaReplyLists(Set<AoaReplyList> aoaReplyLists) {
+    public void setAoaReplyLists(List<AoaReplyList> aoaReplyLists) {
         this.aoaReplyLists = aoaReplyLists;
     }
-
-    private AoaVoteList aoaVoteList;
-
-    private List<AoaLoveDiscussUser> aoaLoveDiscussUsers;
 
     public List<AoaLoveDiscussUser> getAoaLoveDiscussUsers() {
         return aoaLoveDiscussUsers;
@@ -67,9 +67,6 @@ public class AoaDiscussList {
     public void setAoaLoveDiscussUsers(List<AoaLoveDiscussUser> aoaLoveDiscussUsers) {
         this.aoaLoveDiscussUsers = aoaLoveDiscussUsers;
     }
-
-    private Set<AoaReplyList> aoaReplyLists;
-
     public Long getDiscussId() {
         return discussId;
     }

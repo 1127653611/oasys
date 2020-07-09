@@ -10,7 +10,11 @@
 	width: 100%;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-
+wang{
+    margin:0;
+    padding:0;
+    border: none;
+}
 .box-header {
 	color: #444;
 	display: block;

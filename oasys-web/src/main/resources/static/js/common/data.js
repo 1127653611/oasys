@@ -41,16 +41,17 @@ Date.prototype.Format = function(fmt) { //author: meizz
 		$('#starTime').val(startime);
 		if($('#endTime').val()==""||$('#endTime').val()==null)
 		$('#endTime').val(endtime);
-		$('#starTime').on('click',function(){
+		$('#starTime').on('focus',function(){
 			WdatePicker({ minDate:addDate(nowDate,0),maxDate:addDate(nowDate,60),dateFmt:'yyyy-MM-dd HH:mm:ss'});
 		});
 		$('#starTime').on('blur',function(){
-			$('#endTime').val(addDate($('#starTime').val(),1));
+		    var da=addDate($('#starTime').val(),1);
+		    console.log(da);
+			$('#endTime').val(da);
 		});
 		
-		$('#endTime').on('click',function(){
+		$('#endTime').on('focus',function(){
 			var start=$('#starTime').val();
-			console.log(start);
 			WdatePicker({ minDate:addDate(start,1),maxDate:addDate(start,60),dateFmt:'yyyy-MM-dd HH:mm:ss'});
 
 		});

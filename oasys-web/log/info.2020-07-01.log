@@ -1,0 +1,16 @@
+2020-07-01 20:11:05.936 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-07-01 20:11:08.600 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-07-01 20:11:10.588 [main]  WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'chatManageController': Unsatisfied dependency expressed through field 'discussService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'discussServiceImpl': Unsatisfied dependency expressed through field 'aoaVoteTitlesMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.oasys.web.model.dao.discuss.AoaVoteTitlesMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-07-01 20:11:10.601 [main]  INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-01 20:13:42.200 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-07-01 20:13:43.284 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=9c0f20f3-1aec-3507-b83f-89c7d9cc5ac6
+2020-07-01 20:13:45.273 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-01 20:13:45.274 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-01 20:13:45.335 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-01 20:13:45.336 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-01 20:13:45.909 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-01 20:13:46.564 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-01 20:13:47.890 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 7.393 seconds (JVM running for 8.715)
+2020-07-01 20:13:48.786 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

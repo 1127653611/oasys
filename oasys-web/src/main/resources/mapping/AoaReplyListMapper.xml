@@ -10,7 +10,13 @@
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.oasys.web.model.pojo.discuss.AoaReplyList">
     <result column="rc" jdbcType="LONGVARCHAR" property="content" />
 
-    <collection property="aoaLoveUsers" select="cn.oasys.web.model.dao.discuss.AoaLoveUserMapper.findUsersByReptyId"></collection>
+    <association property="aoaUser" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="{id=reply_user_id}"></association>
+
+    <association property="aoaDiscussList" javaType="cn.oasys.web.model.pojo.discuss.AoaDiscussList" select="cn.oasys.web.model.dao.discuss.AoaDiscussListMapper.findDiscussByReply" column="discuss_id"></association>
+
+    <collection property="aoaLoveUsers" select="cn.oasys.web.model.dao.discuss.AoaLoveUserMapper.findUsersByReptyId" column="reply_id"></collection>
+
+    <collection property="aoaCommentLists" select="cn.oasys.web.model.dao.discuss.AoaCommentListMapper.findByReoly" column="reply_id"></collection>
   </resultMap>
 
   <sql id="Base_Column_List">
@@ -37,4 +43,47 @@
   <include refid="Blob_Column_List"></include>
   from aoa_reply_list where discuss_id=#{id} and reply_user_id=#{uid} order by replay_time ${sort}
 </select>
+  <select id="findOne" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List"></include>,
+    <include refid="Blob_Column_List"></include>
+    from aoa_reply_list where reply_id=#{id}
+  </select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.discuss.AoaReplyList">
+    insert into aoa_reply_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="replyId != null">
+        reply_id,
+      </if>
+      <if test="replayTime != null">
+        replay_time,
+      </if>
+      <if test="discussId != null">
+        discuss_id,
+      </if>
+      <if test="replyUserId != null">
+        reply_user_id,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="replyId != null">
+        #{replyId,jdbcType=BIGINT},
+      </if>
+      <if test="replayTime != null">
+        #{replayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="discussId != null">
+        #{discussId,jdbcType=BIGINT},
+      </if>
+      <if test="replyUserId != null">
+        #{replyUserId,jdbcType=BIGINT},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
 </mapper>

@@ -29,37 +29,42 @@
     discuss_id, attachment_id, create_time, status_id, title, type_id, visit_num, discuss_user_id, 
     vote_id, modify_time
   </sql>
+
   <sql id="Blob_Column_List">
     content dcontent
   </sql>
-
+  <select id="findDiscussByReply" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+     from aoa_discuss_list where discuss_id  = #{id}
+  </select>
   <select id="findByTitleLike" resultMap="ResultMapWithBLOBs">
       select
       <include refid="Base_Column_List"></include>
     ,
       <include refid="Blob_Column_List"></include>
-    from aoa_discuss_list where title like #{tittle}
+    from aoa_discuss_list where title like #{tittle} order by create_time DESC
   </select>
   <select id="findAll" resultMap="ResultMapWithBLOBs">
       select
       <include refid="Base_Column_List"></include>
     ,
       <include refid="Blob_Column_List"></include>
-    from aoa_discuss_list
+    from aoa_discuss_list order by create_time DESC
   </select>
   <select id="findByUserAndTitleLike" resultMap="ResultMapWithBLOBs">
       select
       <include refid="Base_Column_List"></include>
     ,
       <include refid="Blob_Column_List"></include>
-    from aoa_discuss_list where title like #{tittle} and #{userid}= discuss_user_id
+    from aoa_discuss_list where title like #{tittle} and #{userid}= discuss_user_id order by create_time DESC
   </select>
   <select id="findByUser" resultMap="ResultMapWithBLOBs">
       select
       <include refid="Base_Column_List"></include>
     ,
       <include refid="Blob_Column_List"></include>
-    from aoa_discuss_list where #{userid}= discuss_user_id
+    from aoa_discuss_list where #{userid}= discuss_user_id order by create_time DESC
   </select>
   <select id="findOne"  resultMap="ResultMapWithBLOBs">
     select
@@ -68,6 +73,79 @@
     <include refid="Blob_Column_List"></include>
     from aoa_discuss_list where discuss_id=#{id }
   </select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.discuss.AoaDiscussList">
+    insert into aoa_discuss_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="discussId != null">
+        discuss_id,
+      </if>
+      <if test="attachmentId != null">
+        attachment_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="statusId != null">
+        status_id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="visitNum != null">
+        visit_num,
+      </if>
+      <if test="discussUserId != null">
+        discuss_user_id,
+      </if>
+      <if test="voteId != null">
+        vote_id,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="discussId != null">
+        #{discussId,jdbcType=BIGINT},
+      </if>
+      <if test="attachmentId != null">
+        #{attachmentId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusId != null">
+        #{statusId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="visitNum != null">
+        #{visitNum,jdbcType=INTEGER},
+      </if>
+      <if test="discussUserId != null">
+        #{discussUserId,jdbcType=BIGINT},
+      </if>
+      <if test="voteId != null">
+        #{voteId,jdbcType=BIGINT},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.discuss.AoaDiscussList">
     update aoa_discuss_list
     <set>

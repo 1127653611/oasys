@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.discuss;
 
+import cn.oasys.web.model.pojo.user.AoaUser;
+
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +20,44 @@ public class AoaReplyList {
 
     private List<AoaCommentList> aoaCommentLists;
 
+    private AoaUser aoaUser;
+
+    private AoaDiscussList aoaDiscussList;
+
+    public AoaReplyList(Long replyId, Date replayTime, Long discussId, Long replyUserId, String content) {
+        this.replyId = replyId;
+        this.replayTime = replayTime;
+        this.discussId = discussId;
+        this.replyUserId = replyUserId;
+        this.content = content;
+    }
+
+    public AoaReplyList() {
+    }
+
+    public AoaDiscussList getAoaDiscussList() {
+        return aoaDiscussList;
+    }
+
+    public void setAoaDiscussList(AoaDiscussList aoaDiscussList) {
+        this.aoaDiscussList = aoaDiscussList;
+    }
+
+    public AoaUser getAoaUser() {
+        return aoaUser;
+    }
+
+    public void setAoaUser(AoaUser aoaUser) {
+        this.aoaUser = aoaUser;
+    }
+
+    public List<AoaCommentList> getAoaCommentLists() {
+        return aoaCommentLists;
+    }
+
+    public void setAoaCommentLists(List<AoaCommentList> aoaCommentLists) {
+        this.aoaCommentLists = aoaCommentLists;
+    }
 
     public List<AoaLoveUser> getAoaLoveUsers() {
         return aoaLoveUsers;

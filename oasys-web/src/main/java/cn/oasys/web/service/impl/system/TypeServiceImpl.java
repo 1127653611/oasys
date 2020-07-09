@@ -47,4 +47,9 @@ public class TypeServiceImpl implements TypeService {
     public List<AoaTypeList> findByTypeModel(String model) {
         return aoaTypeListMapper.findByTypeModel(model);
     }
+
+    @Override
+    public AoaTypeList findOne(Long typeId) {
+        return aoaTypeListMapper.findOneById(typeId);
+    }
 }

@@ -3,6 +3,7 @@ package cn.oasys.web.model.dao.discuss;
 
 import cn.oasys.web.model.pojo.discuss.AoaDiscussList;
 import cn.oasys.web.model.pojo.user.AoaUser;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -21,4 +22,11 @@ public interface AoaDiscussListMapper {
     AoaDiscussList findOne(Long id);
 
     void updateByPrimaryKeySelective(AoaDiscussList discuss);
+
+    AoaDiscussList findDiscussByReply(Long id);
+
+    void insertSelective(AoaDiscussList discussList);
+
+    @Delete("delete from aoa_discuss_list where discuss_id=#{id}")
+    void delete(Long discussId);
 }

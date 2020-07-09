@@ -1,15 +1,3 @@
-/**
- * 弹出框使用方法：
- * 1、自定义模块已经写好，template；
- * 需要设置六个个显示的信息；
- * 1、在需要显示的地方设置类；
- * 	class="usershow"  
-	title="${user.userName}" 
-	thisdept="${user.dept.deptName}" 
-	thisrole="${user.role.roleName}" 
-	thistel="${(user.userTel)!'空的'}"
-	thisemail="${(user.eamil)!'空的'}" 
- */
 
 /*内部员工资料版*/
 $('.usershow').popover({
@@ -25,7 +13,7 @@ $('.usershow').popover({
 			+'</table>	</div></div>'
 	});
 	$('.usershow').on('mouseover',function(){
-		console.log("fds");
+
 		$(".thisdept").text($(this).attr("thisdept"));
 		$(".thisrole").text($(this).attr("thisrole"));
 		$(".thistel").text($(this).attr("thistel"));
@@ -45,11 +33,7 @@ $('.usershow').popover({
 			+'</table>	</div></div>'
 	});
 	$('.othershow').on('mouseover',function(){
-		console.log("fds");
-		console.log("fdsddd:"+$(this).attr("thistel"));
-		console.log("ssss:"+$(this).attr("thissex"));
-		console.log($(this).attr("thisemail"));
-		console.log($(this).attr("thiscompany"));
+
 		$(".thisdept").text($(this).attr("thistel"));
 		$(".thisrole").text($(this).attr("thissex"));
 		$(".thistel").text($(this).attr("thisemail"));

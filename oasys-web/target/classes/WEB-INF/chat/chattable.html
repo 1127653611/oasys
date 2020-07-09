@@ -3,7 +3,7 @@
 	<!--盒子头-->
 	<div class="box-header">
 		<h3 class="box-title">
-			<a th:if="${not #strings.isEmpty(manage)}" href="writechat" class="label label-success" style="padding: 5px;">
+			<a  href="writechat" class="label label-success" style="padding: 5px;">
 				<span class="glyphicon glyphicon-plus"></span> 新增
 			</a>
 			<a href="" class="label label-success" style="padding: 5px;margin-left:5px;">
@@ -54,7 +54,7 @@
 					<td>
 						<a th:if="${not #strings.isEmpty(me)}" th:href="@{'/writechat?id='+${this?.id}}" class="label xiugai"><span
 							class="glyphicon glyphicon-edit"></span> 修改</a>
-						<a th:href="@{'/seediscuss?id='+${this.id}+'&pageNumber='+${page?.pageNum}}" class="label xiugai"> <span
+						<a th:href="@{'/seediscuss?id='+${this.id}+'&pageNumber='+${page?.pageNum}+'&ro='+${ro}}" class="label xiugai"> <span
 							class="glyphicon glyphicon-search"></span>查看</a>
 						 <a th:if="${not #strings.isEmpty(manage)}" href="javascript:void(0);" th:discussId="${this?.id}"
 						class="label shanchu deletethis"><span class="glyphicon glyphicon-remove"></span>
@@ -64,14 +64,13 @@
 			</table>
 		</div>
 	</div>
+	<input type="hidden" id="ro" th:value="${ro}">
 	<!--盒子尾-->
 	<div th:replace="common/paging :: paging"></div>
 </div>
 <script>
 /* 显示表格的删除 */
 	$('.thistable').on('click','.deletethis',function(){
-		console.log($(this).attr('discussId'));
-		console.log('${name}');
 		var name='[[${name}]]';
 		var discussId=$(this).attr('discussId');
 		if(confirm("确定删除吗？ 不能恢复哟~")){
@@ -86,6 +85,14 @@
 });
 $('.baseKeySubmit').on('click',function(){
 		var usersearch=$('.baseKey').val();
-	$('.thistable').load("seetable?baseKey="+usersearch);
+		var ro=$('#ro').val();
+		if(ro==1){
+			$('.thistable').load("chattable?baseKey="+usersearch);
+		}else if(ro==2){
+			$('.thistable').load("metable?baseKey="+usersearch);
+		}else{
+			$('.thistable').load("seetable?baseKey="+usersearch);
+		}
+
 });
 </script>

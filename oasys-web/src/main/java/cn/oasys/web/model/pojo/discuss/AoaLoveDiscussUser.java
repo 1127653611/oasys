@@ -34,4 +34,13 @@ public class AoaLoveDiscussUser {
     public void setUserId(Long userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "AoaLoveDiscussUser{" +
+                "discussId=" + discussId +
+                ", userId=" + userId +
+                ", aoaUser=" + aoaUser +
+                '}';
+    }
 }

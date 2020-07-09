@@ -91,4 +91,8 @@ public class IndexController {
     public String test2(HttpSession session, Model model, HttpServletRequest request){
         return "systemcontrol/control";
     }
+    @RequestMapping("notlimit")
+    public String notLimit() {
+        return "common/notlimit";
+    }
 }

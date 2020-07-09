@@ -72,9 +72,15 @@ public class LoginController {
         if (sessionId == user.getUserId()) {
             model.addAttribute("hasmess", "当前用户已经登录了；不能重复登录");
             session.setAttribute("thisuser", user);
+
             return "login/login";
         } else {
             session.setAttribute("userId", user.getUserId());
+            if (user.getSuperman()==1){
+                session.setAttribute("manage",true);
+            }else {
+                session.setAttribute("manage",false);
+            }
             Browser browser = UserAgent.parseUserAgentString(request.getHeader("User-Agent")).getBrowser();
             Version version = browser.getVersion(request.getHeader("User-Agent"));
             String info = browser.getName() + "/" + version.getVersion();
@@ -90,6 +96,11 @@ public class LoginController {
             AoaUser user = (AoaUser) session.getAttribute("thisuser");
             session.removeAttribute("userId");
             session.setAttribute("userId", user.getUserId());
+            if (user.getSuperman()==1){
+                session.setAttribute("manage",true);
+            }else {
+                session.setAttribute("manage",false);
+            }
         } else {
             return "login/login";
         }

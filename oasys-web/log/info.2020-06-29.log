@@ -1,0 +1,168 @@
+2020-06-29 22:43:48.002 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 22:43:51.046 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 22:43:53.831 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:43:53.832 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:43:53.861 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:43:53.862 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:43:54.318 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:43:54.666 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 22:43:55.727 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 10.321 seconds (JVM running for 13.459)
+2020-06-29 22:43:56.124 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 22:43:56.472 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 22:43:56.699 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:43:56.710 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 22:43:56.758 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 22:44:50.719 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 22:44:51.782 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 22:44:53.394 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:44:53.394 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:44:53.411 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:44:53.412 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:44:53.989 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:44:54.521 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 22:44:55.557 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.497 seconds (JVM running for 7.768)
+2020-06-29 22:44:55.924 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 22:44:56.143 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 22:44:56.261 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:44:56.265 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 22:44:56.280 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 22:46:39.550 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 22:46:40.634 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 22:46:42.596 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:46:42.596 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:46:42.608 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:46:42.609 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:46:43.272 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:46:43.835 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 22:46:44.885 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 7.083 seconds (JVM running for 8.395)
+2020-06-29 22:46:45.211 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 22:46:45.449 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 22:46:45.535 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:46:45.538 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 22:46:45.550 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 22:53:12.471 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 22:53:20.085 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 22:53:28.941 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:53:28.943 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:53:29.004 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:53:29.007 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:53:31.148 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:53:33.363 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 22:53:37.831 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 34.329 seconds (JVM running for 40.52)
+2020-06-29 22:53:39.946 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 22:53:41.330 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 22:53:42.027 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:53:42.043 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 22:53:42.132 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 22:57:19.952 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 22:57:21.068 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 22:57:23.144 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:57:23.144 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:57:23.155 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:57:23.156 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:57:23.740 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:57:24.215 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 22:57:25.460 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 7.373 seconds (JVM running for 8.683)
+2020-06-29 22:57:25.781 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 22:57:26.022 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 22:57:26.116 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:57:26.120 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 22:57:26.131 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 22:57:44.624 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 22:57:45.680 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 22:57:47.437 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:57:47.437 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:57:47.449 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 22:57:47.450 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 22:57:48.090 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:57:48.825 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 22:57:49.974 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 7.086 seconds (JVM running for 8.42)
+2020-06-29 22:57:50.324 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 22:57:50.568 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 22:57:50.871 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 22:57:50.874 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 22:57:50.891 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 23:20:59.163 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 23:21:00.259 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 23:21:01.930 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:21:01.931 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:21:01.941 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:21:01.942 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:21:02.395 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:21:02.841 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 23:21:03.765 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.326 seconds (JVM running for 7.625)
+2020-06-29 23:21:04.093 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 23:21:04.339 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 23:21:04.532 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:21:04.536 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 23:21:04.555 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 23:29:57.067 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 23:29:58.121 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 23:29:59.920 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:29:59.921 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:29:59.937 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:29:59.937 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:30:00.512 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:30:01.143 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 23:30:02.209 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.952 seconds (JVM running for 8.307)
+2020-06-29 23:30:02.557 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 23:30:02.801 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 23:30:02.894 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:30:02.897 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 23:30:02.907 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 23:31:16.412 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 23:31:17.455 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 23:31:19.109 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:31:19.109 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:31:19.120 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:31:19.121 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:31:19.650 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:31:20.198 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 23:31:21.199 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.577 seconds (JVM running for 7.874)
+2020-06-29 23:31:21.545 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 23:31:21.795 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 23:31:21.917 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:31:21.921 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 23:31:21.934 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 23:35:46.863 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 23:35:47.937 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 23:35:49.702 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:35:49.703 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:35:49.715 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:35:49.716 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:35:50.401 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:35:50.951 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 23:35:52.012 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.894 seconds (JVM running for 8.244)
+2020-06-29 23:35:52.367 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 23:35:52.603 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 23:35:52.726 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:35:52.731 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 23:35:52.744 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 23:39:29.272 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 23:39:30.355 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 23:39:32.112 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:39:32.113 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:39:32.121 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:39:32.122 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:39:32.750 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:39:33.300 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 23:39:34.219 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.705 seconds (JVM running for 7.985)
+2020-06-29 23:39:34.559 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 23:39:34.786 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 23:39:34.877 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:39:34.881 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 23:39:34.891 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-29 23:40:45.181 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-06-29 23:40:46.273 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=66c58953-6943-311f-aded-3c336326e40f
+2020-06-29 23:40:48.083 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:40:48.084 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:40:48.094 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-29 23:40:48.095 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-29 23:40:48.746 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:40:49.321 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-06-29 23:40:50.339 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.889 seconds (JVM running for 8.19)
+2020-06-29 23:40:50.672 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-29 23:40:50.909 [main]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-29 23:40:51.028 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-29 23:40:51.032 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-29 23:40:51.047 [SpringContextShutdownHook]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

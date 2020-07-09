@@ -1,0 +1,42 @@
+<html th:fragment="discusslike" xmlns:th="http://www.thymeleaf.org">
+<ul class="list-inline" style="margin-left: 6px;">
+    <li><a href="javascript:void(0)" class="label xinzeng thisreply" id="thisreply"
+           data-th-replyId="${discuss?.discussId}" replyModule="discuss"> <span
+            class="glyphicon glyphicon-share-alt"></span>回复
+    </a></li>
+    <li><a href="javascript:void(0)"> <span class="glyphicon glyphicon-fire"
+                           style="color: red;"></span> 访问数<span>([[${discuss?.visitNum}]])</span>
+    </a></li>
+    <li><a > <span
+            class="glyphicon glyphicon-comment" style="color: #337ab7"></span>
+        讨论次数<span>([[${chatNum}]])</span>
+    </a></li>
+    <li><a href="javascript:void(0)" class="likethis" data-th-replyId="${discuss?.discussId}" module="discuss">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        <span th:if="${discussContain==true}" class="likenum">
+					已赞([[${discussLikeNum}]])
+        </span>
+        <span th:if="${discussContain!=true}" class="likenum">
+					赞([[${discussLikeNum}]])
+        </span>
+    </a>
+    </li>
+</ul>
+<ul class="list-inline" style="margin-left: 10px;">
+    <li th:if="${discussLikeNum>0}">
+        <span class="glyphicon glyphicon-thumbs-up"
+              style="color: #fff;border-radius: 50%;padding: 3px;background-color: #347ab7;"></span>
+        <span class="likethisnum">
+				<a th:each="user,status: ${setUsers}"
+                   class="usershow"
+                   data-th-title="${user?.aoaUser?.userName}"
+                   data-th-thisdept="${user?.aoaUser?.dept?.deptName}"
+                   data-th-thisrole="${user?.aoaUser?.role?.roleName}"
+                   data-th-thistel="${user?.aoaUser?.userTel}"
+                   data-th-thisemail="${user?.aoaUser?.eamil}"
+                   href="javascript:void(0);">[[${user?.aoaUser?.userName}]]、</a>
+				<span>共[[${discussLikeNum}]]人觉得很赞</span>
+			</span>
+    </li>
+</ul>
+<script type="text/javascript" src="js/usershow.js"></script>
