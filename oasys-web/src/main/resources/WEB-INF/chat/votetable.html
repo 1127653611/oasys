@@ -1,4 +1,4 @@
-<wang th:fragment="votetable" xmlns:th="http://www.thymeleaf.org">
+<html th:fragment="votetable" xmlns:th="http://www.thymeleaf.org">
 <div th:if="${not #lists.isEmpty(voteTitles)}" style="border: solid 1px #eee;">
     <table class="table" cellspacing="0" border="0"
            style="border-width: 0px; border-collapse: collapse; margin-bottom: 0px;">
@@ -25,7 +25,7 @@
                 多选
             </th>
         </tr>
-        <wang th:each="voteTitle,status: ${voteTitles}" style="margin:0; padding:0; border:0;">
+        <th:block th:each="voteTitle,status: ${voteTitles}" style="margin:0; padding:0; border:0;">
             <tr>
                 <td style="width: 400px;"><span>[[${voteTitle?.title}]]</span></td>
                 <td>
@@ -77,26 +77,26 @@
 							</span>
                 </td>
             </tr>
-        </wang>
+        </th:block>
         </tbody>
     </table>
 </div>
-<wang th:if="${not #strings.isEmpty(dateType) && dateType!=3} " style="margin:0; padding:0; border:0;">
+<th:block th:if="${not #strings.isEmpty(dateType) && dateType!=3} " style="margin:0; padding:0; border:0;">
     <script>
 			$(function(){
 				$('.votethis').children().css('background-color','#999');
 			});
 
     </script>
-</wang>
-<wang th:if="${isvote==true} " style="margin:0; padding:0; border:0;">
+</th:block>
+<th:block th:if="${isvote==true} " style="margin:0; padding:0; border:0;">
     <script>
 			$(function(){
 				$('.votethis').children().css('background-color','#999');
 			});
 
     </script>
-</wang>
+</th:block>
 <script>
     	$(function(){
     	    var sp="<span class='label label-primary'><i class='glyphicon glyphicon-list'></i> 投票详情</span>";
@@ -106,4 +106,3 @@
 		});
 </script>
 <script type="text/javascript" src="js/usershow.js"></script>
-</wang>

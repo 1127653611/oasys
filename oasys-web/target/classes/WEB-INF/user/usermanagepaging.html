@@ -16,7 +16,7 @@
 				<input id="find" type="text" class="form-control input-sm baseKey"
 					   placeholder="查找..." />
 				<div class="input-group-btn">
-					<a class="btn btn-sm btn-default baseKeySubmit"><span
+					<a class="btn btn-sm btn-default baseKeySubmit" id="baseKeySubmit"><span
 							class="glyphicon glyphicon-search"></span></a>
 				</div>
 			</div>
@@ -68,7 +68,7 @@
 	<!--盒子尾-->
 	<div th:replace="common/paging :: paging"></div>
 </div>
-<script type="text/javascript">
+<script>
 $("#find").keydown(function () {
     	if (window.event.keyCode==13) {
         $(".baseKeySubmit").trigger("click");

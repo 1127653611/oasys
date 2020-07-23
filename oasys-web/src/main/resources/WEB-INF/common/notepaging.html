@@ -1,0 +1,107 @@
+<html th:fragment="notepaging" xmlns:th="http://www.thymeleaf.org">
+<div class="box-footer no-padding" style="margin-top: -20px;">
+
+	<div style="padding: 5px;">
+		<div id="page"
+			 style="background: #fff; border: 0px; margin-top: 0px; padding: 2px; height: 25px;">
+			<div style="width: 40%; float: left;">
+				<div class="pageInfo" style="margin-left: 5px;">
+					共<span>[[${page?.total}]]</span>条 | 每页<span>[[${page?.pageSize}]]</span>条
+					| 共<span>[[${page?.pages}]]</span>页
+				</div>
+			</div>
+			<div style="width: 60%; float: left;">
+				<div class="pageOperation">
+					<!--判断是否是第一页  -->
+
+					<a th:if="${page?.isFirstPage==true || page?.total==0}" class="btn btn-sm btn-default no-padding tablefirst1"
+					   disabled="disabled" style="width: 30px; height: 20px;"> <span
+							class="glyphicon glyphicon-backward"></span></a>
+					<a th:if="${page?.isFirstPage==true || page?.total==0}" class="btn btn-sm btn-default no-padding tableup1"
+					   disabled="disabled" style="width: 30px; height: 20px;"> <span
+							class="glyphicon glyphicon-triangle-left"></span></a>
+
+
+					<a th:if="${page?.isFirstPage!=true && page?.total!=0}" class="btn btn-sm btn-default no-padding tablefirst1"
+					   style="width: 30px; height: 20px;">
+						<span class="glyphicon glyphicon-backward"></span></a>
+					<a th:if="${page?.isFirstPage!=true && page?.total!=0}" class="btn btn-sm btn-default no-padding tableup1"
+					   style="width: 30px; height: 20px;">
+						<span class="glyphicon glyphicon-triangle-left"></span></a>
+
+					<a th:if="${page?.pageNum >= page?.pages}" disabled="disabled" class="btn btn-default no-padding"
+					   style="width: 30px; height: 20px;">
+						[[${page?.pages}]]
+					</a>
+					<a th:if="${page?.pageNum < page?.pages}" disabled="disabled" class="btn btn-default no-padding"
+					   style="width: 30px; height: 20px;">
+						[[${page?.pageNum}]]
+					</a>
+					<!--判断是否是最后23一页  -->
+
+					<a th:if="${page?.isLastPage}==true" class="btn btn-sm btn-default no-padding tabledown1"
+					   disabled="disabled" style="width: 30px; height: 20px;"> <span
+							class="glyphicon glyphicon-triangle-right"></span></a>
+					<a th:if="${page?.isLastPage}==true" class="btn btn-sm btn-default no-padding tablelast1"
+					   disabled="disabled" style="width: 30px; height: 20px;"> <span
+							class="glyphicon glyphicon-forward"></span></a>
+
+					<a th:if="${page?.isLastPage}!=true" class="btn btn-sm btn-default no-padding tabledown1"
+					   style="width: 30px; height: 20px;"> <span
+							class="glyphicon glyphicon-triangle-right"></span></a>
+					<a th:if="${page?.isLastPage}!=true" class="btn btn-sm btn-default no-padding tablelast1"
+					   style="width: 30px; height: 20px;"> <span
+							class="glyphicon glyphicon-forward"></span></a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script>
+		var baseKey=$('.baseKey').val().trim();
+        var sort='[[${sort}]]';
+        sort=sort.replace(/&amp;/g,"&");
+        var alph=$('#thispills .active a').text().trim();
+        var key='&baseKey='+baseKey+'&alph='+alph+sort;
+		var isFirstPage='[[${page.isFirstPage}]]';
+		var isLastPage='[[${page.isLastPage}]]';
+		var pageNum='[[${page.pageNum}]]';
+		var url='[[${url}]]';
+		var pages='[[${page.pages}]]';
+		var pageNumnext=parseInt(pageNum)+parseInt(1);
+		var pageNumlast=parseInt(pageNum)-parseInt(1);
+		/* 分页插件按钮的点击事件 */
+		/* url是从后台接收过来的链接，sort是记录排序规则 */
+		$('.tablefirst1').on('click',function(){
+			if(isFirstPage=='false'){
+			     $('.thistableson').load(url+'?page=0'+key);
+			 }
+		});
+		$('.tableup1').on('click',function(){
+			alert("321");
+			 if(isFirstPage=='false'){
+			     $('.thistableson').load(url+'?page='+pageNumlast+key);
+			 }
+		});
+		$('.tabledown1').on('click',function(){
+			alert("321");
+			if(isLastPage=='false'){
+			 $('.thistableson').load(url+'?page='+pageNumnext+key);
+			 }
+		});
+		$('.tablelast1').on('click',function(){
+			if(isLastPage=='false'){
+				 $('.thistableson').load(url+'?page='+pages+key);
+			 }
+			
+		});
+		
+		/* 查找 */
+		$('.baseKetsubmit').on('click', function() {
+			var baseKey = $('.baseKey').val();
+			console.log(baseKey);
+			$('.thistableson').load('${url}?baseKey='+baseKey+'${(catalog)!''}');
+		});
+</script>

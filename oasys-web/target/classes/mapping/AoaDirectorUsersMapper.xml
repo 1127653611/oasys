@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.note.AoaDirectorUsersMapper">
+    <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.note.AoaDirectorUsers">
+        <id column="director_users_id" jdbcType="BIGINT" property="directorUsersId"/>
+        <result column="catelog_name" jdbcType="VARCHAR" property="catelogName"/>
+        <result column="is_handle" jdbcType="INTEGER" property="isHandle"/>
+        <result column="director_id" jdbcType="BIGINT" property="directorId"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="share_user_id" jdbcType="BIGINT" property="shareUserId"/>
+        <result column="sharetime" jdbcType="TIMESTAMP" property="sharetime"/>
+
+        <association property="aoaDirector" javaType="cn.oasys.web.model.pojo.note.AoaDirector"
+                     select="cn.oasys.web.model.dao.note.AoaDirectorMapper.findOne" column="director_id"></association>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="BaseResultMap1" type="cn.oasys.web.model.pojo.note.AoaDirectorUsers">
+        <association property="user" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="user_id"></association>
+        <association property="shareUser" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="share_user_id"></association>
+    </resultMap>
+    <resultMap id="BaseResultMap2" type="cn.oasys.web.model.pojo.note.AoaDirectorUsers">
+        <id column="director_users_id" jdbcType="BIGINT" property="directorUsersId"/>
+        <result column="catelog_name" jdbcType="VARCHAR" property="catelogName"/>
+        <result column="is_handle" jdbcType="INTEGER" property="isHandle"/>
+        <result column="did" jdbcType="BIGINT" property="directorId"/>
+        <result column="uid" jdbcType="BIGINT" property="userId"/>
+        <result column="share_user_id" jdbcType="BIGINT" property="shareUserId"/>
+        <result column="sharetime" jdbcType="TIMESTAMP" property="sharetime"/>
+
+        <association property="aoaDirector" javaType="cn.oasys.web.model.pojo.note.AoaDirector"
+                     select="cn.oasys.web.model.dao.note.AoaDirectorMapper.findOne" column="director_id"></association>
+        <association property="user" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById"
+                     column="uid"></association>
+        <association property="shareUser" javaType="cn.oasys.web.model.pojo.user.AoaUser" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="share_user_id"></association>
+
+
+    </resultMap>
+    <sql id="Base_Column_List">
+        director_users_id, catelog_name, is_handle, director_id, user_id, share_user_id,
+        sharetime
+    </sql>
+    <sql id="Base_Column_List1">
+        du.director_users_id, du.catelog_name, du.is_handle, du.director_id did, du.user_id uid, du.share_user_id,
+        du.sharetime,
+        di.director_id, di.address, di.company_number, di.email, di.image_path, di.phone_number, di.pinyin, di.remark,
+        di.sex, di.user_name, di.user_id, di.companyname,u.user_name
+    </sql>
+    <select id="findByDirector" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_director_users where director_id=#{id}
+    </select>
+    <select id="findByUserAndShareuserNotNull" resultMap="BaseResultMap1">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_director_users where user_id=#{id} and share_user_id is not null  order by is_handle asc, sharetime DESC
+    </select>
+    <select id="findBaseKey" resultMap="BaseResultMap2">
+        select
+        <include refid="Base_Column_List1"></include>
+        from aoa_director_users du left join aoa_director di on du.director_id=di.director_id left join aoa_user u on du.user_id=u.user_id
+        where du.share_user_id=#{id}
+        and (di.user_name like #{key} or di.phone_number like #{key} or u.user_name like #{key}) order by du.sharetime DESC
+    </select>
+    <select id="findBaseKeyShare" resultMap="BaseResultMap2">
+        select
+        <include refid="Base_Column_List1"></include>
+        from aoa_director_users du left join aoa_director di on du.director_id=di.director_id left join aoa_user u on du.share_user_id=u.user_id
+        where du.user_id=#{id} and du.share_user_id is not null
+        and  (di.user_name like #{key} or di.phone_number like #{key} or u.user_name like #{key})  order by du.is_handle asc, du.sharetime DESC
+    </select>
+    <select id="findByShareuser" resultMap="BaseResultMap1">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_director_users where share_user_id=#{id} order by sharetime DESC
+    </select>
+    <select id="findByDirectorAndUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_director_users where director_id=#{did} and user_id=#{uid}
+    </select>
+    <select id="allDirector" resultType="java.util.Map">
+        SELECT d.*,u.*
+        FROM aoa_director_users AS u LEFT JOIN aoa_director AS d ON
+        d.director_id = u.director_id
+        WHERE u.user_id=#{userId} AND u.director_id is NOT null AND u.is_handle=1
+        <if test="pinyin !='ALL'">
+            AND d.pinyin LIKE '${pinyin}%'
+        </if>
+        <if test="outtype !=null and outtype !=''">
+            AND u.catelog_name = #{outtype}
+        </if>
+        <if test="baseKey !=null and baseKey !=''">
+            AND
+            (d.user_name LIKE '%${baseKey}%'
+            OR d.phone_number LIKE '%${baseKey}%'
+            OR d.companyname LIKE '%${baseKey}%'
+            OR d.pinyin LIKE '${baseKey}%'
+            OR u.catelog_name LIKE '%${baseKey}%'
+            )
+        </if>
+        order by u.catelog_name
+    </select>
+    <!--  <select id="findUserByDirectorAndUser" resultMap="BaseResultMap">-->
+    <!--    select-->
+    <!--    <include refid="Base_Column_List"></include>-->
+    <!--    from aoa_director_users where director_id=#{did} and user_id=#{uid}-->
+    <!--  </select>-->
+    <select id="findOne" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_director_users where director_users_id=#{id}
+    </select>
+    <select id="findCatalogNameByUser" resultType="java.lang.String">
+        select catelog_name from aoa_director_users where user_id=#{id} and catelog_name is not null and catelog_name !=
+        ''
+    </select>
+    <select id="findByUserAndShareuserNotNullAndHandle" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_director_users where user_id=#{id} and share_user_id is not null  and is_handle=#{han}
+    </select>
+    <select id="findByCatalogNameAndUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_director_users where user_id=#{uid} and catelog_name=#{oldname}
+    </select>
+    <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.note.AoaDirectorUsers">
+        insert into aoa_director_users
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="directorUsersId != null">
+                director_users_id,
+            </if>
+            <if test="catelogName != null">
+                catelog_name,
+            </if>
+            <if test="isHandle != null">
+                is_handle,
+            </if>
+            <if test="directorId != null">
+                director_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="shareUserId != null">
+                share_user_id,
+            </if>
+            <if test="sharetime != null">
+                sharetime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="directorUsersId != null">
+                #{directorUsersId,jdbcType=BIGINT},
+            </if>
+            <if test="catelogName != null">
+                #{catelogName,jdbcType=VARCHAR},
+            </if>
+            <if test="isHandle != null">
+                #{isHandle,jdbcType=INTEGER},
+            </if>
+            <if test="directorId != null">
+                #{directorId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="shareUserId != null">
+                #{shareUserId,jdbcType=BIGINT},
+            </if>
+            <if test="sharetime != null">
+                #{sharetime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.note.AoaDirectorUsers">
+        update aoa_director_users
+        <set>
+            <if test="catelogName != null">
+                catelog_name = #{catelogName,jdbcType=VARCHAR},
+            </if>
+            <if test="isHandle != null">
+                is_handle = #{isHandle,jdbcType=INTEGER},
+            </if>
+            <if test="directorId != null">
+                director_id = #{directorId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="shareUserId != null">
+                share_user_id = #{shareUserId,jdbcType=BIGINT},
+            </if>
+            <if test="sharetime != null">
+                sharetime = #{sharetime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where director_users_id = #{directorUsersId,jdbcType=BIGINT}
+    </update>
+
+    <update id="savalist" parameterType="java.util.List">
+        <foreach collection="dus" item="item" separator=";">
+            update aoa_director_users
+            <set>
+                <if test="item.catelogName != null">
+                    catelog_name = #{item.catelogName,jdbcType=VARCHAR},
+                </if>
+                <if test="item.isHandle != null">
+                    is_handle = #{item.isHandle,jdbcType=INTEGER},
+                </if>
+                <if test="item.directorId != null">
+                    director_id = #{item.directorId,jdbcType=BIGINT},
+                </if>
+                <if test="item.userId != null">
+                    user_id = #{item.userId,jdbcType=BIGINT},
+                </if>
+                <if test="item.shareUserId != null">
+                    share_user_id = #{item.shareUserId,jdbcType=BIGINT},
+                </if>
+                <if test="item.sharetime != null">
+                    sharetime = #{item.sharetime,jdbcType=TIMESTAMP},
+                </if>
+            </set>
+            where director_users_id = #{item.directorUsersId,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="insertlist" parameterType="java.util.List">
+        <foreach collection="dus" item="item" separator=";">
+            insert into aoa_director_users
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="item.directorUsersId != null">
+                    director_users_id,
+                </if>
+                <if test="item.catelogName != null">
+                    catelog_name,
+                </if>
+                <if test="item.isHandle != null">
+                    is_handle,
+                </if>
+                <if test="item.directorId != null">
+                    director_id,
+                </if>
+                <if test="item.userId != null">
+                    user_id,
+                </if>
+                <if test="item.shareUserId != null">
+                    share_user_id,
+                </if>
+                <if test="item.sharetime != null">
+                    sharetime,
+                </if>
+            </trim>
+            <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="item.directorUsersId != null">
+                    #{item.directorUsersId,jdbcType=BIGINT},
+                </if>
+                <if test="item.catelogName != null">
+                    #{item.catelogName,jdbcType=VARCHAR},
+                </if>
+                <if test="item.isHandle != null">
+                    #{item.isHandle,jdbcType=INTEGER},
+                </if>
+                <if test="item.directorId != null">
+                    #{item.directorId,jdbcType=BIGINT},
+                </if>
+                <if test="item.userId != null">
+                    #{item.userId,jdbcType=BIGINT},
+                </if>
+                <if test="item.shareUserId != null">
+                    #{item.shareUserId,jdbcType=BIGINT},
+                </if>
+                <if test="item.sharetime != null">
+                    #{item.sharetime,jdbcType=TIMESTAMP},
+                </if>
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

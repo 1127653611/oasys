@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.note.AoaCatalogMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.note.AoaCatalog">
+    <id column="catalog_id" jdbcType="BIGINT" property="catalogId" />
+    <result column="catalog_name" jdbcType="VARCHAR" property="catalogName" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="cata_user_id" jdbcType="BIGINT" property="cataUserId" />
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+    catalog_id, catalog_name, parent_id, cata_user_id
+  </sql>
+
+</mapper>

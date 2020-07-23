@@ -40,4 +40,10 @@ public interface AoaUserMapper {
     List<AoaUser> findAll();
 
     List<AoaUser> findAllByLike(@Param("key") String key);
+
+    List<AoaUser> findAllBySort();
+
+    List<AoaUser> findByPinyinLike(String s);
+
+    List<AoaUser> findUsersByBaseKeyAndPinyinLike(@Param("key") String key, @Param("p") String p);
 }

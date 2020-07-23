@@ -30,4 +30,14 @@ public interface UserService {
     List<AoaUser> findAll();
 
     List<AoaUser> findAllByLike(String key);
+
+
+    List<AoaUser> findAllBySort();
+
+    List<AoaUser> findByPinyinLike(String s);
+
+    List<AoaUser> findUsersByBaseKey(String s);
+
+    List<AoaUser> findUsersByBaseKeyAndPinyinLike(String s, String s1);
+
 }

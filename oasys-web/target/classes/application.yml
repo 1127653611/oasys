@@ -5,11 +5,13 @@ server:
 #    enabled: true
 spring:
   jackson:
-    date-format: yyyy-MM-dd HH:mm
-    time-zone: GMT+8
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  resources:
+    static-locations: classpath:/WEB-INF/,classpath:/static/,classpath:/resources/,file:D:\oasys\resources\static\file
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/oasys?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/oasys?useSSL=false&serverTimezone=UTC&allowMultiQueries=true
     username: root
     password: root
   application:
@@ -32,6 +34,7 @@ mybatis:
     - classpath:/mapping/*.xml
   type-aliases-package: cn.oasys.web.model.pojo
   configuration:
+    lazy-loading-enabled: true
     map-underscore-to-camel-case: true
 #eureka:
 #  #  instance:

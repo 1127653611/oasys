@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.note.AoaNoteListMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.note.AoaNoteList">
+    <id column="note_id" jdbcType="BIGINT" property="noteId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="status_id" jdbcType="BIGINT" property="statusId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
+    <result column="catalog_id" jdbcType="BIGINT" property="catalogId" />
+    <result column="attach_id" jdbcType="BIGINT" property="attachId" />
+    <result column="is_collected" jdbcType="BIGINT" property="isCollected" />
+    <result column="createman_id" jdbcType="BIGINT" property="createmanId" />
+    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    note_id, content, create_time, status_id, title, type_id, catalog_id, attach_id, 
+    is_collected, createman_id, receiver
+  </sql>
+  <select id="finfOne" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_note_list where note_id =#{id}
+  </select>
+  <select id="findOrderByOnce" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_note_list where note_id in
+    (select note_id from aoa_receiver_note where user_id=#{id})
+    <if test="tid!=null">
+      and type_id=#{tid}
+    </if>
+    order by
+    <if test="type!=null">
+      type_id ${type}
+    </if>
+    <if test="status!=null">
+      status_id ${status}
+    </if>
+    <if test="time!=null">
+      create_time ${time}
+    </if>
+    <if test="type==null and status==null and time==null">
+      create_time DESC
+    </if>
+  </select>
+  <select id="findBytitleOrderByOnce" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_note_list where (status_id in (select status_id from aoa_status_list where status_name like #{key}) or
+    DATE_format(create_time,'%Y-%m-%d') like #{key} or type_id in (select type_id from aoa_type_list where type_name like #{key})
+    or title like #{key}) and note_id in
+    (select note_id from aoa_receiver_note where user_id=#{id})
+    <if test="tid!=null">
+      and type_id=#{tid}
+    </if>
+    order by
+    <if test="type!=null">
+      type_id ${type}
+    </if>
+    <if test="status!=null">
+      status_id ${status}
+    </if>
+    <if test="time!=null">
+      create_time ${time}
+    </if>
+    <if test="type==null and status==null and time==null">
+      create_time DESC
+    </if>
+  </select>
+  <select id="findByCatalogIdAndtitleOrderByOnce" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_note_list where (status_id in (select status_id from aoa_status_list where status_name like #{key}) or
+    DATE_format(create_time,'%Y-%m-%d') like #{key} or type_id in (select type_id from aoa_type_list where type_name like #{key})
+    or title like #{key}) and note_id in
+    (select note_id from aoa_receiver_note where user_id=#{id}) and  catalog_id=#{cid}
+    <if test="tid!=null">
+      and type_id=#{tid}
+    </if>
+    order by
+    <if test="type!=null">
+      type_id ${type}
+    </if>
+    <if test="status!=null">
+      status_id ${status}
+    </if>
+    <if test="time!=null">
+      create_time ${time}
+    </if>
+    <if test="type==null and status==null and time==null">
+      create_time DESC
+    </if>
+  </select>
+  <select id="findByCatalogIdOrderByOnce" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_note_list where catalog_id=#{cid} and note_id in
+    (select note_id from aoa_receiver_note where user_id=#{id})
+    <if test="tid!=null">
+      and type_id=#{tid}
+    </if>
+    order by
+    <if test="type!=null">
+      type_id ${type}
+    </if>
+    <if test="status!=null">
+      status_id ${status}
+    </if>
+    <if test="time!=null">
+      create_time ${time}
+    </if>
+    <if test="type==null and status==null and time==null">
+      create_time DESC
+    </if>
+  </select>
+
+</mapper>

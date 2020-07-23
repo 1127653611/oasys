@@ -1,0 +1,66 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<style type="text/css">
+	.table>tbody>tr>td{
+		padding: 15px;
+	}
+	.table{
+		border: 0;
+	}
+</style>
+<fieldset>
+	<legend style="padding-left:5%;">基本信息</legend>
+	<table class="table" border=""  style="width: 90%;margin: auto;margin-bottom: 20px;">
+		<tr>
+			<td class="text-right"  >姓名:</td>
+			<td >	[[${d?.userName}]]</td>
+			<td rowspan="3" colspan="2">
+				<div >
+					<img th:if="${not #strings.isEmpty(imgpath)}" th:src="@{${imgpath}}" class="img-circle"
+						 style="width: 120px;height: 120px;border-radius: 50%;margin-left: 15%;">
+					<img th:if="${#strings.isEmpty(imgpath)}" src="/images/timg.jpg" class="img-circle"
+						 style="width: 120px;height: 120px;border-radius: 50%;margin-left: 15%;">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="text-right" >性别:</td>
+			<td>	[[${d?.sex}]]</td>
+		</tr>
+		<tr>
+			<td class="text-right" >电话:</td>
+			<td>[[${d?.phoneNumber}]]</td>
+		</tr>	
+		<tr>
+			<td class="text-right" width="15%">邮箱:</td>
+			<td width="35%">[[${d?.email}]]</td>
+			<td class="text-right" width="15%">创建人:</td>
+			<td class="text-left" width="35%" >
+				<a style="color: #337ab7;" href="javascript:void(0);" class="usershow"
+						data-th-title="${d?.myuser?.userName}"
+				   data-th-thisdept="${d?.myuser?.dept?.deptName}"
+				   data-th-thisrole="${d?.myuser?.role?.roleName}"
+				   data-th-thistel="${d?.myuser?.userTel}"
+				   data-th-thisemail="${d?.myuser?.eamil}" >[[${d?.myuser?.userName}]]</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="text-right" >公司:</td>
+			<td>[[${d?.companyname}]]</td>
+			<td class="text-right">公司号码:</td>
+			<td class="text-left">[[${d?.companyNumber}]]</td>
+		</tr>
+		<tr>
+			<td class="text-right">住址:</td>
+			<td colspan="3">[[${d?.address}]]</td>
+		</tr>
+		<tr>
+			<td class="text-right">备注:</td>
+			<td colspan="3">[[${d.remark}]]</td>
+		</tr>
+	</table>
+	<div class="box-footer" style="padding-left:5%;">
+		<a href="javascript:void(0);" class="label label-default returnoutaddress" style="padding: 5px;"> <i class="glyphicon glyphicon-chevron-left"></i> <span>返回</span>
+		</a>
+	</div>
+</fieldset>
+<script type="text/javascript" src="js/usershow.js"></script>

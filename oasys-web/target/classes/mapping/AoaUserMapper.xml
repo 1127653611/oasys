@@ -119,6 +119,22 @@
     left join aoa_dept d on u.dept_id=d.dept_id
     left join aoa_position p on u.position_id=p.position_id
   </select>
+  <select id="findAllBySort" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id
+    order by d.dept_id asc
+  </select>
+  <select id="findByPinyinLike" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where u.pinyin like #{s}
+    order by d.dept_id asc
+  </select>
   <select id="findAllByLike" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List1"></include>
@@ -126,6 +142,14 @@
     left join aoa_dept d on u.dept_id=d.dept_id
     left join aoa_position p on u.position_id=p.position_id where  u.real_name like #{key} or u.user_name like #{key}
     or u.user_tel like #{key} or d.dept_name like #{key} or p.name like #{key}
+  </select>
+  <select id="findUsersByBaseKeyAndPinyinLike" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where  (u.real_name like #{key} or u.user_name like #{key}
+    or u.user_tel like #{key} or d.dept_name like #{key} or p.name like #{key}) and u.pinyin like #{p}
   </select>
   <select id="findByRole" resultMap="BaseResultMap">
     select

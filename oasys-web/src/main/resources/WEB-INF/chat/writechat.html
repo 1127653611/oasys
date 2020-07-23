@@ -171,7 +171,7 @@ border-radius: 5px;
 </div>
 <div th:replace="common/modalTip :: modalTip"></div>
 <!-- 判断加入是否从修改投票进来的 -->
-<wang th:if="${not #strings.isEmpty(voteList)}">
+<th:block th:if="${not #strings.isEmpty(voteList)}">
     <script type="text/javascript">
 		$('.addvote').css('display','block');
 		$('.deletethis').children('.label').text("不能编辑");
@@ -182,7 +182,7 @@ border-radius: 5px;
         $("#addv").parent('div').removeClass("add");
     </script>
     <
-</wang>
+</th:block>
 <script type="text/javascript">
 /* 应该是用来测试的，打印出iframe中文本编辑器的处理 */
 $('.givein').on('click',function(){

@@ -1,0 +1,78 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="css/sharemess.css" />
+<div class="box-header">
+	<h3 class="box-title">我共享的</h3>
+	<a class="btn btn-sm btn-default thisrefresh" href="javascript:void(0);" title="刷新" style="padding: 5px;margin-top: -8px;">
+		<span class="glyphicon glyphicon-refresh"></span>
+	</a>
+	<div class="box-tools">
+		<div class="input-group" style="width: 150px;">
+			<input id="find1" type="text" class="form-control input-sm searchbaseKey baseKey" placeholder="查找..." th:value="${baseKey}"/>
+			<div class="input-group-btn">
+				<a class="btn btn-sm btn-default searchbaseKeySumbit"> 
+					<span class="glyphicon glyphicon-search"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div style="margin-bottom:20px;">
+	<div th:each="du,status: ${dus}" th:if="${dus.size() >0}" class="sharemess">
+		<div class="sharecontent">
+			<div>
+				<div class="sharecontent-left" style="height: 30px;">
+					你将联系人:
+					<a href="javascript:void(0);" 
+						class="othershow"
+						data-th-title="${du?.aoaDirector?.userName}"
+					   data-th-thistel="${du?.aoaDirector?.phoneNumber}"
+					   data-th-thissex="${du?.aoaDirector?.sex}"
+					   data-th-thisemail="${du?.aoaDirector?.email}"
+					   data-th-thiscompany="${du?.aoaDirector?.companyname}"  >
+						<img th:if="${not #strings.isEmpty(du?.aoaDirector?.aoaAttachmentList?.attachmentPath)}" th:src="@{${du?.aoaDirector?.aoaAttachmentList?.attachmentPath}}" class="img-circle" style="width:24px;height:24px"/>
+						<img th:if="${#strings.isEmpty(du?.aoaDirector?.aoaAttachmentList?.attachmentPath)}" src="/images/timg.jpg" class="img-circle" style="width:24px;height:24px"/>
+						<span> [[${du?.aoaDirector?.userName}]],[[${du?.aoaDirector?.phoneNumber}]]</span>
+					</a>
+					共享给了:
+						<a href="javascript:void(0);" 
+						class="usershow"
+						   data-th-title="${du?.user?.userName}"
+						   data-th-thisdept="${du?.user?.dept?.deptName}"
+						   data-th-thisrole="${du?.user?.role?.roleName}"
+						   data-th-thistel="${du?.user?.userTel}"
+						   data-th-thisemail="${du?.user?.eamil}"
+						>
+							<img th:src="@{'/images/'+${du?.user?.imgPath}}" class="img-circle" style="width:24px;height:24px"/> [[${du?.user?.userName}]]
+						</a>
+				</div>
+				<div class="share-right" style="height:30px;">
+					<div style="display: inline-block;">
+						<span>状态:</span>
+							<span th:if="${du?.isHandle==0}" class="label label-default">未处理</span>
+							<span th:if="${du?.isHandle==1}" class="label label-success">已处理</span>
+					</div>
+					<p style="float: right;margin:0;">[[${du?.sharetime}]]</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table th:if="${dus.size() ==0}" class="table table-hover table-striped">
+		<tr>
+			<td colspan="7" style="text-align: center;background: #eee;">没能找到相关消息~~~</td>
+		</tr>
+	</table>
+</div>
+<div th:replace="common/paging :: paging"></div>
+<script>
+$("#find1").keydown(function () {
+     		if (window.event.keyCode==13) {
+    	 		$(".searchbaseKeySumbit").trigger("click");
+  		 	}
+		});
+$('.searchbaseKeySumbit').on('click', function() {
+	var url='[[${url}]]';
+	var baseKey = $('.searchbaseKey').val();
+	$('.thistable').load(url+'?baseKey='+baseKey);
+});
+</script>
+<script type="text/javascript" src="js/usershow.js"></script>

@@ -2,6 +2,7 @@ package cn.oasys.web;
 
 import cn.oasys.web.model.dao.discuss.AoaDiscussListMapper;
 import cn.oasys.web.model.dao.mail.AoaMailReciverMapper;
+import cn.oasys.web.model.dao.note.AoaDirectorUsersMapper;
 import cn.oasys.web.model.dao.notice.AoaNoticeUserRelationMapper;
 import cn.oasys.web.model.dao.system.AoaSysMenuMapper;
 import cn.oasys.web.model.dao.user.AoaUserMapper;
@@ -25,6 +26,8 @@ import java.util.Map;
 
 @SpringBootTest
 public class OasysApplicationTest {
+    @Autowired
+    private AoaDirectorUsersMapper aoaDirectorUsersMapper;
     @Autowired
     private AoaDiscussListMapper aoaDiscussListMapper;
     @Autowired
@@ -50,6 +53,6 @@ public class OasysApplicationTest {
 
     @Test
     public void userTset() {
-        System.out.println(aoaDiscussListMapper.findByTitleLike("%f%"));
+
     }
 }

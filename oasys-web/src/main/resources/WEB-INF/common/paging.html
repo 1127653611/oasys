@@ -13,18 +13,18 @@
                 <div class="pageOperation">
                     <!--判断是否是第一页  -->
 
-                    <a th:if="${page?.isFirstPage==true}" class="btn btn-sm btn-default no-padding tablefirst"
+                    <a th:if="${page?.isFirstPage==true || page?.total==0}" class="btn btn-sm btn-default no-padding tablefirst"
                        disabled="disabled" style="width: 30px; height: 20px;"> <span
                             class="glyphicon glyphicon-backward"></span></a>
-                    <a th:if="${page?.isFirstPage==true}" class="btn btn-sm btn-default no-padding tableup"
+                    <a th:if="${page?.isFirstPage==true || page?.total==0}" class="btn btn-sm btn-default no-padding tableup"
                        disabled="disabled" style="width: 30px; height: 20px;"> <span
                             class="glyphicon glyphicon-triangle-left"></span></a>
 
 
-                    <a th:if="${page?.isFirstPage!=true}" class="btn btn-sm btn-default no-padding tablefirst"
+                    <a th:if="${page?.isFirstPage!=true && page?.total!=0}" class="btn btn-sm btn-default no-padding tablefirst"
                        style="width: 30px; height: 20px;">
                         <span class="glyphicon glyphicon-backward"></span></a>
-                    <a th:if="${page?.isFirstPage!=true}" class="btn btn-sm btn-default no-padding tableup"
+                    <a th:if="${page?.isFirstPage!=true && page?.total!=0}" class="btn btn-sm btn-default no-padding tableup"
                        style="width: 30px; height: 20px;">
                         <span class="glyphicon glyphicon-triangle-left"></span></a>
 
@@ -58,6 +58,11 @@
     </div>
 </div>
 <script type="text/javascript">
+        var baseKey=$('.baseKey').val().trim();
+        var sort='[[${sort}]]';
+        sort=sort.replace(/&amp;/g,"&");
+        var alph=$('#thispills .active a').text().trim();
+        var key='&baseKey='+baseKey+'&alph='+alph+sort;
 		var isFirstPage='[[${page.isFirstPage}]]';
 		var isLastPage='[[${page.isLastPage}]]';
 		var pageNum='[[${page.pageNum}]]';
@@ -65,28 +70,68 @@
 		var pages='[[${page.pages}]]';
 		var pageNumnext=parseInt(pageNum)+parseInt(1);
 		var pageNumlast=parseInt(pageNum)-parseInt(1);
+
 		/* 分页插件按钮的点击事件 */
 		/* url是从后台接收过来的链接，sort是记录排序规则 */
 
         $('.tablefirst').on('click',function(){
 			 if(isFirstPage=='false'){
-			     $('.thistable').load(url+'?page=0');
+			     $('.thistable').load(url+'?page=0'+key);
 			 }
 		});
 		$('.tableup').on('click',function(){
+		        console.log(key);
 			 if(isFirstPage=='false'){
-			     $('.thistable').load(url+'?page='+pageNumlast);
+			     $('.thistable').load(url+'?page='+pageNumlast+key);
 			 }
 		});
 		$('.tabledown').on('click',function(){
+		    console.log(key);
 			if(isLastPage=='false'){
-			 $('.thistable').load(url+'?page='+pageNumnext);
+			 $('.thistable').load(url+'?page='+pageNumnext+key);
 			 }
 		});
 		$('.tablelast').on('click',function(){
 			if(isLastPage=='false'){
-				 $('.thistable').load(url+'?page='+pages);
+				 $('.thistable').load(url+'?page='+pages+key);
 			 }
+		});
+		/*类型、状态、时间的排序  */
+		$('.thistype').on('click', function() {
+		    var sort2='[[${sort2}]]';
+		    sort2=sort2.replace(/&amp;/g,"&");
+			if ($(this).children().hasClass('glyphicon-triangle-bottom')) {
+				$('.thistable').load(url+'?type=DESC&icon=glyphicon-triangle-top'+'&baseKey='+baseKey+sort2);
+			} else {
+				$('.thistable').load(url+'?type=ASC&icon=glyphicon-triangle-bottom'+'&baseKey='+baseKey+sort2);
+			}
+		});
+		$('.thisstatus').on('click', function() {
+             var sort2='[[${sort2}]]';
+             sort2=sort2.replace(/&amp;/g,"&");
+			if ($(this).children().hasClass('glyphicon-triangle-bottom')) {
+				$('.thistable').load(url+'?status=DESC&icon=glyphicon-triangle-top'+'&baseKey='+baseKey+sort2);
+			} else {
+				$('.thistable').load(url+'?status=ASC&icon=glyphicon-triangle-bottom'+'&baseKey='+baseKey+sort2);
+			}
+		});
+		$('.thistime').on('click', function() {
+               var sort2='[[${sort2}]]';
+               sort2=sort2.replace(/&amp;/g,"&");
+			if ($(this).children().hasClass('glyphicon-triangle-bottom')) {
+				$('.thistable').load(url+'?time=DESC&icon=glyphicon-triangle-top'+'&baseKey='+baseKey+sort2);
+			} else {
+				$('.thistable').load(url+'?time=ASC&icon=glyphicon-triangle-bottom'+'&baseKey='+baseKey+sort2);
+			}
+		});
+		$('.thisvisit').on('click', function() {
+               var sort2='[[${sort2}]]';
+               sort2=sort2.replace(/&amp;/g,"&");
+			if ($(this).children().hasClass('glyphicon-triangle-bottom')) {
+				$('.thistable').load(url+'?visitnum=DESC&icon=glyphicon-triangle-top'+'&baseKey='+baseKey+sort2);
+			} else {
+				$('.thistable').load(url+'?visitnum=ASC&icon=glyphicon-triangle-bottom'+'&baseKey='+baseKey+sort2);
+			}
 		});
 
 </script>

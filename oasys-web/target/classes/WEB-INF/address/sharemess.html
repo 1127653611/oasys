@@ -1,0 +1,115 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="css/sharemess.css"/>
+<div class="box-header">
+    <h3 class="box-title">共享与我</h3>
+    <a class="btn btn-sm btn-default thisrefresh" href="javascript:void(0);" title="刷新"
+       style="padding: 5px;margin-top: -8px;">
+        <span class="glyphicon glyphicon-refresh"></span>
+    </a>
+    <div class="box-tools">
+        <div class="input-group" style="width: 150px;">
+            <input id="find1" type="text" class="form-control input-sm searchbaseKey baseKey" placeholder="查找..." th:value="${baseKey}"/>
+            <div class="input-group-btn">
+                <a class="btn btn-sm btn-default searchbaseKeySumbit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="thissharemess" style="margin-bottom:20px;">
+    <div th:each="du,status: ${dus}" th:if="${dus?.size() > 0}" class="sharemess">
+        <p>[[${du?.sharetime}]]</p>
+        <div class="sharecontent">
+            <div>
+                <div class="sharecontent-left">
+                    <div class="share-top">
+                        <a href="javascript:void(0);"
+                           class="usershow"
+                           data-th-title="${du?.shareUser?.userName}"
+                           data-th-thisdept="${du?.shareUser?.dept?.deptName}"
+                           data-th-thisrole="${du?.shareUser?.role?.roleName}"
+                           data-th-thistel="${du?.shareUser?.userTel}"
+                           data-th-thisemail="${du?.shareUser?.eamil}"
+                        > <img th:if="${not #strings.isEmpty(du?.shareUser?.imgPath)}" th:src="@{'/images/'+${du?.shareUser?.imgPath}}" class="img-circle"/>
+                            <img th:if="${#strings.isEmpty(du?.shareUser?.imgPath)}" src="/images/timg.jpg" class="img-circle"/>
+                            <span> [[${du?.shareUser?.userName}]]</span></a>共享了以下联系人给你:
+                    </div>
+                    <div class="share-bottom">
+                        <a href="javascript:void(0);"
+                           class="othershow"
+                           data-th-title="${du?.aoaDirector?.userName}"
+                           data-th-thistel="${du?.aoaDirector?.phoneNumber}"
+                           data-th-thissex="${du?.aoaDirector?.sex}"
+                           data-th-thisemail="${du?.aoaDirector?.email}"
+                           data-th-thiscompany="${du?.aoaDirector?.companyname}" style="margin-left: 100px;">
+                            <img th:if="${not #strings.isEmpty(du?.aoaDirector?.aoaAttachmentList?.attachmentPath)}" th:src="@{${du?.aoaDirector?.aoaAttachmentList?.attachmentPath}}" class="img-circle" />
+                            <img th:if="${#strings.isEmpty(du?.aoaDirector?.aoaAttachmentList?.attachmentPath)}" src="/images/timg.jpg" class="img-circle"/>
+                            [[${du?.aoaDirector?.userName}]]
+                        </a>,[[${du?.aoaDirector?.phoneNumber}]]
+                    </div>
+                </div>
+                <div class="share-right">
+                    <div class="share-choose">
+                        <div class="pull-right">
+                            <span> 选择分类： </span>
+                            <select th:if="${du?.isHandle==0}" name="" class="form-control thishandleselect">
+                                <option th:each="ca,status: ${catalogs}" th:value="${ca}">[[${ca}]]</option>
+                            </select>
+                            <select th:if="${du?.isHandle==1}" name="" class="form-control" disabled>
+                                <option th:if="${not #strings.isEmpty(du) && not #strings.isEmpty(du?.catelogName) && du?.catelogName != ''}" th:value="${du?.catelogName}">[[${du?.catelogName}]]</option>
+                                <option th:if="${#strings.isEmpty(du) || #strings.isEmpty(du?.catelogName) || du?.catelogName == ''}">外部通讯录</option>
+                                <option th:if="${ca!=du?.catelogName}" th:each="ca,status:${calogs}" th:value="${ca}">[[${ca}]]</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="share-button">
+                        <button th:if="${du.isHandle==0}" class="btn btn-primary nothandle" data-th-duid="${du?.directorUsersId}">确定</button>
+                        <button th:if="${du.isHandle==1}" class="btn btn-primary" style="background: #ccc;border:none;" disabled>已处理</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<table th:if="${dus?.size() == 0}" class="table table-hover table-striped">
+    <tr>
+        <td colspan="7" style="text-align: center;background: #eee;">没能找到相关消息~~~</td>
+    </tr>
+</table>
+</div>
+<div th:replace="common/paging :: paging"></div>
+<script>
+/* 未处理的共享联系人的controller */
+$('.nothandle').on('click',function(){
+	console.log($('.nothandle').length);
+	var catalog=$(this).parents('.share-right').find('.thishandleselect').val();
+	var duid=$(this).attr('duid');
+	console.log("catalog:"+catalog);
+	console.log("duid:"+duid);
+	$('.thistable').load('sharemess',{catalog:catalog,duid:duid},function(){
+		modalShow(1);	
+	});
+	var count=parseInt($('.showcount').text())-1;
+		console.log(count);
+	if($('.nothandle').length>1){
+		var count=parseInt($('.showcount').text())-1;
+		$('.showcount').text(count);
+	}else{
+		$('.showcount').text("");
+	}
+	
+})
+/* 模糊查询 */
+$('.searchbaseKeySumbit').on('click', function() {
+	var url='[[${url}]]';
+	var baseKey = $('.searchbaseKey').val();
+	$('.thistable').load(url+'?baseKey='+baseKey);
+});
+$("#find1").keydown(function () {
+     		if (window.event.keyCode==13) {
+    	 		$(".searchbaseKeySumbit").trigger("click");
+  		 	}
+		});
+
+</script>
+<script type="text/javascript" src="js/usershow.js"></script>

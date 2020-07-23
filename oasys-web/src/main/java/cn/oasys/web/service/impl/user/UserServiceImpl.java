@@ -109,5 +109,26 @@ public class UserServiceImpl implements UserService {
         return aoaUserMapper.findAllByLike(key);
     }
 
+    @Override
+    public List<AoaUser> findAllBySort() {
+        return aoaUserMapper.findAllBySort();
+    }
+
+    @Override
+    public List<AoaUser> findByPinyinLike(String s) {
+        return aoaUserMapper.findByPinyinLike(s);
+    }
+
+    @Override
+    public List<AoaUser> findUsersByBaseKey(String s) {
+        return aoaUserMapper.findAllByLike(s);
+    }
+
+    @Override
+    public List<AoaUser> findUsersByBaseKeyAndPinyinLike(String key, String p) {
+        System.out.println(key);
+        System.out.println(p);
+        return aoaUserMapper.findUsersByBaseKeyAndPinyinLike(key,p);
+    }
 
 }
