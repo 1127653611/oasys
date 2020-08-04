@@ -126,8 +126,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<AoaUser> findUsersByBaseKeyAndPinyinLike(String key, String p) {
-        System.out.println(key);
-        System.out.println(p);
         return aoaUserMapper.findUsersByBaseKeyAndPinyinLike(key,p);
     }
 

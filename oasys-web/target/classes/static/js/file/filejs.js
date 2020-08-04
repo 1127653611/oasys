@@ -54,7 +54,6 @@ $(".loadfiletype").on("click",".allcheck",function(){
  */
 $(".loadfiletype").on("mousedown",".file-one",function(e){
 	if(3 == e.which){
-		console.log("111");
 	    $(document).bind("contextmenu",function(e){
 	        return false;
 	    });
@@ -81,10 +80,14 @@ $(".loadfiletype").on("mousedown",".file-one",function(e){
 	    	 */
 	    	$(".menu .downloadfile").removeClass("disabled");
 	    	var fileid = $(this).find(".filemessage").val();
-	    	console.log(fileid);
 	    	$(".menu .downloadfile").attr("href","downfile?fileid="+fileid);
 	    }
-	    
+	    if($(this).find(".file-img").hasClass("isshare")){
+            $(".menu .doshare").addClass("disabled");
+            $(".menu .loadokshare").addClass("disabled");
+	    }else{
+            $(".menu .loadokshare").removeClass("disabled");
+	    }
 	    
 	    /**
 	     * 选择超过一个禁用右键菜单中的部分a链接

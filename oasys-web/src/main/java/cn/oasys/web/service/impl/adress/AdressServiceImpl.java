@@ -23,7 +23,7 @@ import java.util.*;
 
 @Service
 public class AdressServiceImpl implements AdressService {
-    @Value("${file.root.path}")
+    @Value("${img.rootpath}")
     private String rootpath;
     @Autowired
     private AoaDirectorMapper aoaDirectorMapper;

@@ -1,0 +1,895 @@
+2020-07-31 20:40:02.924 [restartedMain]  INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-31 20:40:05.904 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:40:12.198 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:40:19.443 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:40:19.496 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:40:19.497 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:40:19.497 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:40:19.656 [restartedMain]  INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:40:19.656 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 13492 ms
+2020-07-31 20:40:21.488 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:40:21.488 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:40:21.536 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:40:21.536 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:40:21.932 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:40:22.742 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:40:23.545 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:40:24.049 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:40:24.105 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:40:24.516 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 28.038 seconds (JVM running for 32.318)
+2020-07-31 20:41:04.323 [http-nio-8080-exec-1]  INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:41:04.324 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:41:04.342 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 18 ms
+2020-07-31 20:41:13.373 [http-nio-8080-exec-8]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-07-31 20:41:13.995 [http-nio-8080-exec-8]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-07-31 20:45:31.909 [Thread-259]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:45:31.919 [Thread-259]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-07-31 20:45:32.019 [Thread-259]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-07-31 20:45:33.339 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:45:33.979 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:45:34.159 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:45:34.159 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:45:34.159 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:45:34.159 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:45:34.189 [restartedMain]  INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:45:34.189 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 840 ms
+2020-07-31 20:45:34.789 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:45:34.789 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:45:34.859 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:45:34.929 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:45:35.489 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:45:35.929 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:45:35.939 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:45:36.349 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 4.049 seconds (JVM running for 344.15)
+2020-07-31 20:45:36.349 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:46:04.751 [Thread-264]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:46:06.231 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:46:06.821 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=a55987e9-0478-3731-b58b-a0b772faf92a
+2020-07-31 20:46:07.081 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:46:07.081 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:46:07.081 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:46:07.091 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:46:07.181 [restartedMain]  INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:46:07.181 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 950 ms
+2020-07-31 20:46:08.052 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:46:08.052 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:46:08.122 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:46:08.162 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:46:08.752 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:46:10.272 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:46:10.272 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:46:10.672 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 5.6 seconds (JVM running for 378.47)
+2020-07-31 20:46:10.672 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:46:49.040 [Thread-523]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:46:50.091 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:46:50.461 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:46:50.591 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:46:50.591 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:46:50.591 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:46:50.591 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:46:50.621 [restartedMain]  INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:46:50.621 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 520 ms
+2020-07-31 20:46:51.001 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:46:51.001 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:46:51.051 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:46:51.101 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:46:51.641 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:46:51.991 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:46:51.991 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:46:52.541 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.243 seconds (JVM running for 420.339)
+2020-07-31 20:46:52.541 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:47:20.810 [Thread-782]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:47:21.970 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:47:22.470 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=7b6411f6-bd56-3119-83ca-a2f2989b8599
+2020-07-31 20:47:22.640 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:47:22.640 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:47:22.640 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:47:22.640 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:47:22.670 [restartedMain]  INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:47:22.670 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 700 ms
+2020-07-31 20:47:23.020 [restartedMain]  WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'fileController': Unsatisfied dependency expressed through field 'fileService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.oasys.web.service.inter.file.FileService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-07-31 20:47:23.020 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-07-31 20:47:23.030 [restartedMain]  INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-31 20:47:23.640 [restartedMain]  WARN  org.springframework.boot.SpringApplication - Unable to close ApplicationContext
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'applicationAvailability' defined in class path resource [org/springframework/boot/autoconfigure/availability/ApplicationAvailabilityAutoConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at cn.oasys.web.OasysWebApplication.main(OasysWebApplication.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506)
+	... 23 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:276)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 45 common frames omitted
+2020-07-31 20:48:04.673 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:48:05.023 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:48:05.163 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:48:05.163 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:48:05.163 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:48:05.163 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:48:05.173 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:48:05.173 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 500 ms
+2020-07-31 20:48:05.493 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:48:05.493 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:48:05.533 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:48:05.573 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:48:06.073 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:48:06.423 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:48:06.423 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:48:06.753 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.799 seconds (JVM running for 494.557)
+2020-07-31 20:48:06.753 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:48:16.704 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:48:16.704 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:48:16.708 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-07-31 20:48:16.716 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2020-07-31 20:48:16.723 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2020-07-31 20:49:04.727 [Thread-1041]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:49:04.728 [Thread-1041]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2020-07-31 20:49:04.731 [Thread-1041]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2020-07-31 20:49:06.033 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:49:06.371 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:49:06.492 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:49:06.492 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:49:06.493 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:49:06.493 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:49:06.518 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:49:06.518 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 482 ms
+2020-07-31 20:49:06.826 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:49:06.826 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:49:06.882 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:49:06.925 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:49:07.824 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:49:08.240 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:49:08.243 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:49:08.610 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.5 seconds (JVM running for 556.406)
+2020-07-31 20:49:08.612 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:49:13.009 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:49:13.010 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:49:13.012 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 20:49:13.013 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2020-07-31 20:49:13.017 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2020-07-31 20:52:36.906 [Thread-1556]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:52:36.907 [Thread-1556]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2020-07-31 20:52:36.911 [Thread-1556]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2020-07-31 20:52:37.970 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:52:38.388 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:52:38.528 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:52:38.528 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:52:38.528 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:52:38.529 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:52:38.557 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:52:38.557 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 585 ms
+2020-07-31 20:52:38.852 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:52:38.852 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:52:38.924 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:52:38.965 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:52:39.526 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:52:39.912 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:52:39.915 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:52:40.029 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:52:40.030 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:52:40.033 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 20:52:40.036 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2020-07-31 20:52:40.041 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2020-07-31 20:52:41.033 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.843 seconds (JVM running for 768.827)
+2020-07-31 20:52:41.035 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:53:39.636 [Thread-1815]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:53:39.637 [Thread-1815]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2020-07-31 20:53:39.640 [Thread-1815]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2020-07-31 20:53:40.885 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:53:41.270 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:53:41.408 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:53:41.409 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:53:41.409 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:53:41.409 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:53:41.434 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:53:41.434 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 546 ms
+2020-07-31 20:53:41.806 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:53:41.806 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:53:41.867 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:53:41.907 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:53:42.399 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:53:42.776 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:53:42.778 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:53:43.291 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.228 seconds (JVM running for 831.085)
+2020-07-31 20:53:43.292 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:53:44.250 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:53:44.251 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:53:44.253 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 20:53:44.254 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2020-07-31 20:53:44.258 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2020-07-31 20:54:53.392 [Thread-2074]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:54:53.393 [Thread-2074]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2020-07-31 20:54:53.396 [Thread-2074]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2020-07-31 20:54:54.466 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:54:54.792 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:54:54.904 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:54:54.905 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:54:54.905 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:54:54.905 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:54:54.936 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:54:54.936 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 465 ms
+2020-07-31 20:54:55.173 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:54:55.173 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:54:55.219 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:54:55.247 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:54:56.023 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:54:56.480 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:54:56.491 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:54:56.877 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.193 seconds (JVM running for 904.669)
+2020-07-31 20:54:56.878 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:54:57.757 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:54:57.758 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:54:57.760 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 20:54:57.762 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2020-07-31 20:54:57.766 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2020-07-31 20:56:07.972 [Thread-2333]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:56:07.973 [Thread-2333]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2020-07-31 20:56:07.976 [Thread-2333]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2020-07-31 20:56:09.080 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:56:09.442 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:56:09.587 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:56:09.588 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:56:09.588 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:56:09.588 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:56:09.620 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:56:09.620 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 537 ms
+2020-07-31 20:56:10.182 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:56:10.182 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:56:10.236 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:56:10.282 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:56:10.838 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:56:11.290 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:56:11.295 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:56:11.911 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.57 seconds (JVM running for 979.702)
+2020-07-31 20:56:11.913 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:56:12.307 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:56:12.308 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:56:12.310 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 20:56:12.311 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2020-07-31 20:56:12.315 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2020-07-31 20:56:50.751 [Thread-2592]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:56:50.751 [Thread-2592]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2020-07-31 20:56:50.754 [Thread-2592]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2020-07-31 20:56:51.848 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:56:52.154 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:56:52.302 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:56:52.303 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:56:52.303 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:56:52.303 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:56:52.328 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:56:52.329 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 479 ms
+2020-07-31 20:56:52.582 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:56:52.582 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:56:52.616 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:56:52.642 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:56:53.441 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:56:53.898 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:56:53.900 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:56:54.359 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.238 seconds (JVM running for 1022.15)
+2020-07-31 20:56:54.361 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:56:54.487 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:56:54.488 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:56:54.492 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-07-31 20:56:54.494 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2020-07-31 20:56:54.504 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2020-07-31 20:59:15.547 [Thread-2851]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:59:15.547 [Thread-2851]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2020-07-31 20:59:15.550 [Thread-2851]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+2020-07-31 20:59:16.570 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:59:16.875 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=a55987e9-0478-3731-b58b-a0b772faf92a
+2020-07-31 20:59:16.978 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:59:16.979 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:59:16.979 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:59:16.979 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:59:16.995 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:59:16.995 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 423 ms
+2020-07-31 20:59:17.308 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:59:17.308 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:59:17.370 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:59:17.397 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:59:18.113 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:59:18.604 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:59:18.607 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:59:18.940 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.114 seconds (JVM running for 1166.729)
+2020-07-31 20:59:18.941 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:59:28.650 [Thread-3110]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:59:29.717 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 20:59:30.082 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 20:59:30.196 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 20:59:30.196 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:59:30.197 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 20:59:30.197 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 20:59:30.223 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 20:59:30.223 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 503 ms
+2020-07-31 20:59:30.448 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 20:59:30.448 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 20:59:30.489 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 20:59:30.524 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 20:59:31.061 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 20:59:31.423 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 20:59:31.425 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 20:59:31.775 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.805 seconds (JVM running for 1179.565)
+2020-07-31 20:59:31.776 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 20:59:34.836 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 20:59:34.836 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 20:59:34.838 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 20:59:34.839 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+2020-07-31 20:59:34.843 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+2020-07-31 21:01:04.083 [Thread-3369]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:01:04.084 [Thread-3369]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+2020-07-31 21:01:04.087 [Thread-3369]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+2020-07-31 21:01:05.136 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:01:05.435 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:01:05.543 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:01:05.544 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:01:05.544 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:01:05.544 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:01:05.560 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:01:05.560 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 422 ms
+2020-07-31 21:01:05.814 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:01:05.814 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:01:05.850 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:01:05.876 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:01:06.690 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:01:07.033 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:01:07.036 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:01:07.375 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.958 seconds (JVM running for 1275.164)
+2020-07-31 21:01:07.376 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:01:12.235 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:01:12.236 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:01:12.238 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 21:01:12.239 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+2020-07-31 21:01:12.243 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+2020-07-31 21:01:13.674 [Thread-3628]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:01:13.674 [Thread-3628]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown initiated...
+2020-07-31 21:01:13.677 [Thread-3628]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown completed.
+2020-07-31 21:01:14.747 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:01:15.057 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:01:15.193 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:01:15.194 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:01:15.194 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:01:15.195 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:01:15.213 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:01:15.213 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 463 ms
+2020-07-31 21:01:15.454 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:01:15.454 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:01:15.505 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:01:15.534 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:01:16.076 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:01:16.465 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:01:16.469 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:01:16.470 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:01:16.471 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:01:16.476 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-07-31 21:01:16.478 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+2020-07-31 21:01:16.484 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+2020-07-31 21:01:16.988 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.962 seconds (JVM running for 1284.777)
+2020-07-31 21:01:16.989 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:01:46.123 [Thread-3887]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:01:46.124 [Thread-3887]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+2020-07-31 21:01:46.127 [Thread-3887]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+2020-07-31 21:01:47.384 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:01:47.711 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:01:47.835 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:01:47.836 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:01:47.836 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:01:47.836 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:01:47.852 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:01:47.853 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 466 ms
+2020-07-31 21:01:48.093 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:01:48.093 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:01:48.138 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:01:48.176 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:01:48.705 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:01:49.064 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:01:49.066 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:01:49.441 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.786 seconds (JVM running for 1317.23)
+2020-07-31 21:01:49.442 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:02:53.589 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:02:53.598 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:02:53.609 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2020-07-31 21:02:53.617 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+2020-07-31 21:02:53.623 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+2020-07-31 21:04:33.893 [Thread-4146]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:04:33.894 [Thread-4146]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+2020-07-31 21:04:33.898 [Thread-4146]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+2020-07-31 21:04:35.126 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:04:35.451 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:04:35.560 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:04:35.560 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:04:35.561 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:04:35.561 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:04:35.576 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:04:35.576 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 448 ms
+2020-07-31 21:04:35.849 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:04:35.849 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:04:35.896 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:04:35.930 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:04:36.549 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:04:37.061 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:04:37.097 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:04:37.577 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.215 seconds (JVM running for 1485.363)
+2020-07-31 21:04:37.578 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:04:42.100 [Thread-4405]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:04:43.408 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:04:43.717 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:04:43.822 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:04:43.823 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:04:43.823 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:04:43.823 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:04:43.839 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:04:43.840 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 430 ms
+2020-07-31 21:04:44.069 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:04:44.069 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:04:44.118 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:04:44.153 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:04:44.641 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:04:44.999 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:04:45.001 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:04:45.049 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:04:45.050 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:04:45.052 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 21:04:45.053 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+2020-07-31 21:04:45.056 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+2020-07-31 21:04:45.685 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.231 seconds (JVM running for 1493.471)
+2020-07-31 21:04:45.688 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:05:31.625 [Thread-4664]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:05:31.626 [Thread-4664]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown initiated...
+2020-07-31 21:05:31.629 [Thread-4664]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown completed.
+2020-07-31 21:05:32.766 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:05:33.059 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:05:33.158 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:05:33.159 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:05:33.159 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:05:33.159 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:05:33.174 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:05:33.175 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 407 ms
+2020-07-31 21:05:33.392 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:05:33.392 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:05:33.425 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:05:33.456 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:05:34.226 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:05:34.608 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:05:34.610 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:05:34.842 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:05:34.843 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:05:34.847 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-07-31 21:05:34.848 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Starting...
+2020-07-31 21:05:34.863 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Start completed.
+2020-07-31 21:05:35.692 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.649 seconds (JVM running for 1543.478)
+2020-07-31 21:05:35.693 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:07:08.871 [Thread-4923]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:07:08.872 [Thread-4923]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown initiated...
+2020-07-31 21:07:08.875 [Thread-4923]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown completed.
+2020-07-31 21:07:10.001 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:07:10.376 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:07:10.514 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:07:10.515 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:07:10.515 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:07:10.515 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:07:10.539 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:07:10.539 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 536 ms
+2020-07-31 21:07:10.807 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:07:10.807 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:07:10.846 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:07:10.873 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:07:11.422 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:07:11.836 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:07:11.839 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:07:12.227 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.97 seconds (JVM running for 1640.011)
+2020-07-31 21:07:12.228 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:07:26.209 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:07:26.211 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:07:26.212 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2020-07-31 21:07:26.214 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Starting...
+2020-07-31 21:07:26.218 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Start completed.
+2020-07-31 21:08:05.016 [Thread-5182]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:08:05.017 [Thread-5182]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown initiated...
+2020-07-31 21:08:05.020 [Thread-5182]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown completed.
+2020-07-31 21:08:06.027 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:08:06.346 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:08:06.456 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:08:06.457 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:08:06.457 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:08:06.457 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:08:06.472 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:08:06.472 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 442 ms
+2020-07-31 21:08:06.686 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:08:06.686 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:08:06.719 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:08:06.743 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:08:07.268 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:08:07.601 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:08:07.604 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:08:07.938 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.645 seconds (JVM running for 1695.722)
+2020-07-31 21:08:07.939 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:08:14.307 [Thread-5441]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:08:15.541 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:08:15.852 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:08:15.953 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:08:15.954 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:08:15.954 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:08:15.954 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:08:15.969 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:08:15.969 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 425 ms
+2020-07-31 21:08:16.229 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:08:16.229 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:08:16.261 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:08:16.292 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:08:16.934 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:08:17.314 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:08:17.316 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:08:17.818 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.043 seconds (JVM running for 1705.603)
+2020-07-31 21:08:17.820 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:08:28.473 [Thread-5700]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:08:29.783 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:08:30.115 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:08:30.232 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:08:30.233 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:08:30.233 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:08:30.233 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:08:30.511 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:08:30.511 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 726 ms
+2020-07-31 21:08:30.755 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:08:30.755 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:08:30.800 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:08:30.852 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:08:31.494 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:08:31.966 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:08:31.970 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:08:32.506 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.451 seconds (JVM running for 1720.29)
+2020-07-31 21:08:32.508 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:09:16.026 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:09:16.028 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:09:16.031 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-07-31 21:09:16.033 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Starting...
+2020-07-31 21:09:16.037 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Start completed.
+2020-07-31 21:10:15.388 [Thread-5959]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:10:15.389 [Thread-5959]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Shutdown initiated...
+2020-07-31 21:10:15.392 [Thread-5959]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Shutdown completed.
+2020-07-31 21:10:16.604 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:10:16.900 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:10:17.005 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:10:17.006 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:10:17.006 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:10:17.006 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:10:17.031 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:10:17.031 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 424 ms
+2020-07-31 21:10:17.237 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:10:17.237 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:10:17.266 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:10:17.292 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:10:17.800 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:10:18.184 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:10:18.186 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:10:18.215 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:10:18.215 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:10:18.217 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 21:10:18.218 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Starting...
+2020-07-31 21:10:18.222 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Start completed.
+2020-07-31 21:10:18.832 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.984 seconds (JVM running for 1826.615)
+2020-07-31 21:10:18.833 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:11:05.232 [Thread-6218]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:11:05.232 [Thread-6218]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Shutdown initiated...
+2020-07-31 21:11:05.235 [Thread-6218]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Shutdown completed.
+2020-07-31 21:11:06.788 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:11:07.134 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:11:07.249 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:11:07.249 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:11:07.250 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:11:07.250 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:11:07.285 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:11:07.285 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 495 ms
+2020-07-31 21:11:07.511 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:11:07.511 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:11:07.539 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:11:07.562 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:11:08.426 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:11:08.897 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:11:08.900 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:11:09.473 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.415 seconds (JVM running for 1877.255)
+2020-07-31 21:11:09.474 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:11:10.787 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:11:10.788 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:11:10.790 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 21:11:10.791 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-18 - Starting...
+2020-07-31 21:11:10.794 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-18 - Start completed.
+2020-07-31 21:11:34.626 [Thread-6477]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:11:34.626 [Thread-6477]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-18 - Shutdown initiated...
+2020-07-31 21:11:34.629 [Thread-6477]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-18 - Shutdown completed.
+2020-07-31 21:11:36.060 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:11:36.414 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:11:36.558 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:11:36.558 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:11:36.558 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:11:36.558 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:11:36.582 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:11:36.583 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 521 ms
+2020-07-31 21:11:36.826 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:11:36.826 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:11:36.857 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:11:36.889 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:11:37.600 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:11:37.939 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:11:37.941 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:11:38.338 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.012 seconds (JVM running for 1906.12)
+2020-07-31 21:11:38.340 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:11:39.243 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:11:39.244 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:11:39.245 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2020-07-31 21:11:39.246 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-19 - Starting...
+2020-07-31 21:11:39.249 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-19 - Start completed.
+2020-07-31 21:14:25.639 [Thread-6736]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:14:25.640 [Thread-6736]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-19 - Shutdown initiated...
+2020-07-31 21:14:25.643 [Thread-6736]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-19 - Shutdown completed.
+2020-07-31 21:14:27.343 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:14:27.685 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:14:27.796 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:14:27.797 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:14:27.797 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:14:27.797 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:14:27.827 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:14:27.827 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 481 ms
+2020-07-31 21:14:28.028 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:14:28.028 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:14:28.059 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:14:28.084 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:14:28.585 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:14:28.941 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:14:28.943 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:14:28.959 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:14:28.960 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:14:28.962 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 21:14:28.963 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-20 - Starting...
+2020-07-31 21:14:28.968 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-20 - Start completed.
+2020-07-31 21:14:29.536 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.978 seconds (JVM running for 2077.316)
+2020-07-31 21:14:29.537 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:38:22.373 [Thread-6995]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:38:22.373 [Thread-6995]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-20 - Shutdown initiated...
+2020-07-31 21:38:22.377 [Thread-6995]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-20 - Shutdown completed.
+2020-07-31 21:38:23.633 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:38:23.917 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:38:24.018 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:38:24.019 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:38:24.019 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:38:24.019 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:38:24.041 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:38:24.041 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 406 ms
+2020-07-31 21:38:24.248 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:38:24.248 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:38:24.278 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:38:24.298 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:38:24.992 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:38:25.521 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:38:25.523 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:38:25.563 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:38:25.564 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:38:25.565 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2020-07-31 21:38:25.567 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-21 - Starting...
+2020-07-31 21:38:25.570 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-21 - Start completed.
+2020-07-31 21:38:25.917 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.021 seconds (JVM running for 3513.682)
+2020-07-31 21:38:25.918 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:48:47.053 [Thread-7254]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:48:47.053 [Thread-7254]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-21 - Shutdown initiated...
+2020-07-31 21:48:47.056 [Thread-7254]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-21 - Shutdown completed.
+2020-07-31 21:48:48.600 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:48:48.946 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:48:49.054 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:48:49.055 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:48:49.055 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:48:49.055 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:48:49.093 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:48:49.093 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 490 ms
+2020-07-31 21:48:49.319 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:48:49.320 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:48:49.350 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:48:49.373 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:48:50.103 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:48:50.594 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:48:50.598 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:48:50.928 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.039 seconds (JVM running for 4138.687)
+2020-07-31 21:48:50.929 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:52:26.705 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:52:26.706 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:52:26.712 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-07-31 21:52:26.719 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-22 - Starting...
+2020-07-31 21:52:26.728 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-22 - Start completed.
+2020-07-31 21:55:08.272 [Thread-7513]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:55:08.273 [Thread-7513]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-22 - Shutdown initiated...
+2020-07-31 21:55:08.277 [Thread-7513]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-22 - Shutdown completed.
+2020-07-31 21:55:09.520 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:55:09.820 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:55:09.919 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:55:09.920 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:55:09.920 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:55:09.920 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:55:09.936 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:55:09.936 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 413 ms
+2020-07-31 21:55:10.234 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:55:10.234 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:55:10.270 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:55:10.305 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:55:10.825 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:55:11.183 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:55:11.185 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:55:11.544 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.739 seconds (JVM running for 4519.299)
+2020-07-31 21:55:11.545 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:55:24.891 [Thread-7772]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:55:26.003 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:55:26.438 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:55:26.584 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:55:26.585 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:55:26.585 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:55:26.585 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:55:26.605 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:55:26.605 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 599 ms
+2020-07-31 21:55:26.874 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:55:26.874 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:55:26.925 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:55:27.007 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:55:27.559 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:55:27.923 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:55:27.925 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:55:28.251 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.106 seconds (JVM running for 4536.007)
+2020-07-31 21:55:28.252 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:55:35.079 [Thread-8031]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:55:36.308 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:55:36.673 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:55:36.778 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:55:36.778 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:55:36.778 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:55:36.778 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:55:36.793 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:55:36.793 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 483 ms
+2020-07-31 21:55:36.995 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:55:36.995 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:55:37.029 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:55:37.054 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:55:37.541 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:55:37.935 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:55:37.937 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:55:38.287 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.711 seconds (JVM running for 4546.042)
+2020-07-31 21:55:38.287 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:56:04.596 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:56:04.598 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:56:04.600 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 21:56:04.602 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Starting...
+2020-07-31 21:56:04.606 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Start completed.
+2020-07-31 21:56:37.349 [Thread-8290]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:56:37.350 [Thread-8290]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Shutdown initiated...
+2020-07-31 21:56:37.355 [Thread-8290]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-23 - Shutdown completed.
+2020-07-31 21:56:38.755 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:56:39.055 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:56:39.162 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:56:39.162 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:56:39.162 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:56:39.163 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:56:39.179 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:56:39.179 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 420 ms
+2020-07-31 21:56:39.371 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:56:39.371 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:56:39.399 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:56:39.422 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:56:40.202 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:56:40.593 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:56:40.595 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:56:40.962 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.946 seconds (JVM running for 4608.717)
+2020-07-31 21:56:40.963 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:57:03.720 [Thread-8549]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:57:04.978 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 21:57:05.277 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 21:57:05.379 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 21:57:05.379 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:57:05.380 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 21:57:05.380 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 21:57:05.398 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 21:57:05.398 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 418 ms
+2020-07-31 21:57:05.621 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 21:57:05.621 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 21:57:05.662 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 21:57:05.690 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 21:57:06.219 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 21:57:06.567 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 21:57:06.569 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 21:57:06.906 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.662 seconds (JVM running for 4634.66)
+2020-07-31 21:57:06.907 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 21:58:19.310 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 21:58:19.311 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 21:58:19.313 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 21:58:19.314 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-24 - Starting...
+2020-07-31 21:58:19.318 [http-nio-8080-exec-1]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-24 - Start completed.
+2020-07-31 22:03:53.932 [Thread-8808]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 22:03:53.933 [Thread-8808]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-24 - Shutdown initiated...
+2020-07-31 22:03:53.935 [Thread-8808]  INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-24 - Shutdown completed.
+2020-07-31 22:03:55.435 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 22:03:55.719 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=a55987e9-0478-3731-b58b-a0b772faf92a
+2020-07-31 22:03:55.817 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 22:03:55.817 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 22:03:55.818 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 22:03:55.818 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 22:03:55.845 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 22:03:55.845 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 407 ms
+2020-07-31 22:03:56.041 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 22:03:56.042 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 22:03:56.078 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 22:03:56.111 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 22:03:57.007 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 22:03:57.356 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 22:03:57.359 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 22:03:57.818 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 3.104 seconds (JVM running for 5045.568)
+2020-07-31 22:03:57.820 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-31 22:04:00.222 [http-nio-8080-exec-1]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-31 22:04:00.223 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-31 22:04:00.225 [http-nio-8080-exec-1]  INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-31 22:04:04.683 [Thread-9067]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-31 22:04:05.957 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - No active profile set, falling back to default profiles: default
+2020-07-31 22:04:06.281 [restartedMain]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=8b954691-c2de-3838-af66-a70f2f5c903d
+2020-07-31 22:04:06.378 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-31 22:04:06.379 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-31 22:04:06.379 [restartedMain]  INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-31 22:04:06.379 [restartedMain]  INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-07-31 22:04:06.406 [restartedMain]  INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-31 22:04:06.406 [restartedMain]  INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 447 ms
+2020-07-31 22:04:06.613 [restartedMain]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-07-31 22:04:06.613 [restartedMain]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-31 22:04:06.651 [restartedMain]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-31 22:04:06.684 [restartedMain]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-07-31 22:04:07.190 [restartedMain]  INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-31 22:04:07.622 [restartedMain]  INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-31 22:04:07.625 [restartedMain]  INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-31 22:04:08.191 [restartedMain]  INFO  cn.oasys.web.OasysWebApplication - Started OasysWebApplication in 2.975 seconds (JVM running for 5055.941)
+2020-07-31 22:04:08.193 [restartedMain]  INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged

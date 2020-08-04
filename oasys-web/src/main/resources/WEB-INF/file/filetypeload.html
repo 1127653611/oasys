@@ -1,0 +1,313 @@
+<html th:fragment="filetypeload" xmlns:th="http://www.thymeleaf.org">
+<div class="menu">
+    <ul class="nav nav-pills nav-stacked" style="padding:5px 0 5px 0;">
+        <th:block th:if="${not #strings.isEmpty(isload)}">
+            <th:block th:if="${not #strings.isEmpty(istrash)}">
+                <li><a class="filereturnback">还原</a></li>
+            </th:block>
+            <th:block th:if="${not #strings.isEmpty(isshare)}">
+                <li><a class="downloadfile">下载</a></li>
+            </th:block>
+            <th:block th:if="${#strings.isEmpty(isshare) && #strings.isEmpty(istrash)}">
+                <li><a class="downloadfile">下载</a></li>
+                <li><a class="loadokshare">分享</a></li>
+                <li><a class="menurename">重命名</a></li>
+                <li><a onclick="{return confirm('文件将放入回收站，确定删除吗？');};" class="loadtrash">删除</a></li>
+            </th:block>
+        </th:block>
+        <th:block th:if="${#strings.isEmpty(isload)}">
+            <li><a class="open">打开</a></li>
+            <li><a class="downloadfile">下载</a></li>
+            <li><a class="doshare" th:href="@{'doshare?pathid='+${nowpath?.pathId}+'&'}">分享</a></li>
+            <li><a class="movefile">移动到</a></li>
+            <li><a class="copyfile">复制到</a></li>
+            <li><a class="menurename">重命名</a></li>
+            <li><a onclick="{return confirm('文件将放入回收站，确定删除吗？');};" class="delete">删除</a></li>
+        </th:block>
+    </ul>
+</div>
+<div class="bgc-w box box-primary" style="height: 695px;">
+    <!--盒子头-->
+    <div class="box-header">
+        <th:block th:if="${not #strings.isEmpty(isload)}">
+            <th:block th:switch="${type}">
+                <th:block th:case="picture">
+                    <h3 class="box-title" style="font-size: 12px;">图片</h3>
+                    <input class="loadfilestype" name="type" type="hidden" th:value="${type}"/>
+                </th:block>
+                <th:block th:case="document">
+                    <h3 class="box-title" style="font-size: 12px;">文档</h3>
+                    <input class="loadfilestype" name="type" type="hidden" th:value="${type}"/>
+                </th:block>
+                <th:block th:case="music">
+                    <h3 class="box-title" style="font-size: 12px;">音乐</h3>
+                    <input class="loadfilestype" name="type" type="hidden" th:value="${type}"/>
+                </th:block>
+                <th:block th:case="video">
+                    <h3 class="box-title" style="font-size: 12px;">视频</h3>
+                    <input class="loadfilestype" name="type" type="hidden" th:value="${type}"/>
+                </th:block>
+                <th:block th:case="yasuo">
+                    <h3 class="box-title" style="font-size: 12px;">压缩包</h3>
+                    <input class="loadfilestype" name="type" type="hidden" th:value="${type}"/>
+                </th:block>
+                <th:block th:case="trash">
+                    <h3 class="box-title" style="font-size: 12px;">回收站</h3>
+                    <input class="loadfilestype" name="type" type="hidden" th:value="${type}"/>
+                </th:block>
+                <th:block th:case="share">
+                    <h3 class="box-title" style="font-size: 12px;">分享文件</h3>
+                    <input class="loadfilestype" name="type" type="hidden" th:value="${type}"/>
+                </th:block>
+                <th:block th:case="all">
+                    <h3 class="box-title" style="font-size: 12px;">全部文件查找</h3>
+                    <input class="loadfilestype" name="type" type="hidden" th:value="${type}"/>
+                </th:block>
+            </th:block>
+        </th:block>
+        <th:block th:if="${#strings.isEmpty(isload)}">
+            <h3 th:if="${nowpath?.parentId==1}" class="box-title" style="font-size: 12px;">[[${nowpath?.pathName}]]</h3>
+            <h3 th:if="${nowpath?.parentId!=1}" class="box-title" style="font-size: 12px;">
+                <a style="font-size: 12px;" th:href="@{'filetest?pathid='+${nowpath?.parentId}}">返回上一层 </a>
+                >
+                <a th:each="allparenth,status: ${allparentpaths}" style="font-size: 12px;"
+                   th:href="@{'filetest?pathid='+${allparenth?.pathId}}">[[${allparenth?.pathName}]]</a>
+                >
+                [[${nowpath?.pathName}]]
+            </h3>
+        </th:block>
+        <div class="box-tools">
+            <div class="input-group" style="width: 150px;">
+                <input id="find" type="text" class="form-control input-sm  findfileandpath"
+                       placeholder="查找..."/>
+                <div class="input-group-btn">
+                    <a class="btn btn-sm btn-default btn-change findfileandpathgo"><span
+                            class="glyphicon glyphicon-search"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--盒子身体-->
+    <div class="box-body no-padding">
+
+        <div style="padding: 5px;">
+            <a class="btn btn-sm btn-default allcheck"
+               href="javascript:void(0);" title="全选/反选"><span
+                    class="iconfont icon-xuanze1"></span></a>
+            <div class="btn-group">
+                <th:block th:if="${not #strings.isEmpty(isload)}">
+
+                    <a th:if="${not #strings.isEmpty(istrash)}" onclick="{return confirm('文件将无法复原，确定删除吗？');};"
+                       class="btn btn-sm btn-default loaddelete" title="删除">
+                        <span class="iconfont icon-lajitong"></span>
+                    </a>
+
+                    <a th:if="${#strings.isEmpty(istrash) && #strings.isEmpty(isshare)}"
+                       onclick="{return confirm('文件将放入回收站，确定删除吗？');};" class="btn btn-sm btn-default loadtrash"
+                       title="删除">
+                        <span class="iconfont icon-lajitong"></span>
+                    </a>
+
+                </th:block>
+                <th:block th:if="${ #strings.isEmpty(isload)}">
+
+                    <a onclick="{return confirm('文件将放入回收站，确定删除吗？');};" class="btn btn-sm btn-default topdelete"
+                       th:href="@{'deletefile?pathid='+${nowpath?.pathId}+'&checkpathids=&checkfileids='}" title="删除">
+                        <span class="iconfont icon-lajitong"></span>
+                    </a>
+                    <a class="btn btn-sm btn-default topcreatepath" href="javascript:void(0);" title="新建文件夹">
+                        <span class="iconfont icon-xinzengwenjian"></span>
+                    </a>
+                </th:block>
+            </div>
+            <a class="btn btn-sm btn-default" href="filemanage" title="刷新"><span
+                    class="iconfont icon-shuaxin"></span></a>
+        </div>
+
+
+        <div class="file-box" style="overflow-y: auto;">
+            <div class="boxcontain" style="height: auto;">
+                <th:block th:if="${ #strings.isEmpty(isload)}">
+                    <!--新建文件夹操作显示部分  -->
+                    <div class="file-one creatpath pathtextarea diplaynone" style="width: 144px;">
+                        <div class="file-img">
+                            <img src="images/fileimg/Folder.png"/>
+                        </div>
+                        <div class="file-name" style="text-align: left;">
+                            <form action="createpath">
+                                <input class="creatpathinput" type="text" name="pathname" value="新建文件夹"/>
+                                <input type="hidden" name="pathid" th:value="${nowpath?.pathId}"/>
+                                <button class="btn btn-default">
+                                    <em class="glyphicon glyphicon-ok" style="font-size: 12px;"></em>
+                                </button>
+                                <span class="btn btn-default">
+									<em class="glyphicon glyphicon-remove cansalcreate" style="font-size: 12px;"></em>
+								</span>
+                            </form>
+                        </div>
+                        <span class="file-check">
+							<span class="iconfont icon-xuanze" style="height:1.5em;width:1.5em"></span>
+						</span>
+                    </div>
+                </th:block>
+                <th:block th:if="${not #lists.isEmpty(paths)}">
+                    <div th:each="path,status: ${paths}" class="file-one">
+                        <div class="file-img path">
+                            <a th:if="${not #strings.isEmpty(istrash)}">
+                                <img src="images/fileimg/Folder.png"/>
+                            </a>
+                            <a th:if="${ #strings.isEmpty(istrash)}" th:href="@{'filetest?pathid='+${path?.pathId}}">
+                                <img src="images/fileimg/Folder.png"/>
+                            </a>
+                        </div>
+                        <div class="file-name path">
+
+                            <div th:if="${not #strings.isEmpty(istrash)}" class="filename">
+                                <a style="font-size: 12px;">[[${path?.pathName}]]</a>
+                            </div>
+                            <div th:if="${ #strings.isEmpty(istrash)}" class="filename">
+                                <a th:href="@{'filetest?pathid='+${path?.pathId}}" style="font-size: 12px;">[[${path?.pathName}]]</a>
+                            </div>
+
+                            <div class="pathtextarea rename diplaynone"
+                                 style="position: absolute;top: 97px;left: -5px;z-index:100;">
+                                <th:block th:if="${not #strings.isEmpty(isload)}">
+                                    <input class="creatpathinput" type="text" name="name" th:value="${path?.pathName}"/>
+                                    <input class="renamefp" type="hidden" name="renamefp" th:value="${path?.pathId}"/>
+                                    <input class="pathid" type="hidden" name="pathid" th:value="${path?.parentId}"/>
+                                    <input class="isfile" type="hidden" name="isfile" value="false"/>
+                                    <button class="btn btn-default okfilerename">
+                                        <em class="glyphicon glyphicon-ok" style="font-size: 12px;"></em>
+                                    </button>
+                                    <span class="btn btn-default">
+											<em class="glyphicon glyphicon-remove cansalcreate"
+                                                style="font-size: 12px;"></em>
+										</span>
+                                </th:block>
+                                <th:block th:if="${ #strings.isEmpty(isload)}">
+                                    <form action="rename">
+                                        <input class="creatpathinput" type="text" name="name"
+                                               th:value="${path?.pathName}"/>
+                                        <input type="hidden" name="renamefp" th:value="${path?.pathId}"/>
+                                        <input type="hidden" name="pathid" th:value="${nowpath?.pathId}"/>
+                                        <input type="hidden" name="isfile" value="false"/>
+                                        <button class="btn btn-default">
+                                            <em class="glyphicon glyphicon-ok" style="font-size: 12px;"></em>
+                                        </button>
+                                        <span class="btn btn-default">
+												<em class="glyphicon glyphicon-remove cansalcreate"
+                                                    style="font-size: 12px;"></em>
+											</span>
+                                    </form>
+                                </th:block>
+                            </div>
+                        </div>
+                        <input type="hidden" class="pathmessage" th:value="${path?.pathId}">
+                        <span class="file-check">
+								<span class="iconfont icon-xuanze" style="height:1.5em;width:1.5em"></span>
+							</span>
+                    </div>
+                </th:block>
+
+                <div th:each="file,status: ${files}" class="file-one">
+                    <div th:if="${file?.fileIsshare==1}" class="file-img isshare" th:switch="${file?.fileShuffix}">
+                        <img th:case="zip" src="images/fileimg/ZIP.png"/>
+                        <img th:case="rar" src="images/fileimg/ZIP.png"/>
+                        <img th:case="7-Zip" src="images/fileimg/ZIP.png"/>
+                        <img th:case="mp4" src="images/fileimg/Video.png"/>
+                        <img th:case="rmvb" src="images/fileimg/Video.png"/>
+                        <img th:case="7-avi" src="images/fileimg/Video.png"/>
+                        <img th:case="'pdf'" src="images/fileimg/PDF.png"/>
+                        <img th:case="mp3" src="images/fileimg/Music.png"/>
+                        <img th:case="aiff" src="images/fileimg/Music.png"/>
+                        <img th:case="jpeg" th:src="@{'imgshow?fileid='+${file?.fileId}}"
+                             style="height:71px;width:56px;"/>
+                        <img th:case="png" th:src="@{'imgshow?fileid='+${file?.fileId}}"
+                             style="height:71px;width:56px;"/>
+                        <img th:case="gif" th:src="@{'imgshow?fileid='+${file?.fileId}}"
+                             style="height:71px;width:56px;"/>
+                        <img th:case="jpg" th:src="@{'imgshow?fileid='+${file?.fileId}}"
+                             style="height:71px;width:56px;"/>
+                        <img th:case="*" src="images/fileimg/Text.png"/>
+                    </div>
+                    <div th:if="${file?.fileIsshare!=1}" class="file-img" th:switch="${file?.fileShuffix}">
+                        <img th:case="zip" src="images/fileimg/ZIP.png"/>
+                        <img th:case="rar" src="images/fileimg/ZIP.png"/>
+                        <img th:case="7-Zip" src="images/fileimg/ZIP.png"/>
+                        <img th:case="mp4" src="images/fileimg/Video.png"/>
+                        <img th:case="rmvb" src="images/fileimg/Video.png"/>
+                        <img th:case="7-avi" src="images/fileimg/Video.png"/>
+                        <img th:case="'pdf'" src="images/fileimg/PDF.png"/>
+                        <img th:case="mp3" src="images/fileimg/Music.png"/>
+                        <img th:case="aiff" src="images/fileimg/Music.png"/>
+                        <img th:case="jpeg" th:src="@{'imgshow?fileid='+${file?.fileId}}"
+                             style="height:71px;width:56px;"/>
+                        <img th:case="png" th:src="@{'imgshow?fileid='+${file?.fileId}}"
+                             style="height:71px;width:56px;"/>
+                        <img th:case="gif" th:src="@{'imgshow?fileid='+${file?.fileId}}"
+                             style="height:71px;width:56px;"/>
+                        <img th:case="jpg" th:src="@{'imgshow?fileid='+${file?.fileId}}"
+                             style="height:71px;width:56px;"/>
+                        <img th:case="*" src="images/fileimg/Text.png"/>
+                    </div>
+                    <div class="file-name">
+                        <div class="filename">
+                            <a>[[${file?.fileName}]]</a>
+                            <input type="hidden" class="fileuserid" th:id="${file?.user?.userId}"/>
+                            <input type="hidden" class="nowuserid" th:id="${userid}"/>
+                        </div>
+                        <div class="pathtextarea rename diplaynone"
+                             style="position: absolute;top: 97px;left: -5px;z-index:100;">
+                            <th:block th:if="${not #strings.isEmpty(isload)}">
+                                <input class="creatpathinput" type="text" name="name" th:value="${file?.fileName}"/>
+                                <input class="renamefp" type="hidden" name="renamefp" th:value="${file?.fileId}"/>
+                                <input class="pathid" type="hidden" name="pathid" value=""/>
+                                <input class="isfile" type="hidden" name="isfile" value="true"/>
+                                <button class="btn btn-default okfilerename">
+                                    <em class="glyphicon glyphicon-ok" style="font-size: 12px;"></em>
+                                </button>
+                                <span class="btn btn-default">
+										<em class="glyphicon glyphicon-remove cansalcreate"
+                                            style="font-size: 12px;"></em>
+									</span>
+                            </th:block>
+                            <th:block th:if="${ #strings.isEmpty(isload)}">
+                                <form action="rename">
+                                    <input class="creatpathinput" type="text" name="name" th:value="${file?.fileName}"/>
+                                    <input type="hidden" name="renamefp" th:value="${file?.fileId}"/>
+                                    <input type="hidden" name="pathid" th:value="${nowpath?.pathId}"/>
+                                    <input type="hidden" name="isfile" value="true"/>
+                                    <button class="btn btn-default">
+                                        <em class="glyphicon glyphicon-ok" style="font-size: 12px;"></em>
+                                    </button>
+                                    <span class="btn btn-default">
+										<em class="glyphicon glyphicon-remove cansalcreate"
+                                            style="font-size: 12px;"></em>
+									</span>
+                                </form>
+                            </th:block>
+                        </div>
+                    </div>
+                    <input type="hidden" class="filemessage" th:value="${file?.fileId}">
+                    <span class="file-check">
+							<span class="iconfont icon-xuanze" style="height:1.5em;width:1.5em"></span>
+						</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<th:block th:if="${not #strings.isEmpty(message)}">
+    <script type="text/javascript">
+		var message='[[${message}]]';
+		alert(message);
+	</script>
+</th:block>
+<script>
+    $("#find").keydown(function () {
+     if (window.event.keyCode==13) {
+     $(".findfileandpathgo").trigger("click");
+     }
+ });
+
+</script>

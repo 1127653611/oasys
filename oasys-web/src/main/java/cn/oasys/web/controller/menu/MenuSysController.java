@@ -65,7 +65,6 @@ public class MenuSysController {
     }
     @RequestMapping("checkMenu")
     public String checkMenu(HttpServletRequest req,AoaSysMenu aoaSysMenu){
-        System.out.println(aoaSysMenu);
         if (StringUtils.isEmpty(aoaSysMenu.getParentId())) aoaSysMenu.setParentId(0L);
         if (StringUtils.isEmpty(aoaSysMenu.getMenuName())){
             req.setAttribute("errormess", "名称不能为空");

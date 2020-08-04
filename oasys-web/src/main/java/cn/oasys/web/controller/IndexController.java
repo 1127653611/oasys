@@ -71,8 +71,6 @@ public class IndexController {
                     oneMenuAll.add(menuSysService.findByChil(aoaSysMenu.getParentId(), user.getRole().getRoleId(),true,true));
                 }
             }
-            System.out.println(oneMenuAll);
-            System.out.println(twoMenuAll);
             req.setAttribute("oneMenuAll", oneMenuAll);
             req.setAttribute("twoMenuAll", twoMenuAll);
         }

@@ -4,11 +4,15 @@ server:
 #  hystrix:
 #    enabled: true
 spring:
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 300MB
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
   resources:
-    static-locations: classpath:/WEB-INF/,classpath:/static/,classpath:/resources/,file:D:\oasys\resources\static\file
+    static-locations: classpath:/WEB-INF/,classpath:/static/,classpath:/resources/,file:D:\oasys\resources\static\file,file:D:\oasys\resources\static\images
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/oasys?useSSL=false&serverTimezone=UTC&allowMultiQueries=true

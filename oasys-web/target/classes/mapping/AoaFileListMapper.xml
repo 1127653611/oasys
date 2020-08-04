@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.file.AoaFileListMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.file.AoaFileList">
+    <id column="file_id" jdbcType="BIGINT" property="fileId" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+    <result column="file_path" jdbcType="VARCHAR" property="filePath" />
+    <result column="file_shuffix" jdbcType="VARCHAR" property="fileShuffix" />
+    <result column="content_type" jdbcType="VARCHAR" property="contentType" />
+    <result column="model" jdbcType="VARCHAR" property="model" />
+    <result column="path_id" jdbcType="BIGINT" property="pathId" />
+    <result column="size" jdbcType="BIGINT" property="size" />
+    <result column="upload_time" jdbcType="TIMESTAMP" property="uploadTime" />
+    <result column="file_user_id" jdbcType="BIGINT" property="fileUserId" />
+    <result column="file_istrash" jdbcType="BIGINT" property="fileIstrash" />
+    <result column="file_isshare" jdbcType="BIGINT" property="fileIsshare" />
+    <association property="user" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="file_user_id"></association>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    file_id, file_name, file_path, file_shuffix, content_type, model, path_id, size, 
+    upload_time, file_user_id, file_istrash, file_isshare
+  </sql>
+  <select id="findByFilePath" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where path_id =#{id} and file_istrash=0
+  </select>
+  <select id="findByPath" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where path_id =#{id}
+  </select>
+  <select id="finddocument" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_user_id =#{id} and file_istrash=0 and
+    content_type not like 'image/%' and
+    content_type not like 'application/%' and
+    content_type not like 'video/%'  and
+    content_type not like 'audio/%'
+  </select>
+  <select id="finddocumentlike" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_user_id =#{id} and file_istrash=0 and
+    content_type not like 'image/%' and
+    content_type not like 'application/%' and
+    content_type not like 'video/%'  and
+    content_type not like 'audio/%' and file_name like #{key}
+  </select>
+  <select id="finOne" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_id =#{id}
+  </select>
+  <select id="findByUserAndContentTypeLikeAndFileIstrash" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_user_id =#{uid} and  content_type like #{key} and file_istrash=#{trash}
+  </select>
+  <select id="findByUserAndFileIstrashAndContentTypeLikeAndFileNameLike" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_user_id =#{uid} and  content_type like #{key} and file_istrash=#{trash} and  file_name like #{key1}
+  </select>
+  <select id="findByUserAndFileIstrashAndFileNameLike" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_user_id =#{uid}  and file_istrash=#{trash} and  file_name like #{key}
+  </select>
+  <select id="findByUserAndFileIstrash" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_user_id =#{uid} and file_istrash=#{trash}
+  </select>
+  <select id="findByFileIsshareAndFileIstrash" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_istrash=#{trash} and file_isshare=#{share}
+  </select>
+  <select id="findByFileIsshareAndFileNameLike" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where file_istrash=0 and file_isshare=#{share} and file_name like #{key}
+  </select>
+
+  <select id="findByFileNameAndFpath" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_file_list where path_id =#{pid} and file_name=#{name}
+  </select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.file.AoaFileList">
+    insert into aoa_file_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fileId != null">
+        file_id,
+      </if>
+      <if test="fileName != null">
+        file_name,
+      </if>
+      <if test="filePath != null">
+        file_path,
+      </if>
+      <if test="fileShuffix != null">
+        file_shuffix,
+      </if>
+      <if test="contentType != null">
+        content_type,
+      </if>
+      <if test="model != null">
+        model,
+      </if>
+      <if test="pathId != null">
+        path_id,
+      </if>
+      <if test="size != null">
+        size,
+      </if>
+      <if test="uploadTime != null">
+        upload_time,
+      </if>
+      <if test="fileUserId != null">
+        file_user_id,
+      </if>
+      <if test="fileIstrash != null">
+        file_istrash,
+      </if>
+      <if test="fileIsshare != null">
+        file_isshare,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fileId != null">
+        #{fileId,jdbcType=BIGINT},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null">
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="fileShuffix != null">
+        #{fileShuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="contentType != null">
+        #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null">
+        #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="pathId != null">
+        #{pathId,jdbcType=BIGINT},
+      </if>
+      <if test="size != null">
+        #{size,jdbcType=BIGINT},
+      </if>
+      <if test="uploadTime != null">
+        #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fileUserId != null">
+        #{fileUserId,jdbcType=BIGINT},
+      </if>
+      <if test="fileIstrash != null">
+        #{fileIstrash,jdbcType=BIGINT},
+      </if>
+      <if test="fileIsshare != null">
+        #{fileIsshare,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.oasys.web.model.pojo.file.AoaFileList">
+    update aoa_file_list
+    set file_name = #{fileName,jdbcType=VARCHAR},
+    file_path = #{filePath,jdbcType=VARCHAR},
+    file_shuffix = #{fileShuffix,jdbcType=VARCHAR},
+    content_type = #{contentType,jdbcType=VARCHAR},
+    model = #{model,jdbcType=VARCHAR},
+    path_id = #{pathId,jdbcType=BIGINT},
+    size = #{size,jdbcType=BIGINT},
+    upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+    file_user_id = #{fileUserId,jdbcType=BIGINT},
+    file_istrash = #{fileIstrash,jdbcType=BIGINT},
+    file_isshare = #{fileIsshare,jdbcType=BIGINT}
+    where file_id = #{fileId,jdbcType=BIGINT}
+  </update>
+  <delete id="delete">
+    delete from aoa_file_list where file_id =#{id}
+  </delete>
+</mapper>

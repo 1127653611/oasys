@@ -62,7 +62,6 @@ public class ProcessController {
                         @RequestParam(value = "page", defaultValue = "0") int page,
                         @RequestParam(value = "size", defaultValue = "10") int size,
                         @RequestParam(value = "title", required = false) String title){
-        System.out.println(title);
         PageHelper.startPage(page,size);
         List<AoaUser> userlist;
         if (StringUtils.isEmpty(title)) {
@@ -89,7 +88,6 @@ public class ProcessController {
     public String apply(@RequestParam("filePath") MultipartFile filePath, HttpServletRequest req , AoaBursement bu,
                         @SessionAttribute("userId") Long userId) throws IllegalStateException, IOException {
 
-        System.out.println(bu);
         return "redirect:/xinxeng";
     }
 }

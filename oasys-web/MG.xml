@@ -65,12 +65,14 @@
 <!-- <table tableName="aoa_vote_title_user" domainObjectName="AoaVoteTitleUser"></table>-->
 <!-- <table tableName="aoa_love_discuss_user" domainObjectName="AoaLoveDiscussUser"></table>-->
 <!-- <table tableName="aoa_love_user" domainObjectName="AoaLoveUser"></table>-->
- <table tableName="aoa_attachment_list" domainObjectName="AoaAttachmentList"></table>
- <table tableName="aoa_catalog" domainObjectName="AoaCatalog"></table>
- <table tableName="aoa_director" domainObjectName="AoaDirector"></table>
- <table tableName="aoa_director_users" domainObjectName="AoaDirectorUsers"></table>
- <table tableName="aoa_note_list" domainObjectName="AoaNoteList"></table>
- <table tableName="aoa_receiver_note" domainObjectName="AoaReceiverNote"></table>
+<!-- <table tableName="aoa_attachment_list" domainObjectName="AoaAttachmentList"></table>-->
+<!-- <table tableName="aoa_catalog" domainObjectName="AoaCatalog"></table>-->
+<!-- <table tableName="aoa_director" domainObjectName="AoaDirector"></table>-->
+<!-- <table tableName="aoa_director_users" domainObjectName="AoaDirectorUsers"></table>-->
+<!-- <table tableName="aoa_note_list" domainObjectName="AoaNoteList"></table>-->
+<!-- <table tableName="aoa_receiver_note" domainObjectName="AoaReceiverNote"></table>-->
+ <table tableName="aoa_file_list" domainObjectName="AoaFileList"></table>
+ <table tableName="aoa_file_path" domainObjectName="AoaFilePath"></table>
 
 
 	</context>

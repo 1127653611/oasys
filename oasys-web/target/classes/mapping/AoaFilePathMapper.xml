@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.file.AoaFilePathMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.file.AoaFilePath">
+    <id column="path_id" jdbcType="BIGINT" property="pathId" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="path_name" jdbcType="VARCHAR" property="pathName" />
+    <result column="path_user_id" jdbcType="BIGINT" property="pathUserId" />
+    <result column="path_istrash" jdbcType="BIGINT" property="pathIstrash" />
+
+    <collection property="fileLists" select="cn.oasys.web.model.dao.file.AoaFileListMapper.findByFilePath" column="path_id"></collection>
+  </resultMap>
+  <resultMap id="BaseResultMap1" type="cn.oasys.web.model.pojo.file.AoaFilePath">
+    <id column="path_id" jdbcType="BIGINT" property="pathId" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="path_name" jdbcType="VARCHAR" property="pathName" />
+    <result column="path_user_id" jdbcType="BIGINT" property="pathUserId" />
+    <result column="path_istrash" jdbcType="BIGINT" property="pathIstrash" />
+    <collection property="childpath" select="findpathByparent" column="{id=path_id,path_istrash=path_istrash}"></collection>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    path_id, parent_id, path_name, path_user_id, path_istrash
+  </sql>
+  <select id="findByPathName" resultMap="BaseResultMap">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where path_name=#{name}
+  </select>
+  <select id="findByParentIdAndPathUserId" resultMap="BaseResultMap">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where parent_id=#{pid} and path_user_id=#{uid}
+  </select>
+  <select id="findByPathUserIdAndPathIstrash" resultMap="BaseResultMap">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where path_user_id=#{uid} and path_istrash=#{trash}
+  </select>
+  <select id="findByPathUserIdAndPathIstrashAndPathNameLikeAndParentIdNot" resultMap="BaseResultMap">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where path_user_id=#{uid} and path_istrash=#{trash}
+    and path_name like #{key} and parent_id != #{pid}
+  </select>
+  <select id="findByPathNameAndParentId" resultMap="BaseResultMap">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where path_name=#{name} and parent_id=#{pid}
+  </select>
+  <select id="findOne" resultMap="BaseResultMap">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where path_id=#{id}
+  </select>
+
+  <select id="findpathByparent" resultMap="BaseResultMap1">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where parent_id=#{id} and path_istrash=#{path_istrash}
+  </select>
+  <select id="findByParentId" resultMap="BaseResultMap">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where parent_id=#{id}
+  </select>
+  <select id="findByParentIdAndPathIstrash" resultMap="BaseResultMap">
+    select path_id, parent_id, path_name, path_user_id, path_istrash from aoa_file_path where parent_id=#{pid} and path_istrash=#{trash}
+  </select>
+  <update id="updateByPrimaryKey" parameterType="cn.oasys.web.model.pojo.file.AoaFilePath">
+    update aoa_file_path
+    set parent_id = #{parentId,jdbcType=BIGINT},
+    path_name = #{pathName,jdbcType=VARCHAR},
+    path_user_id = #{pathUserId,jdbcType=BIGINT},
+    path_istrash = #{pathIstrash,jdbcType=BIGINT}
+    where path_id = #{pathId,jdbcType=BIGINT}
+  </update>
+
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.file.AoaFilePath">
+    insert into aoa_file_path
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pathId != null">
+        path_id,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="pathName != null">
+        path_name,
+      </if>
+      <if test="pathUserId != null">
+        path_user_id,
+      </if>
+      <if test="pathIstrash != null">
+        path_istrash,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pathId != null">
+        #{pathId,jdbcType=BIGINT},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="pathName != null">
+        #{pathName,jdbcType=VARCHAR},
+      </if>
+      <if test="pathUserId != null">
+        #{pathUserId,jdbcType=BIGINT},
+      </if>
+      <if test="pathIstrash != null">
+        #{pathIstrash,jdbcType=BIGINT},
+      </if>
+    </trim>
+    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="pathId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  <delete id="delete">
+    delete from aoa_file_path where path_id=#{id}
+  </delete>
+</mapper>
