@@ -168,6 +168,9 @@
         #{fileIsshare,jdbcType=BIGINT},
       </if>
     </trim>
+    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="fileId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
   </insert>
   <update id="updateByPrimaryKey" parameterType="cn.oasys.web.model.pojo.file.AoaFileList">
     update aoa_file_list
