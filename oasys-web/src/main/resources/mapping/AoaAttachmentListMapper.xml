@@ -85,5 +85,34 @@
     SELECT LAST_INSERT_ID()
   </selectKey>
 </insert>
-
+  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.note.AoaAttachmentList">
+    update aoa_attachment_list
+    <set>
+      <if test="attachmentName != null">
+        attachment_name = #{attachmentName,jdbcType=VARCHAR},
+      </if>
+      <if test="attachmentPath != null">
+        attachment_path = #{attachmentPath,jdbcType=VARCHAR},
+      </if>
+      <if test="attachmentShuffix != null">
+        attachment_shuffix = #{attachmentShuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="attachmentSize != null">
+        attachment_size = #{attachmentSize,jdbcType=VARCHAR},
+      </if>
+      <if test="attachmentType != null">
+        attachment_type = #{attachmentType,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null">
+        model = #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null">
+        upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where attachment_id = #{attachmentId,jdbcType=BIGINT}
+  </update>
 </mapper>
