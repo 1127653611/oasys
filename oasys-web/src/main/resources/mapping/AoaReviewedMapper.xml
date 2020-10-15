@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.process.AoaReviewedMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaReviewed">
+    <id column="reviewed_id" jdbcType="BIGINT" property="reviewedId" />
+    <result column="advice" jdbcType="VARCHAR" property="advice" />
+    <result column="reviewed_time" jdbcType="TIMESTAMP" property="reviewedTime" />
+    <result column="status_id" jdbcType="BIGINT" property="statusId" />
+    <result column="pro_id" jdbcType="BIGINT" property="proId" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="del" jdbcType="INTEGER" property="del" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    reviewed_id, advice, reviewed_time, status_id, pro_id, user_id, del
+  </sql>
+
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaReviewed">
+    insert into aoa_reviewed
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="reviewedId != null">
+        reviewed_id,
+      </if>
+      <if test="advice != null">
+        advice,
+      </if>
+      <if test="reviewedTime != null">
+        reviewed_time,
+      </if>
+      <if test="statusId != null">
+        status_id,
+      </if>
+      <if test="proId != null">
+        pro_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="reviewedId != null">
+        #{reviewedId,jdbcType=BIGINT},
+      </if>
+      <if test="advice != null">
+        #{advice,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewedTime != null">
+        #{reviewedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusId != null">
+        #{statusId,jdbcType=BIGINT},
+      </if>
+      <if test="proId != null">
+        #{proId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

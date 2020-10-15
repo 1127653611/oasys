@@ -1,31 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.oasys.web.model.dao.process.AoaProcessListMapper">
-  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaProcessList">
-    <id column="process_id" jdbcType="BIGINT" property="processId" />
-    <result column="apply_time" jdbcType="TIMESTAMP" property="applyTime" />
-    <result column="deeply_id" jdbcType="BIGINT" property="deeplyId" />
-    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
-    <result column="process_name" jdbcType="VARCHAR" property="processName" />
-    <result column="procsee_days" jdbcType="INTEGER" property="procseeDays" />
-    <result column="is_checked" jdbcType="INTEGER" property="isChecked" />
-    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
-    <result column="status_id" jdbcType="BIGINT" property="statusId" />
-    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
-    <result column="pro_file_id" jdbcType="BIGINT" property="proFileId" />
-    <result column="process_user_id" jdbcType="BIGINT" property="processUserId" />
-    <result column="shenuser" jdbcType="VARCHAR" property="shenuser" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.oasys.web.model.pojo.process.AoaProcessList">
-    <result column="process_des" jdbcType="LONGVARCHAR" property="processDes" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaProcessList">
+        <id column="process_id" jdbcType="BIGINT" property="processId"/>
+        <result column="apply_time" jdbcType="TIMESTAMP" property="applyTime"/>
+        <result column="deeply_id" jdbcType="BIGINT" property="deeplyId"/>
+        <result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+        <result column="process_name" jdbcType="VARCHAR" property="processName"/>
+        <result column="procsee_days" jdbcType="INTEGER" property="procseeDays"/>
+        <result column="is_checked" jdbcType="INTEGER" property="isChecked"/>
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+        <result column="status_id" jdbcType="BIGINT" property="statusId"/>
+        <result column="type_name" jdbcType="VARCHAR" property="typeName"/>
+        <result column="pro_file_id" jdbcType="BIGINT" property="proFileId"/>
+        <result column="process_user_id" jdbcType="BIGINT" property="processUserId"/>
+        <result column="shenuser" jdbcType="VARCHAR" property="shenuser"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.oasys.web.model.pojo.process.AoaProcessList">
+        <result column="process_des" jdbcType="LONGVARCHAR" property="processDes"/>
+    </resultMap>
 
-  <sql id="Base_Column_List">
-    process_id, apply_time, deeply_id, end_time, process_name, procsee_days, is_checked, 
-    start_time, status_id, type_name, pro_file_id, process_user_id, shenuser
-  </sql>
-  <sql id="Blob_Column_List">
-    process_des
-  </sql>
+    <sql id="Base_Column_List">
+        process_id, apply_time, deeply_id, end_time, process_name, procsee_days, is_checked,
+        start_time, status_id, type_name, pro_file_id, process_user_id, shenuser
+    </sql>
+    <sql id="Blob_Column_List">
+        process_des
+    </sql>
+    <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaProcessList">
+        insert into aoa_process_list
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="processId != null">
+                process_id,
+            </if>
+            <if test="applyTime != null">
+                apply_time,
+            </if>
+            <if test="deeplyId != null">
+                deeply_id,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+            <if test="processName != null">
+                process_name,
+            </if>
+            <if test="procseeDays != null">
+                procsee_days,
+            </if>
+            <if test="isChecked != null">
+                is_checked,
+            </if>
+            <if test="startTime != null">
+                start_time,
+            </if>
+            <if test="statusId != null">
+                status_id,
+            </if>
+            <if test="typeName != null">
+                type_name,
+            </if>
+            <if test="proFileId != null">
+                pro_file_id,
+            </if>
+            <if test="processUserId != null">
+                process_user_id,
+            </if>
+            <if test="shenuser != null">
+                shenuser,
+            </if>
+            <if test="processDes != null">
+                process_des,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="processId != null">
+                #{processId,jdbcType=BIGINT},
+            </if>
+            <if test="applyTime != null">
+                #{applyTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deeplyId != null">
+                #{deeplyId,jdbcType=BIGINT},
+            </if>
+            <if test="endTime != null">
+                #{endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="processName != null">
+                #{processName,jdbcType=VARCHAR},
+            </if>
+            <if test="procseeDays != null">
+                #{procseeDays,jdbcType=INTEGER},
+            </if>
+            <if test="isChecked != null">
+                #{isChecked,jdbcType=INTEGER},
+            </if>
+            <if test="startTime != null">
+                #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="statusId != null">
+                #{statusId,jdbcType=BIGINT},
+            </if>
+            <if test="typeName != null">
+                #{typeName,jdbcType=VARCHAR},
+            </if>
+            <if test="proFileId != null">
+                #{proFileId,jdbcType=BIGINT},
+            </if>
+            <if test="processUserId != null">
+                #{processUserId,jdbcType=BIGINT},
+            </if>
+            <if test="shenuser != null">
+                #{shenuser,jdbcType=VARCHAR},
+            </if>
+            <if test="processDes != null">
+                #{processDes,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="processId" >
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
 
+    <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaProcessList">
+        update aoa_process_list
+        <set>
+            <if test="applyTime != null">
+                apply_time = #{applyTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deeplyId != null">
+                deeply_id = #{deeplyId,jdbcType=BIGINT},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="processName != null">
+                process_name = #{processName,jdbcType=VARCHAR},
+            </if>
+            <if test="procseeDays != null">
+                procsee_days = #{procseeDays,jdbcType=INTEGER},
+            </if>
+            <if test="isChecked != null">
+                is_checked = #{isChecked,jdbcType=INTEGER},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="statusId != null">
+                status_id = #{statusId,jdbcType=BIGINT},
+            </if>
+            <if test="typeName != null">
+                type_name = #{typeName,jdbcType=VARCHAR},
+            </if>
+            <if test="proFileId != null">
+                pro_file_id = #{proFileId,jdbcType=BIGINT},
+            </if>
+            <if test="processUserId != null">
+                process_user_id = #{processUserId,jdbcType=BIGINT},
+            </if>
+            <if test="shenuser != null">
+                shenuser = #{shenuser,jdbcType=VARCHAR},
+            </if>
+            <if test="processDes != null">
+                process_des = #{processDes,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where process_id = #{processId,jdbcType=BIGINT}
+    </update>
 </mapper>
