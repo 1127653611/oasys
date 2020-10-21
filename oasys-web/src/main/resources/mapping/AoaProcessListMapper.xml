@@ -15,6 +15,10 @@
         <result column="pro_file_id" jdbcType="BIGINT" property="proFileId"/>
         <result column="process_user_id" jdbcType="BIGINT" property="processUserId"/>
         <result column="shenuser" jdbcType="VARCHAR" property="shenuser"/>
+        <association property="aoaTypeList" select="cn.oasys.web.model.dao.system.AoaTypeListMapper.findOneById" column="deeply_id"></association>
+        <association property="aoaStatusList" select="cn.oasys.web.model.dao.system.AoaStatusListMapper.findOne" column="status_id"></association>
+        <association property="user" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="process_user_id"></association>
+        <association property="aoaAttachmentList" select="cn.oasys.web.model.dao.note.AoaAttachmentListMapper.findOne" column="pro_file_id"></association>
     </resultMap>
     <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.oasys.web.model.pojo.process.AoaProcessList">
         <result column="process_des" jdbcType="LONGVARCHAR" property="processDes"/>
@@ -27,6 +31,26 @@
     <sql id="Blob_Column_List">
         process_des
     </sql>
+    <select id="findByuserId" resultMap="ResultMapWithBLOBs">
+        select <include refid="Base_Column_List"></include>
+        ,<include refid="Blob_Column_List"></include>
+        from aoa_process_list where process_user_id = #{uid}
+        <if test="key != null">
+            and process_des like #{key}
+        </if>
+        order by apply_time DESC
+    </select>
+    <select id="findlastthree" resultMap="ResultMapWithBLOBs">
+        select <include refid="Base_Column_List"></include>
+        ,<include refid="Blob_Column_List"></include>
+        from aoa_process_list where process_user_id = #{uid}
+        order by apply_time DESC LIMIT 0,3
+    </select>
+    <select id="findOne" resultMap="ResultMapWithBLOBs">
+        select <include refid="Base_Column_List"></include>
+        ,<include refid="Blob_Column_List"></include>
+        from aoa_process_list where process_id = #{id}
+    </select>
     <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaProcessList">
         insert into aoa_process_list
         <trim prefix="(" suffix=")" suffixOverrides=",">

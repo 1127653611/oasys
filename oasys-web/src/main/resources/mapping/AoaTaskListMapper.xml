@@ -23,6 +23,7 @@
         task_id, comment, end_time, is_cancel, is_top, modify_time, publish_time, star_time,
         status_id, task_describe, ticking, title, type_id, task_push_user_id, reciverlist
     </sql>
+
     <select id="findByUsersIdOrderByTypeId" resultMap="BaseResultMap">
         select <include refid="Base_Column_List"></include>
         from aoa_task_list where task_push_user_id = #{uid}

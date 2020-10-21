@@ -9,12 +9,31 @@
     <result column="pro_id" jdbcType="BIGINT" property="proId" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
     <result column="del" jdbcType="INTEGER" property="del" />
+    <association property="aoaProcessList" select="cn.oasys.web.model.dao.process.AoaProcessListMapper.findOne" column="pro_id"></association>
   </resultMap>
 
   <sql id="Base_Column_List">
     reviewed_id, advice, reviewed_time, status_id, pro_id, user_id, del
   </sql>
-
+  <sql id="Base_Column_List1">
+    r.reviewed_id, r.advice, r.reviewed_time, r.status_id, r.pro_id, r.user_id, r.del
+  </sql>
+  <select id="findByProIdAndUserId" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from aoa_reviewed where pro_id = #{pid} and user_id = #{uid}
+  </select>
+  <select id="findByReviewedTimeNotNullAndProId" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from aoa_reviewed where reviewed_time is not null and pro_id = #{pid}
+  </select>
+<select id="findByUserIdAndSort" resultMap="BaseResultMap">
+  select <include refid="Base_Column_List1"></include>
+   from aoa_reviewed r left join aoa_process_list p on r.pro_id = p.process_id where r.user_id = #{uid} and r.del = #{del}
+  <if test="key != null">
+    and (p.process_name like #{key} or p.type_name like #{key} or r.status_id in (select status_id from aoa_status_list where status_name like #{key}))
+  </if>
+  order by r.status_id ,p.apply_time DESC
+</select>
   <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaReviewed">
     insert into aoa_reviewed
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -64,4 +83,28 @@
       </if>
     </trim>
   </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaReviewed">
+    update aoa_reviewed
+    <set>
+      <if test="advice != null">
+        advice = #{advice,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewedTime != null">
+        reviewed_time = #{reviewedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="statusId != null">
+        status_id = #{statusId,jdbcType=BIGINT},
+      </if>
+      <if test="proId != null">
+        pro_id = #{proId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=INTEGER},
+      </if>
+    </set>
+    where reviewed_id = #{reviewedId,jdbcType=BIGINT}
+  </update>
 </mapper>

@@ -38,6 +38,11 @@
         </foreach>
         and attends_time &gt; #{start} and attends_time &lt; #{end}
     </select>
+    <select id="findlastest" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_attends_list where DATE_format(attends_time,'%Y-%m-%d') like #{date} and attends_user_id = #{uid}
+    </select>
     <delete id="delete">
         delete from aoa_attends_list where attends_id =#{id}
     </delete>

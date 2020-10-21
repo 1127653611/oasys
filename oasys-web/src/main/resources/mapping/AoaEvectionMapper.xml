@@ -12,7 +12,11 @@
   <sql id="Base_Column_List">
     evection_id, type_id, pro_id, personnel_advice, manager_advice
   </sql>
-
+  <select id="findByProId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_evection where pro_id=#{id}
+  </select>
   <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaEvection">
     insert into aoa_evection
     <trim prefix="(" suffix=")" suffixOverrides=",">

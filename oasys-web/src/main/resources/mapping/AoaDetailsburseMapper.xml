@@ -1,93 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.oasys.web.model.dao.process.AoaDetailsburseMapper">
-  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaDetailsburse">
-    <id column="detailsburse_id" jdbcType="BIGINT" property="detailsburseId" />
-    <result column="descript" jdbcType="VARCHAR" property="descript" />
-    <result column="detailmoney" jdbcType="DOUBLE" property="detailmoney" />
-    <result column="invoices" jdbcType="INTEGER" property="invoices" />
-    <result column="produce_time" jdbcType="TIMESTAMP" property="produceTime" />
-    <result column="subject" jdbcType="VARCHAR" property="subject" />
-    <result column="bursment_id" jdbcType="BIGINT" property="bursmentId" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaDetailsburse">
+        <id column="detailsburse_id" jdbcType="BIGINT" property="detailsburseId"/>
+        <result column="descript" jdbcType="VARCHAR" property="descript"/>
+        <result column="detailmoney" jdbcType="DOUBLE" property="detailmoney"/>
+        <result column="invoices" jdbcType="INTEGER" property="invoices"/>
+        <result column="produce_time" jdbcType="TIMESTAMP" property="produceTime"/>
+        <result column="subject" jdbcType="VARCHAR" property="subject"/>
+        <result column="bursment_id" jdbcType="BIGINT" property="bursmentId"/>
+    </resultMap>
 
-  <sql id="Base_Column_List">
-    detailsburse_id, descript, detailmoney, invoices, produce_time, subject, bursment_id
-  </sql>
+    <sql id="Base_Column_List">
+        detailsburse_id, descript, detailmoney, invoices, produce_time, subject, bursment_id
+    </sql>
+    <select id="findByBurs" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_detailsburse where bursment_id = #{id}
+    </select>
+    <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaDetailsburse">
+        insert into aoa_detailsburse
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="detailsburseId != null">
+                detailsburse_id,
+            </if>
+            <if test="descript != null">
+                descript,
+            </if>
+            <if test="detailmoney != null">
+                detailmoney,
+            </if>
+            <if test="invoices != null">
+                invoices,
+            </if>
+            <if test="produceTime != null">
+                produce_time,
+            </if>
+            <if test="subject != null">
+                subject,
+            </if>
+            <if test="bursmentId != null">
+                bursment_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="detailsburseId != null">
+                #{detailsburseId,jdbcType=BIGINT},
+            </if>
+            <if test="descript != null">
+                #{descript,jdbcType=VARCHAR},
+            </if>
+            <if test="detailmoney != null">
+                #{detailmoney,jdbcType=DOUBLE},
+            </if>
+            <if test="invoices != null">
+                #{invoices,jdbcType=INTEGER},
+            </if>
+            <if test="produceTime != null">
+                #{produceTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="subject != null">
+                #{subject,jdbcType=VARCHAR},
+            </if>
+            <if test="bursmentId != null">
+                #{bursmentId,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
 
-  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaDetailsburse">
-    insert into aoa_detailsburse
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="detailsburseId != null">
-        detailsburse_id,
-      </if>
-      <if test="descript != null">
-        descript,
-      </if>
-      <if test="detailmoney != null">
-        detailmoney,
-      </if>
-      <if test="invoices != null">
-        invoices,
-      </if>
-      <if test="produceTime != null">
-        produce_time,
-      </if>
-      <if test="subject != null">
-        subject,
-      </if>
-      <if test="bursmentId != null">
-        bursment_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="detailsburseId != null">
-        #{detailsburseId,jdbcType=BIGINT},
-      </if>
-      <if test="descript != null">
-        #{descript,jdbcType=VARCHAR},
-      </if>
-      <if test="detailmoney != null">
-        #{detailmoney,jdbcType=DOUBLE},
-      </if>
-      <if test="invoices != null">
-        #{invoices,jdbcType=INTEGER},
-      </if>
-      <if test="produceTime != null">
-        #{produceTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="subject != null">
-        #{subject,jdbcType=VARCHAR},
-      </if>
-      <if test="bursmentId != null">
-        #{bursmentId,jdbcType=BIGINT},
-      </if>
-    </trim>
-  </insert>
-
-  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaDetailsburse">
-    update aoa_detailsburse
-    <set>
-      <if test="descript != null">
-        descript = #{descript,jdbcType=VARCHAR},
-      </if>
-      <if test="detailmoney != null">
-        detailmoney = #{detailmoney,jdbcType=DOUBLE},
-      </if>
-      <if test="invoices != null">
-        invoices = #{invoices,jdbcType=INTEGER},
-      </if>
-      <if test="produceTime != null">
-        produce_time = #{produceTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="subject != null">
-        subject = #{subject,jdbcType=VARCHAR},
-      </if>
-      <if test="bursmentId != null">
-        bursment_id = #{bursmentId,jdbcType=BIGINT},
-      </if>
-    </set>
-    where detailsburse_id = #{detailsburseId,jdbcType=BIGINT}
-  </update>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaDetailsburse">
+        update aoa_detailsburse
+        <set>
+            <if test="descript != null">
+                descript = #{descript,jdbcType=VARCHAR},
+            </if>
+            <if test="detailmoney != null">
+                detailmoney = #{detailmoney,jdbcType=DOUBLE},
+            </if>
+            <if test="invoices != null">
+                invoices = #{invoices,jdbcType=INTEGER},
+            </if>
+            <if test="produceTime != null">
+                produce_time = #{produceTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="subject != null">
+                subject = #{subject,jdbcType=VARCHAR},
+            </if>
+            <if test="bursmentId != null">
+                bursment_id = #{bursmentId,jdbcType=BIGINT},
+            </if>
+        </set>
+        where detailsburse_id = #{detailsburseId,jdbcType=BIGINT}
+    </update>
 
 </mapper>

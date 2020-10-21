@@ -14,108 +14,16 @@
     <result column="manager_advice" jdbcType="VARCHAR" property="managerAdvice" />
     <result column="days" jdbcType="INTEGER" property="days" />
   </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
+
   <sql id="Base_Column_List">
     regular_id, advice, deficiency, dobetter, experience, personnel_advice, pullulate, 
     understand, pro_id, manager_advice, days
   </sql>
-  <select id="selectByExample" parameterType="cn.oasys.web.model.pojo.AoaRegularExample" resultMap="BaseResultMap">
+  <select id="findByProId" resultMap="BaseResultMap">
     select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from aoa_regular
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
+    <include refid="Base_Column_List"></include>
+    from aoa_regular where pro_id=#{id}
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from aoa_regular
-    where regular_id = #{regularId,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from aoa_regular
-    where regular_id = #{regularId,jdbcType=BIGINT}
-  </delete>
-  <delete id="deleteByExample" parameterType="cn.oasys.web.model.pojo.AoaRegularExample">
-    delete from aoa_regular
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="cn.oasys.web.model.pojo.process.AoaRegular">
-    insert into aoa_regular (regular_id, advice, deficiency, 
-      dobetter, experience, personnel_advice, 
-      pullulate, understand, pro_id, 
-      manager_advice, days)
-    values (#{regularId,jdbcType=BIGINT}, #{advice,jdbcType=VARCHAR}, #{deficiency,jdbcType=VARCHAR}, 
-      #{dobetter,jdbcType=VARCHAR}, #{experience,jdbcType=VARCHAR}, #{personnelAdvice,jdbcType=VARCHAR}, 
-      #{pullulate,jdbcType=VARCHAR}, #{understand,jdbcType=VARCHAR}, #{proId,jdbcType=BIGINT}, 
-      #{managerAdvice,jdbcType=VARCHAR}, #{days,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaRegular">
     insert into aoa_regular
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -189,70 +97,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.oasys.web.model.pojo.AoaRegularExample" resultType="java.lang.Long">
-    select count(*) from aoa_regular
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update aoa_regular
-    <set>
-      <if test="record.regularId != null">
-        regular_id = #{record.regularId,jdbcType=BIGINT},
-      </if>
-      <if test="record.advice != null">
-        advice = #{record.advice,jdbcType=VARCHAR},
-      </if>
-      <if test="record.deficiency != null">
-        deficiency = #{record.deficiency,jdbcType=VARCHAR},
-      </if>
-      <if test="record.dobetter != null">
-        dobetter = #{record.dobetter,jdbcType=VARCHAR},
-      </if>
-      <if test="record.experience != null">
-        experience = #{record.experience,jdbcType=VARCHAR},
-      </if>
-      <if test="record.personnelAdvice != null">
-        personnel_advice = #{record.personnelAdvice,jdbcType=VARCHAR},
-      </if>
-      <if test="record.pullulate != null">
-        pullulate = #{record.pullulate,jdbcType=VARCHAR},
-      </if>
-      <if test="record.understand != null">
-        understand = #{record.understand,jdbcType=VARCHAR},
-      </if>
-      <if test="record.proId != null">
-        pro_id = #{record.proId,jdbcType=BIGINT},
-      </if>
-      <if test="record.managerAdvice != null">
-        manager_advice = #{record.managerAdvice,jdbcType=VARCHAR},
-      </if>
-      <if test="record.days != null">
-        days = #{record.days,jdbcType=INTEGER},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update aoa_regular
-    set regular_id = #{record.regularId,jdbcType=BIGINT},
-      advice = #{record.advice,jdbcType=VARCHAR},
-      deficiency = #{record.deficiency,jdbcType=VARCHAR},
-      dobetter = #{record.dobetter,jdbcType=VARCHAR},
-      experience = #{record.experience,jdbcType=VARCHAR},
-      personnel_advice = #{record.personnelAdvice,jdbcType=VARCHAR},
-      pullulate = #{record.pullulate,jdbcType=VARCHAR},
-      understand = #{record.understand,jdbcType=VARCHAR},
-      pro_id = #{record.proId,jdbcType=BIGINT},
-      manager_advice = #{record.managerAdvice,jdbcType=VARCHAR},
-      days = #{record.days,jdbcType=INTEGER}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
+
   <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaRegular">
     update aoa_regular
     <set>
@@ -289,18 +134,5 @@
     </set>
     where regular_id = #{regularId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.oasys.web.model.pojo.process.AoaRegular">
-    update aoa_regular
-    set advice = #{advice,jdbcType=VARCHAR},
-      deficiency = #{deficiency,jdbcType=VARCHAR},
-      dobetter = #{dobetter,jdbcType=VARCHAR},
-      experience = #{experience,jdbcType=VARCHAR},
-      personnel_advice = #{personnelAdvice,jdbcType=VARCHAR},
-      pullulate = #{pullulate,jdbcType=VARCHAR},
-      understand = #{understand,jdbcType=VARCHAR},
-      pro_id = #{proId,jdbcType=BIGINT},
-      manager_advice = #{managerAdvice,jdbcType=VARCHAR},
-      days = #{days,jdbcType=INTEGER}
-    where regular_id = #{regularId,jdbcType=BIGINT}
-  </update>
+
 </mapper>

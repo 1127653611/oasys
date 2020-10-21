@@ -178,8 +178,8 @@
   <select id="findOneUserByname" resultType="AoaUser" parameterType="java.lang.String">
     select
     <include refid="Base_Column_List" />
-    from aoa_user where user_name=#{username}
-    or user_tel=#{username}
+    from aoa_user where (user_name=#{username}
+    or user_tel=#{username})
     and password=#{password}
   </select>
   <select id="findOneById" resultMap="BaseResultMap" >

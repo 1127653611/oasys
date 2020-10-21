@@ -1,135 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.oasys.web.model.dao.process.AoaBursementMapper">
-  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaBursement">
-    <id column="bursement_id" jdbcType="BIGINT" property="bursementId" />
-    <result column="all_money" jdbcType="DOUBLE" property="allMoney" />
-    <result column="allinvoices" jdbcType="INTEGER" property="allinvoices" />
-    <result column="burse_time" jdbcType="TIMESTAMP" property="burseTime" />
-    <result column="financial_advice" jdbcType="VARCHAR" property="financialAdvice" />
-    <result column="manager_advice" jdbcType="VARCHAR" property="managerAdvice" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="type_id" jdbcType="BIGINT" property="typeId" />
-    <result column="operation_name" jdbcType="BIGINT" property="operationName" />
-    <result column="pro_id" jdbcType="BIGINT" property="proId" />
-    <result column="user_name" jdbcType="BIGINT" property="userName" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    bursement_id, all_money, allinvoices, burse_time, financial_advice, manager_advice, 
-    name, type_id, operation_name, pro_id, user_name
-  </sql>
+    <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaBursement">
+        <id column="bursement_id" jdbcType="BIGINT" property="bursementId"/>
+        <result column="all_money" jdbcType="DOUBLE" property="allMoney"/>
+        <result column="allinvoices" jdbcType="INTEGER" property="allinvoices"/>
+        <result column="burse_time" jdbcType="TIMESTAMP" property="burseTime"/>
+        <result column="financial_advice" jdbcType="VARCHAR" property="financialAdvice"/>
+        <result column="manager_advice" jdbcType="VARCHAR" property="managerAdvice"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="type_id" jdbcType="BIGINT" property="typeId"/>
+        <result column="operation_name" jdbcType="BIGINT" property="operationName"/>
+        <result column="pro_id" jdbcType="BIGINT" property="proId"/>
+        <result column="user_name" jdbcType="BIGINT" property="userName"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        bursement_id, all_money, allinvoices, burse_time, financial_advice, manager_advice,
+        name, type_id, operation_name, pro_id, user_name
+    </sql>
+    <select id="findByProId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_bursement where pro_id=#{id}
+    </select>
+    <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaBursement">
+        insert into aoa_bursement
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bursementId != null">
+                bursement_id,
+            </if>
+            <if test="allMoney != null">
+                all_money,
+            </if>
+            <if test="allinvoices != null">
+                allinvoices,
+            </if>
+            <if test="burseTime != null">
+                burse_time,
+            </if>
+            <if test="financialAdvice != null">
+                financial_advice,
+            </if>
+            <if test="managerAdvice != null">
+                manager_advice,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="typeId != null">
+                type_id,
+            </if>
+            <if test="operationName != null">
+                operation_name,
+            </if>
+            <if test="proId != null">
+                pro_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bursementId != null">
+                #{bursementId,jdbcType=BIGINT},
+            </if>
+            <if test="allMoney != null">
+                #{allMoney,jdbcType=DOUBLE},
+            </if>
+            <if test="allinvoices != null">
+                #{allinvoices,jdbcType=INTEGER},
+            </if>
+            <if test="burseTime != null">
+                #{burseTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="financialAdvice != null">
+                #{financialAdvice,jdbcType=VARCHAR},
+            </if>
+            <if test="managerAdvice != null">
+                #{managerAdvice,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="typeId != null">
+                #{typeId,jdbcType=BIGINT},
+            </if>
+            <if test="operationName != null">
+                #{operationName,jdbcType=BIGINT},
+            </if>
+            <if test="proId != null">
+                #{proId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=BIGINT},
+            </if>
+        </trim>
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="bursementId">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
 
-  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaBursement">
-    insert into aoa_bursement
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="bursementId != null">
-        bursement_id,
-      </if>
-      <if test="allMoney != null">
-        all_money,
-      </if>
-      <if test="allinvoices != null">
-        allinvoices,
-      </if>
-      <if test="burseTime != null">
-        burse_time,
-      </if>
-      <if test="financialAdvice != null">
-        financial_advice,
-      </if>
-      <if test="managerAdvice != null">
-        manager_advice,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-      <if test="typeId != null">
-        type_id,
-      </if>
-      <if test="operationName != null">
-        operation_name,
-      </if>
-      <if test="proId != null">
-        pro_id,
-      </if>
-      <if test="userName != null">
-        user_name,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="bursementId != null">
-        #{bursementId,jdbcType=BIGINT},
-      </if>
-      <if test="allMoney != null">
-        #{allMoney,jdbcType=DOUBLE},
-      </if>
-      <if test="allinvoices != null">
-        #{allinvoices,jdbcType=INTEGER},
-      </if>
-      <if test="burseTime != null">
-        #{burseTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="financialAdvice != null">
-        #{financialAdvice,jdbcType=VARCHAR},
-      </if>
-      <if test="managerAdvice != null">
-        #{managerAdvice,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="typeId != null">
-        #{typeId,jdbcType=BIGINT},
-      </if>
-      <if test="operationName != null">
-        #{operationName,jdbcType=BIGINT},
-      </if>
-      <if test="proId != null">
-        #{proId,jdbcType=BIGINT},
-      </if>
-      <if test="userName != null">
-        #{userName,jdbcType=BIGINT},
-      </if>
-    </trim>
-    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="bursementId" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-  </insert>
-
-  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaBursement">
-    update aoa_bursement
-    <set>
-      <if test="allMoney != null">
-        all_money = #{allMoney,jdbcType=DOUBLE},
-      </if>
-      <if test="allinvoices != null">
-        allinvoices = #{allinvoices,jdbcType=INTEGER},
-      </if>
-      <if test="burseTime != null">
-        burse_time = #{burseTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="financialAdvice != null">
-        financial_advice = #{financialAdvice,jdbcType=VARCHAR},
-      </if>
-      <if test="managerAdvice != null">
-        manager_advice = #{managerAdvice,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="typeId != null">
-        type_id = #{typeId,jdbcType=BIGINT},
-      </if>
-      <if test="operationName != null">
-        operation_name = #{operationName,jdbcType=BIGINT},
-      </if>
-      <if test="proId != null">
-        pro_id = #{proId,jdbcType=BIGINT},
-      </if>
-      <if test="userName != null">
-        user_name = #{userName,jdbcType=BIGINT},
-      </if>
-    </set>
-    where bursement_id = #{bursementId,jdbcType=BIGINT}
-  </update>
+    <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaBursement">
+        update aoa_bursement
+        <set>
+            <if test="allMoney != null">
+                all_money = #{allMoney,jdbcType=DOUBLE},
+            </if>
+            <if test="allinvoices != null">
+                allinvoices = #{allinvoices,jdbcType=INTEGER},
+            </if>
+            <if test="burseTime != null">
+                burse_time = #{burseTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="financialAdvice != null">
+                financial_advice = #{financialAdvice,jdbcType=VARCHAR},
+            </if>
+            <if test="managerAdvice != null">
+                manager_advice = #{managerAdvice,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="typeId != null">
+                type_id = #{typeId,jdbcType=BIGINT},
+            </if>
+            <if test="operationName != null">
+                operation_name = #{operationName,jdbcType=BIGINT},
+            </if>
+            <if test="proId != null">
+                pro_id = #{proId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=BIGINT},
+            </if>
+        </set>
+        where bursement_id = #{bursementId,jdbcType=BIGINT}
+    </update>
 </mapper>

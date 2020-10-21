@@ -24,6 +24,11 @@
     plan_id, start_time, create_time, end_time, label, plan_comment, plan_content, plan_summary, 
     status_id, title, type_id, plan_user_id, attach_id
   </sql>
+  <select id="findByUserlimit" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_plan_list where plan_user_id=#{id} order by create_time DESC , end_time DESC LIMIT 0,2
+  </select>
   <select id="findOne" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"></include>

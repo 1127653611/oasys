@@ -19,6 +19,7 @@
     note_id, content, create_time, status_id, title, type_id, catalog_id, attach_id, 
     is_collected, createman_id, receiver
   </sql>
+
   <select id="finfOne" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"></include>
