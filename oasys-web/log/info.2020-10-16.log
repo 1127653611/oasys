@@ -1,0 +1,96 @@
+2020-10-16 00:10:48.830 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:10:50.717 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=ce023b39-e0af-3c74-8e9f-1b57d099ee70
+2020-10-16 00:10:53.081 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 00:10:53.081 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 00:10:53.090 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 00:10:53.091 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 00:10:53.468 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-16 00:10:53.861 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-16 00:10:54.853 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 8.332 seconds (JVM running for 9.943)
+2020-10-16 00:10:55.443 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-16 00:12:28.949 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:12:30.026 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=ce023b39-e0af-3c74-8e9f-1b57d099ee70
+2020-10-16 00:12:32.619 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 00:12:32.620 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 00:12:32.654 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 00:12:32.654 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 00:12:33.167 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-16 00:12:33.529 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-16 00:12:34.417 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 7.065 seconds (JVM running for 8.333)
+2020-10-16 00:12:35.208 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-16 00:21:21.138 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:21:22.741 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=ce023b39-e0af-3c74-8e9f-1b57d099ee70
+2020-10-16 00:21:24.700 [main]  WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dayManageController': Unsatisfied dependency expressed through field 'processService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'processServiceImpl': Unsatisfied dependency expressed through field 'aoaBursementMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.oasys.web.model.dao.process.AoaBursementMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-10-16 00:21:24.720 [main]  INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-16 00:23:05.337 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:23:07.111 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=ce023b39-e0af-3c74-8e9f-1b57d099ee70
+2020-10-16 00:23:09.334 [main]  WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dayManageController': Unsatisfied dependency expressed through field 'processService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'processServiceImpl': Unsatisfied dependency expressed through field 'aoaProcessListMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.oasys.web.model.dao.process.AoaProcessListMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-10-16 00:23:09.347 [main]  INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-16 00:23:54.909 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:23:56.599 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=ce023b39-e0af-3c74-8e9f-1b57d099ee70
+2020-10-16 00:23:59.324 [main]  WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dayManageController': Unsatisfied dependency expressed through field 'processService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'processServiceImpl': Unsatisfied dependency expressed through field 'aoaProcessListMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.oasys.web.model.dao.process.AoaProcessListMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-10-16 00:23:59.339 [main]  INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-16 00:27:15.100 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:27:16.556 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=ce023b39-e0af-3c74-8e9f-1b57d099ee70
+2020-10-16 00:27:19.004 [main]  WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dayManageController': Unsatisfied dependency expressed through field 'processService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'processServiceImpl': Unsatisfied dependency expressed through field 'aoaProcessListMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.oasys.web.model.dao.process.AoaProcessListMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-10-16 00:27:19.022 [main]  INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-16 00:28:11.856 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:28:12.886 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=ce023b39-e0af-3c74-8e9f-1b57d099ee70
+2020-10-16 00:28:14.391 [main]  WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dayManageController': Unsatisfied dependency expressed through field 'processService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'processServiceImpl': Unsatisfied dependency expressed through field 'aoaProcessListMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.oasys.web.model.dao.process.AoaProcessListMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-10-16 00:28:14.401 [main]  INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-16 00:30:07.623 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:30:08.686 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=ce023b39-e0af-3c74-8e9f-1b57d099ee70
+2020-10-16 00:30:10.199 [main]  WARN  o.s.w.context.support.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dayManageController': Unsatisfied dependency expressed through field 'processService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'processServiceImpl': Unsatisfied dependency expressed through field 'aoaProcessListMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.oasys.web.model.dao.process.AoaProcessListMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-10-16 00:30:10.212 [main]  INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-10-16 00:42:54.567 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 00:42:56.928 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=65050925-d252-32f3-bbc1-eb383497d76e
+2020-10-16 00:42:59.910 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 00:42:59.911 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 00:42:59.920 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 00:42:59.921 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 00:43:00.305 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-16 00:43:00.682 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-16 00:43:01.537 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 9.298 seconds (JVM running for 10.643)
+2020-10-16 00:43:02.496 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-16 01:06:29.632 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 01:06:30.939 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=18a003bc-0c03-3183-8e60-15a13ee206d6
+2020-10-16 01:06:34.117 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 01:06:34.117 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 01:06:34.125 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 01:06:34.126 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 01:06:34.518 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-16 01:06:34.934 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-16 01:06:35.964 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 7.933 seconds (JVM running for 9.234)
+2020-10-16 01:06:36.747 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-16 01:34:51.138 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 01:34:52.616 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=21fc085c-97ee-3f6c-aa2b-a1e0882a0738
+2020-10-16 01:34:55.829 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 01:34:55.829 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 01:34:55.842 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 01:34:55.842 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 01:34:56.224 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-16 01:34:56.611 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-16 01:34:57.634 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 8.425 seconds (JVM running for 9.792)
+2020-10-16 01:34:58.430 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-16 02:04:29.192 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-16 02:04:30.361 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=405d6633-3f71-39fe-9ab7-15a51be985c3
+2020-10-16 02:04:33.387 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 02:04:33.388 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 02:04:33.397 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-16 02:04:33.397 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-16 02:04:33.726 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-16 02:04:34.085 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-16 02:04:35.173 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 8.071 seconds (JVM running for 9.341)
+2020-10-16 02:04:36.020 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

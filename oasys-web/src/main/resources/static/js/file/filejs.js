@@ -17,7 +17,7 @@ $(".loadfiletype").on("mouseover mouseout",".file-one",function(event){
  * .file-box .file-check"
  */
 $(".loadfiletype").on("click",".file-check",function(){
-	console.log("ssss");
+
 	if($(this).parent(".file-one").hasClass("file-one-check")){
 		$(this).parent(".file-one").removeClass("file-one-check");
 	}else{
@@ -116,13 +116,13 @@ $(document).click(function(e){
  * $(".loadfiletype").on("click",".menurename",function(){
  */
 $(".loadfiletype").on("click",".menurename",function(){
-	console.log("重命名！~~");
+
 	var checked =$(".loadfiletype .file-one.file-one-check");
 	checked.find(".filename").addClass("diplaynone");
 	checked.find(".rename").removeClass("diplaynone");
 });
 $(".loadfiletype").on("click",".cansalcreate",function(){
-	console.log("2312");
+
 	var checked =$(".loadfiletype .file-one.file-one-check");
 	checked.find(".rename").addClass("diplaynone");
 	checked.find(".filename").removeClass("diplaynone");
@@ -135,7 +135,6 @@ $(".loadfiletype").on("click",".cansalcreate",function(){
  * 这里是移动
  */
 $(".menu .movefile").click(function(){
-	console.log("进入移动模态框点击！~~");
 	$("#thismodal").modal("toggle");
 	$('#thismodal .modal-body').css('display', 'block');
 	$("#thismodal .mc-title").html("移动到");
@@ -151,7 +150,7 @@ $(".menu .movefile").click(function(){
 		console.log($(this).attr("pathId"));
 		for(var i=0;i<checkpathids.length;i++){
 			if($(this).attr("pathId") == checkpathids[i]){
-				console.log("is com!~~~");
+
 				$(this).addClass("diplaynone");
 				return;
 			}
@@ -162,7 +161,7 @@ $(".menu .movefile").click(function(){
  * 这里是复制
  */
 $(".menu .copyfile").click(function(){
-	console.log("进入复制模态框点击！~~");
+
 	$("#thismodal").modal("toggle");
 	$('#thismodal .modal-body').css('display', 'block');
 	$("#thismodal .mc-title").html("复制到");

@@ -1,5 +1,6 @@
 package cn.oasys.web.controller.login;
 
+import cn.oasys.web.common.Utils.MD5Util;
 import cn.oasys.web.common.Utils.VerifyCodeUtils;
 import cn.oasys.web.model.pojo.user.AoaUser;
 import cn.oasys.web.model.pojo.user.AoaUserLoginRecord;
@@ -9,6 +10,7 @@ import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.UserAgent;
 import eu.bitwalker.useragentutils.Version;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -59,7 +61,7 @@ public class LoginController {
             request.setAttribute("errormess", "验证码输入错误!");
             return "login/login";
         }
-        AoaUser user = userService.findOneUser(userName, password);
+        AoaUser user = userService.findOneUser(userName, MD5Util.getMD5String(password));
         if (Objects.isNull(user)) {
             model.addAttribute("errormess", "账号或密码错误!");
             return "login/login";

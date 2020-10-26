@@ -1,22 +1,24 @@
-<html  th:fragment="signin"  xmlns:th="http://www.thymeleaf.org">
+<th:block  th:fragment="signin">
 <div class="jichu kaoqin " style="cursor: pointer;">
 	<div class="wenzi">
 			<a class="attendce" style="text-decoration: none; color:white;">
 				<h2 class="">
-					<#if alist??>
-							${alist.attendHmtime}
-						<#else>
-							未签到
-					</#if>
+                    <th:block th:if="${not #strings.isEmpty(alist)}">
+                        [[${alist?.attendHmtime}]]
+                    </th:block>
+                    <th:block th:if="${ #strings.isEmpty(alist)}">
+                        未签到
+                    </th:block>
 				</h2>
 			</a>
 			<p>
 			点击<span class="glyphicon glyphicon-hand-up"></span>
-				<#if alist??>
-						${type}
-					<#else>
-						签到
-				</#if>
+                <th:block th:if="${not #strings.isEmpty(alist)}">
+                    [[${type}]]
+                </th:block>
+                <th:block th:if="${ #strings.isEmpty(alist)}">
+                    签到
+                </th:block>
 			</p>
 	</div>
 	<div class="iconfont">
@@ -50,5 +52,6 @@
 		confirm("您确定签到吗");
 		$("#refresh").load('singin');
 	});-->
-    
-</script>
+
+<!--</script>-->
+    </th:block>

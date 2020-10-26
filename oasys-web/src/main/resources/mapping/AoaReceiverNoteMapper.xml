@@ -10,5 +10,24 @@
   <sql id="Base_Column_List">
     id, note_id, user_id
   </sql>
-
+<insert id="insert">
+  insert into aoa_receiver_note(note_id,user_id) values
+  <foreach collection="us" item="item" separator=",">
+    (#{nid},#{item})
+  </foreach>
+</insert>
+<select id="findByNoteId" resultMap="BaseResultMap">
+  select <include refid="Base_Column_List"></include>
+  from aoa_receiver_note where note_id = #{id}
+</select>
+<select id="finduserid" resultMap="BaseResultMap">
+  select <include refid="Base_Column_List"></include>
+  from aoa_receiver_note where note_id = #{id} and user_id=#{uid}
+</select>
+  <delete id="delete">
+    delete from aoa_receiver_note where note_id = #{id}
+  </delete>
+  <delete id="deleteOne">
+    delete from aoa_receiver_note where id = #{id}
+  </delete>
 </mapper>

@@ -1,0 +1,117 @@
+<th:block th:fragment="managetable">
+    <div class="bgc-w box box-primary">
+        <!--盒子头-->
+        <div class="box-header">
+            <h3 class="box-title">
+                <a href="addtask" class="label label-success" style="padding: 5px;">
+                    <span class="glyphicon glyphicon-plus"></span> 新增
+                </a>
+            </h3>
+            <div class="box-tools">
+                <div class="input-group" style="width: 150px;">
+                    <input id="find" type="text" class="form-control input-sm cha baseKey"
+                           placeholder="查找..."/>
+                    <div class="input-group-btn chazhao baseKetsubmit">
+                        <a class="btn btn-sm btn-default"><span
+                                class="glyphicon glyphicon-search"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--盒子身体-->
+        <div class="box-body no-padding">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="co commen ">类型<span class="block"></span></th>
+                        <th scope="col">标题</th>
+                        <th scope="col" class="co commen ">发布时间<span class="block"></span></th>
+                        <th scope="col">发布人</th>
+                        <th scope="col">部门</th>
+                        <th scope="col" class="co commen ">状态<span class="block"></span></th>
+                        <th>置顶</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="task: ${tasklist}">
+                        <td><span>[[${task?.typename}]]</span></td>
+                        <td><span>[[${task?.title}]]</span></td>
+                        <td><span>[[${#dates.format(task?.publishtime, 'yyyy-MM-dd HH:mm:ss')}]]</span></td>
+                        <td><span>[[${task?.username}]]</span></td>
+                        <td><span>[[${task?.deptname}]]</span></td>
+
+                        <td th:if="${task?.cancel==1}"><span class="label label-default">已取消</span></td>
+
+                        <td th:if="${task?.cancel!=1}"><span class="label" th:classappend="${task?.statuscolor}">[[${task?.statusname}]]</span>
+                        </td>
+
+
+                        <td th:if="${task?.zhiding==1}"><span class="labels"><label><input type="checkbox" name="top"
+                                                                                           class="val" checked disabled><i>✓</i></label></span>
+                        </td>
+
+                        <td th:if="${task?.zhiding!=1}"><span class="labels"><label><input type="checkbox" name="top"
+                                                                                           class="val" disabled><i>✓</i></label></span>
+                        </td>
+
+                        <td><a th:href="@{'edittasks?id='+${task?.taskid}}"
+                               class="label xiugai"><span
+                                class="glyphicon glyphicon-edit"></span> 修改</a>
+                            <a th:href="@{'seetasks?id='+${task?.taskid}}" class="label xiugai"><span
+                                    class="glyphicon glyphicon-search"></span> 查看</a>
+                            <a th:href="@{'shanchu?id='+${task?.taskid}}"
+                               onclick="{return confirm('删除该记录将不能恢复，确定删除吗？');};"
+                               class="label shanchu"><span
+                                    class="glyphicon glyphicon-remove"></span> 删除</a></td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--盒子尾-->
+        <div th:replace="common/paging :: paging"></div>
+    </div>
+
+    <script>
+		/* 分页插件按钮的点击事件 */
+
+		$('.baseKetsubmit').on('click',function(){
+			var url='[[${url}]]';
+			var baseKey=$('.baseKey').val();
+			$('.thistable').load(url+'?baseKey='+baseKey);
+		});
+		
+$("#find").keydown(function () {
+     if (window.event.keyCode==13) {
+     $(".chazhao").trigger("click");
+   }
+});
+
+  $(function(){
+			   $(".commen").click(function(){
+				   
+					/* //寻找指定兄弟节点并去除class
+					var $else=$(this).addClass("mm").siblings(".commen").removeClass("mm");
+					//点击变换字体颜色
+					var $color=$(this).addClass("bl").removeClass("co").siblings(".commen").addClass("co").removeClass("bl");
+					//切换img
+					$("#img").appendTo(".mm span"); */	
+					var $val=$(this).text();
+					
+					 $(".thistable").load("paixu",{val:$val});
+					
+					
+				});
+			  
+		   });
+	
+		
+
+    </script>
+</th:block>

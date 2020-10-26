@@ -1,11 +1,15 @@
 package cn.oasys.web;
 
+import cn.oasys.web.common.Utils.MD5Util;
 import cn.oasys.web.model.dao.discuss.AoaDiscussListMapper;
 import cn.oasys.web.model.dao.mail.AoaMailReciverMapper;
 import cn.oasys.web.model.dao.note.AoaDirectorUsersMapper;
 import cn.oasys.web.model.dao.notice.AoaNoticeUserRelationMapper;
 import cn.oasys.web.model.dao.system.AoaSysMenuMapper;
 import cn.oasys.web.model.dao.user.AoaUserMapper;
+import cn.oasys.web.service.inter.mail.MailService;
+import cn.oasys.web.service.inter.user.UserService;
+import com.mysql.cj.xdevapi.Collection;
 import org.junit.jupiter.api.Test;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
@@ -14,18 +18,23 @@ import org.mybatis.generator.exception.InvalidConfigurationException;
 import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.sql.*;
+import java.util.*;
 
 @SpringBootTest
 public class OasysApplicationTest {
+    @Value("${user.avatar.rootpath}")
+    private String userAvatarRootpath;
     @Autowired
     private AoaDirectorUsersMapper aoaDirectorUsersMapper;
     @Autowired
@@ -38,6 +47,8 @@ public class OasysApplicationTest {
     private AoaUserMapper aoaUserMapper;
     @Autowired
     private AoaMailReciverMapper aoaMailReciverMapper;
+    @Autowired
+    private MailService mailService;
 
     @Test
     public void oasysytest() throws InterruptedException, SQLException, IOException, XMLParserException, InvalidConfigurationException {
@@ -50,9 +61,11 @@ public class OasysApplicationTest {
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);
     }
-
     @Test
-    public void userTset() {
+    public void tyes() throws ClassNotFoundException, SQLException {
+        System.out.println(MD5Util.getMD5String("123456"));
+        System.out.println(MD5Util.getMD5String("123456"));
+        System.out.println(MD5Util.getMD5String("123456"));
 
     }
 }

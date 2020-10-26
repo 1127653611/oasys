@@ -1,4 +1,4 @@
-<html th:fragment="subject" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="subject">
 <style>
 .modal-body li{
 list-style-type:none;
@@ -40,7 +40,7 @@ color:blue;
 				<i><img class="qie" src="images/Tplus.png" /></i><i><img src="images/subject.gif"/></i>[[${sub?.name}]]
 			</p>
 				<ul th:id="@{'one'+${sub?.subjectId}}" class="panel-collapse collapse">
-					<li th:each="li,status: ${sublist}" class="cur" style="margin-bottom: 5px;padding-left: 54px; margin-left: -40px;"><i><img src="images/fangzi.gif" /></i>[[${li?.name}]]</li>
+					<li th:if="${list?.parentId==sub?.subjectId}" th:each="list,status: ${sublist}" class="cur" style="margin-bottom: 5px;padding-left: 54px; margin-left: -40px;"><i><img src="images/fangzi.gif" /></i>[[${list?.name}]]</li>
 
 				</ul>
 			</div>
@@ -86,7 +86,7 @@ color:blue;
 			var $text=$(this).text();
 			$(".ject").val($text);
 			$(".cur").css("background-color","#fff");
-			console.log('sssssssssss');
+
 			$(this).css("background-color","rgba(0, 188, 212, 0.06)");
 			
 		});
@@ -96,3 +96,4 @@ color:blue;
 		});
 	})
 </script>
+</th:block>

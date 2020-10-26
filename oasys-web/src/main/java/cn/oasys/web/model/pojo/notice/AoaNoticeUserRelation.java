@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.notice;
 
+import cn.oasys.web.model.pojo.user.AoaUser;
+
 import java.util.List;
 
 public class AoaNoticeUserRelation {
@@ -11,25 +13,24 @@ public class AoaNoticeUserRelation {
 
     private Long relatinUserId;
 
-    private List<AoaNoticeList> aoaNoticeLists;
+    private AoaNoticeList aoaNoticeList;
 
-    @Override
-    public String toString() {
-        return "AoaNoticeUserRelation{" +
-                "relatinId=" + relatinId +
-                ", isRead=" + isRead +
-                ", relatinNoticeId=" + relatinNoticeId +
-                ", relatinUserId=" + relatinUserId +
-                ", aoaNoticeLists=" + aoaNoticeLists +
-                '}';
+    private AoaUser user;
+
+    public AoaUser getUser() {
+        return user;
     }
 
-    public List<AoaNoticeList> getAoaNoticeLists() {
-        return aoaNoticeLists;
+    public void setUser(AoaUser user) {
+        this.user = user;
     }
 
-    public void setAoaNoticeLists(List<AoaNoticeList> aoaNoticeLists) {
-        this.aoaNoticeLists = aoaNoticeLists;
+    public AoaNoticeList getAoaNoticeList() {
+        return aoaNoticeList;
+    }
+
+    public void setAoaNoticeList(AoaNoticeList aoaNoticeList) {
+        this.aoaNoticeList = aoaNoticeList;
     }
 
     public Long getRelatinId() {
@@ -62,5 +63,14 @@ public class AoaNoticeUserRelation {
 
     public void setRelatinUserId(Long relatinUserId) {
         this.relatinUserId = relatinUserId;
+    }
+
+    public AoaNoticeUserRelation(Integer isRead, Long relatinNoticeId, Long relatinUserId) {
+        this.isRead = isRead;
+        this.relatinNoticeId = relatinNoticeId;
+        this.relatinUserId = relatinUserId;
+    }
+
+    public AoaNoticeUserRelation() {
     }
 }

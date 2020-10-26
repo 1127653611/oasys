@@ -8,6 +8,7 @@ import cn.oasys.web.model.pojo.file.AoaFilePath;
 import cn.oasys.web.model.pojo.note.AoaAttachmentList;
 import cn.oasys.web.model.pojo.user.AoaUser;
 import cn.oasys.web.service.inter.file.FileService;
+import com.github.pagehelper.util.StringUtil;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.xml.transform.Source;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -28,8 +28,12 @@ public class FileServiceImpl implements FileService {
     private AoaFileListMapper aoaFileListMapper;
     @Autowired
     private AoaAttachmentListMapper aoaAttachmentListMapper;
-    @Value("${file.root.path}")
+    @Value("${file.rootpath}")
     private String rootPath;
+    @Value("${attachment.roopath}")
+    private String atachmentpath;
+    @Value("${user.avatar.rootpath}")
+    private String userAvatarRootpath;
     @Autowired
     private AoaFilePathMapper aoaFilePathMapper;
 
@@ -64,12 +68,16 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
-    public void savefile(MultipartFile file, AoaUser user, AoaFilePath nowpath, boolean isfile) throws IOException {
+    public Object savefile(MultipartFile file, AoaUser user, AoaFilePath nowpath, boolean isfile) throws IOException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM");
-        File root = new File(this.rootPath, user.getUserName());
+        File root ;
+        if (isfile){
+            root=new File(this.rootPath, user.getUserName());
+        }else {
+            root=new File(this.atachmentpath, user.getUserName());
+        }
 
         File savepath = new File(root, simpleDateFormat.format(new Date()));
-        //System.out.println(savePath.getPath());
 
         if (!savepath.exists()) {
             savepath.mkdirs();
@@ -94,10 +102,11 @@ public class FileServiceImpl implements FileService {
             filelist.setFileUserId(user.getUserId());
             filelist.setFileIsshare(0L);
             aoaFileListMapper.insertSelective(filelist);
+            return filelist;
         } else {
             AoaAttachmentList attachment = new AoaAttachmentList();
             attachment.setAttachmentName(file.getOriginalFilename());
-            attachment.setAttachmentPath(targetFile.getAbsolutePath().replace("\\", "/").replace(this.rootPath, ""));
+            attachment.setAttachmentPath(targetFile.getAbsolutePath().replace("\\", "/").replace(this.atachmentpath, ""));
             attachment.setAttachmentShuffix(shuffix);
             attachment.setAttachmentSize(String.valueOf(file.getSize()));
             attachment.setAttachmentType(file.getContentType());
@@ -105,6 +114,7 @@ public class FileServiceImpl implements FileService {
             attachment.setUserId(user.getUserId() + "");
             attachment.setModel("note");
             aoaAttachmentListMapper.insertSelective(attachment);
+            return attachment;
         }
     }
 
@@ -162,33 +172,29 @@ public class FileServiceImpl implements FileService {
     public void trashpath(List<Long> checkpathids, long istrash, boolean isfirst) {
         for (Long pathid : checkpathids) {
             AoaFilePath filepath = aoaFilePathMapper.findOne(pathid);
-            //System.out.println("第一个文件夹："+filepath);
+
 
             //首先将此文件夹下的文件放入回收战
             List<AoaFileList> files = aoaFileListMapper.findByFilePath(filepath.getPathId());
             if (!files.isEmpty()) {
-                //	System.out.println("找到第一个文件夹下的文件不为空！~~~");
-                //System.out.println(files);
+
                 List<Long> fileids = new ArrayList<>();
                 for (AoaFileList filelist : files) {
                     fileids.add(filelist.getFileId());
                 }
                 trashfile(fileids, 2L, null);
             }
-//			System.out.println("此文件夹内的文件修改成功");
-            //然后将此文件夹下的文件夹放入回收战
+
             List<AoaFilePath> filepaths = aoaFilePathMapper.findByParentId(pathid);
             if (!filepaths.isEmpty()) {
-//				System.out.println("此文件夹下还有文件夹");
+
                 List<Long> pathids2 = new ArrayList<>();
                 for (AoaFilePath filePath : filepaths) {
                     pathids2.add(filePath.getPathId());
                 }
-//				System.out.println("pathids2"+pathids2);
-//				System.out.println("接下来尽心递归调用");
+
                 trashpath(pathids2, 2L, false);
             }
-//			System.out.println("此文件下下再无文件夹");
             if (isfirst) {
                 filepath.setParentId(0L);
             }
@@ -324,8 +330,6 @@ public class FileServiceImpl implements FileService {
             AoaFilePath filepath = aoaFilePathMapper.findOne(pathid);
             //首先将此文件夹下的文件还原
             List<AoaFileList> files = aoaFileListMapper.findByPath(filepath.getPathId());
-            System.out.println(filepath.getPathId());
-            System.out.println(files);
             if (!files.isEmpty()) {
                 List<Long> fileids = new ArrayList<>();
                 for (AoaFileList filelist : files) {
@@ -428,7 +432,6 @@ public class FileServiceImpl implements FileService {
     public void deletePath(List<Long> checkpathids) {
         for (Long pathid : checkpathids) {
             AoaFilePath filepath = aoaFilePathMapper.findOne(pathid);
-//			System.out.println("第一个文件夹："+filepath);
 
             //首先删除此文件夹下的文件
             List<AoaFileList> files = aoaFileListMapper.findByPath(filepath.getPathId());
@@ -522,6 +525,71 @@ public class FileServiceImpl implements FileService {
                 break;
         }
 
+    }
+
+    @Override
+    public Integer updateatt(MultipartFile file, AoaUser user, Object o, Long attachId) throws IOException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM");
+        File root = new File(this.atachmentpath,user.getUserName());
+
+        File savepath = new File(root,simpleDateFormat.format(new Date()));
+
+        if (!savepath.exists()) {
+            savepath.mkdirs();
+        }
+        if(!file.isEmpty()){
+            String shuffix = FilenameUtils.getExtension(file.getOriginalFilename());
+            String newFileName = UUID.randomUUID().toString().toLowerCase()+"."+shuffix;
+            File targetFile = new File(savepath,newFileName);
+            file.transferTo(targetFile);
+            AoaAttachmentList aoaAttachmentList=aoaAttachmentListMapper.findOne(attachId);
+            aoaAttachmentList.setAttachmentName(file.getOriginalFilename());
+            aoaAttachmentList.setAttachmentPath(targetFile.getAbsolutePath().replace("\\", "/").replace(this.atachmentpath, ""));
+            aoaAttachmentList.setAttachmentShuffix(shuffix);
+            aoaAttachmentList.setAttachmentSize(file.getSize()+"");
+            aoaAttachmentList.setAttachmentType(file.getContentType());
+            aoaAttachmentList.setUploadTime(new Date());
+            return aoaAttachmentListMapper.updateByPrimaryKeySelective(aoaAttachmentList);
+
+        }
+        return 0;
+    }
+
+    @Override
+    public AoaAttachmentList findByAttachmentId(Long paid) {
+        return aoaAttachmentListMapper.findOne(paid);
+    }
+
+    @Override
+    public File get(AoaAttachmentList aoaAttachmentList) {
+        return new File(this.atachmentpath+aoaAttachmentList.getAttachmentPath());
+    }
+
+    @Override
+    public Long count() {
+        return aoaFileListMapper.count();
+    }
+
+    @Override
+    public String upload(MultipartFile filePath) throws IOException {
+        File dir=new File(userAvatarRootpath);
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+
+        String fileName=filePath.getOriginalFilename();
+        if(!StringUtil.isEmpty(fileName)){
+
+            String suffix=FilenameUtils.getExtension(fileName);
+
+            String newFileName = UUID.randomUUID().toString().toLowerCase() + "." + suffix;
+            File targetFile = new File(dir,newFileName);
+            filePath.transferTo(targetFile);
+            String imgpath=targetFile.getPath().replace("\\", "/").replace(userAvatarRootpath, "");
+            return imgpath;
+        }else{
+            return null;
+        }
     }
 
     private void copyfile(AoaFileList filelist, AoaFilePath topath, boolean isfilein) {

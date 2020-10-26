@@ -16,13 +16,13 @@ window.onresize = function() {
 // 当通过前台校验，再进入后台再次校验，返回该操作是否执行正确，否则返回错误信息；
 function modalShow(count) {
 	if (count == 0) {
-		console.log("Error:有错误信息");
+
 		$("#thismodal").modal("toggle");
 		$('#thismodal .modal-success').css('display', 'none');
 		$('#thismodal .modal-error').css('display', 'block');
 	}
 	if (count == 1) {
-		console.log("success：信息核对正确");
+
 		$("#thismodal").modal("toggle");
 		$('#thismodal .modal-error').css('display', 'none');
 		$('#thismodal .modal-success').css('display', 'block');

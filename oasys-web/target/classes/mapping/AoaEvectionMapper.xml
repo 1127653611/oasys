@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.process.AoaEvectionMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaEvection">
+    <id column="evection_id" jdbcType="BIGINT" property="evectionId" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
+    <result column="pro_id" jdbcType="BIGINT" property="proId" />
+    <result column="personnel_advice" jdbcType="VARCHAR" property="personnelAdvice" />
+    <result column="manager_advice" jdbcType="VARCHAR" property="managerAdvice" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    evection_id, type_id, pro_id, personnel_advice, manager_advice
+  </sql>
+  <select id="findByProId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_evection where pro_id=#{id}
+  </select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaEvection">
+    insert into aoa_evection
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="evectionId != null">
+        evection_id,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="proId != null">
+        pro_id,
+      </if>
+      <if test="personnelAdvice != null">
+        personnel_advice,
+      </if>
+      <if test="managerAdvice != null">
+        manager_advice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="evectionId != null">
+        #{evectionId,jdbcType=BIGINT},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="proId != null">
+        #{proId,jdbcType=BIGINT},
+      </if>
+      <if test="personnelAdvice != null">
+        #{personnelAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="managerAdvice != null">
+        #{managerAdvice,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaEvection">
+    update aoa_evection
+    <set>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="proId != null">
+        pro_id = #{proId,jdbcType=BIGINT},
+      </if>
+      <if test="personnelAdvice != null">
+        personnel_advice = #{personnelAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="managerAdvice != null">
+        manager_advice = #{managerAdvice,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where evection_id = #{evectionId,jdbcType=BIGINT}
+  </update>
+
+</mapper>

@@ -23,10 +23,12 @@ var yearmonth;
 	}
 	
 	function getdate(month){
+	 var baseKey=$('.baseKey').val().trim();
 		$.ajax({
 			type:"get",
 			url:'realmonthtable',
-			data:{month:month},
+			data:{month:month,
+			baseKey:baseKey},
 			success:function(dates){
 				 $("#refresh").html(dates)
 			},

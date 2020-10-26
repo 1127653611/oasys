@@ -12,5 +12,35 @@
   <sql id="Base_Column_List">
     catalog_id, catalog_name, parent_id, cata_user_id
   </sql>
-
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.note.AoaCatalog">
+    insert into aoa_catalog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="catalogId != null">
+        catalog_id,
+      </if>
+      <if test="catalogName != null">
+        catalog_name,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="cataUserId != null">
+        cata_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="catalogId != null">
+        #{catalogId,jdbcType=BIGINT},
+      </if>
+      <if test="catalogName != null">
+        #{catalogName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="cataUserId != null">
+        #{cataUserId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
 </mapper>

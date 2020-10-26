@@ -24,5 +24,10 @@ public class UserLoginRecordServiceImpl implements UserLoginRecordService {
         return aoaUserLoginRecordMapper.getAllById(userid);
     }
 
+    @Override
+    public Integer countlog(String format) {
+        return aoaUserLoginRecordMapper.countlog(format);
+    }
+
 
 }

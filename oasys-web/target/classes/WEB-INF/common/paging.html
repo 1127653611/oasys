@@ -58,7 +58,7 @@
     </div>
 </div>
 <script type="text/javascript">
-        var baseKey=$('.baseKey').val().trim();
+        var baseKey=$('.baseKey').val();
         var sort='[[${sort}]]';
         sort=sort.replace(/&amp;/g,"&");
         var alph=$('#thispills .active a').text().trim();
@@ -80,13 +80,13 @@
 			 }
 		});
 		$('.tableup').on('click',function(){
-		        console.log(key);
+
 			 if(isFirstPage=='false'){
 			     $('.thistable').load(url+'?page='+pageNumlast+key);
 			 }
 		});
 		$('.tabledown').on('click',function(){
-		    console.log(key);
+
 			if(isLastPage=='false'){
 			 $('.thistable').load(url+'?page='+pageNumnext+key);
 			 }

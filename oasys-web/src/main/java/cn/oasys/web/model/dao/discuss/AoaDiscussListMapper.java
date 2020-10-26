@@ -6,6 +6,7 @@ import cn.oasys.web.model.pojo.user.AoaUser;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 @Mapper
@@ -29,4 +30,7 @@ public interface AoaDiscussListMapper {
 
     @Delete("delete from aoa_discuss_list where discuss_id=#{id}")
     void delete(Long discussId);
+
+    @Select("select count(*) from aoa_discuss_list")
+    Long count();
 }

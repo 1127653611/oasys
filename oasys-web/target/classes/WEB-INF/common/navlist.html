@@ -1,4 +1,4 @@
-<html  th:fragment="navlist"  xmlns:th="http://www.thymeleaf.org">
+<th:block  th:fragment="navlist" >
 <div class="col-md-12 green" >
 	<!--导航栏左侧按钮，-->
 	<ul class="nav navbar-nav navbar-left" style="margin-left: -15px;">
@@ -26,12 +26,12 @@
 				</a>
 		</li>
 		<li class="dropdown">
-		<!--设置导航栏头像面板--> 
+		<!--设置导航栏头像面板-->
 		<a href="#" class="green-none white" data-toggle="dropdown">
-				<img th:src="@{'/images/'+${(user?.imgPath)}}" class="user-image" /> <span>[[${user?.userName}]]</span>
+				<img th:src="@{${(user?.imgPath)}}" class="user-image" /> <span>[[${user?.userName}]]</span>
 		</a> <!--设置点击按钮弹出用户面板层-->
 			<ul class="dropdown-menu" style="padding:0;">
-				<li class="user-header green"><img th:src="@{'/images/'+${(user?.imgPath)}}"
+				<li class="user-header green"><img th:src="@{${(user?.imgPath)}}"
 					class="img-circle" style="width: 100px;height:100px;" />
 					<p class="white" style="">
 						<span>[[${user?.dept?.deptName}]] </span> / <span> [[${user?.role?.roleName}]]</span><br> <small>[[${user?.position?.name}]]</small>
@@ -49,7 +49,7 @@
 
 		<li style="position: relative;"><a  id="history" class="green-none white" data-toggle="dropdown"><span
 				class="glyphicon glyphicon-time"></span></a>
-				
+
 		<ul id="historypanel" class="dropdown-menu"
 				style="position: absolute; background-color: #222d32;">
 			<div th:replace="user/userlog :: userlog"></div>
@@ -97,3 +97,4 @@
 		})
 	})
 </script>
+</th:block>

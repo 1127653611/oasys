@@ -24,19 +24,19 @@ public class AoaMailReciver {
                 ", mailReciverId=" + mailReciverId +
                 ", isStar=" + isStar +
                 ", isDel=" + isDel +
-                ", aoaInMailLists=" + aoaInMailLists +
+                ", aoaInMailList=" + aoaInMailList +
                 '}';
     }
 
-    public List<AoaInMailList> getAoaInMailLists() {
-        return aoaInMailLists;
+    public AoaInMailList getAoaInMailList() {
+        return aoaInMailList;
     }
 
-    public void setAoaInMailLists(List<AoaInMailList> aoaInMailLists) {
-        this.aoaInMailLists = aoaInMailLists;
+    public void setAoaInMailList(AoaInMailList aoaInMailList) {
+        this.aoaInMailList = aoaInMailList;
     }
 
-    private List<AoaInMailList> aoaInMailLists;
+    private AoaInMailList aoaInMailList;
 
     public Long getPkId() {
         return pkId;

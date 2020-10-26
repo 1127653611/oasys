@@ -112,6 +112,23 @@
     left join aoa_dept d on u.dept_id=d.dept_id
     left join aoa_position p on u.position_id=p.position_id where u.position_id=#{id}
   </select>
+  <select id="findByname" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where u.user_name=#{name}
+  </select>
+  <select id="findbyFatherId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List1"></include>
+    from aoa_user u left join aoa_role_ r on u.role_id=r.role_id
+    left join aoa_dept d on u.dept_id=d.dept_id
+    left join aoa_position p on u.position_id=p.position_id where u.father_id=#{uid}
+    <if test="key != null">
+      and (u.real_name like #{key} or u.user_name like #{key})
+    </if>
+  </select>
   <select id="findAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List1"></include>
@@ -161,8 +178,8 @@
   <select id="findOneUserByname" resultType="AoaUser" parameterType="java.lang.String">
     select
     <include refid="Base_Column_List" />
-    from aoa_user where user_name=#{username}
-    or user_tel=#{username}
+    from aoa_user where (user_name=#{username}
+    or user_tel=#{username})
     and password=#{password}
   </select>
   <select id="findOneById" resultMap="BaseResultMap" >

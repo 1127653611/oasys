@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.process.AoaResignMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaResign">
+    <id column="resign_id" jdbcType="BIGINT" property="resignId" />
+    <result column="financial_advice" jdbcType="VARCHAR" property="financialAdvice" />
+    <result column="is_finish" jdbcType="BIT" property="isFinish" />
+    <result column="nofinish" jdbcType="VARCHAR" property="nofinish" />
+    <result column="personnel_advice" jdbcType="VARCHAR" property="personnelAdvice" />
+    <result column="suggest" jdbcType="VARCHAR" property="suggest" />
+    <result column="hand_user" jdbcType="BIGINT" property="handUser" />
+    <result column="pro_id" jdbcType="BIGINT" property="proId" />
+    <result column="manager_advice" jdbcType="VARCHAR" property="managerAdvice" />
+    <association property="user" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="hand_user"></association>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    resign_id, financial_advice, is_finish, nofinish, personnel_advice, suggest, hand_user, 
+    pro_id, manager_advice
+  </sql>
+  <select id="findByProId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_resign where pro_id=#{id}
+  </select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaResign">
+    insert into aoa_resign
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="resignId != null">
+        resign_id,
+      </if>
+      <if test="financialAdvice != null">
+        financial_advice,
+      </if>
+      <if test="isFinish != null">
+        is_finish,
+      </if>
+      <if test="nofinish != null">
+        nofinish,
+      </if>
+      <if test="personnelAdvice != null">
+        personnel_advice,
+      </if>
+      <if test="suggest != null">
+        suggest,
+      </if>
+      <if test="handUser != null">
+        hand_user,
+      </if>
+      <if test="proId != null">
+        pro_id,
+      </if>
+      <if test="managerAdvice != null">
+        manager_advice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="resignId != null">
+        #{resignId,jdbcType=BIGINT},
+      </if>
+      <if test="financialAdvice != null">
+        #{financialAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="isFinish != null">
+        #{isFinish,jdbcType=BIT},
+      </if>
+      <if test="nofinish != null">
+        #{nofinish,jdbcType=VARCHAR},
+      </if>
+      <if test="personnelAdvice != null">
+        #{personnelAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="suggest != null">
+        #{suggest,jdbcType=VARCHAR},
+      </if>
+      <if test="handUser != null">
+        #{handUser,jdbcType=BIGINT},
+      </if>
+      <if test="proId != null">
+        #{proId,jdbcType=BIGINT},
+      </if>
+      <if test="managerAdvice != null">
+        #{managerAdvice,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaResign">
+    update aoa_resign
+    <set>
+      <if test="financialAdvice != null">
+        financial_advice = #{financialAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="isFinish != null">
+        is_finish = #{isFinish,jdbcType=BIT},
+      </if>
+      <if test="nofinish != null">
+        nofinish = #{nofinish,jdbcType=VARCHAR},
+      </if>
+      <if test="personnelAdvice != null">
+        personnel_advice = #{personnelAdvice,jdbcType=VARCHAR},
+      </if>
+      <if test="suggest != null">
+        suggest = #{suggest,jdbcType=VARCHAR},
+      </if>
+      <if test="handUser != null">
+        hand_user = #{handUser,jdbcType=BIGINT},
+      </if>
+      <if test="proId != null">
+        pro_id = #{proId,jdbcType=BIGINT},
+      </if>
+      <if test="managerAdvice != null">
+        manager_advice = #{managerAdvice,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where resign_id = #{resignId,jdbcType=BIGINT}
+  </update>
+
+</mapper>

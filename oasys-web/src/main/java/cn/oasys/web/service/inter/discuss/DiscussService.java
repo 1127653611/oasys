@@ -48,4 +48,6 @@ public interface DiscussService {
     void deleteDiscuss(AoaDiscussList discuss);
 
     void deleteLoveByreply(Long discussId);
+
+    Long count();
 }

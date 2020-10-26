@@ -79,13 +79,13 @@ border-radius: 5px;
             </div>
             <div class="form-group addvote" style="display:none;">
                 <label class="control-label">开始日期</label>
-                <input th:if="${not #strings.isEmpty(voteList)}" id="starTime" th:value="${#dates.format(voteList?.startTime, 'yyyy-MM-dd HH:mm:ss')}"
+                <input th:if="${not #strings.isEmpty(voteList)}" id="starTime" th:value="${#dates.format(voteList?.startTime,'yyyy-MM-dd HH:mm:ss')}"
                        name="startTime" class="form-control"
                        disabled="disabled"/>
                 <input th:if="${#strings.isEmpty(voteList)}" id="starTime" name="startTime" class="form-control"/>
             </div>
             <div class="form-group addvote" style="display:none;">
-                <label class="control-label">截止日期</label> <input id="endTime" th:value="${#dates.format(voteList?.endTime, 'yyyy-MM-dd HH:mm:ss')}"
+                <label class="control-label">截止日期</label> <input id="endTime" th:value="${#dates.format(voteList?.endTime,'yyyy-MM-dd HH:mm:ss')}"
                                                                  name="endTime" class="form-control"/>
             </div>
             <div class="form-group addvote" style="display:none;">
@@ -186,8 +186,7 @@ border-radius: 5px;
 <script type="text/javascript">
 /* 应该是用来测试的，打印出iframe中文本编辑器的处理 */
 $('.givein').on('click',function(){
-	console.log("tent:"+$('.tent').val());
-	console.log("iframe:"+$('.ke-edit-iframe').contents().find('body').text());
+
 });
 $('.successToUrl').on('click',function(){
 	window.location.href='/chatmanage';
@@ -198,13 +197,12 @@ function mess(errorMess){
 	$('.modal-error-mess').text(errorMess);
 	modalShow(0);
 	isRight = 0;
-	console.log("fsdhfakfks");
+
 }
 //表单提交前执行的onsubmit()方法；返回false时，执行相应的提示信息；返回true就提交表单到后台校验与执行
 function check() {
     var ss=$("#starTime").val();
-    console.log(ss);
-	console.log("开始进入了");
+
 	//提示框可能在提交之前是block状态，所以在这之前要设置成none
 	$('.alert-danger').css('display', 'none');
 	var isRight = 1;
@@ -238,7 +236,7 @@ function check() {
 		/*检测select中的值变化，假如是选的投票，则把相关的显示出来  */
 		$('#selecttype').on('change',function(){
 			var key=$('#selecttype').val();
-			console.log('dfa');
+
 			if(key=='21'){
 				$('.addvote').css('display','block');
 			}else{
@@ -255,7 +253,7 @@ function check() {
 			var tr = $('<tr></tr>').append(td1).append(td2).append(td3);
 			$('#addtable table tbody').append(tr);
 			$('#inputtext').val('');
-			console.log(i);
+
 			i=i+1;
 		}
 		/* 点击增加投票时的判断，*/
@@ -280,7 +278,7 @@ function check() {
 			if (!confirm("删除该记录将不能恢复，确定删除吗？")) {
 				return false
 			}
-			console.log($('tbody').children('tr').length);
+
 			if ($('tbody').children('tr').length == 2) {
 				alert("最后一条不能再删除了")
 				return false;

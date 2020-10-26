@@ -35,15 +35,18 @@
                                                              src="images/timg.jpg" alt="images"/>
                 </span>
             </td>
-            <td th:if="${emp?.dept?.deptId==dept?.deptId}" th:each="dept,status: ${deptlist}" class="col-xs-2">[[${dept?.deptName}]]</td>
-        <td class=" col-xs-2">[[${emp?.realName}]]</td>
-        <td class="col-xs-2 na">[[${emp?.userName}]]</td>
+            <td  class="col-xs-2">
+                [[${emp?.dept?.deptName}]]
+            </td>
+            <td class=" col-xs-2">[[${emp?.realName}]]</td>
+            <td class="col-xs-2 na">[[${emp?.userName}]]</td>
 
-        <td th:if="${emp?.position?.positionId==pos?.positionId}" th:each="pos,status: ${poslist}" class=" col-xs-2">[[${pos?.name}]]</td>
-<td class=" col-xs-2">[[${emp?.userTel}]]</td>
-</tr>
-</tbody>
-</table>
+            <td class=" col-xs-2">[[${emp?.position?.name}]]
+            </td>
+            <td class=" col-xs-2">[[${emp?.userTel}]]</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 <div th:replace="common/paging :: paging"></div>

@@ -44,20 +44,13 @@ $(function() {
 	$(".collect").on(
 			"click",
 			function() {
+			    var th=$(this);
 				var $id = $(this).attr("id");
 				var iscollect = 0;
 				if ($(this).hasClass("glyphicon-star-empty")) {
-					$(this).removeClass("glyphicon-star-empty").addClass(
-							"glyphicon-star")
-					//已经收藏
 					iscollect = 1;
-					alert("收藏成功")
 				} else if ($(this).hasClass("glyphicon-star")) {
-					$(this).removeClass("glyphicon-star").addClass(
-							"glyphicon-star-empty")
-					//取消收藏
 					iscollect = 0;
-					alert("取消收藏")
 				}
 				$.ajax({
 					type : "get",
@@ -67,8 +60,16 @@ $(function() {
 						id : $id,
 						iscollected : iscollect
 					},
-					success : function() {
-						
+					success : function(data) {
+						  if(data==0){
+						        th.removeClass("glyphicon-star").addClass(
+                          							"glyphicon-star-empty")
+                          		alert("取消收藏")
+						  }if(data==1){
+						       th.removeClass("glyphicon-star-empty").addClass(
+                          							"glyphicon-star")
+                                alert("收藏成功")
+                          }
 					},
 					error : function() {
 					}

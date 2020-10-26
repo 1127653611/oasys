@@ -288,7 +288,7 @@ cursor: pointer;
 	
 //表单提交前执行的onsubmit()方法；返回false时，执行相应的提示信息；返回true就提交表单到后台校验与执行
 function check() {
-	console.log("开始进入了");
+
 	//提示框可能在提交之前是block状态，所以在这之前要设置成none
 	$('.alert-danger').css('display', 'none');
 	var isRight = 1;
@@ -304,7 +304,7 @@ function check() {
 			}  */
 			
 			// 获取到input框的兄弟的文本信息，并对应提醒；
-			console.log(index);
+
 			var errorMess = "红色提示框不能为空!";
 			// 对齐设置错误信息提醒；红色边框
 			$(this).parent().addClass("has-error has-feedback");
@@ -333,7 +333,7 @@ function check() {
 	$(function(){
 		
 		$(".tt").on("focus",".leave",function(){
-			console.log("11")
+
 			var $time1=$(this).parents(".date").siblings(".t1").children().val();
 			var $time2=$(this).parents(".date").siblings(".t2").children().val();
 			var $date1=new Date($time1);
@@ -384,7 +384,7 @@ function check() {
 	
 		//把tr置空
 		$(".stayjian").click(function(){
-			console.log("yy");
+
 			 $("[name=items]:checkbox").each(function(){
 				 if(this.checked){
 	    			//获取被选中了的行

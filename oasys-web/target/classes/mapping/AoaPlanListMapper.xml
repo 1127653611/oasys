@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.plan.AoaPlanListMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.plan.AoaPlanList">
+    <id column="plan_id" jdbcType="BIGINT" property="planId" />
+    <id column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="label" jdbcType="VARCHAR" property="label" />
+    <result column="plan_comment" jdbcType="VARCHAR" property="planComment" />
+    <result column="plan_content" jdbcType="VARCHAR" property="planContent" />
+    <result column="plan_summary" jdbcType="VARCHAR" property="planSummary" />
+    <result column="status_id" jdbcType="BIGINT" property="statusId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
+    <result column="plan_user_id" jdbcType="BIGINT" property="planUserId" />
+    <result column="attach_id" jdbcType="BIGINT" property="attachId" />
+    <association property="aoaTypeList" select="cn.oasys.web.model.dao.system.AoaTypeListMapper.findOneById" column="type_id"></association>
+    <association property="aoaStatusList" select="cn.oasys.web.model.dao.system.AoaStatusListMapper.findOne" column="status_id"></association>
+    <association property="user" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="plan_user_id"></association>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    plan_id, start_time, create_time, end_time, label, plan_comment, plan_content, plan_summary, 
+    status_id, title, type_id, plan_user_id, attach_id
+  </sql>
+  <select id="findByUserlimit" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_plan_list where plan_user_id=#{id} order by create_time DESC , end_time DESC LIMIT 0,2
+  </select>
+  <select id="findOne" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_plan_list where plan_id=#{id}
+  </select>
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_plan_list
+  </select>
+  <select id="findlatest" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_plan_list where create_time > #{start} and create_time  &lt;  #{end} and plan_user_id=#{uid} and type_id=#{tid}
+    order by create_time DESC limit 0,1
+  </select>
+  <select id="findBySortAndKeyAndUser" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_plan_list where plan_user_id=#{uid}
+    <if test="key != null">
+      and (label like #{key} or title like #{key} or DATE_format(create_time,'%Y-%m-%d') like #{key}
+      or type_id in(select type_id from aoa_type_list where type_name like #{key}) or status_id in(select status_id from aoa_status_list where status_name like #{key})
+      )
+    </if>
+    order by
+    <if test="type!=null">
+      type_id ${type}
+    </if>
+    <if test="status!=null">
+      status_id ${status}
+    </if>
+    <if test="time!=null">
+      create_time ${time}
+    </if>
+    <if test="type==null and status==null and time==null">
+      create_time DESC
+    </if>
+  </select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.plan.AoaPlanList">
+    insert into aoa_plan_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="planId != null">
+        plan_id,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="label != null">
+        label,
+      </if>
+      <if test="planComment != null">
+        plan_comment,
+      </if>
+      <if test="planContent != null">
+        plan_content,
+      </if>
+      <if test="planSummary != null">
+        plan_summary,
+      </if>
+      <if test="statusId != null">
+        status_id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="planUserId != null">
+        plan_user_id,
+      </if>
+      <if test="attachId != null">
+        attach_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="planId != null">
+        #{planId,jdbcType=BIGINT},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="label != null">
+        #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="planComment != null">
+        #{planComment,jdbcType=VARCHAR},
+      </if>
+      <if test="planContent != null">
+        #{planContent,jdbcType=VARCHAR},
+      </if>
+      <if test="planSummary != null">
+        #{planSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="statusId != null">
+        #{statusId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="planUserId != null">
+        #{planUserId,jdbcType=BIGINT},
+      </if>
+      <if test="attachId != null">
+        #{attachId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.plan.AoaPlanList">
+    update aoa_plan_list
+    <set>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="label != null">
+        label = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="planComment != null">
+        plan_comment = #{planComment,jdbcType=VARCHAR},
+      </if>
+      <if test="planContent != null">
+        plan_content = #{planContent,jdbcType=VARCHAR},
+      </if>
+      <if test="planSummary != null">
+        plan_summary = #{planSummary,jdbcType=VARCHAR},
+      </if>
+      <if test="statusId != null">
+        status_id = #{statusId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="planUserId != null">
+        plan_user_id = #{planUserId,jdbcType=BIGINT},
+      </if>
+      <if test="attachId != null">
+        attach_id = #{attachId,jdbcType=BIGINT},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where plan_id = #{planId,jdbcType=BIGINT}
+  </update>
+</mapper>

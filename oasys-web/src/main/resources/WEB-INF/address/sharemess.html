@@ -81,16 +81,15 @@
 <script>
 /* 未处理的共享联系人的controller */
 $('.nothandle').on('click',function(){
-	console.log($('.nothandle').length);
+
 	var catalog=$(this).parents('.share-right').find('.thishandleselect').val();
 	var duid=$(this).attr('duid');
-	console.log("catalog:"+catalog);
-	console.log("duid:"+duid);
+
 	$('.thistable').load('sharemess',{catalog:catalog,duid:duid},function(){
 		modalShow(1);	
 	});
 	var count=parseInt($('.showcount').text())-1;
-		console.log(count);
+
 	if($('.nothandle').length>1){
 		var count=parseInt($('.showcount').text())-1;
 		$('.showcount').text(count);

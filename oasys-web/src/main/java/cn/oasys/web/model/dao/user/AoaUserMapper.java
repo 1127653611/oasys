@@ -46,4 +46,8 @@ public interface AoaUserMapper {
     List<AoaUser> findByPinyinLike(String s);
 
     List<AoaUser> findUsersByBaseKeyAndPinyinLike(@Param("key") String key, @Param("p") String p);
+
+    List<AoaUser> findbyFatherId(@Param("key") String key, @Param("uid") Long userid);
+
+    AoaUser findByname(String name);
 }

@@ -40,4 +40,18 @@ public class AoaCatalog {
     public void setCataUserId(Long cataUserId) {
         this.cataUserId = cataUserId;
     }
+
+    public AoaCatalog(String catalogName,  Long cataUserId) {
+        this.catalogName = catalogName;
+        this.cataUserId = cataUserId;
+    }
+
+    public AoaCatalog(String catalogName, Integer parentId, Long cataUserId) {
+        this.catalogName = catalogName;
+        this.parentId = parentId;
+        this.cataUserId = cataUserId;
+    }
+
+    public AoaCatalog() {
+    }
 }

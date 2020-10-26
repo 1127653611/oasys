@@ -1,0 +1,98 @@
+<th:block th:fragment="realplantable">
+    <table class="table table-striped table-hover table-bordered table-responsive">
+        <tr>
+            <th>部门</th>
+            <th>成员</th>
+            <th>计划</th>
+            <th>状态</th>
+            <th>总结</th>
+            <th>评价</th>
+        </tr>
+        <th:block th:each="userName: ${uMap}">
+            <tr th:each="user: ${ulist}">
+                <th:block th:if="${userName.key==user?.userName}">
+                    <td>[[${user?.dept?.deptName}]]</td>
+                    <td>[[${user?.userName}]]</td>
+                    <td>
+                        <th:block th:if="${not #strings.isEmpty(userName?.value)}">
+                            <div>【[[${userName?.value?.label}]]】[[${userName?.value?.title}]]</div>
+                            <div>[[${userName?.value?.planContent}]]
+                                <a th:if="${not #strings.isEmpty(userName?.value?.attachId)}" style="color:#337ab7;"
+                                   th:href="@{'down?paid='+${userName?.value?.attachId}}">
+                                    <span class="glyphicon glyphicon-paperclip"></span></a></div>
+                        </th:block>
+                    </td>
+                    <td>
+                        <th:block th:if="${not #strings.isEmpty(userName?.value)}">
+                        <span th:each="s: ${status}" th:if="${userName?.value?.statusId==s?.statusId}" class="label"
+                              th:classappend="${s?.statusColor}">
+												   			[[${s?.statusName}]]</span>
+                        </th:block>
+                    </td>
+
+                    <td>
+                        <th:block th:if="${not #strings.isEmpty(userName?.value)}">[[${userName?.value.planSummary}]]
+                        </th:block>
+                    </td>
+                    <td>
+                        <th:block th:if="${not #strings.isEmpty(userName?.value)}">
+                            <!-- 模态框按钮 -->
+                            <a class="btn thisa" th:id="${userName?.value?.planId}">
+                        <span class="label label-success ">
+											<i class="glyphicon glyphicon-commenting">
+											评论</i>
+											</span>
+                            </a>
+                            <div>
+                                【[[${user?.userName}]]】
+                                <th:block th:if="${not #strings.isEmpty(userName?.value?.planComment)}">
+                                    [[${userName?.value?.planComment}]]
+                                </th:block>
+                            </div>
+                        </th:block>
+                    </td>
+                </th:block>
+            </tr>
+        </th:block>
+    </table>
+    <div th:replace="common/paging :: paging"></div>
+    <div th:replace="common/comment :: comment"></div>
+    <script>
+$('.thisa').on('click',function(){
+	$("#myModal").modal("toggle");
+	$("#commentid").val($(this).attr("id"))
+});
+
+var start=$("#start").text();
+var end=$("#end").text();
+
+//评论提交
+$("#commentsave").click(function(){
+	 var $comment=$("#comment").val();
+	 var $commentid=$("#commentid").val();
+      var starttime='[[${starttime}]]';
+      var endtime='[[${endtime}]]';
+      var choose='[[${choose}]]';
+      var url='[[${url}]]';
+	 $.ajax({
+		 type:"get",
+		 url:url,
+		 data:{
+			 pid:$commentid,
+			 comment:$comment,
+			 starttime:starttime,
+			 endtime:endtime,
+			 choose:choose
+		 },
+		 success:function(dates){
+			 $(".fade").hide();
+			 $(".close").click();
+			 $("#refresh").html(dates);
+		},
+		 error:function(){
+		}
+	 })
+})
+
+    </script>
+</th:block>

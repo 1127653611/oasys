@@ -45,7 +45,7 @@
 					 content="未选中"
 				}
 				 $.post("powerss",{roleid:$roleid,content:content,menuid:menu},function(result){
-				        console.log(result);
+
 					   if(result.code=='200'){
 					   var sure=confirm(result.extend.msg);
 					   if(sure==true){

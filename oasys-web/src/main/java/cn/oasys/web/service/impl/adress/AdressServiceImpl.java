@@ -160,6 +160,11 @@ public class AdressServiceImpl implements AdressService {
     }
 
     @Override
+    public Long count() {
+        return aoaDirectorMapper.count();
+    }
+
+    @Override
     public void saveDerectorUser(AoaDirectorUsers dc) {
         aoaDirectorUsersMapper.insertSelective(dc);
     }

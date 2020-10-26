@@ -8,4 +8,6 @@ public interface UserLoginRecordService {
     public Integer save(AoaUserLoginRecord aoaUserLoginRecord);
 
     List<AoaUserLoginRecord> getAll(long userid);
+
+    Integer countlog(String format);
 }

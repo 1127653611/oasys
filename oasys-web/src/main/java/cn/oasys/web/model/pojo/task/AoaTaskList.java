@@ -152,4 +152,25 @@ public class AoaTaskList {
     public void setReciverlist(String reciverlist) {
         this.reciverlist = reciverlist == null ? null : reciverlist.trim();
     }
+
+    @Override
+    public String toString() {
+        return "AoaTaskList{" +
+                "taskId=" + taskId +
+                ", comment='" + comment + '\'' +
+                ", endTime=" + endTime +
+                ", isCancel=" + isCancel +
+                ", isTop=" + isTop +
+                ", modifyTime=" + modifyTime +
+                ", publishTime=" + publishTime +
+                ", starTime=" + starTime +
+                ", statusId=" + statusId +
+                ", taskDescribe='" + taskDescribe + '\'' +
+                ", ticking='" + ticking + '\'' +
+                ", title='" + title + '\'' +
+                ", typeId=" + typeId +
+                ", taskPushUserId=" + taskPushUserId +
+                ", reciverlist='" + reciverlist + '\'' +
+                '}';
+    }
 }

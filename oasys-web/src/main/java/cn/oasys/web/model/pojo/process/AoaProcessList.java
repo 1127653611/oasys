@@ -1,5 +1,10 @@
 package cn.oasys.web.model.pojo.process;
 
+import cn.oasys.web.model.pojo.note.AoaAttachmentList;
+import cn.oasys.web.model.pojo.system.AoaStatusList;
+import cn.oasys.web.model.pojo.system.AoaTypeList;
+import cn.oasys.web.model.pojo.user.AoaUser;
+
 import java.util.Date;
 
 public class AoaProcessList {
@@ -15,7 +20,7 @@ public class AoaProcessList {
 
     private Integer procseeDays;
 
-    private Integer isChecked;
+    private Integer isChecked=0;
 
     private Date startTime;
 
@@ -30,6 +35,46 @@ public class AoaProcessList {
     private String shenuser;
 
     private String processDes;
+
+    private AoaTypeList aoaTypeList;
+
+    private AoaStatusList aoaStatusList;
+
+    private AoaUser user;
+
+    private AoaAttachmentList aoaAttachmentList;
+
+    public AoaAttachmentList getAoaAttachmentList() {
+        return aoaAttachmentList;
+    }
+
+    public void setAoaAttachmentList(AoaAttachmentList aoaAttachmentList) {
+        this.aoaAttachmentList = aoaAttachmentList;
+    }
+
+    public AoaUser getUser() {
+        return user;
+    }
+
+    public void setUser(AoaUser user) {
+        this.user = user;
+    }
+
+    public AoaTypeList getAoaTypeList() {
+        return aoaTypeList;
+    }
+
+    public void setAoaTypeList(AoaTypeList aoaTypeList) {
+        this.aoaTypeList = aoaTypeList;
+    }
+
+    public AoaStatusList getAoaStatusList() {
+        return aoaStatusList;
+    }
+
+    public void setAoaStatusList(AoaStatusList aoaStatusList) {
+        this.aoaStatusList = aoaStatusList;
+    }
 
     public Long getProcessId() {
         return processId;
@@ -141,5 +186,25 @@ public class AoaProcessList {
 
     public void setProcessDes(String processDes) {
         this.processDes = processDes == null ? null : processDes.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "AoaProcessList{" +
+                "processId=" + processId +
+                ", applyTime=" + applyTime +
+                ", deeplyId=" + deeplyId +
+                ", endTime=" + endTime +
+                ", processName='" + processName + '\'' +
+                ", procseeDays=" + procseeDays +
+                ", isChecked=" + isChecked +
+                ", startTime=" + startTime +
+                ", statusId=" + statusId +
+                ", typeName='" + typeName + '\'' +
+                ", proFileId=" + proFileId +
+                ", processUserId=" + processUserId +
+                ", shenuser='" + shenuser + '\'' +
+                ", processDes='" + processDes + '\'' +
+                '}';
     }
 }

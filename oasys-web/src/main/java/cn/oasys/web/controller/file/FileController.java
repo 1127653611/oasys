@@ -229,7 +229,6 @@ public class FileController {
                                     @RequestParam(value = "checkfileids[]", required = false) List<Long> checkfileids,
                                     Model model) {
 
-        System.out.println(type + checkpathids + checkfileids);
         if (checkfileids != null) {
             // 文件放入回收站
             fileService.trashfile(checkfileids, 1L, userid);
@@ -292,8 +291,6 @@ public class FileController {
 
     @RequestMapping("mcloadpath")
     public String mcloadpath(@RequestParam("mctoid") Long mctoid, @RequestParam("mcpathids") List<Long> mcpathids, Model model) {
-        System.out.println(mctoid);
-        System.out.println(mcpathids);
 
         List<AoaFilePath> showsonpaths = fileService.mcpathload(mctoid, mcpathids);
         model.addAttribute("mcpaths", showsonpaths);
@@ -308,10 +305,6 @@ public class FileController {
                        @RequestParam("mcfileids") List<Long> mcfileids,
                        @RequestParam("mcpathids") List<Long> mcpathids,
                        Model model) {
-        System.out.println(morc);
-        System.out.println(mctoid);
-        System.out.println(mcfileids);
-        System.out.println(mcpathids);
 
         if (morc) {
 
@@ -331,7 +324,6 @@ public class FileController {
                                      @RequestParam(value = "checkfileids[]", required = false) List<Long> checkfileids,
                                      Model model) {
 
-        System.out.println(type + checkpathids + checkfileids);
         if (checkfileids != null) {
             // 删除文件
             fileService.deleteFile(checkfileids);

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.process.AoaOvertimeMapper">
+    <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaOvertime">
+        <id column="overtime_id" jdbcType="BIGINT" property="overtimeId"/>
+        <result column="type_id" jdbcType="BIGINT" property="typeId"/>
+        <result column="pro_id" jdbcType="BIGINT" property="proId"/>
+        <result column="personnel_advice" jdbcType="VARCHAR" property="personnelAdvice"/>
+        <result column="manager_advice" jdbcType="VARCHAR" property="managerAdvice"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        overtime_id, type_id, pro_id, personnel_advice, manager_advice
+    </sql>
+    <select id="findByProId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from aoa_overtime where pro_id=#{id}
+    </select>
+    <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaOvertime">
+        insert into aoa_overtime
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="overtimeId != null">
+                overtime_id,
+            </if>
+            <if test="typeId != null">
+                type_id,
+            </if>
+            <if test="proId != null">
+                pro_id,
+            </if>
+            <if test="personnelAdvice != null">
+                personnel_advice,
+            </if>
+            <if test="managerAdvice != null">
+                manager_advice,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="overtimeId != null">
+                #{overtimeId,jdbcType=BIGINT},
+            </if>
+            <if test="typeId != null">
+                #{typeId,jdbcType=BIGINT},
+            </if>
+            <if test="proId != null">
+                #{proId,jdbcType=BIGINT},
+            </if>
+            <if test="personnelAdvice != null">
+                #{personnelAdvice,jdbcType=VARCHAR},
+            </if>
+            <if test="managerAdvice != null">
+                #{managerAdvice,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaOvertime">
+        update aoa_overtime
+        <set>
+            <if test="typeId != null">
+                type_id = #{typeId,jdbcType=BIGINT},
+            </if>
+            <if test="proId != null">
+                pro_id = #{proId,jdbcType=BIGINT},
+            </if>
+            <if test="personnelAdvice != null">
+                personnel_advice = #{personnelAdvice,jdbcType=VARCHAR},
+            </if>
+            <if test="managerAdvice != null">
+                manager_advice = #{managerAdvice,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where overtime_id = #{overtimeId,jdbcType=BIGINT}
+    </update>
+
+</mapper>

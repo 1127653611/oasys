@@ -1,6 +1,5 @@
 <html th:fragment="notepaging" xmlns:th="http://www.thymeleaf.org">
 <div class="box-footer no-padding" style="margin-top: -20px;">
-
 	<div style="padding: 5px;">
 		<div id="page"
 			 style="background: #fff; border: 0px; margin-top: 0px; padding: 2px; height: 25px;">
@@ -60,7 +59,7 @@
 
 </div>
 <script>
-		var baseKey=$('.baseKey').val().trim();
+		var baseKey=$('.baseKey').val();
         var sort='[[${sort}]]';
         sort=sort.replace(/&amp;/g,"&");
         var alph=$('#thispills .active a').text().trim();
@@ -80,13 +79,11 @@
 			 }
 		});
 		$('.tableup1').on('click',function(){
-			alert("321");
 			 if(isFirstPage=='false'){
 			     $('.thistableson').load(url+'?page='+pageNumlast+key);
 			 }
 		});
 		$('.tabledown1').on('click',function(){
-			alert("321");
 			if(isLastPage=='false'){
 			 $('.thistableson').load(url+'?page='+pageNumnext+key);
 			 }
@@ -98,10 +95,5 @@
 			
 		});
 		
-		/* 查找 */
-		$('.baseKetsubmit').on('click', function() {
-			var baseKey = $('.baseKey').val();
-			console.log(baseKey);
-			$('.thistableson').load('${url}?baseKey='+baseKey+'${(catalog)!''}');
-		});
+
 </script>

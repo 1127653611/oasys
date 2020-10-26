@@ -1,5 +1,8 @@
 package cn.oasys.web.model.pojo.notice;
 
+import cn.oasys.web.model.pojo.system.AoaStatusList;
+import cn.oasys.web.model.pojo.system.AoaTypeList;
+
 import java.util.Date;
 
 public class AoaNoticeList {
@@ -13,22 +16,6 @@ public class AoaNoticeList {
 
     private Date noticeTime;
 
-    @Override
-    public String toString() {
-        return "AoaNoticeList{" +
-                "noticeId=" + noticeId +
-                ", content='" + content + '\'' +
-                ", isTop=" + isTop +
-                ", modifyTime=" + modifyTime +
-                ", noticeTime=" + noticeTime +
-                ", statusId=" + statusId +
-                ", title='" + title + '\'' +
-                ", typeId=" + typeId +
-                ", url='" + url + '\'' +
-                ", userId=" + userId +
-                '}';
-    }
-
     private Long statusId;
 
     private String title;
@@ -39,6 +26,25 @@ public class AoaNoticeList {
 
     private Long userId;
 
+    private AoaStatusList aoaStatusList;
+
+    private AoaTypeList aoaTypeList;
+
+    public AoaStatusList getAoaStatusList() {
+        return aoaStatusList;
+    }
+
+    public void setAoaStatusList(AoaStatusList aoaStatusList) {
+        this.aoaStatusList = aoaStatusList;
+    }
+
+    public AoaTypeList getAoaTypeList() {
+        return aoaTypeList;
+    }
+
+    public void setAoaTypeList(AoaTypeList aoaTypeList) {
+        this.aoaTypeList = aoaTypeList;
+    }
     public Long getNoticeId() {
         return noticeId;
     }
@@ -117,5 +123,21 @@ public class AoaNoticeList {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "AoaNoticeList{" +
+                "noticeId=" + noticeId +
+                ", content='" + content + '\'' +
+                ", isTop=" + isTop +
+                ", modifyTime=" + modifyTime +
+                ", noticeTime=" + noticeTime +
+                ", statusId=" + statusId +
+                ", title='" + title + '\'' +
+                ", typeId=" + typeId +
+                ", url='" + url + '\'' +
+                ", userId=" + userId +
+                '}';
     }
 }

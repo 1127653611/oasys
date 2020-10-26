@@ -134,32 +134,33 @@ textarea {
 			</div>
 			
 			<form action="notesave" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="noteId" th:value="${note?.noteId}">
 			<div class="form-group">
-				<select th:if="${not #strings.isEmpty(cata)}"  name="catalogname" id="ctl00_cphMain_ddlFile"
+				<select th:if="${not #strings.isEmpty(cata)}"  name="catalogId" id="ctl00_cphMain_ddlFile"
 					class="form-control select2">
-					<option th:if="${cata?.catalogId==ca?.catalogId}" selected="selected" th:each="ca,status: ${calist}"  id="catalog">
+					<option th:if="${cata?.catalogId==ca?.catalogId}" th:value="${ca?.catalogId}" selected="selected" th:each="ca,status: ${calist}"  id="catalog">
 					✟[[${ca?.catalogName}]]
 					</option>
-					<option th:if="${cata?.catalogId!=ca?.catalogId}" th:each="ca,status: ${calist}"  th:id="catalog">
+					<option th:if="${cata?.catalogId!=ca?.catalogId}" th:value="${ca?.catalogId}" th:each="ca,status: ${calist}"  th:id="catalog">
 					✟[[${ca?.catalogName}]]
 					</option>
 				</select>
-				<select th:if="${#strings.isEmpty(cata)}"  name="catalogname" th:id="ctl00_cphMain_ddlFile"
+				<select th:if="${#strings.isEmpty(cata)}"  name="catalogId" th:id="ctl00_cphMain_ddlFile"
 					class="form-control select2">
-					<option th:each="ca,status: ${calist}"  th:id="catalog">
+					<option th:each="ca,status: ${calist}"  th:id="catalog" th:value="${ca?.catalogId}">
 					✟[[${ca?.catalogName}]]
 					</option>
 				</select>
 			</div>
 			<div class="form-group">
-				<select th:if="${not #strings.isEmpty(note)}"  name="type" id="ctl00_cphMain_ddlType"
+				<select th:if="${not #strings.isEmpty(note)}"  name="typeId" id="ctl00_cphMain_ddlType"
 					class="form-control select2">
-						<option th:if="${note?.typeId==t?.typeId}" selected="selected" th:each="t,status: ${typelist}">[[${t?.typeName}]]</option>
-						<option th:if="${note?.typeId!=t?.typeId}" th:each="t,status: ${typelist}">[[${t?.typeName}]]</option>
+						<option th:value="${note?.typeId}" th:if="${note?.typeId==t?.typeId}" selected="selected" th:each="t,status: ${typelist}">[[${t?.typeName}]]</option>
+						<option th:value="${t?.typeId}" th:if="${note?.typeId!=t?.typeId}" th:each="t,status: ${typelist}">[[${t?.typeName}]]</option>
 				</select>
-				<select th:if="${#strings.isEmpty(note)}"  name="type" th:id="ctl00_cphMain_ddlType"
+				<select th:if="${#strings.isEmpty(note)}"  name="typeId" th:id="ctl00_cphMain_ddlType"
 					class="form-control select2">
-						<option  th:each="t,status: ${typelist}">[[${t?.typeName}]]</option>
+						<option th:value="${t?.typeId}" th:each="t,status: ${typelist}">[[${t?.typeName}]]</option>
 				</select>
 			</div>
 
@@ -178,14 +179,14 @@ textarea {
 				</div>
 			</div>
 			<div class="form-group">
-				<select th:if="${not #strings.isEmpty(note)}"  name="status"
+				<select th:if="${not #strings.isEmpty(note)}"  name="statusId"
 					id="ctl00_cphMain_ddlImportance" class="form-control select2">
-						<option th:if="${note?.statusId==s?.statusId}"selected="selected" th:each="s,status: ${statuslist}" >[[${s?.statusName}]]</option>
-						<option th:if="${note?.statusId!=s?.statusId}" th:each="s,status: ${statuslist}" >[[${s?.statusName}]]</option>
+						<option th:value="${note?.statusId}" th:if="${note?.statusId==s?.statusId}"selected="selected" th:each="s,status: ${statuslist}" >[[${s?.statusName}]]</option>
+						<option th:value="${s?.statusId}" th:if="${note?.statusId!=s?.statusId}" th:each="s,status: ${statuslist}" >[[${s?.statusName}]]</option>
 				</select>
-				<select th:if="${#strings.isEmpty(note)}"  name="status"
+				<select th:if="${#strings.isEmpty(note)}"  name="statusId"
 					th:id="ctl00_cphMain_ddlImportance" class="form-control select2">
-					<option  th:each="s,status: ${statuslist}" >[[${s?.statusName}]]</option>
+					<option th:value="${s?.statusId}"  th:each="s,status: ${statuslist}" >[[${s?.statusName}]]</option>
 				</select>
 			</div>
 			<div class="form-group">
@@ -243,7 +244,7 @@ textarea {
 			});
 			
 			function check(){
-				console.log("开始进入了");
+
 				var text=$('.ke-edit-iframe').contents().find('body').text();
 				//提示框可能在提交之前是block状态，所以在这之前要设置成none
 				$('.alert-danger').css('display', 'none');

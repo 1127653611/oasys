@@ -27,7 +27,7 @@ public class AoaInMailList {
 
     private Integer mailStar;
 
-    private String mailContent;
+    private String content;
 
     public Long getMailId() {
         return mailId;
@@ -125,12 +125,12 @@ public class AoaInMailList {
         this.mailStar = mailStar;
     }
 
-    public String getMailContent() {
-        return mailContent;
+    public String getContent() {
+        return content;
     }
 
-    public void setMailContent(String mailContent) {
-        this.mailContent = mailContent == null ? null : mailContent.trim();
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Override
@@ -148,7 +148,7 @@ public class AoaInMailList {
                 ", mailDel=" + mailDel +
                 ", mailPush=" + mailPush +
                 ", mailStar=" + mailStar +
-                ", mailContent='" + mailContent + '\'' +
+                ", content='" + content + '\'' +
                 '}';
     }
 }

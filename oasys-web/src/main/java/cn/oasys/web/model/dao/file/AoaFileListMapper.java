@@ -5,6 +5,7 @@ import cn.oasys.web.model.pojo.file.AoaFilePath;
 import cn.oasys.web.model.pojo.user.AoaUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -39,4 +40,7 @@ public interface AoaFileListMapper {
     List<AoaFileList> findByFileIsshareAndFileNameLike(@Param("share") long share, @Param("key") String findlike);
 
     List<AoaFileList> findByUserAndFileIstrashAndFileNameLike(@Param("uid") Long userId, @Param("trash") long istrash, @Param("key") String findlike);
+
+    @Select("select count(*) from aoa_file_list")
+    Long count();
 }

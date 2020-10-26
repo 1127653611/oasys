@@ -7,66 +7,67 @@
     <result column="task_id" jdbcType="BIGINT" property="taskId" />
     <result column="task_recive_user_id" jdbcType="BIGINT" property="taskReciveUserId" />
   </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
   <sql id="Base_Column_List">
     pk_id, status_id, task_id, task_recive_user_id
   </sql>
-
+  <select id="findOne" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from aoa_task_user where pk_id=#{id}
+  </select>
+  <delete id="deleteUserNoId">
+    delete from aoa_task_user where task_id=#{tid} and pk_id not in
+    <foreach collection="pklist" item="item" open="(" close=")" separator=",">
+      #{item}
+    </foreach>
+  </delete>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.task.AoaTaskUser">
+    insert into aoa_task_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkId != null">
+        pk_id,
+      </if>
+      <if test="statusId != null">
+        status_id,
+      </if>
+      <if test="taskId != null">
+        task_id,
+      </if>
+      <if test="taskReciveUserId != null">
+        task_recive_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkId != null">
+        #{pkId,jdbcType=BIGINT},
+      </if>
+      <if test="statusId != null">
+        #{statusId,jdbcType=BIGINT},
+      </if>
+      <if test="taskId != null">
+        #{taskId,jdbcType=BIGINT},
+      </if>
+      <if test="taskReciveUserId != null">
+        #{taskReciveUserId,jdbcType=BIGINT},
+      </if>
+    </trim>
+    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="pkId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.task.AoaTaskUser">
+    update aoa_task_user
+    <set>
+      <if test="statusId != null">
+        status_id = #{statusId,jdbcType=BIGINT},
+      </if>
+      <if test="taskId != null">
+        task_id = #{taskId,jdbcType=BIGINT},
+      </if>
+      <if test="taskReciveUserId != null">
+        task_recive_user_id = #{taskReciveUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where pk_id = #{pkId,jdbcType=BIGINT}
+  </update>
 </mapper>

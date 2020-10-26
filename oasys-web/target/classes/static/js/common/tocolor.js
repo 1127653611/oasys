@@ -1,3 +1,4 @@
+
 function toyellow(){
 	/* 绿变黄 */
 	$('.green').removeClass('green').addClass('yellow');

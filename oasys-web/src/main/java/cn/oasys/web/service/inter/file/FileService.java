@@ -2,6 +2,7 @@ package cn.oasys.web.service.inter.file;
 
 import cn.oasys.web.model.pojo.file.AoaFileList;
 import cn.oasys.web.model.pojo.file.AoaFilePath;
+import cn.oasys.web.model.pojo.note.AoaAttachmentList;
 import cn.oasys.web.model.pojo.user.AoaUser;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,7 +23,7 @@ public interface FileService {
 
     void findAllParent(AoaFilePath filepath, List<AoaFilePath> allparentpaths);
 
-    void savefile(MultipartFile file, AoaUser user, AoaFilePath nowpath, boolean isfile) throws IOException;
+    Object savefile(MultipartFile file, AoaUser user, AoaFilePath nowpath, boolean isfile) throws IOException;
 
     AoaFileList findOneFile(Long fileid);
 
@@ -53,4 +54,14 @@ public interface FileService {
     void deletePath(List<Long> checkpathids);
 
     void findFile(AoaUser user, String findlike, String type,Model model);
+
+    Integer updateatt(MultipartFile file, AoaUser user, Object o, Long attachId) throws IOException;
+
+    AoaAttachmentList findByAttachmentId(Long paid);
+
+    File get(AoaAttachmentList aoaAttachmentList);
+
+    Long count();
+
+    String upload(MultipartFile filePath) throws IOException;
 }

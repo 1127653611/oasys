@@ -8,9 +8,11 @@ import com.github.stuxuhai.jpinyin.PinyinException;
 import java.util.List;
 
 public interface UserService {
-    public AoaUser findOneUser(String username,String password);
-    public AoaUser findOne(Long id);
-    public List<AoaUserLog> findLogByUser(long userid);
+    AoaUser findOneUser(String username, String password);
+
+    AoaUser findOne(Long id);
+
+    List<AoaUserLog> findLogByUser(long userid);
 
     List<AoaUser> findByDept(long dept);
 
@@ -23,14 +25,13 @@ public interface UserService {
 
     List<AoaUser> findByPosition(Long positionId);
 
-    List<AoaUser> findByidLockLike(int islock,String key);
+    List<AoaUser> findByidLockLike(int islock, String key);
 
     List<AoaUser> findByRole(long rolrid);
 
     List<AoaUser> findAll();
 
     List<AoaUser> findAllByLike(String key);
-
 
     List<AoaUser> findAllBySort();
 
@@ -40,4 +41,11 @@ public interface UserService {
 
     List<AoaUser> findUsersByBaseKeyAndPinyinLike(String s, String s1);
 
+    List<AoaUser> findmyemployuser(String baseKey, Long userid);
+
+    AoaUser findByname(String name);
+
+    List<AoaUser> findByFatherId(Long userId);
+
+    void update(AoaUser users);
 }

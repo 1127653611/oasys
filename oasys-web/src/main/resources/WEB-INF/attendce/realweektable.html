@@ -1,0 +1,36 @@
+<th:block th:fragment="realweektable">
+    <table class="table table-striped table-hover table-bordered table-responsive">
+        <tr>
+            <th>部门</th>
+            <th>成员</th>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>
+            <th>星期六</th>
+            <th>星期日</th>
+        </tr>
+
+        <tr th:each="user: ${ulist}">
+            <td>[[${user?.dept?.deptName}]]</td>
+            <td>[[${user?.userName}]]</td>
+            <td th:each="wd: ${weekday}" class="report">
+                <th:block th:if="${not #lists.isEmpty(user.aSet)}">
+                    <a th:if="${user?.userId==att?.user?.userId && att?.weekOfday==wd}" th:each="att: ${user?.aSet}"
+                       th:href="@{'attendceedit?aid='+${att?.attendsId}}">
+
+                        <div th:if="${att?.typeId==8}">上班：[[${att?.attendHmtime}]]
+                        </div>
+                        <div th:if="${att?.typeId==9}">下班：[[${att?.attendHmtime}]]
+                        </div>
+                    </a>
+                </th:block>
+            </td>
+
+        </tr>
+
+    </table>
+    <div th:replace="common/paging :: paging"></div>
+
+</th:block>

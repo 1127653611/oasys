@@ -46,7 +46,7 @@
                     <span th:if="${not #strings.isEmpty(collect)}" class="glyphicon glyphicon-star-empty choose_collect"
                           data-th-data-type="${collect}"></span>
                     <span th:if="${#strings.isEmpty(collect)}" class="glyphicon glyphicon-star-empty choose_collect"
-                          data-type="0"></span>
+                          data-type="1"></span>
                 </a>
 
             </div>
@@ -123,7 +123,7 @@
 
                         <a
                                 onclick="{return confirm('删除该记录将不能恢复，确定删除吗？');}"
-                                th:href="@{/notedelete?nid='+${note?.noteId}}"
+                                th:href="@{'/notedelete?nid='+${note?.noteId}}"
                                 class="label shanchu"><span
                                 class="glyphicon glyphicon-remove"></span> 删除</a></td>
 
@@ -143,12 +143,18 @@
     	 		$(".baseKetsubmit").trigger("click");
   		 	}
 		});
-		$('.baseKetsubmit').on('click', function() {
+		$('.baseKetsubmit').on('click', function() {var $cataid;
+		    $(".cata ul li ").each(function(){
+			     if($(this).hasClass("borderleft")){
+				       $cataid=$(this).children("a").attr("id");
+				}
+			})
+		    var collect='[[${collect}]]';
 		    var url='[[${url}]]';
 		    var catalog='[[${catalog}]]';
 		    catalog=catalog.replace(/&amp;/g,"&");
 			var baseKey = $('.baseKey').val();
-			$('.thistable').load(url+'?baseKey='+baseKey+catalog);
+			$('.thistable').load(url+'?baseKey='+baseKey+'&iscollect='+collect+'&cata='+$cataid+catalog);
 		});
 
 //点击在某个目录下面写东西
@@ -217,6 +223,9 @@ function somenotedelete(){
 		})
 	}
 }
+
+
+
 
 
 

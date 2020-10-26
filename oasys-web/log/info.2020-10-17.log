@@ -1,0 +1,40 @@
+2020-10-17 03:58:12.350 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-17 03:58:14.484 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=d45590b2-884f-3bc4-ae89-bdc8c4dd2147
+2020-10-17 03:58:17.943 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-17 03:58:17.943 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-17 03:58:17.960 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-17 03:58:17.960 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-17 03:58:18.388 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-17 03:58:19.049 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-17 03:58:20.125 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 10.08 seconds (JVM running for 12.327)
+2020-10-17 03:58:21.064 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-17 04:00:23.962 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-17 04:00:25.062 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=d45590b2-884f-3bc4-ae89-bdc8c4dd2147
+2020-10-17 04:00:27.556 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-17 04:00:27.556 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-17 04:00:27.566 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-17 04:00:27.566 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-17 04:00:28.004 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-17 04:00:28.334 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-17 04:00:29.236 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.83 seconds (JVM running for 8.053)
+2020-10-17 04:00:30.021 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-17 04:09:26.606 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-17 04:09:27.669 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=e0c0f863-3dd5-39c7-9491-74f80f68cf77
+2020-10-17 04:09:29.858 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-17 04:09:29.859 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-17 04:09:29.871 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-17 04:09:29.872 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-17 04:09:30.242 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-17 04:09:30.633 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-17 04:09:31.550 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 6.545 seconds (JVM running for 7.846)
+2020-10-17 04:09:32.291 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-17 08:58:52.969 [main]  INFO  cn.oasys.web.OasysApplicationTest - No active profile set, falling back to default profiles: default
+2020-10-17 08:58:55.806 [main]  INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=d52dfdc7-1710-3657-bfc2-b99c3502c2ad
+2020-10-17 08:59:00.341 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-17 08:59:00.341 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-17 08:59:00.361 [main]  WARN  com.netflix.config.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-10-17 08:59:00.362 [main]  INFO  com.netflix.config.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-10-17 08:59:01.094 [main]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-17 08:59:01.925 [main]  WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-10-17 08:59:04.062 [main]  INFO  cn.oasys.web.OasysApplicationTest - Started OasysApplicationTest in 16.108 seconds (JVM running for 18.622)
+2020-10-17 08:59:05.435 [SpringContextShutdownHook]  INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

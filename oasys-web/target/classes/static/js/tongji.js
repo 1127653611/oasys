@@ -20,7 +20,6 @@
             		var num=parseInt(sp[1]);
             		arraynum.push(num);
             	 }
-            	 console.log(arrayname+";"+arraynum)
           	//柱形图初始化
             chart = new Highcharts.Chart({
                 chart: {

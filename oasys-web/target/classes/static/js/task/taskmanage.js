@@ -7,7 +7,7 @@ $(function(){
 					//切换img
 					$("#img").appendTo(".mm span");	
 					var $val=$(this).text();
-					console.log("什么鬼？");
+
 					 $(".thistable").load("paixu",{val:$val});
 					
 					

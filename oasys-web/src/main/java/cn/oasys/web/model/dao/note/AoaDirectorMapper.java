@@ -4,6 +4,7 @@ import cn.oasys.web.model.pojo.note.AoaDirector;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface AoaDirectorMapper {
@@ -16,4 +17,7 @@ public interface AoaDirectorMapper {
 
     @Delete("delete from aoa_director where director_id =#{id}")
     void deleteDirector(Long directorId);
+
+    @Select("select count(*) from aoa_director")
+    Long count();
 }

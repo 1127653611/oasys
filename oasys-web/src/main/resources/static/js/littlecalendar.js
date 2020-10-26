@@ -126,7 +126,7 @@ $(function(){
 						date2=$toyear+"-"+last+"-"+$day;
 					 for(var i=0;i<a.length;i++){
             			 if(date2==a[i]){
-            				  console.log(date2)
+
                    			$(this).children(".icon").addClass("glyphicon glyphicon-flag");
                    		}
             		 }

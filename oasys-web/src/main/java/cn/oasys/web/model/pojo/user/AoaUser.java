@@ -1,8 +1,11 @@
 package cn.oasys.web.model.pojo.user;
 
+import cn.oasys.web.model.pojo.attendce.AoaAttendsList;
 import cn.oasys.web.model.pojo.role.AoaRole;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 public class AoaUser {
     private Long userId;
@@ -70,6 +73,26 @@ public class AoaUser {
     private AoaDept dept;
 
     private AoaPosition position;
+
+    private Set<AoaAttendsList> aSet;
+
+    private List<Integer> uMap;
+
+    public List<Integer> getuMap() {
+        return uMap;
+    }
+
+    public void setuMap(List<Integer> uMap) {
+        this.uMap = uMap;
+    }
+
+    public Set<AoaAttendsList> getaSet() {
+        return aSet;
+    }
+
+    public void setaSet(Set<AoaAttendsList> aSet) {
+        this.aSet = aSet;
+    }
 
     public AoaDept getDept() {
         return dept;
@@ -369,9 +392,6 @@ public class AoaUser {
                 ", superman=" + superman +
                 ", holiday=" + holiday +
                 ", pinyin='" + pinyin + '\'' +
-                ", role=" + role +
-                ", dept=" + dept +
-                ", position=" + position +
                 '}';
     }
 }

@@ -57,4 +57,6 @@ public interface AdressService {
     List<AoaDirectorUsers> findByUserAndShareuserNotNull(Long userId);
 
     List<AoaDirectorUsers> findBaseKeyShare(String s, Long userId);
+
+    Long count();
 }

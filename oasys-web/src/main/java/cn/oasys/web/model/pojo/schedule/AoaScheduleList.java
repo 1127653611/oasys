@@ -1,5 +1,9 @@
 package cn.oasys.web.model.pojo.schedule;
 
+import cn.oasys.web.model.pojo.system.AoaStatusList;
+import cn.oasys.web.model.pojo.system.AoaTypeList;
+import cn.oasys.web.model.pojo.user.AoaUser;
+
 import java.util.Date;
 
 public class AoaScheduleList {
@@ -26,6 +30,36 @@ public class AoaScheduleList {
     private String miaoshu;
 
     private Integer isreminded;
+
+    private AoaStatusList aoaStatusList;
+
+    private AoaTypeList aoaTypeList;
+
+    private AoaUser user;
+
+    public AoaUser getUser() {
+        return user;
+    }
+
+    public void setUser(AoaUser user) {
+        this.user = user;
+    }
+
+    public AoaStatusList getAoaStatusList() {
+        return aoaStatusList;
+    }
+
+    public void setAoaStatusList(AoaStatusList aoaStatusList) {
+        this.aoaStatusList = aoaStatusList;
+    }
+
+    public AoaTypeList getAoaTypeList() {
+        return aoaTypeList;
+    }
+
+    public void setAoaTypeList(AoaTypeList aoaTypeList) {
+        this.aoaTypeList = aoaTypeList;
+    }
 
     public Long getRcId() {
         return rcId;
@@ -121,5 +155,25 @@ public class AoaScheduleList {
 
     public void setIsreminded(Integer isreminded) {
         this.isreminded = isreminded;
+    }
+
+    @Override
+    public String toString() {
+        return "AoaScheduleList{" +
+                "rcId=" + rcId +
+                ", createTime=" + createTime +
+                ", endTime=" + endTime +
+                ", filedescribe='" + filedescribe + '\'' +
+                ", isRemind=" + isRemind +
+                ", startTime=" + startTime +
+                ", statusId=" + statusId +
+                ", title='" + title + '\'' +
+                ", typeId=" + typeId +
+                ", userId=" + userId +
+                ", miaoshu='" + miaoshu + '\'' +
+                ", isreminded=" + isreminded +
+                ", aoaStatusList=" + aoaStatusList +
+                ", aoaTypeList=" + aoaTypeList +
+                '}';
     }
 }

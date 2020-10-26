@@ -90,7 +90,7 @@
 
 <div th:if="${not #strings.isEmpty(#httpServletRequest?.getAttribute('success'))}">
     <script type="text/javascript">
-			console.log("成功的");
+
 			modalShow(1);
     </script>
 </div>
@@ -98,16 +98,16 @@
 <div th:if="${not #strings.isEmpty(#httpServletRequest?.getAttribute('errormess'))}">
 <input type="hidden" value="${#httpServletRequest?.getAttribute('errormess')}" class="hide-error">
     <script type="text/javascript">
-		console.log("失败的");
+
 		$('.alert-danger').css('display', 'block');
 		modalShow(0);
 		//获取后台传过来的错误信息值；
 		var errormess='[[${#httpServletRequest?.getAttribute('errormess')}]]';
-		console.log("errormess:"+errormess);
+
 		 // 提示框的错误信息显示
 		$('.error-mess').text(errormess);
 		// 模态框的错误信息显示
 		$('#thismodal .modal-error-mess').text(errormess);
-		console.log("errormess+thismodal:"+$('#thismodal .modal-error-mess').text());
+
 	</script>
 </div>

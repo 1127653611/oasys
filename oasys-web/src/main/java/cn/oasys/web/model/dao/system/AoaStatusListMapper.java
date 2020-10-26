@@ -32,4 +32,7 @@ public interface AoaStatusListMapper {
 
     @Select("select status_id ,status_color , status_model , status_name , sort_precent , sort_value  from aoa_status_list where status_model=#{model}")
     List<AoaStatusList> findByStatusModel(@Param("model") String inform);
+
+    @Select("select status_id ,status_color , status_model , status_name , sort_precent , sort_value  from aoa_status_list where status_model=#{model} and status_name =#{key}")
+    AoaStatusList findByStatusModelAndStatusName(@Param("model") String model, @Param("key") String val);
 }

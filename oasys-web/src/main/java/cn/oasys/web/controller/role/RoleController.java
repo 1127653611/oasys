@@ -68,7 +68,6 @@ public class RoleController {
     public String index2(HttpServletRequest req, Model model){
 
         Long roleid=Long.parseLong(req.getParameter("id"));
-        System.out.println(roleid);
         AoaRole role=roleService.findOne(roleid);
         List<AoaSysMenu> oneMenuAll=menuSysService.findByRoleParentAll(0L, roleid);
         List<AoaSysMenu> twoMenuAll=menuSysService.findByRoleChiledAll(0L, roleid);

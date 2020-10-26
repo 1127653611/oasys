@@ -214,7 +214,7 @@ $('.chat-box').off('click','.likethis').on('click','.likethis',function(){
 	    var rightNum=$(this).parent().siblings(".pull-right").children(".rightNum").text();
 	   $('.replychange').load('/likeuserload',{module:module,replyId:replyId,rightNum:rightNum});
 	}else{
-		console.log("参数错误");
+
 	}
 
 });
@@ -249,7 +249,7 @@ $('.chat-box').off('click','.likethis').on('click','.likethis',function(){
 		$("#hiddenreplyModule").val($(this).attr('replyModule'));
 		var name = $(this).attr('replyName');
 		$('.replyName').val(name);
-		console.log(typeof(name));
+
 		if(typeof(name) != 'undefined' ){
 			$("#comment").val("@"+name);
 		}
@@ -265,17 +265,17 @@ $('.chat-box').off('click','.likethis').on('click','.likethis',function(){
 	    var isvote='[[${isvote}]]';
 	    var dateType='[[${dateType}]]';
 		if(dateType==1){
-			console.log("投票还未开始");
+
 			return false;
 		}else if(dateType==2){
-			console.log("投票已经结束");
+
 			return false;
 		}
 		if($(this).children().children('.glyphicon').hasClass('glyphicon-hand-left')){
-			console.log("已经投票了");
+
 			return false;
 		}else if(isvote=='true'){
-		    console.log("已经投票了");
+
             return false;
    		}
 		else{
@@ -299,7 +299,7 @@ $('.chat-box').off('click','.likethis').on('click','.likethis',function(){
 				});
 
 				}else{
-					console.log("投票方式是单选,已经投过票了");
+
 					return false;
 				}
 			}else{

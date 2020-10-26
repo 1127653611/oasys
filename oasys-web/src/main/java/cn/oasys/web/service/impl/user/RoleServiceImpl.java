@@ -46,7 +46,6 @@ public class RoleServiceImpl implements RoleService {
     public void update(AoaRole role) {
         if (role.getRoleId()==null){
             aoaRoleMapper.insert(role);
-            System.out.println(role.getRoleId());
             List<AoaSysMenu> aoaSysMenus=aoaSysMenuMapper.findAll();
             for (AoaSysMenu aoaSysMenu: aoaSysMenus){
                aoaRolePowerListMapper.sava(new AoaRolePowerList(null,aoaSysMenu.getMenuId(),role.getRoleId()));

@@ -1,0 +1,106 @@
+<th:block th:fragment="planviewtable" xmlns:th="http://www.thymeleaf.org">
+    <div class="bgc-w box box-primary">
+        <div class="box-header">
+            <a class="label label-success" href="planedit?pid=-1"><span class="glyphicon glyphicon-plus"></span>
+                新增
+            </a>
+
+            <div class="input-group" style="width:150px;float:right;top:-5px">
+                <input type="text" id="find" class="form-control input-sm pull-right baseKey" th:value="${baseKey}"
+                       placeholder="查找..."/>
+                <div class="input-group-btn" style="top:-1px;">
+                    <a class="btn btn-sm btn-default glyphicon glyphicon-search btn-change baseKetsubmit"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="box-body">
+            <div class="table" style="padding-top: 15px;">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <tr class="table-header">
+                            <th scope="col" class="paixu thistype" style="color:blue;">类型
+                                <span th:if="${not #strings.isEmpty(type) && not #strings.isEmpty(icon)}"
+                                      class="glyphicon" th:classappend="${icon}"></span>
+                            </th>
+                            <th scope="col">标题</th>
+                            <th scope="col"><span class="paixu thistime" style="color:blue;">发布时间
+							<span th:if="${not #strings.isEmpty(time) && not #strings.isEmpty(icon)}" class="glyphicon"
+                                  th:classappend="${icon}"></span>
+
+
+						</span></th>
+                            <th scope="col">发布人</th>
+                            <th scope="col">部门</th>
+                            <th scope="col"><span class="paixu thisstatus" style="color:blue;">状态
+								<span th:if="${not #strings.isEmpty(status) && not #strings.isEmpty(icon)}"
+                                      class="glyphicon" th:classappend="${icon}"></span>
+
+
+						</span></th>
+                            <th scope="col">附件</th>
+                            <th scope="col">操作</th>
+                        </tr>
+
+
+                        <tr th:each="plan,status: ${plist}" th:if="${not #lists.isEmpty(plist)}">
+                            <td>
+                                [[${plan?.aoaTypeList?.typeName}]]
+                            </td>
+
+                            <td>
+                                <th:block th:if="${not #strings.isEmpty(plan?.label)}">【[[${plan?.label}]]】</th:block>[[${plan?.title}]]
+                            </td>
+                            <td>
+                                [[${#dates.format(plan?.createTime, 'yyyy-MM-dd HH:mm:ss')}]]
+                            </td>
+                            <td>
+                                [[${plan?.user?.userName}]]
+                            </td>
+                            <td>
+                                [[${plan?.user?.dept?.deptName}]]
+                            </td>
+                            <td>
+                                <span class="label ${s.statusColor}">[[${plan?.aoaStatusList?.statusName}]]</span>
+
+                            </td>
+                            <td>
+
+                                <a th:if="${not #strings.isEmpty(plan?.attachId)}" style="color:#337ab7;"
+                                   th:href="@{'down?paid='+${plan?.attachId}}">
+                                    <span class="glyphicon glyphicon-paperclip"></span>
+                                </a>
+
+                            </td>
+                            <td>
+                                <a th:href="@{'planedit?pid='+${plan?.planId}}" class="label xiugai"><span
+                                        class="glyphicon glyphicon-edit"></span> 修改</a>
+                                <a onclick="{return confirm('删除该记录将不能恢复，确定删除吗？');};"
+                                   th:href="@{'plandelete?pid='+${plan?.planId}}" class="label shanchu"><span
+                                        class="glyphicon glyphicon-remove"></span> 删除</a>
+                            </td>
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div th:replace="common/paging :: paging"></div>
+
+    </div>
+    <script>
+     $("#find").keydown(function () {
+     		if (window.event.keyCode==13) {
+    	 		$(".baseKetsubmit").trigger("click");
+  		 	}
+		});
+		$('.baseKetsubmit').on('click', function() {
+		    var url='[[${url}]]';
+			var baseKey = $('.baseKey').val();
+			$('.thistable').load(url+'?baseKey='+baseKey);
+		});
+</script>
+</th:block>

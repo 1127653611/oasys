@@ -1,6 +1,7 @@
 package cn.oasys.web.model.pojo.process;
 
 import java.util.Date;
+import java.util.List;
 
 public class AoaBursement {
     private Long bursementId;
@@ -24,6 +25,26 @@ public class AoaBursement {
     private Long proId;
 
     private Long userName;
+
+    private AoaProcessList aoaProcessList;
+
+    List<AoaDetailsburse> details;
+
+    public List<AoaDetailsburse> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<AoaDetailsburse> details) {
+        this.details = details;
+    }
+
+    public AoaProcessList getAoaProcessList() {
+        return aoaProcessList;
+    }
+
+    public void setAoaProcessList(AoaProcessList aoaProcessList) {
+        this.aoaProcessList = aoaProcessList;
+    }
 
     public Long getBursementId() {
         return bursementId;
@@ -111,5 +132,23 @@ public class AoaBursement {
 
     public void setUserName(Long userName) {
         this.userName = userName;
+    }
+
+    @Override
+    public String toString() {
+        return "AoaBursement{" +
+                "bursementId=" + bursementId +
+                ", allMoney=" + allMoney +
+                ", allinvoices=" + allinvoices +
+                ", burseTime=" + burseTime +
+                ", financialAdvice='" + financialAdvice + '\'' +
+                ", managerAdvice='" + managerAdvice + '\'' +
+                ", name='" + name + '\'' +
+                ", typeId=" + typeId +
+                ", operationName=" + operationName +
+                ", proId=" + proId +
+                ", userName=" + userName +
+                ", aoaProcessList=" + aoaProcessList +
+                '}';
     }
 }

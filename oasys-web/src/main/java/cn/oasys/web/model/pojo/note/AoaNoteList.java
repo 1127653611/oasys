@@ -1,5 +1,8 @@
 package cn.oasys.web.model.pojo.note;
 
+import cn.oasys.web.model.pojo.system.AoaStatusList;
+import cn.oasys.web.model.pojo.system.AoaTypeList;
+
 import java.util.Date;
 
 public class AoaNoteList {
@@ -19,7 +22,7 @@ public class AoaNoteList {
 
     private Long attachId;
 
-    private Long isCollected;
+    private Long isCollected=0L;
 
     private Long createmanId;
 
@@ -111,5 +114,22 @@ public class AoaNoteList {
 
     public void setReceiver(String receiver) {
         this.receiver = receiver == null ? null : receiver.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "AoaNoteList{" +
+                "noteId=" + noteId +
+                ", content='" + content + '\'' +
+                ", createTime=" + createTime +
+                ", statusId=" + statusId +
+                ", title='" + title + '\'' +
+                ", typeId=" + typeId +
+                ", catalogId=" + catalogId +
+                ", attachId=" + attachId +
+                ", isCollected=" + isCollected +
+                ", createmanId=" + createmanId +
+                ", receiver='" + receiver + '\'' +
+                '}';
     }
 }

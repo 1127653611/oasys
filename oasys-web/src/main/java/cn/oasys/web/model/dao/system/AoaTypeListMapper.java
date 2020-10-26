@@ -30,6 +30,8 @@ public interface AoaTypeListMapper {
     List<AoaTypeList> findByTypeModel(@Param("model") String model);
 
     @Select("select type_name from aoa_type_list where  type_id = #{id}")
-    Object findname(@Param("id") Long typeId);
+    String findname(@Param("id") Long typeId);
 
+    @Select("select type_id  , type_color  , type_model  , type_name ,sort_value  from aoa_type_list where type_model=#{model} and type_name=#{key}")
+    AoaTypeList findByTypeModelAndTypeName(@Param("model") String model, @Param("key") String val);
 }

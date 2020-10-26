@@ -34,12 +34,14 @@ var starttime,endtime;
 		arr=data.split(";");
 		 starttime=arr[0];
 		 endtime=arr[1];
+		 var baseKey=$('.baseKey').val().trim();
 		 $.ajax({
 			 type:"get",
 			 url:'realweektable',
 			 data:{
 				 starttime:starttime,
-				 endtime:endtime
+				 endtime:endtime,
+                 baseKey:baseKey
 			 },
 			success:function(dates){
 				 $("#refresh").html(dates)

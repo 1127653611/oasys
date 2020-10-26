@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.process.AoaStayMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.process.AoaStay">
+    <id column="stay_id" jdbcType="BIGINT" property="stayId" />
+    <result column="day" jdbcType="INTEGER" property="day" />
+    <result column="hotel_name" jdbcType="VARCHAR" property="hotelName" />
+    <result column="leave_time" jdbcType="TIMESTAMP" property="leaveTime" />
+    <result column="stay_city" jdbcType="VARCHAR" property="stayCity" />
+    <result column="stay_money" jdbcType="DOUBLE" property="stayMoney" />
+    <result column="stay_time" jdbcType="TIMESTAMP" property="stayTime" />
+    <result column="evemoney_id" jdbcType="BIGINT" property="evemoneyId" />
+    <result column="user_name" jdbcType="BIGINT" property="userName" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    stay_id, day, hotel_name, leave_time, stay_city, stay_money, stay_time, evemoney_id, 
+    user_name
+  </sql>
+<select id="findByEvemoney" resultMap="BaseResultMap">
+  select <include refid="Base_Column_List"></include>
+  from aoa_stay where evemoney_id = #{id}
+</select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.process.AoaStay">
+    insert into aoa_stay
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stayId != null">
+        stay_id,
+      </if>
+      <if test="day != null">
+        day,
+      </if>
+      <if test="hotelName != null">
+        hotel_name,
+      </if>
+      <if test="leaveTime != null">
+        leave_time,
+      </if>
+      <if test="stayCity != null">
+        stay_city,
+      </if>
+      <if test="stayMoney != null">
+        stay_money,
+      </if>
+      <if test="stayTime != null">
+        stay_time,
+      </if>
+      <if test="evemoneyId != null">
+        evemoney_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stayId != null">
+        #{stayId,jdbcType=BIGINT},
+      </if>
+      <if test="day != null">
+        #{day,jdbcType=INTEGER},
+      </if>
+      <if test="hotelName != null">
+        #{hotelName,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveTime != null">
+        #{leaveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stayCity != null">
+        #{stayCity,jdbcType=VARCHAR},
+      </if>
+      <if test="stayMoney != null">
+        #{stayMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="stayTime != null">
+        #{stayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="evemoneyId != null">
+        #{evemoneyId,jdbcType=BIGINT},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaStay">
+    update aoa_stay
+    <set>
+      <if test="day != null">
+        day = #{day,jdbcType=INTEGER},
+      </if>
+      <if test="hotelName != null">
+        hotel_name = #{hotelName,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveTime != null">
+        leave_time = #{leaveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stayCity != null">
+        stay_city = #{stayCity,jdbcType=VARCHAR},
+      </if>
+      <if test="stayMoney != null">
+        stay_money = #{stayMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="stayTime != null">
+        stay_time = #{stayTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="evemoneyId != null">
+        evemoney_id = #{evemoneyId,jdbcType=BIGINT},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=BIGINT},
+      </if>
+    </set>
+    where stay_id = #{stayId,jdbcType=BIGINT}
+  </update>
+
+</mapper>

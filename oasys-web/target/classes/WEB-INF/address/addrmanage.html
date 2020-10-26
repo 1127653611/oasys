@@ -196,8 +196,7 @@ li.activee>a {
 			$('#thischangetypesubmit').on('click',function(){
 				var did=$("#thischangetype").attr('thisdid');
 				var catalog=$('#thisselectvalue').val();
-				console.log("did:"+did)
-				console.log("fdsfsdfdaffd");
+
 				$.ajax({
 					url:'/changethistype',
 					type:'post',
@@ -206,8 +205,7 @@ li.activee>a {
 					data:{'did':did,'catalog':catalog},
 					datatype:'json',
 					success:function(data){
-						console.log("执行成功了么?");
-						console.log(data);
+
 						 if(data){
 							var alph=$('#thispills .active a').text().trim();	//获取字母表中的值
 							$('.thistable').load('outaddresspaging',{alph:alph});
@@ -224,7 +222,7 @@ li.activee>a {
 				$("#thischangetype").attr('thisdid',$(this).attr("thisdid"));				
 				//设置名字
 				$("#thischangetype").attr('title',$(this).attr("thisuserName"));
-				console.log($("#thischangetype").attr('title'));
+
 				$("#thischangetypename").text($(this).attr("thisuserName"));
 				//设置电话号码
 				$("#thischangetype").attr('thistel',$(this).attr("thisphoneNumber"));
@@ -260,12 +258,12 @@ li.activee>a {
 			/* 查看内部联系人详情 */
 			$('.thistable').on('click','.inlookthis',function(){
 				var userId=$(this).attr('userId');
-				console.log(userId);
+
 				$('.thistable').load('inmessshow',{userId:userId});
 			})
 			/* 我的分享的消息记录 */
 			$('.meshareother').on('click',function(){
-				console.log("我的分享点击了么？");
+
 				$('.thistable').load('mesharemess');
 			})
 			/* 分享信息按钮的点击事件 */
@@ -280,21 +278,20 @@ li.activee>a {
 			/* 模态框中的点击 */
 			$('.thistable').on('click','.thisshareuser',function(){
 				var sharedirector=$('.sharehidden').val();
-				console.log("分享的通讯录:"+sharedirector);
+
 				var length=$('#shareModal .table-r tbody input[type="checkbox"]:checked').length;
 				if(length<1){
-					console.log("长度小于1");
+
 					$('#shareModal .alert-dismissable').css("display","block");
 					$('.error-mess').text("没有选择要分享的人");
 					return false;
 				}
 				var directors=new Array();
 				$('#shareModal .table-r tbody input[type="checkbox"]:checked').each(function(index){
-					console.log("下标："+index);
-					console.log("用户："+$(this).attr("userId"));
+
 					directors[index]=$(this).attr("userId");
 				})
-				console.log(directors);
+
 				/*传值给后台：1、要分享的通讯录id；2、要接收的userid的数组；  */
 				$("#shareModal .modal-1").load("shareother",{'directors[]':directors,sharedirector:sharedirector});
 			})
@@ -305,7 +302,7 @@ li.activee>a {
 			/*分享。。。*/
 			$('.thistable').on('click','.thisshare',function(){
 				var sharedirector=$(this).attr("directorId");
-				console.log("分享的通讯录:"+sharedirector);
+
 				$('.sharehidden').val(sharedirector);
 				$('#shareModal').modal("toggle");
 				$("#shareModal .modal-1").load("modalshare");
@@ -314,7 +311,7 @@ li.activee>a {
 			/* 用户删除某个联系人 */
 			$('.thistable').on('click','.thisdelete',function(){
 				var did=$(this).attr('did');
-				console.log(did);
+
 				if(confirm("确定删除吗？")){
 					$('.thistable').load('deletedirector',{did:did},function(){
 						modalShow(1);
@@ -325,7 +322,7 @@ li.activee>a {
 			/* 新建外部联系人分类 */
 			$('.addtype').on('click',function(){
 				var typename=$('.addtypename').val().trim();
-				console.log(typename);
+
 				var count=1;
 				if(typename==""){
 						count=0;
@@ -335,7 +332,7 @@ li.activee>a {
 					}
 				$('#thisul li a').each(function(index){
 					if($(this).text().trim()==typename){
-						console.log("分类名字已存在");
+
 						count=0;
 						$('.modal-error-mess').text("该分类名字已经存在,请重新命名!");
 						modalShow(0);
@@ -343,17 +340,14 @@ li.activee>a {
 					}
 				})
 				if(count==0){
-					console.log("分类名字已存在————————不会往下执行了");
+
 					return false;
 				}
-				console.log("会继续往下面走，执行ajax");
+
 				$('#thisul').load("addtypename",{typename:typename},function(response,status,xhr){
 					modalShow(1);
 					$('.addtypename').val("");
-					/* console.log("听说这是执行成功会返回的的？？？");
-					console.log("response:"+response);
-					console.log("status:"+status);
-					console.log("xhr:"+xhr); */
+
 				});
 			})
 			
@@ -364,7 +358,7 @@ li.activee>a {
 			/* 修改外部联系人 */
 			$('.thistable').on('click','.thischange',function(){
 				var did=$(this).attr('did');
-				console.log(did);
+
 				$('.thistable').load('addaddress',{did:did});
 			})
 			/* 刷新按钮 */
@@ -399,18 +393,17 @@ li.activee>a {
 			/*字母表的字母点击事件  */
 			$('#thispills a').on('click',function(){
 				/* 这里获取到的是上一次active的那一个， */
-				console.log("外部通讯录值："+$('#thisul .activee').text().trim());
-				console.log("关键字："+$('.baseKey').val());
+
 				var alph=$(this).text().trim();
 				var type=$('#navpills .activee').text().trim();
 				var baseKey=$('.baseKey').val().trim();
 				var outtype=$('#thisul .activee').text().trim();
 				if(type=="内部通讯录"){
-					console.log("是内部通讯录");
+
 					$('.thistable').load('inaddresspaging',{alph:alph,baseKey:baseKey});
 				}else{
 					/*还要进行判断，是否为空；不为空说明是在外部的分类里面进行；为空说明查找所有的外部通讯录  */
-					console.log("是外部通讯录");
+
 					$('.thistable').load('outaddresspaging',{alph:alph,outtype:outtype,baseKey:baseKey});
 				}
 			})
@@ -429,7 +422,7 @@ li.activee>a {
 			$('#thisul').on('click','li a',function(){
 				var alph=$('#thispills .active a').text().trim();
 				var outtype=$(this).text().trim();
-				console.log(outtype);
+
 				$('.thistable').load('outaddresspaging',{alph:alph,outtype:outtype});	
 			})
 			/* 外部通讯录分类的编辑与删除 */

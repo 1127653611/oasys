@@ -9,4 +9,6 @@ public interface AoaAttachmentListMapper {
     AoaAttachmentList findOne(long id);
 
     void insertSelective(AoaAttachmentList attachment);
+
+    Integer updateByPrimaryKeySelective(AoaAttachmentList aoaAttachmentList);
 }

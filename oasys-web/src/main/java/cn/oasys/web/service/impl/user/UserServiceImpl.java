@@ -1,5 +1,6 @@
 package cn.oasys.web.service.impl.user;
 
+import cn.oasys.web.common.Utils.MD5Util;
 import cn.oasys.web.model.dao.role.AoaRoleMapper;
 import cn.oasys.web.model.dao.user.AoaDeptMapper;
 import cn.oasys.web.model.dao.user.AoaPositionMapper;
@@ -15,6 +16,7 @@ import com.github.stuxuhai.jpinyin.PinyinFormat;
 import com.github.stuxuhai.jpinyin.PinyinHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -72,12 +74,12 @@ public class UserServiceImpl implements UserService {
             String pinyin= PinyinHelper.convertToPinyinString(user.getUserName(), "", PinyinFormat.WITHOUT_TONE);
             user.setPinyin(pinyin);
             user.setFatherId(dept.getDeptmanager());
-            user.setPassword("123456");
+            user.setPassword(MD5Util.getMD5String("123456"));
             aoaUserMapper.sava(user);
         }else {
             user.setFatherId(dept.getDeptmanager());
             if(isbackpassword){
-                user.setPassword("123456");
+                user.setPassword(MD5Util.getMD5String("123456"));
             }
             aoaUserMapper.updateSelective(user);
         }
@@ -127,6 +129,32 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<AoaUser> findUsersByBaseKeyAndPinyinLike(String key, String p) {
         return aoaUserMapper.findUsersByBaseKeyAndPinyinLike(key,p);
+    }
+
+    @Override
+    public List<AoaUser> findmyemployuser(String baseKey, Long userid) {
+        if (!StringUtils.isEmpty(baseKey)) {
+            // 模糊查询
+            return aoaUserMapper.findbyFatherId("%"+baseKey+"%", userid);
+        }
+        else{
+            return aoaUserMapper.findbyFatherId(null,userid);
+        }
+    }
+
+    @Override
+    public AoaUser findByname(String name) {
+        return aoaUserMapper.findByname(name);
+    }
+
+    @Override
+    public List<AoaUser> findByFatherId(Long userId) {
+        return aoaUserMapper.findbyFatherId(null,userId);
+    }
+
+    @Override
+    public void update(AoaUser users) {
+        aoaUserMapper.updateSelective(users);
     }
 
 }

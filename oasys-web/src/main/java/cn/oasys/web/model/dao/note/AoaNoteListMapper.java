@@ -9,13 +9,19 @@ import java.util.List;
 @Mapper
 public interface AoaNoteListMapper {
 
-    List<AoaNoteList> findOrderByOnce(@Param("id") long userid, @Param("type") Object type, @Param("status") Object status, @Param("time") Object time,@Param("tid")Long typeId);
+    List<AoaNoteList> findOrderByOnce(@Param("key")String key,@Param("id") long userid, @Param("type") String type, @Param("status") String status, @Param("time") String time,@Param("tid")Long typeId,@Param("co")Long iscolect);
 
-    List<AoaNoteList> findBytitleOrderByOnce(@Param("key") String key, @Param("id") long userid, @Param("type") Object type, @Param("status") Object status, @Param("time") Object time,@Param("tid")Long typeId);
-
-    List<AoaNoteList> findByCatalogIdOrderByOnce(@Param("cid") Long catalogId, @Param("id") long userid, @Param("type") Object type, @Param("status") Object status, @Param("time") Object time,@Param("tid")Long typeId);
-
-    List<AoaNoteList> findByCatalogIdAndtitleOrderByOnce(@Param("key") String s,@Param("cid") Long catalogId, @Param("id") long userid, @Param("type") Object type, @Param("status") Object status, @Param("time") Object time,@Param("tid")Long typeId);
+    List<AoaNoteList> findByCatalogIdAndtitleOrderByOnce(@Param("key") String s,@Param("cid") Long catalogId, @Param("id") long userid, @Param("type") String type, @Param("status") String status, @Param("time") String time,@Param("tid")Long typeId,@Param("co")Long iscolect);
 
     AoaNoteList finfOne(Long nid);
+
+    void insertSelective(AoaNoteList note2);
+
+    void updateByPrimaryKeySelective(AoaNoteList note2);
+
+    void updatecollect(@Param("co") Long collect, @Param("nid") Long noteid);
+
+    void delete(long noteid);
+
+    List<AoaNoteList> findByCatalogId(long catalogid);
 }

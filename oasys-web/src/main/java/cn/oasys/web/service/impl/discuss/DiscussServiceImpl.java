@@ -400,6 +400,11 @@ public class DiscussServiceImpl implements DiscussService {
         aoaLoveUserMapper.deleteLoveByreply(discussId);
     }
 
+    @Override
+    public Long count() {
+        return aoaDiscussListMapper.count();
+    }
+
     private List<Map<String, Object>> commentPackaging(List<AoaCommentList> commentList) {
         List<Map<String, Object>> commentMap = new ArrayList<>();
         for (int i = 0; i < commentList.size(); i++) {

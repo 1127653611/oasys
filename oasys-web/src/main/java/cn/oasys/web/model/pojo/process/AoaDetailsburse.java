@@ -72,4 +72,17 @@ public class AoaDetailsburse {
     public void setBursmentId(Long bursmentId) {
         this.bursmentId = bursmentId;
     }
+
+    @Override
+    public String toString() {
+        return "AoaDetailsburse{" +
+                "detailsburseId=" + detailsburseId +
+                ", descript='" + descript + '\'' +
+                ", detailmoney=" + detailmoney +
+                ", invoices=" + invoices +
+                ", produceTime=" + produceTime +
+                ", subject='" + subject + '\'' +
+                ", bursmentId=" + bursmentId +
+                '}';
+    }
 }

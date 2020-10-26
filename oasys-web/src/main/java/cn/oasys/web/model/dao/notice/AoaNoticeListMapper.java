@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface AoaNoticeListMapper {
@@ -14,4 +15,19 @@ public interface AoaNoticeListMapper {
             " where user_id=#{id} order by is_top desc, modify_time desc ")
     List<AoaNoticeList> findByUserId(@Param("id") Long userId);
 
+    List<Map<String, Object>> findMyNoticeLimit(Long userId);
+
+    List<AoaNoticeList> findByUserIdOrDerByObj(@Param("uid") Long userId, @Param("key") String baseKey, @Param("type") String type, @Param("status") String status, @Param("time") String time);
+
+    AoaNoticeList findOne(Long noticeId);
+
+    void insertSelective(AoaNoticeList menu);
+
+    void updateByPrimaryKeySelective(AoaNoticeList menu);
+
+    void delete(Long noticeId);
+
+    List<Map<String, Object>> findMyNotice(Long userId);
+
+    List<Map<String, Object>> sortMyNotice(@Param("uid") Long userId, @Param("key") String baseKey, @Param("type") String type, @Param("status") String status, @Param("time") String time);
 }

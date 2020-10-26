@@ -71,8 +71,24 @@
 <!-- <table tableName="aoa_director_users" domainObjectName="AoaDirectorUsers"></table>-->
 <!-- <table tableName="aoa_note_list" domainObjectName="AoaNoteList"></table>-->
 <!-- <table tableName="aoa_receiver_note" domainObjectName="AoaReceiverNote"></table>-->
- <table tableName="aoa_file_list" domainObjectName="AoaFileList"></table>
- <table tableName="aoa_file_path" domainObjectName="AoaFilePath"></table>
+<!-- <table tableName="aoa_file_list" domainObjectName="AoaFileList"></table>-->
+<!-- <table tableName="aoa_file_path" domainObjectName="AoaFilePath"></table>-->
+<!-- <table tableName="aoa_plan_list" domainObjectName="AoaPlanList"></table>-->
+<!-- <table tableName="aoa_mailnumber" domainObjectName="AoaMailnumber"></table>-->
+<!-- <table tableName="aoa_in_mail_list" domainObjectName="AoaInMailList"></table>-->
+<!-- <table tableName="aoa_task_logger" domainObjectName="AoaTaskLogger"></table>-->
+<!-- <table tableName="aoa_schedule_user" domainObjectName="AoaScheduleUser"></table>-->
+<!-- <table tableName="aoa_attends_list" domainObjectName="AoaAttendsList"></table>-->
+<!-- <table tableName="aoa_reviewed" domainObjectName="AoaReviewed"></table>-->
+<!-- <table tableName="aoa_evection" domainObjectName="AoaEvection"></table>-->
+<!-- <table tableName="aoa_overtime" domainObjectName="AoaOvertime"></table>-->
+<!-- <table tableName="aoa_regular" domainObjectName="AoaRegular"></table>-->
+<!-- <table tableName="aoa_holiday" domainObjectName="AoaHoliday"></table>-->
+<!-- <table tableName="aoa_resign" domainObjectName="AoaResign"></table>-->
+<!-- <table tableName="aoa_evectionmoney" domainObjectName="AoaEvectionmoney"></table>-->
+<!-- <table tableName="aoa_stay" domainObjectName="AoaStay"></table>-->
+<!-- <table tableName="aoa_traffic" domainObjectName="AoaTraffic"></table>-->
+ <table tableName="aoa_notepaper" domainObjectName="AoaNotepaper"></table>
 
 
 	</context>
