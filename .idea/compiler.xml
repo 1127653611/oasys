@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="oasysweb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="oasys" target="1.8" />
       <module name="oasys (1) (cn.gson)" target="1.8" />
       <module name="oasyseureka" target="1.8" />
+      <module name="oasysweb" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
