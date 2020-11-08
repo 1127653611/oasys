@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>oasys-web</module>321
+        <module>oasys-web</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

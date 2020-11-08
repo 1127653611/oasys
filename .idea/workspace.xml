@@ -1,352 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="892e1a41-6c6e-4ca8-90c3-9ae06c650c5a" name="Default Changelist" comment="ok">
-      <change afterPath="$PROJECT_DIR$/log/error.2020-11-08.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/info.2020-11-08.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Common.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/annotation/OperLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/aspect/WebLogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/exception/WebControllerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/400.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLogMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-28.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-31.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-08-03.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-08-04.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-28.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-29.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-31.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-08-03.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-08-04.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-08-05.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-eureka/oasyseureka.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-eureka/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-eureka/src/main/java/cn/oasys/eureka/EurekaConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-eureka/src/main/java/cn/oasys/eureka/OasysEurekaApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-eureka/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-eureka/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-eureka/target/classes/cn/oasys/eureka/EurekaConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-eureka/target/classes/cn/oasys/eureka/OasysEurekaApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-15.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-19.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-22.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-25.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-29.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-30.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-07-01.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-07-02.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-07-10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-07-23.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-08-05.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-08-07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-09-08.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-09-23.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-16.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-17.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-20.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-15.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-19.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-22.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-25.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-29.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-30.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-07-01.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-07-02.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-07-10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-07-23.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-08-05.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-08-07.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-09-08.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-09-23.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-16.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-17.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-20.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/OasysWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/OasysWebApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Utils/StringToDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Utils/application.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Utils/application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/IntercepterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/IntercepterConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/recordInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/recordInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/aderss/AddrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/aderss/AddrController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/attendance/AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/attendance/AttendanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/chat/ChatManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/chat/ChatManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/common/ConmmonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/common/ConmmonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/inform/InformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/inform/InformController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/login/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/mail/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/mail/MailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/menu/MenuSysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/menu/MenuSysController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/plan/PlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/plan/PlanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/process/ProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/process/ProcessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/role/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/role/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/system/StatusSysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/system/StatusSysController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/system/TypeSysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/system/TypeSysController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/task/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/task/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/DeptController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/attendce/AoaAttendsListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/attendce/AoaAttendsListMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/discuss/AoaDiscussListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/discuss/AoaDiscussListMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/note/AoaNotepaperMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/note/AoaNotepaperMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/role/AoaRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/role/AoaRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/system/AoaSysMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/system/AoaSysMenuMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLoginRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLoginRecordMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/attendce/AoaAttendsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/attendce/AoaAttendsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaEvectionmoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaEvectionmoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaStay.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaStay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaTraffic.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaTraffic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/user/AoaUserLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/user/AoaUserLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/adress/AdressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/adress/AdressServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/file/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/file/FileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/mail/MailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/mail/MailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/note/NoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/note/NoteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/process/ProcessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/process/ProcessServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/system/MenuSysServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/system/MenuSysServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/DeptServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserLoginRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserLoginRecordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/adress/AdressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/adress/AdressService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/attendce/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/attendce/AttendanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/discuss/DiscussService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/discuss/DiscussService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/file/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/file/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/mail/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/mail/MailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/note/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/note/NoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/process/ProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/process/ProcessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/schedule/DaymanageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/schedule/DaymanageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/system/MenuSysService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/system/MenuSysService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/DeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/DeptService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserLoginRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserLoginRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/inaddrss.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/inaddrss.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/inmessshow.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/inmessshow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/mesharemess.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/mesharemess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/sharemess.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/sharemess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/shareuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/shareuser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/userhas.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/userhas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/attendce/realweektable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/attendce/realweektable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chatmanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chatmanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chattable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chattable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/discusslike.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/discusslike.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/replytable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/replytable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/votetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/votetable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/leftlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/leftlists.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/noterecivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/noterecivers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/notlimit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/notlimit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/recivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/recivers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/daymanage/daycalendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/daymanage/daycalendar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/mailmanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/mailmanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/seemail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/seemail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/plan/planviewtable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/plan/planviewtable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/audetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/audetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/evectionmoney.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/evectionmoney.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/evemonserch.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/evemonserch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/eveserach.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/eveserach.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/holiday.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/holiday.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/holiserch.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/holiserch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/procedure.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/procedure.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/reguserch.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/reguserch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/serch.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/serch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menuedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menuedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menumanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menumanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menutable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menutable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/statusedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/statusedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typeedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typeedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typemanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typemanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typetable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/deptedit.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/deptmanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/deptread.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/editpaper.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/edituser.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/login.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/panel.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/positionedit.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/positionmanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlog.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlogmanage.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlogmanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlogmanagetable.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlogmanagetable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlogrecordmanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlogrecordmanagetable.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/usermanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/usermanagepaging.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userpanel.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptread.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptread.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/editpaper.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/editpaper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/edituser.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/edituser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlogrecordmanagetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlogrecordmanagetable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/usermanagepaging.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/usermanagepaging.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/banner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaAttendsListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaAttendsListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaDiscussListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaDiscussListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaEvectionmoneyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaEvectionmoneyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaNotepaperMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaNotepaperMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaReviewedMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaReviewedMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaStayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaStayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaTrafficMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaTrafficMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLoginRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLoginRecordMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/test/java/cn/oasys/web/OasysApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/test/java/cn/oasys/web/OasysApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/inaddrss.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/inaddrss.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/inmessshow.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/inmessshow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/mesharemess.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/mesharemess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/sharemess.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/sharemess.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/shareuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/shareuser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/userhas.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/userhas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/attendce/realweektable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/attendce/realweektable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/chatmanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/chatmanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/chattable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/chattable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/discusslike.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/discusslike.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/replytable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/replytable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/votetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/votetable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/leftlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/leftlists.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/noterecivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/noterecivers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/notlimit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/notlimit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/recivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/recivers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/daymanage/daycalendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/daymanage/daycalendar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/mail/mailmanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/mail/mailmanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/mail/seemail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/mail/seemail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/plan/planviewtable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/plan/planviewtable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/audetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/audetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/evectionmoney.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/evemonserch.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/eveserach.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/eveserach.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/holiday.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/holiday.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/holiserch.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/holiserch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/procedure.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/procedure.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/reguserch.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/serch.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/serch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menuedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menuedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menumanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menumanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menutable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menutable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/statusedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/statusedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typeedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typeedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typemanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typemanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typetable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/deptedit.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/deptmanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/deptread.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/editpaper.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/edituser.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/login.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/panel.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/positionedit.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/positionmanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlog.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlogmanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlogmanagetable.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlogrecordmanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlogrecordmanagetable.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/usermanage.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/usermanagepaging.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userpanel.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/deptedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/deptedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/deptread.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/deptread.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/editpaper.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/editpaper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/edituser.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/edituser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/userlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/userlog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/userlogrecordmanagetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/userlogrecordmanagetable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/usermanagepaging.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/usermanagepaging.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/banner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/OasysWebApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/OasysWebApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/Utils/StringToDate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/Utils/application.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/Utils/application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/intercepter/IntercepterConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/intercepter/IntercepterConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/intercepter/recordInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/intercepter/recordInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/aderss/AddrController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/aderss/AddrController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/attendance/AttendanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/attendance/AttendanceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/chat/ChatManageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/chat/ChatManageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/common/ConmmonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/common/ConmmonController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/inform/InformController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/inform/InformController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/login/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/login/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/mail/MailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/mail/MailController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/menu/MenuSysController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/menu/MenuSysController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/plan/PlanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/plan/PlanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/process/ProcessController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/process/ProcessController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/role/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/role/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/system/StatusSysController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/system/StatusSysController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/system/TypeSysController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/system/TypeSysController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/task/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/task/TaskController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/DeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/DeptController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserLoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserLoginController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/attendce/AoaAttendsListMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/attendce/AoaAttendsListMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/discuss/AoaDiscussListMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/discuss/AoaDiscussListMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/note/AoaNotepaperMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/note/AoaNotepaperMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/role/AoaRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/role/AoaRoleMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/system/AoaSysMenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/system/AoaSysMenuMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/user/AoaUserLogMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/user/AoaUserLogMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/user/AoaUserLoginRecordMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/user/AoaUserLoginRecordMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/attendce/AoaAttendsList.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/attendce/AoaAttendsList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaEvectionmoney.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaEvectionmoney.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaStay.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaStay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaTraffic.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaTraffic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/user/AoaUserLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/user/AoaUserLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/adress/AdressServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/adress/AdressServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/file/FileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/file/FileServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/mail/MailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/mail/MailServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/note/NoteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/note/NoteServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/process/ProcessServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/process/ProcessServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/system/MenuSysServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/system/MenuSysServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/DeptServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/DeptServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/UserLoginRecordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/UserLoginRecordServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/adress/AdressService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/adress/AdressService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/attendce/AttendanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/attendce/AttendanceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/discuss/DiscussService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/discuss/DiscussService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/file/FileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/file/FileService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/note/NoteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/note/NoteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/process/ProcessService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/process/ProcessService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/system/MenuSysService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/system/MenuSysService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/DeptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/DeptService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/UserLoginRecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/UserLoginRecordService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaAttendsListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaAttendsListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaDiscussListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaDiscussListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaEvectionmoneyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaEvectionmoneyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaNotepaperMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaNotepaperMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaReviewedMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaReviewedMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaStayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaStayMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaTrafficMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaTrafficMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaUserLoginRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaUserLoginRecordMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/test-classes/cn/oasys/web/OasysApplicationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/test-classes/cn/oasys/web/OasysApplicationTest.class" afterDir="false" />
+    <list default="true" id="892e1a41-6c6e-4ca8-90c3-9ae06c650c5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -376,11 +31,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+            <state relative-caret-position="240">
+              <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -522,9 +186,9 @@
         <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/seemail.html" />
         <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/common/ConmmonController.java" />
         <option value="$PROJECT_DIR$/oasys-web/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Common.java" />
         <option value="$PROJECT_DIR$/oasys-web/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -871,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603746530649</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ok">
+      <created>1604838457761</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604838457761</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -931,9 +602,9 @@
       <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49785408" weight="0.38036117" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.49302575" visible="true" weight="0.36568847" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49302575" weight="0.3194131" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5069742" side_tool="true" weight="0.39277652" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32392776" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32392776" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49731758" weight="0.30248308" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295711" />
       <window_info anchor="bottom" id="Problems" order="10" weight="0.3295711" />
@@ -1364,13 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Common.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2592">
@@ -1383,8 +1047,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        <state relative-caret-position="240">
+          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
         </state>
       </provider>
     </entry>
