@@ -42,7 +42,7 @@
 						   data-th-thistel="${du?.user?.userTel}"
 						   data-th-thisemail="${du?.user?.eamil}"
 						>
-							<img th:src="@{'/images/'+${du?.user?.imgPath}}" class="img-circle" style="width:24px;height:24px"/> [[${du?.user?.userName}]]
+							<img th:src="@{${du?.user?.imgPath}}" class="img-circle" style="width:24px;height:24px"/> [[${du?.user?.userName}]]
 						</a>
 				</div>
 				<div class="share-right" style="height:30px;">

@@ -12,4 +12,6 @@ public interface AoaNotepaperMapper {
     List<AoaNotepaper> findByUserIdOrderByCreateTimeDesc(Long userId);
 
     List<AoaNotepaper> findByUserIdOrderByCreateTimeDesc1(Long userId);
+
+    void insertSelective(AoaNotepaper npaper);
 }

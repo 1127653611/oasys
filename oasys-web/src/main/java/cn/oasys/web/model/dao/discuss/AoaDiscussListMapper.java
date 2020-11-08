@@ -12,13 +12,7 @@ import java.util.List;
 @Mapper
 public interface AoaDiscussListMapper {
 
-    List<AoaDiscussList> findByTitleLike(@Param("tittle") String s);
-
-    List<AoaDiscussList> findAll();
-
-    List<AoaDiscussList> findByUserAndTitleLike(@Param("userid") Long userid, @Param("tittle") String s);
-
-    List<AoaDiscussList> findByUser(Long userId);
+    List<AoaDiscussList> findByTitleLike(@Param("key") String s,@Param("type") String type,@Param("time") String time,@Param("vi") String visitnum,@Param("uid") Long userid);
 
     AoaDiscussList findOne(Long id);
 

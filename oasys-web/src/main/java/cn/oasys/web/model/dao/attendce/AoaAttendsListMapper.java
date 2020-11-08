@@ -32,10 +32,16 @@ public interface AoaAttendsListMapper {
     @Select("select count(*) from aoa_attends_list where DATE_FORMAT(attends_time,'%Y-%m') like #{month} and attends_user_id = #{uid} and status_id = #{statusid}")
     Integer countnum(@Param("month") String month, @Param("statusid") long statusId, @Param("uid") Long userId);
 
-    @Select("select sum(holiday_days) from aoa_attends_list where DATE_FORMAT(attends_time,'%Y-%m') like #{month} and attends_user_id = #{uid} and type_id = #{typeid}")
+    @Select("select count(*) from aoa_attends_list where DATE_FORMAT(attends_time,'%Y-%m') like #{month} and attends_user_id = #{uid} and type_id = #{typeid}")
     Integer countothernum(@Param("month") String month, @Param("typeid") long typeid, @Param("uid") Long userId);
 
     List<AoaAttendsList> findBySortAndKeyAndUserId(@Param("key") String key, @Param("uid") Long userId, @Param("type") String type, @Param("status") String status, @Param("time") String time);
 
     AoaAttendsList findlastest(@Param("date") String nowdate, @Param("uid") Long userId);
+
+    @Select("SELECT COUNT(*) from aoa_attends_list  WHERE DATE_format(attends_time,'%Y-%m-%d') like #{date} and attends_user_id=#{uid}")
+    Integer countrecord(@Param("date") String nowdate, @Param("uid") Long userId);
+
+    @Select("select attends_id from aoa_attends_list  WHERE DATE_format(attends_time,'%Y-%m-%d') like #{date} and attends_user_id=#{uid} and type_id=9")
+    Long findoffworkid(@Param("date") String nowdate, @Param("uid") Long userId);
 }

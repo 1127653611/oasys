@@ -23,8 +23,6 @@ import java.util.*;
 
 @Service
 public class AdressServiceImpl implements AdressService {
-    @Value("${img.rootpath}")
-    private String rootpath;
     @Autowired
     private AoaDirectorMapper aoaDirectorMapper;
     @Autowired
@@ -64,9 +62,13 @@ public class AdressServiceImpl implements AdressService {
             result.put("email", addressList.get(i).get("email"));
 //			!Objects.isNull(atDao.findOne(d.getAttachment()))
             if (addressList.get(i).get("image_path") != null) {
-                result.put("image_path", aoaAttachmentListMapper.findOne(Long.parseLong((addressList.get(i).get("image_path") + ""))).getAttachmentPath());
-            }else{
-                result.put("image_path",null);
+                if (aoaAttachmentListMapper.findOne(Long.parseLong((addressList.get(i).get("image_path") + "")))!= null) {
+                    result.put("image_path", aoaAttachmentListMapper.findOne(Long.parseLong((addressList.get(i).get("image_path") + ""))).getAttachmentPath());
+                } else {
+                    result.put("image_path", null);
+                }
+            } else {
+                result.put("image_path", null);
             }
             adds.add(result);
         }
@@ -76,36 +78,6 @@ public class AdressServiceImpl implements AdressService {
     @Override
     public AoaDirectorUsers findOneDerectorUser(Long did) {
         return aoaDirectorUsersMapper.findOne(did);
-    }
-
-
-    @Override
-    public AoaAttachmentList upload(MultipartFile file, Long userId, String model) throws IOException {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM");
-        File savepath = new File(rootpath, simpleDateFormat.format(new Date()));
-        if (!savepath.exists()) {
-            savepath.mkdirs();
-        }
-        String fileName = file.getOriginalFilename();
-        if (!StringUtil.isEmpty(fileName)) {
-            String suffix = FilenameUtils.getExtension(fileName);
-            String newFileName = UUID.randomUUID().toString().toLowerCase() + "." + suffix;
-            File targetFile = new File(savepath, newFileName);
-            file.transferTo(targetFile);
-
-            AoaAttachmentList attachment = new AoaAttachmentList();
-            attachment.setAttachmentName(file.getOriginalFilename());
-            attachment.setAttachmentPath(targetFile.getAbsolutePath().replace("\\", "/").replace(rootpath, ""));
-            attachment.setAttachmentShuffix(suffix);
-            attachment.setAttachmentSize(String.valueOf(file.getSize()));
-            attachment.setAttachmentType(file.getContentType());
-            attachment.setUploadTime(new Date());
-            attachment.setUserId(userId + "");
-            attachment.setModel(model);
-            aoaAttachmentListMapper.insertSelective(attachment);
-            return attachment;
-        }
-        return null;
     }
 
     @Override
@@ -123,18 +95,19 @@ public class AdressServiceImpl implements AdressService {
 
     @Override
     public List<AoaDirectorUsers> findByCatalogNameAndUser(String oldtypename, Long userId) {
-        return aoaDirectorUsersMapper.findByCatalogNameAndUser(oldtypename,userId);
+        return aoaDirectorUsersMapper.findByCatalogNameAndUser(oldtypename, userId);
     }
 
     @Override
     public void savaList(List<AoaDirectorUsers> dus) {
-        if (dus!=null && dus.size()>0) {
+        if (dus != null && dus.size() > 0) {
             aoaDirectorUsersMapper.savalist(dus);
         }
     }
+
     @Override
     public void insertlist(List<AoaDirectorUsers> dus) {
-        if (dus!=null && dus.size()>0) {
+        if (dus != null && dus.size() > 0) {
             aoaDirectorUsersMapper.insertlist(dus);
         }
     }
@@ -146,7 +119,7 @@ public class AdressServiceImpl implements AdressService {
 
     @Override
     public List<AoaDirectorUsers> findBaseKey(String s, Long userId) {
-        return aoaDirectorUsersMapper.findBaseKey(s,userId);
+        return aoaDirectorUsersMapper.findBaseKey(s, userId);
     }
 
     @Override
@@ -156,7 +129,7 @@ public class AdressServiceImpl implements AdressService {
 
     @Override
     public List<AoaDirectorUsers> findBaseKeyShare(String s, Long userId) {
-        return aoaDirectorUsersMapper.findBaseKeyShare(s,userId);
+        return aoaDirectorUsersMapper.findBaseKeyShare(s, userId);
     }
 
     @Override
@@ -196,7 +169,7 @@ public class AdressServiceImpl implements AdressService {
 
     @Override
     public AoaDirectorUsers findByDirectorAndUser(Long directorId, Long userId) {
-        return aoaDirectorUsersMapper.findByDirectorAndUser(directorId,userId);
+        return aoaDirectorUsersMapper.findByDirectorAndUser(directorId, userId);
     }
 
 

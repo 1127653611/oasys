@@ -27,4 +27,41 @@
   ,<include refid="Blob_Column_List"></include>
   from aoa_notepaper where notepaper_user_id = #{id} order by create_time DESC
 </select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.note.AoaNotepaper">
+    insert into aoa_notepaper
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="notepaperId != null">
+        notepaper_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="notepaperUserId != null">
+        notepaper_user_id,
+      </if>
+      <if test="concent != null">
+        concent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="notepaperId != null">
+        #{notepaperId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="notepaperUserId != null">
+        #{notepaperUserId,jdbcType=BIGINT},
+      </if>
+      <if test="concent != null">
+        #{concent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
 </mapper>

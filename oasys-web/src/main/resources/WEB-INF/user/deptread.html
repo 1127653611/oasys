@@ -84,7 +84,7 @@ a:hover {
                                 <td><span>[[${user?.userName}]]</span></td>
                                 <td><span>[[${user?.position?.name}]]</span></td>
                                 <td>
-                                    <a class="usermanagechange label xiugai">
+                                    <a th:if="${user?.userId!=deptmanage?.userId}" class="usermanagechange label xiugai">
                                         <span class="glyphicon glyphicon-edit"></span> 人事调动
                                     </a>
                                     <input class="deptuserid" type="hidden" th:value="${user?.userId}"/>
@@ -210,6 +210,7 @@ a:hover {
                                         <option th:each="user,status: ${deptuser}" th:value="${user.userId}">
                                             [[${user?.realName}]]
                                         </option>
+                                        <option value="">无</option>
                                     </select>
                                 </div>
                             </div>

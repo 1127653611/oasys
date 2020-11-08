@@ -195,7 +195,7 @@ border-top: 1px solid #2196F3;
                         <td class="css" style="width:30px;"></td>
                         <td class="wi"><label class="control-label">请假天数</label></td>
                         <td colspan="4">
-                            <div class="bottom">]]${map?.tianshu}]]天</div>
+                            <div class="bottom">[[${map?.tianshu}]]天</div>
                         </td>
                     </tr>
 
@@ -207,7 +207,7 @@ border-top: 1px solid #2196F3;
                         <td class="css" style="width:30px;"></td>
                         <td class="wi"><label class="control-label">相关资料</label></td>
                         <td colspan="4">
-                            <div class="bottom"><#if map.file??>
+                            <div class="bottom">
 
                                 <th:block th:if="${map?.file!='file'}">
 

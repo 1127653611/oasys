@@ -1,13 +1,22 @@
 package cn.oasys.web;
 
+import cn.oasys.web.common.Common;
 import cn.oasys.web.common.Utils.MD5Util;
+import cn.oasys.web.exception.NameErrorException;
 import cn.oasys.web.model.dao.discuss.AoaDiscussListMapper;
 import cn.oasys.web.model.dao.mail.AoaMailReciverMapper;
 import cn.oasys.web.model.dao.note.AoaDirectorUsersMapper;
 import cn.oasys.web.model.dao.notice.AoaNoticeUserRelationMapper;
+import cn.oasys.web.model.dao.role.AoaRoleMapper;
+import cn.oasys.web.model.dao.role.AoaRolePowerListMapper;
 import cn.oasys.web.model.dao.system.AoaSysMenuMapper;
 import cn.oasys.web.model.dao.user.AoaUserMapper;
+import cn.oasys.web.model.pojo.attendce.AoaAttendsList;
+import cn.oasys.web.model.pojo.role.AoaRole;
+import cn.oasys.web.model.pojo.role.AoaRolePowerList;
+import cn.oasys.web.model.pojo.system.AoaSysMenu;
 import cn.oasys.web.service.inter.mail.MailService;
+import cn.oasys.web.service.inter.process.ProcessService;
 import cn.oasys.web.service.inter.user.UserService;
 import com.mysql.cj.xdevapi.Collection;
 import org.junit.jupiter.api.Test;
@@ -29,7 +38,10 @@ import javax.mail.internet.MimeMultipart;
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Date;
 
 @SpringBootTest
 public class OasysApplicationTest {
@@ -49,6 +61,12 @@ public class OasysApplicationTest {
     private AoaMailReciverMapper aoaMailReciverMapper;
     @Autowired
     private MailService mailService;
+    @Autowired
+    private AoaRolePowerListMapper aoaRolePowerListMapper;
+    @Autowired
+    private AoaRoleMapper aoaRoleMapper;
+    @Autowired
+    private ProcessService processService;
 
     @Test
     public void oasysytest() throws InterruptedException, SQLException, IOException, XMLParserException, InvalidConfigurationException {
@@ -61,11 +79,9 @@ public class OasysApplicationTest {
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);
     }
-    @Test
-    public void tyes() throws ClassNotFoundException, SQLException {
-        System.out.println(MD5Util.getMD5String("123456"));
-        System.out.println(MD5Util.getMD5String("123456"));
-        System.out.println(MD5Util.getMD5String("123456"));
 
+    @Test
+    public void tyes() throws ClassNotFoundException, SQLException, ParseException, NameErrorException {
+       throw new NameErrorException("dsadas");
     }
 }

@@ -30,9 +30,6 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -167,37 +164,7 @@ public class PlanController {
         }
 
     }
-    @RequestMapping("down")
-    public void dsaf(HttpServletResponse response, HttpServletRequest request) {
-        AoaAttachmentList att = null;
-        if (StringUtils.isEmpty(request.getParameter("paid")) || request.getParameter("paid") == null
-                || request.getParameter("paid").length() == 0) {
-        } else {
-            Long paid = Long.valueOf(request.getParameter("paid"));
-             att = fileService.findByAttachmentId(paid);
-        }
-        if (StringUtils.isEmpty(request.getParameter("nid")) || request.getParameter("nid") == null
-                || request.getParameter("nid").length() == 0) {
-        } else {
-            Long nid = Long.valueOf(request.getParameter("nid"));
-            AoaNoteList note = noteService.findOne(nid);
-             att = fileService.findByAttachmentId(note.getAttachId());
-        }
-        File file = fileService.get(att);
-        try {
-            // 在浏览器里面显示
-            response.setContentLength(Integer.parseInt(att.getAttachmentSize()));
-            response.setContentType(att.getAttachmentType());
-            response.setHeader("Content-Disposition",
-                    "attachment;filename=" + new String(att.getAttachmentName().getBytes("UTF-8"), "ISO8859-1"));
-            ServletOutputStream sos = response.getOutputStream();
-            byte[] data = new byte[Integer.parseInt(att.getAttachmentSize())];
-            IOUtils.readFully(new FileInputStream(file), data);
-            IOUtils.write(data, sos);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     private void typestatus(Model model) {
         List<AoaTypeList> type = typeService.findByTypeModel("aoa_plan_list");

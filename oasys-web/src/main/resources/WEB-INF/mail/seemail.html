@@ -35,7 +35,7 @@
 							<a href="javacript:void(0);" class="label xiugai yulan" title="图片预览">
 							<span class="glyphicon glyphicon-search"></span> 预览</a>
 								</th:block>
-							<a th:href="@{'file?fileid='+${mail?.mailFileId}}" class="label xiugai">
+							<a th:href="@{'fileata?fileid='+${mail?.mailFileId}}" class="label xiugai">
 							<span class="glyphicon glyphicon-download-alt"></span> 下载</a>
 							</p>
 						</div>
@@ -89,7 +89,7 @@ var filepath='[[${filepath}]]';
     		placement:'auto right',
 				trigger: 'hover click',
     		template:'<div class="popover" role="tooltip"><div class="arrow"></div>'
-    		+'<h3 class="popover-title"></h3><div><img src="show/'+filepath+'"style="max-width: 200px;"/></div><div class="popover-content"></div></div>'
+    		+'<h3 class="popover-title"></h3><div><img src="showata/'+filepath+'"style="max-width: 200px;"/></div><div class="popover-content"></div></div>'
     	})
 		//回复
 		$(".huifu").click(function(){

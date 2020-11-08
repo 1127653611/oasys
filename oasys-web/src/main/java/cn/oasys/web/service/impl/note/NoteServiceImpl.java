@@ -143,4 +143,9 @@ public class NoteServiceImpl implements NoteService {
     public void deletecata(long catalogid) {
         aoaCatalogMapper.delete(catalogid);
     }
+
+    @Override
+    public void saveNotePaper(AoaNotepaper npaper) {
+        aoaNotepaperMapper.insertSelective(npaper);
+    }
 }

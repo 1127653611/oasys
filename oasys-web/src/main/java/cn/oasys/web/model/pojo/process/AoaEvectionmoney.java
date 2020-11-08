@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.process;
 
+import java.util.List;
+
 public class AoaEvectionmoney {
     private Long evectionmoneyId;
 
@@ -14,6 +16,46 @@ public class AoaEvectionmoney {
     private Long proId;
 
     private Integer pro;
+
+    private String shenname;
+
+    List<AoaTraffic> traffic;
+
+    List<AoaStay> stay;
+
+    public List<AoaStay> getStay() {
+        return stay;
+    }
+
+    public void setStay(List<AoaStay> stay) {
+        this.stay = stay;
+    }
+
+    private AoaProcessList aoaProcessList;
+
+    public AoaProcessList getAoaProcessList() {
+        return aoaProcessList;
+    }
+
+    public void setAoaProcessList(AoaProcessList aoaProcessList) {
+        this.aoaProcessList = aoaProcessList;
+    }
+
+    public List<AoaTraffic> getTraffic() {
+        return traffic;
+    }
+
+    public void setTraffic(List<AoaTraffic> traffic) {
+        this.traffic = traffic;
+    }
+
+    public String getShenname() {
+        return shenname;
+    }
+
+    public void setShenname(String shenname) {
+        this.shenname = shenname;
+    }
 
     public Long getEvectionmoneyId() {
         return evectionmoneyId;
@@ -70,4 +112,5 @@ public class AoaEvectionmoney {
     public void setPro(Integer pro) {
         this.pro = pro;
     }
+
 }

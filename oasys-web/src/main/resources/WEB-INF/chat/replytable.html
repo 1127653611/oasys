@@ -1,80 +1,83 @@
-<html th:fragment="replytable" xmlns:th="http://www.thymeleaf.org">
-<table class="table" style="margin-bottm: 0px;">
-    <tbody th:if="${not #lists.isEmpty(replyList) && replyList.size()>0}">
-    <tr th:each="reply,status: ${replyList}">
-        <td>
-            <div class="post">
-                <div class="user-block">
-				<span> <a href="javascript:void(0)"> <img th:src="@{'/images/'+${reply?.user?.imgPath}}"
-                                         class="big-img"/>
+<th:block th:fragment="replytable">
+    <table class="table" style="margin-bottm: 0px;">
+        <tbody th:if="${not #lists.isEmpty(replyList) && replyList.size()>0}">
+        <tr th:each="reply,status: ${replyList}">
+            <td>
+                <div class="post">
+                    <div class="user-block">
+				<span> <a href="javascript:void(0)"> <img th:src="@{${reply?.user?.imgPath}}"
+                                                          class="big-img"/>
 				</a>
 				</span> <span class="username"> <a href="javascript:void(0)"
                                                    class="raply-name">[[${reply?.user?.userName}]]</a>
-					<a th:if="${session.manage==true || reply?.discuss?.discussUserId==session.userId || reply?.user.userId==session.userId}" data-th-replyId="${reply?.replyId}" replyModule="reply"
+					<a th:if="${session.manage==true || reply?.discuss?.discussUserId==session.userId || reply?.user.userId==session.userId}"
+                       data-th-replyId="${reply?.replyId}" replyModule="reply"
                        href="javascript:void(0);" class="deletethis pull-right" style="font-size: 12px;">
 					<span style="font-size: 16px;">&times;</span>
 					</a>
 				</span> <span class="right-time">[[${#dates.format(reply?.replayTime, 'yyyy-MM-dd HH:mm:ss')}]]</span>
-                    <p th:utext="${reply?.content}" style="padding-top: 10px;"></p>
-                    <div class="replyrefresh">
-                        <div th:replace="chat/replylike :: replylike"></div>
-                    </div>
-                    <div class="comment collapse" th:if="${not #lists.isEmpty(commentList)}" th:id="'comment'+${reply?.replyId}"
-                         style="margin-left: 80px;" >
-                        <table class="table table-hover" style="margin-bottom: 0;">
-                            <tbody>
-                            <tr th:if="${comment.reply == reply.replyId}" th:each="comment,status: ${commentList}">
-                                <td class="comment-td"><a href="javascript:void(0)"> <img
-                                        th:src="@{'/images/'+${comment?.user?.imgPath}}" class="big-img"/>
-                                </a></td>
-                                <td>
-                                    <div class="user-block">
-                                        <a href="" class="raply-name">[[${comment?.user?.userName}]]: </a>[[${comment?.comment}]]
-                                        <ul class="list-inline pull-right"
-                                            style="display: block;">
-                                            <li>[[${#dates.format(comment?.time, 'yyyy-MM-dd HH:mm:ss')}]]</li>
-                                            <li><a href="javascript:void(0)" class="label xinzeng thisreply"
-                                                   data-th-replyId="${reply?.replyId}" replyModule="reply"
-                                                   data-th-replyName="${comment?.user?.userName}"><span
-                                                    class="glyphicon glyphicon-share-alt"></span>回复</a></li>
-                                            <li th:if="${session.manage==true || comment?.user?.userId==session.userId || reply?.discuss?.discussUserId==session.userId}"><a href="javascript:void(0);"
-                                                                                           class="label shanchu deletethis"
-                                                                                           data-th-replyId="${comment?.commentId}"
-                                                                                           replyModule="comment"><span
-                                                    class="glyphicon glyphicon-remove"></span>删除</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        <p th:utext="${reply?.content}" style="padding-top: 10px;"></p>
+                        <div class="replyrefresh">
+                            <div th:replace="chat/replylike :: replylike"></div>
+                        </div>
+                        <div class="comment collapse" th:if="${not #lists.isEmpty(commentList)}"
+                             th:id="'comment'+${reply?.replyId}"
+                             style="margin-left: 80px;">
+                            <table class="table table-hover" style="margin-bottom: 0;">
+                                <tbody>
+                                <tr th:if="${comment.reply == reply.replyId}" th:each="comment,status: ${commentList}">
+                                    <td class="comment-td"><a href="javascript:void(0)"> <img
+                                            th:src="@{${comment?.user?.imgPath}}" class="big-img"/>
+                                    </a></td>
+                                    <td>
+                                        <div class="user-block">
+                                            <a href="" class="raply-name">[[${comment?.user?.userName}]]: </a>[[${comment?.comment}]]
+                                            <ul class="list-inline pull-right"
+                                                style="display: block;">
+                                                <li>[[${#dates.format(comment?.time, 'yyyy-MM-dd HH:mm:ss')}]]</li>
+                                                <li><a href="javascript:void(0)" class="label xinzeng thisreply"
+                                                       data-th-replyId="${reply?.replyId}" replyModule="reply"
+                                                       data-th-replyName="${comment?.user?.userName}"><span
+                                                        class="glyphicon glyphicon-share-alt"></span>回复</a></li>
+                                                <li th:if="${session.manage==true || comment?.user?.userId==session.userId || reply?.discuss?.discussUserId==session.userId}">
+                                                    <a href="javascript:void(0);"
+                                                       class="label shanchu deletethis"
+                                                       data-th-replyId="${comment?.commentId}"
+                                                       replyModule="comment"><span
+                                                            class="glyphicon glyphicon-remove"></span>删除</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </td>
-    </tr>
+            </td>
+        </tr>
 
-    <tr>
-        <th th:if="${page.total>page.endRow}" scope="col"
-            style="background-color: #EEEEEE;text-align: center;padding:16px;" class="addmore">
-            还有[[${page.total-page.endRow}]]条，点击加载更多~~~
-        </th>
-        <th th:if="${page.total<=page.endRow}" scope="col"
-            style="background-color: #EEEEEE;text-align: center;padding:16px;" class="addmore">
-            <span class="nomore">已经没有更多了~~~</span>
-        </th>
-    </tr>
-    </tbody>
-    <tbody th:if="${#lists.isEmpty(replyList) || replyList.size()==0}">
+        <tr>
+            <th th:if="${page.total>page.endRow}" scope="col"
+                style="background-color: #EEEEEE;text-align: center;padding:16px;" class="addmore">
+                还有[[${page.total-page.endRow}]]条，点击加载更多~~~
+            </th>
+            <th th:if="${page.total<=page.endRow}" scope="col"
+                style="background-color: #EEEEEE;text-align: center;padding:16px;" class="addmore">
+                <span class="nomore">已经没有更多了~~~</span>
+            </th>
+        </tr>
+        </tbody>
+        <tbody th:if="${#lists.isEmpty(replyList) || replyList.size()==0}">
 
-    <tr>
-        <th scope="col" style="background-color: #EEEEEE;text-align: center;">还没有评论，快来坐沙发~~~</th>
-    </tr>
-    </tbody>
-</table>
-<div th:replace="common/comment :: comment"></div>
-<script>
+        <tr>
+            <th scope="col" style="background-color: #EEEEEE;text-align: center;">还没有评论，快来坐沙发~~~</th>
+        </tr>
+        </tbody>
+    </table>
+    <div th:replace="common/comment :: comment"></div>
+    <script>
 /* 点击加载更多 */
 $('.addmore').on('click',function(){
 	var selecttype=$("#selecttype option:selected").val();	//获得查看类型select中的值
@@ -127,4 +130,6 @@ $('.toggle').on('click',function() {
 	}
 });
 
-</script>
+
+    </script>
+</th:block>

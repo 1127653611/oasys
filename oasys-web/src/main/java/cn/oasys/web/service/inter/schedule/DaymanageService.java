@@ -7,7 +7,7 @@ import cn.oasys.web.model.pojo.schedule.AoaScheduleUser;
 import java.util.List;
 
 public interface DaymanageService {
-    public List<AoaScheduleUser> aboutmeschedule(Long userId);
+     List<AoaScheduleUser> aboutmeschedule(Long userId);
 
     List<AoaScheduleList> findByUser(Long userId,String key);
 

@@ -66,6 +66,9 @@
         #{pro,jdbcType=INTEGER},
       </if>
     </trim>
+    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="evectionmoneyId" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
   </insert>
 
   <update id="updateByPrimaryKeySelective" parameterType="cn.oasys.web.model.pojo.process.AoaEvectionmoney">

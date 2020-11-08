@@ -86,4 +86,23 @@ public class AttendanceServiceImpl implements AttendanceService {
     public AoaAttendsList findlastest(String nowdate, Long userId) {
         return aoaAttendsListMapper.findlastest("%"+nowdate+"%",userId);
     }
+
+    @Override
+    public Integer countrecord(String nowdate, Long userId) {
+        return aoaAttendsListMapper.countrecord("%"+nowdate+"%",userId);
+    }
+
+    @Override
+    public Long findoffworkid(String nowdate, Long userId) {
+        return aoaAttendsListMapper.findoffworkid("%"+nowdate+"%",userId);
+    }
+
+    @Override
+    public void updatetime(Date date, String hourmin, long statusId, Long aid) {
+        AoaAttendsList aoaAttendsList=aoaAttendsListMapper.findOne(aid);
+        aoaAttendsList.setAttendsTime(date);
+        aoaAttendsList.setAttendHmtime(hourmin);
+        aoaAttendsList.setStatusId(statusId);
+        aoaAttendsListMapper.updateByPrimaryKeySelective(aoaAttendsList);
+    }
 }

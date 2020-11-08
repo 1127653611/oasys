@@ -6,6 +6,7 @@ import cn.oasys.web.service.inter.user.UserLoginRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -20,8 +21,12 @@ public class UserLoginRecordServiceImpl implements UserLoginRecordService {
     }
 
     @Override
-    public List<AoaUserLoginRecord> getAll(long userid) {
-        return aoaUserLoginRecordMapper.getAllById(userid);
+    public List<AoaUserLoginRecord> getAll(long userid,String basekey) {
+        if (StringUtils.isEmpty(basekey)) {
+            return aoaUserLoginRecordMapper.getAllById(userid);
+        }else {
+            return aoaUserLoginRecordMapper.getAllByIdAndkey(userid,"%"+basekey+"%");
+        }
     }
 
     @Override

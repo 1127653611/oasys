@@ -24,6 +24,10 @@
                         </div>
                         <div th:if="${att?.typeId==9}">下班：[[${att?.attendHmtime}]]
                         </div>
+                        <div th:if="${att?.typeId==46}">请假
+                        </div>
+                        <div th:if="${att?.typeId==47}">出差
+                        </div>
                     </a>
                 </th:block>
             </td>

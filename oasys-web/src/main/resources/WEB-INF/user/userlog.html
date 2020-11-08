@@ -5,7 +5,7 @@
 </li>
 <li th:each="ulog,status: ${#httpServletRequest.getAttribute('userLogList')}" class="left">
 <a th:href="@{'javascript:changepath(\''+${ulog.url}+'\');'}"><div class="">[[${ulog.title}]]</div>
-		<small>[[${ulog.logTime}]]</small></a></li>
+		<small>[[${#dates.format(ulog?.logTime, 'yyyy-MM-dd HH:mm:ss')}]]</small></a></li>
 <li>
 	<div style="text-align: center; padding: 10px 15px;">
 		<a href="javascript:changepath('morelog');">更多记录...</a>

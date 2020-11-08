@@ -147,6 +147,22 @@ public class AoaAttendsList {
         this.holidayStart = holidayStart;
     }
 
+    public AoaAttendsList(String attendsIp, String attendsRemark, Date attendsTime, Long statusId, Long typeId, Long attendsUserId, String attendHmtime, String weekOfday, Double holidayDays, Date holidayStart) {
+        this.attendsIp = attendsIp;
+        this.attendsRemark = attendsRemark;
+        this.attendsTime = attendsTime;
+        this.statusId = statusId;
+        this.typeId = typeId;
+        this.attendsUserId = attendsUserId;
+        this.attendHmtime = attendHmtime;
+        this.weekOfday = weekOfday;
+        this.holidayDays = holidayDays;
+        this.holidayStart = holidayStart;
+    }
+
+    public AoaAttendsList() {
+    }
+
     @Override
     public String toString() {
         return "AoaAttendsList{" +

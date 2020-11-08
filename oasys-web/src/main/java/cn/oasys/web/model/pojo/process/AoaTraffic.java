@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.process;
 
+import cn.oasys.web.model.pojo.user.AoaUser;
+
 import java.util.Date;
 
 public class AoaTraffic {
@@ -20,6 +22,26 @@ public class AoaTraffic {
     private Long evectionId;
 
     private Long userName;
+
+    private String username;
+
+    private AoaUser user;
+
+    public AoaUser getUser() {
+        return user;
+    }
+
+    public void setUser(AoaUser user) {
+        this.user = user;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Long getTrafficId() {
         return trafficId;

@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+
 @Service
 @Transactional
 public class MenuSysServiceImpl implements MenuSysService {
@@ -29,44 +30,35 @@ public class MenuSysServiceImpl implements MenuSysService {
 
     @Override
     public void findMenuSys(HttpServletRequest request, AoaUser user) {
-        List<AoaSysMenu> oneMenuAll=aoaSysMenuMapper.findbyparentxianall(0L, user.getRole().getRoleId(), true,true);
-        List<AoaSysMenu> twoMenuAll=aoaSysMenuMapper.findbyparentsxian(0L, user.getRole().getRoleId(), true,true);
+        List<AoaSysMenu> oneMenuAll = aoaSysMenuMapper.findbyparentxianall(0L, user.getRole().getRoleId(), true, true);
+        List<AoaSysMenu> twoMenuAll = aoaSysMenuMapper.findbyparentsxian(0L, user.getRole().getRoleId(), true, true);
         request.setAttribute("oneMenuAll", oneMenuAll);
         request.setAttribute("twoMenuAll", twoMenuAll);
     }
 
     @Override
-    public List<AoaSysMenu> findname( long roleid, boolean bo, boolean le,String val) {
-        return aoaSysMenuMapper.findname(roleid,bo,le,val);
+    public List<AoaSysMenu> findname(long roleid, boolean bo, boolean le, String val) {
+        return aoaSysMenuMapper.findname(roleid, bo, le, val);
     }
 
     @Override
     public List<AoaSysMenu> findChil(Long id, Long roleid, Boolean bo, Boolean le) {
-        return aoaSysMenuMapper.findbyparentxianall(id, roleid, bo,le);
+        return aoaSysMenuMapper.findbyparentxianall(id, roleid, bo, le);
     }
 
     @Override
     public AoaSysMenu findByChil(Long menuid, Long roleid, Boolean bo, Boolean le) {
-        return aoaSysMenuMapper.findByChil(menuid,roleid,bo,le);
+        return aoaSysMenuMapper.findByChil(menuid, roleid, bo, le);
     }
 
     @Override
     public void findAllMenuSys(HttpServletRequest request) {
         //查找所有父菜单
-        Iterable<AoaSysMenu> oneMenuAll=aoaSysMenuMapper.findByParentIdOrderBySortId(0L);
+        Iterable<AoaSysMenu> oneMenuAll = aoaSysMenuMapper.findByParentIdOrderBySortId(0L);
         //查找所有子级
-        Iterable<AoaSysMenu> twoMenuAll=aoaSysMenuMapper.findByParentIdNotOrderBySortId(0L);
+        Iterable<AoaSysMenu> twoMenuAll = aoaSysMenuMapper.findByParentIdNotOrderBySortId(0L);
         request.setAttribute("oneMenuAll", oneMenuAll);
         request.setAttribute("twoMenuAll", twoMenuAll);
-    }
-    //修改其他    @Override
-    public void changeSortId(Integer sortId, Integer arithNum, Long parentId) {
-        aoaSysMenuMapper.changeSortId(sortId,arithNum,parentId);
-    }
-    //修改自己
-    @Override
-    public void changeSortId2(Integer sortId, Integer arithNum, Long menuId) {
-        aoaSysMenuMapper.changeSortId2(sortId,arithNum,menuId);
     }
 
     @Override
@@ -81,17 +73,16 @@ public class MenuSysServiceImpl implements MenuSysService {
 
     @Override
     public void save(AoaSysMenu aoaSysMenu) {
-        if (aoaSysMenu.getMenuId()!=null){
-             aoaSysMenuMapper.update(aoaSysMenu);
-        }
-        else {
+        if (aoaSysMenu.getMenuId() != null) {
+            aoaSysMenuMapper.update(aoaSysMenu);
+        } else {
             aoaSysMenuMapper.sava(aoaSysMenu);
             List<AoaRole> aoaRoles = aoaRoleMapper.findAll();
-            for (AoaRole aoaRole:aoaRoles){
-                if (aoaRole.getRoleId()==1){
-                    aoaRolePowerListMapper.sava(new AoaRolePowerList(1,aoaSysMenu.getMenuId(),aoaRole.getRoleId()));
-                }else {
-                    aoaRolePowerListMapper.sava(new AoaRolePowerList(0,aoaSysMenu.getMenuId(),aoaRole.getRoleId()));
+            for (AoaRole aoaRole : aoaRoles) {
+                if (aoaRole.getRoleId() == 1) {
+                    aoaRolePowerListMapper.sava(new AoaRolePowerList(1, aoaSysMenu.getMenuId(), aoaRole.getRoleId()));
+                } else {
+                    aoaRolePowerListMapper.sava(new AoaRolePowerList(0, aoaSysMenu.getMenuId(), aoaRole.getRoleId()));
                 }
             }
         }
@@ -109,19 +100,65 @@ public class MenuSysServiceImpl implements MenuSysService {
     }
 
     @Override
-    public List<AoaSysMenu> findByRoleChiledAll(Long id,Long roleid) {
-        return aoaSysMenuMapper.findByRoleChiledAll(id,roleid);
+    public List<AoaSysMenu> findByRoleChiledAll(Long id, Long roleid) {
+        return aoaSysMenuMapper.findByRoleChiledAll(id, roleid);
     }
 
     @Override
-    public List<AoaSysMenu> findByRoleParentAll(Long id,Long roleid) {
-        return aoaSysMenuMapper.findByRoleParentAll(id,roleid);
+    public List<AoaSysMenu> findByRoleParentAll(Long id, Long roleid) {
+        return aoaSysMenuMapper.findByRoleParentAll(id, roleid);
     }
 
     @Override
     public void update(AoaSysMenu aoaSysMenu) {
-         aoaSysMenuMapper.update(aoaSysMenu);
+        aoaSysMenuMapper.update(aoaSysMenu);
     }
 
+    @Override
+    public List<AoaSysMenu> findBySortIdlt(Long parentId, Integer sortId) {
+        return aoaSysMenuMapper.findBySortIdlt(parentId, sortId-1);
+    }
+
+    @Override
+    public List<AoaSysMenu> findBySortIdgt(Long parentId, Integer sortId) {
+        return aoaSysMenuMapper.findBySortIdgt(parentId, sortId+1);
+    }
+
+    @Override
+    public void upSort(List<AoaSysMenu> aoaSysMenus, Long menuId) {
+        for (AoaSysMenu aoaSysMenu : aoaSysMenus) {
+            aoaSysMenu.setSortId(aoaSysMenu.getSortId() + 1);
+            aoaSysMenuMapper.update(aoaSysMenu);
+        }
+        AoaSysMenu aoaSysMenu=aoaSysMenuMapper.findOne(menuId);
+        aoaSysMenu.setSortId(aoaSysMenu.getSortId()-1);
+        aoaSysMenuMapper.update(aoaSysMenu);
+    }
+
+    @Override
+    public void downSort(List<AoaSysMenu> aoaSysMenus, Long menuId) {
+        for (AoaSysMenu aoaSysMenu : aoaSysMenus) {
+            aoaSysMenu.setSortId(aoaSysMenu.getSortId() - 1);
+            aoaSysMenuMapper.update(aoaSysMenu);
+        }
+        AoaSysMenu aoaSysMenu=aoaSysMenuMapper.findOne(menuId);
+        aoaSysMenu.setSortId(aoaSysMenu.getSortId()+1);
+        aoaSysMenuMapper.update(aoaSysMenu);
+    }
+
+    @Override
+    public List<AoaSysMenu> findbyparentsxian(long l, Long roleId, boolean b, boolean b1) {
+        return aoaSysMenuMapper.findbyparentsxian(l,roleId,b,b1);
+    }
+
+    @Override
+    public List<AoaSysMenu> findAll() {
+        return aoaSysMenuMapper.findAll();
+    }
+
+    @Override
+    public AoaSysMenu findbyUrl(String servletPath) {
+        return aoaSysMenuMapper.findbyUrl(servletPath);
+    }
 
 }

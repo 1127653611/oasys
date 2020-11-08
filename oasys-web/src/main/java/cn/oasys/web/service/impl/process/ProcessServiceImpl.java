@@ -16,7 +16,7 @@ import cn.oasys.web.model.pojo.system.AoaTypeList;
 import cn.oasys.web.model.pojo.user.AoaDept;
 import cn.oasys.web.model.pojo.user.AoaPosition;
 import cn.oasys.web.model.pojo.user.AoaUser;
-import cn.oasys.web.service.inter.adress.AdressService;
+import cn.oasys.web.service.inter.file.FileService;
 import cn.oasys.web.service.inter.process.ProcessService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -63,7 +63,7 @@ public class ProcessServiceImpl implements ProcessService {
     @Autowired
     private AoaProcessListMapper aoaProcessListMapper;
     @Autowired
-    private AdressService adressService;
+    private FileService fileService;
     @Autowired
     private AoaDeptMapper aoaDeptMapper;
     @Autowired
@@ -136,31 +136,6 @@ public class ProcessServiceImpl implements ProcessService {
         model.addAttribute("harrylist", harrylist);
 
     }
-    public void writefile(HttpServletResponse response, File file) {
-        ServletOutputStream sos = null;
-        FileInputStream aa = null;
-        try {
-            aa = new FileInputStream(file);
-            sos = response.getOutputStream();
-            // 读取文件问字节码
-            byte[] data = new byte[(int) file.length()];
-            IOUtils.readFully(aa, data);
-            // 将文件流输出到浏览器
-            IOUtils.write(data, sos);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } finally {
-            try {
-                sos.close();
-                aa.close();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-    }
 
     @Override
     public void index5(AoaProcessList pro, String val, AoaUser lu, MultipartFile filePath, String userName) throws IOException {
@@ -172,7 +147,7 @@ public class ProcessServiceImpl implements ProcessService {
         pro.setIsChecked(0);
         AoaAttachmentList attaid = null;
         if (!StringUtil.isEmpty(filePath.getOriginalFilename())) {
-            attaid = adressService.upload(filePath, lu.getUserId(), "aoa_bursement");
+            attaid = fileService.upload(filePath, lu.getUserId(), "aoa_bursement", "img");
             pro.setProFileId(attaid.getAttachmentId());
         }
     }
@@ -196,9 +171,11 @@ public class ProcessServiceImpl implements ProcessService {
         }
         bu.setProId(pro.getProcessId());
         aoaBursementMapper.insertSelective(bu);
-        for (AoaDetailsburse adb : bu.getDetails()) {
-            adb.setBursmentId(bu.getBursementId());
-            aoaDetailsburseMapper.insertSelective(adb);
+        if (!mm.isEmpty()) {
+            for (AoaDetailsburse adb : bu.getDetails()) {
+                adb.setBursmentId(bu.getBursementId());
+                aoaDetailsburseMapper.insertSelective(adb);
+            }
         }
     }
 
@@ -304,6 +281,8 @@ public class ProcessServiceImpl implements ProcessService {
             } else {
                 result.put("filetype", "appli");
             }
+        } else {
+            result.put("filepath", "");
         }
         return result;
     }
@@ -380,11 +359,11 @@ public class ProcessServiceImpl implements ProcessService {
     }
 
     @Override
-    public List<AoaReviewed> index(AoaUser user, String key,Model model) {
-        if (StringUtils.isEmpty(key)){
-            return aoaReviewedMapper.findByUserIdAndSort(null,user.getUserId(),false);
-        }else {
-            return aoaReviewedMapper.findByUserIdAndSort("%"+key+"%",user.getUserId(),false);
+    public List<AoaReviewed> index(AoaUser user, String key, Model model) {
+        if (StringUtils.isEmpty(key)) {
+            return aoaReviewedMapper.findByUserIdAndSort(null, user.getUserId(), false);
+        } else {
+            return aoaReviewedMapper.findByUserIdAndSort("%" + key + "%", user.getUserId(), false);
         }
     }
 
@@ -397,13 +376,13 @@ public class ProcessServiceImpl implements ProcessService {
     public List<Map<String, Object>> index2(List<AoaReviewed> prolist, AoaUser user) {
         List<Map<String, Object>> list = new ArrayList<>();
         for (int i = 0; i < prolist.size(); i++) {
-            String harryname=aoaTypeListMapper.findname(prolist.get(i).getAoaProcessList().getDeeplyId());
-            AoaStatusList status=aoaStatusListMapper.findOne(prolist.get(i).getStatusId());
-            Map<String, Object> result=new HashMap<>();
+            String harryname = aoaTypeListMapper.findname(prolist.get(i).getAoaProcessList().getDeeplyId());
+            AoaStatusList status = aoaStatusListMapper.findOne(prolist.get(i).getStatusId());
+            Map<String, Object> result = new HashMap<>();
             result.put("typename", prolist.get(i).getAoaProcessList().getTypeName());
             result.put("title", prolist.get(i).getAoaProcessList().getProcessName());
             result.put("pushuser", prolist.get(i).getAoaProcessList().getUser().getUserName());
-            result.put("applytime",  prolist.get(i).getAoaProcessList().getApplyTime());
+            result.put("applytime", prolist.get(i).getAoaProcessList().getApplyTime());
             result.put("harry", harryname);
             result.put("statusname", status.getStatusName());
             result.put("statuscolor", status.getStatusColor());
@@ -416,41 +395,41 @@ public class ProcessServiceImpl implements ProcessService {
 
     @Override
     public AoaReviewed findByProIdAndUserId(Long processId, Long userId) {
-        return aoaReviewedMapper.findByProIdAndUserId(processId,userId);
+        return aoaReviewedMapper.findByProIdAndUserId(processId, userId);
     }
 
     @Override
-    public void findPro(Model model, Long processId, String typename,Long userid) {
-        if(("费用报销").equals(typename)){
-            AoaBursement bu=aoaBursementMapper.findByProId(processId);
+    public void findPro(Model model, Long processId, String typename, Long userid) {
+        if (("费用报销").equals(typename)) {
+            AoaBursement bu = aoaBursementMapper.findByProId(processId);
             model.addAttribute("bu", bu);
 
-        }else if(("出差费用").equals(typename)){
-            AoaEvectionmoney emoney=aoaEvectionmoneyMapper.findByProId(processId);
+        } else if (("出差费用").equals(typename)) {
+            AoaEvectionmoney emoney = aoaEvectionmoneyMapper.findByProId(processId);
             model.addAttribute("bu", emoney);
-        }else if(("转正申请").equals(typename)||("离职申请").equals(typename)){
-            AoaUser zhuan=aoaUserMapper.findOneById(userid);
+        } else if (("转正申请").equals(typename) || ("离职申请").equals(typename)) {
+            AoaUser zhuan = aoaUserMapper.findOneById(userid);
             model.addAttribute("position", zhuan);
         }
     }
 
     @Override
     public List<Map<String, Object>> indexx(AoaProcessList process) {
-        List<Map<String,Object>> relist=new ArrayList<>();
-        List<AoaReviewed> revie=aoaReviewedMapper.findByReviewedTimeNotNullAndProId(process.getProcessId());
-        for (int i = 0; i <revie.size(); i++) {
-            Map<String, Object> result=new HashMap<>();
-            AoaUser u=aoaUserMapper.findOneById(revie.get(i).getUserId());
-            AoaPosition po=u.getPosition();
-            AoaStatusList status=aoaStatusListMapper.findOne(revie.get(i).getStatusId());
+        List<Map<String, Object>> relist = new ArrayList<>();
+        List<AoaReviewed> revie = aoaReviewedMapper.findByReviewedTimeNotNullAndProId(process.getProcessId());
+        for (int i = 0; i < revie.size(); i++) {
+            Map<String, Object> result = new HashMap<>();
+            AoaUser u = aoaUserMapper.findOneById(revie.get(i).getUserId());
+            AoaPosition po = u.getPosition();
+            AoaStatusList status = aoaStatusListMapper.findOne(revie.get(i).getStatusId());
             result.put("poname", po.getName());
             result.put("username", u.getUserName());
-            result.put("retime",revie.get(i).getReviewedTime());
-            result.put("restatus",status.getStatusName());
-            result.put("statuscolor",status.getStatusColor());
+            result.put("retime", revie.get(i).getReviewedTime());
+            result.put("restatus", status.getStatusName());
+            result.put("statuscolor", status.getStatusColor());
             result.put("des", revie.get(i).getAdvice());
-            result.put("img",u.getImgPath());
-            result.put("positionid",u.getPositionId());
+            result.put("img", u.getImgPath());
+            result.put("positionid", u.getPositionId());
             relist.add(result);
         }
         return relist;
@@ -458,7 +437,7 @@ public class ProcessServiceImpl implements ProcessService {
 
     @Override
     public void save(Long proId, Long userId, AoaReviewed reviewed, AoaProcessList pro, AoaUser user2) {
-        AoaReviewed re=aoaReviewedMapper.findByProIdAndUserId(proId,userId);
+        AoaReviewed re = aoaReviewedMapper.findByProIdAndUserId(proId, userId);
         re.setAdvice(reviewed.getAdvice());
         re.setStatusId(reviewed.getStatusId());
         re.setReviewedTime(new Date());
@@ -466,13 +445,13 @@ public class ProcessServiceImpl implements ProcessService {
         aoaReviewedMapper.updateByPrimaryKeySelective(re);
 
 
-        AoaReviewed re2=new AoaReviewed();
+        AoaReviewed re2 = new AoaReviewed();
         re2.setProId(proId);
         re2.setUserId(user2.getUserId());
         re2.setStatusId(23L);
         aoaReviewedMapper.insertSelective(re2);
 
-        pro.setShenuser(pro.getShenuser()+";"+user2.getUserName());
+        pro.setShenuser(pro.getShenuser() + ";" + user2.getUserName());
         pro.setStatusId(24L);//改变主表的状态
         aoaProcessListMapper.updateByPrimaryKeySelective(pro);
     }
@@ -512,7 +491,7 @@ public class ProcessServiceImpl implements ProcessService {
                 emoney.setManagerAdvice(reviewed.getAdvice());
                 aoaEvectionmoneyMapper.updateByPrimaryKeySelective(emoney);
             }
-            if (me.getPositionId()== 5) {
+            if (me.getPositionId() == 5) {
                 emoney.setFinancialAdvice(reviewed.getAdvice());
                 aoaEvectionmoneyMapper.updateByPrimaryKeySelective(emoney);
             }
@@ -570,6 +549,30 @@ public class ProcessServiceImpl implements ProcessService {
             } else if (me.getPositionId().equals(7L)) {
                 over.setFinancialAdvice(reviewed.getAdvice());
                 aoaResignMapper.updateByPrimaryKeySelective(over);
+            }
+        }
+    }
+
+    @Override
+    public void saveEvectionMoney(AoaProcessList pro, AoaEvectionmoney eve, List<AoaTraffic> ss, List<AoaStay> mm) {
+        if (StringUtils.isEmpty(pro.getProcessId())) {
+            aoaProcessListMapper.insertSelective(pro);
+        } else {
+            aoaProcessListMapper.updateByPrimaryKeySelective(pro);
+        }
+        eve.setProId(pro.getProcessId());
+        aoaEvectionmoneyMapper.insertSelective(eve);
+        if (!ss.isEmpty()) {
+            for (AoaTraffic aoaTraffic : ss
+            ) {
+                aoaTraffic.setEvectionId(eve.getEvectionmoneyId());
+                aoaTrafficMapper.insertSelective(aoaTraffic);
+            }
+        }
+        if (!mm.isEmpty()){
+            for (AoaStay aoaStay:mm){
+                aoaStay.setEvemoneyId(eve.getEvectionmoneyId());
+                aoaStayMapper.insertSelective(aoaStay);
             }
         }
     }

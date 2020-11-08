@@ -29,12 +29,6 @@ public interface AoaSysMenuMapper {
     @Select("select menu_id ,menu_grade , menu_icon , menu_name , menu_url ,parent_id , is_show , sort_id  from aoa_sys_menu  where parent_id<> #{id} order by sort_id asc")
     List<AoaSysMenu> findByParentIdNotOrderBySortId(@Param("id") long l);
 
-    @Update("update aoa_sys_menu menu set menu.sort_id=(#{sortid} - #{num}) where menu.menu_id= #{menuid}")
-    void changeSortId2(@Param("sortid") Integer sortId, @Param("num") Integer arithNum, @Param("menuid") Long menuId);
-
-    @Update("update aoa_sys_menu menu set menu.sort_id=#{sortid} where menu.parent_id = #{parentid} and menu.sort_id=(#{sortid} - #{num})")
-    void changeSortId(@Param("sortid") Integer sortId, @Param("num") Integer arithNum, @Param("parentid") Long parentId);
-
     @Select("select menu_id ,menu_grade , menu_icon , menu_name , menu_url ,parent_id , is_show , sort_id  from aoa_sys_menu where menu_id=#{id}")
     AoaSysMenu findOne(@Param("id") Long getId);
 
@@ -42,14 +36,25 @@ public interface AoaSysMenuMapper {
 
     Long sava(AoaSysMenu aoaSysMenu);
 
-    @Delete("DELETE from aoa_sys_menu WHERE menu_id=#{id}")
+    @Update("update  aoa_sys_menu set parent_id=9999 WHERE menu_id=#{id}")
     void deleteThis(@Param("id") Long menuId);
+
     @Select("select menu_id ,menu_grade , menu_icon , menu_name , menu_url ,parent_id , is_show , sort_id  from aoa_sys_menu where menu_name like #{name}")
     List<AoaSysMenu> findByMenuNameLike(@Param("name") String name);
 
     List<AoaSysMenu> findByRoleParentAll(@Param("id") Long id, @Param("roleid") Long roleid);
 
     List<AoaSysMenu> findByRoleChiledAll(@Param("id") Long id, @Param("roleid") Long roleid);
+
     @Select("select menu_id ,menu_grade , menu_icon , menu_name , menu_url ,parent_id , is_show , sort_id  from aoa_sys_menu ")
     List<AoaSysMenu> findAll();
+
+    @Select("select menu_id ,menu_grade , menu_icon , menu_name , menu_url ,parent_id , is_show , sort_id  from aoa_sys_menu where parent_id = #{pid} and sort_id = #{sid}")
+    List<AoaSysMenu> findBySortIdlt(@Param("pid") Long parentId, @Param("sid") Integer sortId);
+
+    @Select("select menu_id ,menu_grade , menu_icon , menu_name , menu_url ,parent_id , is_show , sort_id  from aoa_sys_menu where parent_id = #{pid} and sort_id = #{sid}")
+    List<AoaSysMenu> findBySortIdgt(@Param("pid") Long parentId, @Param("sid") Integer sortId);
+
+    @Select("select menu_id ,menu_grade , menu_icon , menu_name , menu_url ,parent_id , is_show , sort_id  from aoa_sys_menu where menu_url=#{url}")
+    AoaSysMenu findbyUrl(String servletPath);
 }

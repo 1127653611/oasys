@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.oasys.web.model.dao.user.AoaUserLogMapper">
+  <resultMap id="BaseResultMap" type="cn.oasys.web.model.pojo.user.AoaUserLog">
+    <id column="log_id" jdbcType="BIGINT" property="logId" />
+    <result column="ip_addr" jdbcType="VARCHAR" property="ipAddr" />
+    <result column="log_time" jdbcType="TIMESTAMP" property="logTime" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    log_id, ip_addr, log_time, title, url, user_id
+  </sql>
+  <select id="findByUser" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from aoa_user_log where user_id = #{uid}
+    <if test="key != null">
+      and title like #{key}
+    </if>
+    order by
+    <if test="time != null">
+      log_time ${time}
+    </if>
+    <if test="time == null">
+      log_time DESC
+    </if>
+  </select>
+  <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.user.AoaUserLog">
+    insert into aoa_user_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        log_id,
+      </if>
+      <if test="ipAddr != null">
+        ip_addr,
+      </if>
+      <if test="logTime != null">
+        log_time,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        #{logId,jdbcType=BIGINT},
+      </if>
+      <if test="ipAddr != null">
+        #{ipAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="logTime != null">
+        #{logTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

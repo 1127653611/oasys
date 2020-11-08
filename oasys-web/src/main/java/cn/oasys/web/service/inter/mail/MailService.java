@@ -43,7 +43,7 @@ public interface MailService {
 
     boolean isContainChinese(String inReceiver);
 
-    public void pushmail(String account,String password,String reciver,
+    void pushmail(String account,String password,String reciver,
                          String name,String title,String content,String affix,String filename);
 
     void updateMail(AoaInMailList inmail);

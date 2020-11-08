@@ -1,5 +1,7 @@
 package cn.oasys.web.controller.user;
 
+import cn.oasys.web.common.Common;
+import cn.oasys.web.model.pojo.role.AoaRole;
 import cn.oasys.web.model.pojo.user.AoaDept;
 import cn.oasys.web.model.pojo.user.AoaPosition;
 import cn.oasys.web.model.pojo.user.AoaUser;
@@ -68,85 +70,89 @@ public class DeptController {
     public String readdept(@RequestParam(value = "deptid") Long deptId, Model model) {
         AoaDept dept = deptService.findOne(deptId);
         AoaUser deptmanage = null;
-        if(dept.getDeptmanager()!=null){
+        if (dept.getDeptmanager() != null) {
             deptmanage = userService.findOne(dept.getDeptmanager());
-            model.addAttribute("deptmanage",deptmanage);
+            model.addAttribute("deptmanage", deptmanage);
         }
-        List<AoaDept> depts =  deptService.findAll();
+        List<AoaDept> depts = deptService.findAll();
         List<AoaPosition> positions = positionService.findByDeptidAndNameNotLike(deptId,"%经理");
         List<AoaUser> formaluser = new ArrayList<>();
         List<AoaUser> deptusers = userService.findByDept(dept.getDeptId());
         for (AoaUser deptuser : deptusers) {
-            AoaPosition position = deptuser.getPosition();
-            if(!position.getName().endsWith("经理")){
-                formaluser.add(deptuser);
-            }
+            formaluser.add(deptuser);
         }
-        model.addAttribute("positions",positions);
-        model.addAttribute("depts",depts);
-        model.addAttribute("deptuser",formaluser);
-        model.addAttribute("dept",dept);
-        model.addAttribute("isread",1);
+        model.addAttribute("positions", positions);
+        model.addAttribute("depts", depts);
+        model.addAttribute("deptuser", formaluser);
+        model.addAttribute("dept", dept);
+        model.addAttribute("isread", 1);
         return "user/deptread";
     }
+
     @RequestMapping("selectdept")
     @ResponseBody
-    public List<AoaPosition> selectdept(@RequestParam("selectdeptid") Long deptid){
+    public List<AoaPosition> selectdept(@RequestParam("selectdeptid") Long deptid) {
 
-        return positionService.findByDeptidAndNameNotLike(deptid,"%经理");
+        return positionService.findByDeptidAndNameNotLike(deptid, "%经理");
     }
+
     @RequestMapping("deptandpositionchange")
     public String deptandpositionchange(@RequestParam("positionid") Long positionid,
                                         @RequestParam("changedeptid") Long changedeptid,
                                         @RequestParam("userid") Long userid,
                                         @RequestParam("deptid") Long deptid,
                                         Model model) throws PinyinException {
-        AoaUser user=userService.findOne(userid);
+        AoaUser user = userService.findOne(userid);
         user.setPositionId(positionid);
         user.setDeptId(changedeptid);
-        userService.saveUser(user,false);
+        user.setRoleId(deptService.getRoleid(user));
+        userService.saveUser(user, false);
         return "forward:/readdept";
     }
+
     @RequestMapping("deptmanagerchange")
     public String deptmanagerchange(@RequestParam("oldpositionid") Long oldpostionid,
-                                    @RequestParam(value="positionid",required=false) Long positionid,
-                                    @RequestParam(value="changedeptid",required=false) Long changedeptid,
-                                    @RequestParam(value="oldmanageid",required=false) Long oldmanageid,
-                                    @RequestParam(value="newmanageid",required=false) Long newmanageid,
+                                    @RequestParam(value = "positionid", required = false) Long positionid,
+                                    @RequestParam(value = "changedeptid", required = false) Long changedeptid,
+                                    @RequestParam(value = "oldmanageid", required = false) Long oldmanageid,
+                                    @RequestParam(value = "newmanageid", required = false) Long newmanageid,
                                     @RequestParam("deptid") Long deptid,
                                     Model model) throws PinyinException {
-        if(oldmanageid!=null){
-            AoaUser user=userService.findOne(oldmanageid);
+        if (oldmanageid != null) {
+            AoaUser user = userService.findOne(oldmanageid);
             user.setDeptId(changedeptid);
             user.setPositionId(positionid);
-            userService.saveUser(user,false);
-            if(newmanageid!=null){
-                deptService.updateManage(deptid,newmanageid);
-                AoaUser user1=userService.findOne(newmanageid);
+            user.setRoleId(deptService.getRoleid(user));
+            userService.saveUser(user, false);
+            if (newmanageid != null) {
+                deptService.updateManage(deptid, newmanageid);
+                AoaUser user1 = userService.findOne(newmanageid);
                 user1.setPositionId(oldpostionid);
                 user1.setDeptId(deptid);
-                userService.saveUser(user1,false);
-                List<AoaUser> deptUsers=userService.findByDept(deptid);
-                for (AoaUser u: deptUsers){
-                    userService.saveUser(u,false);
+                user1.setRoleId(deptService.getRoleid(user1));
+                userService.saveUser(user1, false);
+                List<AoaUser> deptUsers = userService.findByDept(deptid);
+                for (AoaUser u : deptUsers) {
+                    userService.saveUser(u, false);
                 }
-            }else{
-                deptService.updateManage(deptid,null);
-                List<AoaUser> deptUsers=userService.findByDept(deptid);
-                for (AoaUser u: deptUsers){
-                    userService.saveUser(u,false);
+            } else {
+                deptService.updateManage(deptid, null);
+                List<AoaUser> deptUsers = userService.findByDept(deptid);
+                for (AoaUser u : deptUsers) {
+                    userService.saveUser(u, false);
                 }
             }
-        }else{
+        } else {
             AoaPosition manage = positionService.findByDeptidAndNameLike(deptid, "%经理").get(0);
-            deptService.updateManage(deptid,newmanageid);
-            AoaUser user3=userService.findOne(newmanageid);
+            deptService.updateManage(deptid, newmanageid);
+            AoaUser user3 = userService.findOne(newmanageid);
             user3.setPositionId(manage.getPositionId());
             user3.setDeptId(deptid);
-            userService.saveUser(user3,false);
-            List<AoaUser> deptUsers=userService.findByDept(deptid);
-            for (AoaUser u: deptUsers){
-                userService.saveUser(u,false);
+            user3.setRoleId(deptService.getRoleid(user3));
+            userService.saveUser(user3, false);
+            List<AoaUser> deptUsers = userService.findByDept(deptid);
+            for (AoaUser u : deptUsers) {
+                userService.saveUser(u, false);
             }
         }
 

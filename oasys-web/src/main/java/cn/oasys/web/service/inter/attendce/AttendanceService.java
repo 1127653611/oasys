@@ -27,4 +27,10 @@ public interface AttendanceService {
     List<AoaAttendsList> singlepage(String baseKey, Long userid, String type, String status, String time);
 
     AoaAttendsList findlastest(String nowdate, Long userId);
+
+    Integer countrecord(String nowdate, Long userId);
+
+    Long findoffworkid(String nowdate, Long userId);
+
+    void updatetime(Date date, String hourmin, long statusId, Long aid);
 }

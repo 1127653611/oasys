@@ -57,9 +57,16 @@
 				<div class="icon">
 					<span class="glyphicon glyphicon-remove"></span>
 				</div>
-				<div class="modal-p">
+				<div class="modal-p" th:if="${ #strings.isEmpty(msgg)}">
 					<h2 style="text-align: center;">操作错误</h2>
 					<p class="modal-error-mess">你的权限不匹配</p>
+					<div class="modal-p">
+						<button type="button" class="btn btn-primary" onclick="javascript:history.back();">返回</button>
+					</div>
+				</div>
+				<div class="modal-p" th:if="${not #strings.isEmpty(msgg)}">
+					<h2 style="text-align: center;">操作错误</h2>
+					<p class="modal-error-mess">系统核心，不能操作</p>
 					<div class="modal-p">
 						<button type="button" class="btn btn-primary" onclick="javascript:history.back();">返回</button>
 					</div>

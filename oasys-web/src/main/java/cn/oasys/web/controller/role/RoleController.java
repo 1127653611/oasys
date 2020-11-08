@@ -106,7 +106,7 @@ public class RoleController {
             if(content.equals("选中")){
                 roleService.save(rolepower.getPkId(),1);
             }else{
-                roleService.save(rolepower.getPkId(),null);
+                roleService.save(rolepower.getPkId(),0);
             }
 
             return null;
@@ -126,7 +126,7 @@ public class RoleController {
         if(content.equals("选中")){
             roleService.save(rolepower.getPkId(),1);
         }else{
-            roleService.save(rolepower.getPkId(),null);
+            roleService.save(rolepower.getPkId(),0);
         }
         return null;
         //return true;

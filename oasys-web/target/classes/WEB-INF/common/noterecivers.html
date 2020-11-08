@@ -27,7 +27,7 @@
 														<img th:if="${not #strings.isEmpty(emp.imgPath) && emp.imgPath!=''}"
                                                              style="width: 30px;height: 30px;"
                                                              class="profile-user-img img-responsive img-circle"
-                                                             th:src="@{'/images/'+${emp?.imgPath}}"/>
+                                                             th:src="@{${emp?.imgPath}}"/>
 														<img th:if="${#strings.isEmpty(emp.imgPath) || emp.imgPath==''}"
                                                              style="width: 30px;height: 30px;"
                                                              class="profile-user-img img-responsive img-circle"

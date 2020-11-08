@@ -39,4 +39,6 @@ public interface NoteService {
     List<AoaNoteList> findByCatalogId(long catalogid);
 
     void deletecata(long catalogid);
+
+    void saveNotePaper(AoaNotepaper npaper);
 }

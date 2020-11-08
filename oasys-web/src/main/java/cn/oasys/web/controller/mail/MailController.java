@@ -138,6 +138,10 @@ public class MailController {
             request.setAttribute("errormess", "请正确填写账号");
             return "forward:/addaccount";
         }
+        if (!mail.getMailAccount().matches(".*@qq.com") && !mail.getMailAccount().matches(".*@163.com")){
+            request.setAttribute("errormess", "只支持163邮箱和QQ邮箱");
+            return "forward:/addaccount";
+        }
         request.setAttribute("mail", mail);
         if (Objects.isNull(mail.getMailNumberId())) {
             mail.setMailNumUserId(userId);
@@ -391,7 +395,7 @@ public class MailController {
         }
         if (!StringUtil.isEmpty(name)) {
             if (!StringUtil.isEmpty(file.getOriginalFilename())) {
-                attaid = adressService.upload(file, userId, "mail");
+                attaid = fileService.upload(file, userId, "mail","atta");
             }
             //发送成功
             mail.setMailPush(1);
@@ -452,38 +456,6 @@ public class MailController {
         return "redirect:/mail";
     }
 
-    @RequestMapping("show/**")
-    public void image(Model model, HttpServletResponse response, @SessionAttribute("userId") Long userId, HttpServletRequest request)
-            throws IOException {
-
-        String startpath = new String(URLDecoder.decode(request.getRequestURI(), "utf-8"));
-
-        String path = startpath.replace("/show", "");
-
-        File f = new File(rootpath, path);
-        ServletOutputStream sos = response.getOutputStream();
-        FileInputStream input = new FileInputStream(f.getPath());
-        byte[] data = new byte[(int) f.length()];
-        IOUtils.readFully(input, data);
-        // 将文件流输出到浏览器
-        IOUtils.write(data, sos);
-        input.close();
-        sos.close();
-    }
-
-    @RequestMapping("file")
-    public void downFile(HttpServletResponse response, @RequestParam("fileid") Long fileid) {
-        try {
-            AoaAttachmentList attd = fileService.findByAttachmentId(fileid);
-            File file = new File(rootpath, attd.getAttachmentPath());
-            response.setContentLength(Integer.parseInt(attd.getAttachmentSize()));
-            response.setContentType(attd.getAttachmentType());
-            response.setHeader("Content-Disposition", "attachment;filename=" + new String(attd.getAttachmentName().getBytes("UTF-8"), "ISO8859-1"));
-            processService.writefile(response, file);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @RequestMapping("alldelete")
     public String delete(HttpServletRequest req, @SessionAttribute("userId") Long userId, Model model,

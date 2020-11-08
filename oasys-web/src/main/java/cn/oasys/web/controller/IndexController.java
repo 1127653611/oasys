@@ -1,8 +1,11 @@
 package cn.oasys.web.controller;
 import cn.oasys.web.model.pojo.attendce.AoaAttendsList;
 import cn.oasys.web.model.pojo.note.AoaNotepaper;
+import cn.oasys.web.model.pojo.notice.AoaNoticeList;
 import cn.oasys.web.model.pojo.plan.AoaPlanList;
 import cn.oasys.web.model.pojo.process.AoaProcessList;
+import cn.oasys.web.model.pojo.schedule.AoaScheduleList;
+import cn.oasys.web.model.pojo.schedule.AoaScheduleUser;
 import cn.oasys.web.model.pojo.system.AoaStatusList;
 import cn.oasys.web.model.pojo.system.AoaSysMenu;
 import cn.oasys.web.model.pojo.system.AoaTypeList;
@@ -31,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -58,6 +62,8 @@ public class IndexController {
     @Autowired
     private ProcessService processService;
     @Autowired
+    private DaymanageService daymanageService;
+    @Autowired
     private MenuSysService menuSysService;
     @Autowired
     private NoticeService noticeService;
@@ -68,13 +74,39 @@ public class IndexController {
     @RequestMapping("index")
     public String index(HttpServletRequest request, Model model){
         HttpSession session=request.getSession();
-        if(StringUtils.isEmpty(session.getAttribute("userId"))){
-            return "login/login";
-        }
         Long userId = Long.parseLong(session.getAttribute("userId") + "");
         AoaUser user=userService.findOne(userId);
         menuSysService.findMenuSys(request,user);
+        List<AoaScheduleUser> aboutmenotice = daymanageService.aboutmeschedule(userId);
+        for (AoaScheduleUser scheduleList : aboutmenotice) {
+            if(scheduleList.getAoaScheduleList().getIsreminded()!=null && scheduleList.getAoaScheduleList().getIsreminded()==0){
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");//24小时制
+//				simpleDateFormat.parse(scheduleList.getStartTime()).getTime();
+                String start = simpleDateFormat.format(scheduleList.getAoaScheduleList().getStartTime());
+                String now = simpleDateFormat.format(new Date());
+                try {
+                    long now2 = simpleDateFormat.parse(now).getTime();
+                    long start2 = simpleDateFormat.parse(start).getTime();
+                    long cha = start2-now2;
+                    if(0<cha && cha <86400000){
+                        AoaNoticeList remindnotices = new AoaNoticeList();
+                        remindnotices.setTypeId(11l);
+                        remindnotices.setStatusId(15l);
+                        remindnotices.setTitle("您有一个日程即将开始");
+                        remindnotices.setUrl("/daycalendar");
+                        remindnotices.setUserId(userId);
+                        remindnotices.setNoticeTime(new Date());
+                        noticeService.save(remindnotices,userId);
 
+                        scheduleList.getAoaScheduleList().setIsreminded(1);
+                        daymanageService.save(scheduleList.getAoaScheduleList());
+                    }
+                } catch (ParseException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
         int notice=noticeService.findByReadAndUserId(false,userId);
         int mail=mailService.findByReadAndDelAndReciverId(false, false, userId).size();
         int task=taskService.findByUserIdAndStatusId(userId,3);
@@ -167,7 +199,7 @@ public class IndexController {
         String nowdate = sdf.format(date);
         AoaAttendsList aList =attendanceService .findlastest(nowdate, userId);
         if (aList != null) {
-            String type = typeService.findOne(aList.getTypeId()).getTypeName();
+            long type=aList.getTypeId();
             model.addAttribute("type", type);
         }
         model.addAttribute("alist", aList);

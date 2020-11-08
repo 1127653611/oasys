@@ -1,9 +1,13 @@
 package cn.oasys.web.service.impl.user;
 
+import cn.oasys.web.common.Common;
+import cn.oasys.web.model.dao.role.AoaRoleMapper;
 import cn.oasys.web.model.dao.user.AoaDeptMapper;
 import cn.oasys.web.model.dao.user.AoaPositionMapper;
+import cn.oasys.web.model.pojo.role.AoaRole;
 import cn.oasys.web.model.pojo.user.AoaDept;
 import cn.oasys.web.model.pojo.user.AoaPosition;
+import cn.oasys.web.model.pojo.user.AoaUser;
 import cn.oasys.web.service.inter.user.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +16,8 @@ import java.util.List;
 
 @Service
 public class DeptServiceImpl implements DeptService {
+    @Autowired
+    private AoaRoleMapper aoaRoleMapper;
     @Autowired
     private AoaPositionMapper aoaPositionMapper;
     @Autowired
@@ -47,5 +53,13 @@ public class DeptServiceImpl implements DeptService {
     @Override
     public void updateManage(Long deptid, Long newmanageid) {
         aoaDeptMapper.updateManage(deptid,newmanageid);
+    }
+
+    @Override
+    public Long getRoleid(AoaUser user) {
+        user.setPosition(aoaPositionMapper.findOne(user.getPositionId()));
+        int rolevalue= Common.PositonToRole(user);
+        List<AoaRole> aoaRoles=aoaRoleMapper.findByValue(rolevalue);
+        return aoaRoles.get(0).getRoleId();
     }
 }

@@ -1,58 +1,353 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="892e1a41-6c6e-4ca8-90c3-9ae06c650c5a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/file/FileServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/file/FileService.java" afterDir="false" />
+    <list default="true" id="892e1a41-6c6e-4ca8-90c3-9ae06c650c5a" name="Default Changelist" comment="ok">
+      <change afterPath="$PROJECT_DIR$/log/error.2020-11-08.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/info.2020-11-08.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Common.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/annotation/OperLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/aspect/WebLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/exception/WebControllerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/400.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLogMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-15.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-16.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-17.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-18.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/error.2020-07-23.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-15.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-16.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-17.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-18.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.2020-07-23.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/MG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/MG.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error.2020-07-26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error.2020-07-27.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error.2020-07-28.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error.2020-07-31.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error.2020-08-03.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error.2020-08-04.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.2020-07-26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.2020-07-27.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.2020-07-28.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.2020-07-29.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.2020-07-31.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.2020-08-03.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.2020-08-04.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.2020-08-05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-eureka/oasyseureka.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-eureka/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-eureka/src/main/java/cn/oasys/eureka/EurekaConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-eureka/src/main/java/cn/oasys/eureka/OasysEurekaApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-eureka/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-eureka/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-eureka/target/classes/cn/oasys/eureka/EurekaConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-eureka/target/classes/cn/oasys/eureka/OasysEurekaApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-12.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-15.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-19.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-22.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-25.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-29.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-06-30.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-07-01.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-07-02.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-07-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-07-23.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-08-05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-08-07.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-09-08.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-09-23.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-16.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/error.2020-10-20.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-12.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-15.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-19.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-22.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-25.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-29.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-06-30.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-07-01.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-07-02.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-07-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-07-23.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-08-05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-08-07.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-09-08.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-09-23.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-16.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/log/info.2020-10-20.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/OasysWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/OasysWebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Utils/StringToDate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Utils/application.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Utils/application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/IntercepterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/IntercepterConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/recordInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/recordInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/file/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/file/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/aderss/AddrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/aderss/AddrController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/attendance/AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/attendance/AttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/chat/ChatManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/chat/ChatManageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/common/ConmmonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/common/ConmmonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/inform/InformController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/inform/InformController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/mail/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/mail/MailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/menu/MenuSysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/menu/MenuSysController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/plan/PlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/plan/PlanController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/process/ProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/process/ProcessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/role/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/role/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/system/StatusSysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/system/StatusSysController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/system/TypeSysController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/system/TypeSysController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/task/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/task/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/DeptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/DeptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/attendce/AoaAttendsListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/attendce/AoaAttendsListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/discuss/AoaDiscussListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/discuss/AoaDiscussListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/note/AoaNotepaperMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/note/AoaNotepaperMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/role/AoaRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/role/AoaRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/system/AoaSysMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/system/AoaSysMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLoginRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLoginRecordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/attendce/AoaAttendsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/attendce/AoaAttendsList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaEvectionmoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaEvectionmoney.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaStay.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaStay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaTraffic.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/process/AoaTraffic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/user/AoaUserLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/user/AoaUserLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/adress/AdressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/adress/AdressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/file/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/file/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/mail/MailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/mail/MailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/note/NoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/note/NoteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/process/ProcessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/process/ProcessServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/system/MenuSysServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/system/MenuSysServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/DeptServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/DeptServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserLoginRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserLoginRecordServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/filemanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/filemanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/filetypeload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/mcpathload.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/mcpathload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/adress/AdressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/adress/AdressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/attendce/AttendanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/attendce/AttendanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/discuss/DiscussService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/discuss/DiscussService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/file/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/file/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/mail/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/mail/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/note/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/note/NoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/process/ProcessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/process/ProcessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/schedule/DaymanageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/schedule/DaymanageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/system/MenuSysService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/system/MenuSysService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/DeptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/DeptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserLoginRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserLoginRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/inaddrss.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/inaddrss.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/inmessshow.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/inmessshow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/mesharemess.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/mesharemess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/sharemess.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/sharemess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/shareuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/shareuser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/userhas.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/userhas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/attendce/realweektable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/attendce/realweektable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chatmanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chatmanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chattable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chattable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/discusslike.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/discusslike.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/replytable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/replytable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/votetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/votetable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/leftlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/leftlists.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/noterecivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/noterecivers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/notlimit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/notlimit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/recivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/recivers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/daymanage/daycalendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/daymanage/daycalendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/mailmanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/mailmanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/seemail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/seemail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/plan/planviewtable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/plan/planviewtable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/audetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/audetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/evectionmoney.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/evectionmoney.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/evemonserch.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/evemonserch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/eveserach.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/eveserach.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/holiday.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/holiday.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/holiserch.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/holiserch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/procedure.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/procedure.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/reguserch.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/reguserch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/serch.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/serch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menuedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menuedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menumanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menumanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menutable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menutable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/statusedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/statusedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typeedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typeedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typemanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typemanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/typetable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/deptedit.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/deptmanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/deptread.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/editpaper.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/edituser.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/login.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/panel.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/positionedit.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/positionmanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlog.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlogmanage.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlogmanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlogmanagetable.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlogmanagetable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlogrecordmanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userlogrecordmanagetable.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/usermanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/usermanagepaging.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/task/user/userpanel.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptread.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/editpaper.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/editpaper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/edituser.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/edituser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlogrecordmanagetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/userlogrecordmanagetable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/usermanagepaging.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/usermanagepaging.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/fileajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/fileajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/filejs.js" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/filejs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/file/filemanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/file/filemanage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/file/filetypeload.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/file/mcpathload.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaAttendsListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaAttendsListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaDiscussListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaDiscussListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaEvectionmoneyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaEvectionmoneyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaNotepaperMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaNotepaperMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaReviewedMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaReviewedMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaStayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaStayMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaTrafficMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaTrafficMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLoginRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLoginRecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/src/test/java/cn/oasys/web/OasysApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/src/test/java/cn/oasys/web/OasysApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/inaddrss.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/inaddrss.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/inmessshow.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/inmessshow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/mesharemess.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/mesharemess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/sharemess.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/sharemess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/shareuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/shareuser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/userhas.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/address/userhas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/attendce/realweektable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/attendce/realweektable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/chatmanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/chatmanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/chattable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/chattable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/discusslike.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/discusslike.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/replytable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/replytable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/votetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/chat/votetable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/leftlists.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/leftlists.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/noterecivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/noterecivers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/notlimit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/notlimit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/recivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/common/recivers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/daymanage/daycalendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/daymanage/daycalendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/mail/mailmanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/mail/mailmanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/mail/seemail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/mail/seemail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/plan/planviewtable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/plan/planviewtable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/audetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/audetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/evectionmoney.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/evemonserch.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/eveserach.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/eveserach.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/holiday.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/holiday.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/holiserch.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/holiserch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/procedure.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/procedure.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/reguserch.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/serch.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/process/serch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/control.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menuedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menuedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menumanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menumanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menutable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/menutable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/statusedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/statusedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typeedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typeedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typemanage.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typemanage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/systemcontrol/typetable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/deptedit.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/deptmanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/deptread.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/editpaper.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/edituser.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/login.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/panel.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/positionedit.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/positionmanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlog.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlogmanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlogmanagetable.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlogrecordmanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userlogrecordmanagetable.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/usermanage.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/usermanagepaging.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/task/user/userpanel.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/deptedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/deptedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/deptread.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/deptread.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/editpaper.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/editpaper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/edituser.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/edituser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/userlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/userlog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/userlogrecordmanagetable.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/userlogrecordmanagetable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/usermanagepaging.html" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/WEB-INF/user/usermanagepaging.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/OasysWebApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/OasysWebApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/Utils/StringToDate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/Utils/application.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/Utils/application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/intercepter/IntercepterConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/intercepter/IntercepterConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/intercepter/recordInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/common/intercepter/recordInterceptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/file/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/file/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/aderss/AddrController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/aderss/AddrController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/attendance/AttendanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/attendance/AttendanceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/chat/ChatManageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/chat/ChatManageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/common/ConmmonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/common/ConmmonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/inform/InformController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/inform/InformController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/login/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/login/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/mail/MailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/mail/MailController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/menu/MenuSysController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/menu/MenuSysController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/plan/PlanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/plan/PlanController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/process/ProcessController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/process/ProcessController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/role/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/role/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/system/StatusSysController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/system/StatusSysController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/system/TypeSysController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/system/TypeSysController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/task/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/task/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/DeptController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/DeptController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserLoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserLoginController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/controller/user/UserLoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/attendce/AoaAttendsListMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/attendce/AoaAttendsListMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/discuss/AoaDiscussListMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/discuss/AoaDiscussListMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/note/AoaNotepaperMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/note/AoaNotepaperMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/role/AoaRoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/role/AoaRoleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/system/AoaSysMenuMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/system/AoaSysMenuMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/user/AoaUserLogMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/user/AoaUserLogMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/user/AoaUserLoginRecordMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/dao/user/AoaUserLoginRecordMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/attendce/AoaAttendsList.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/attendce/AoaAttendsList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaEvectionmoney.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaEvectionmoney.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaStay.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaStay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaTraffic.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/process/AoaTraffic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/user/AoaUserLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/model/pojo/user/AoaUserLog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/adress/AdressServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/adress/AdressServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/file/FileServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/file/FileServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/mail/MailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/mail/MailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/note/NoteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/note/NoteServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/process/ProcessServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/process/ProcessServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/system/MenuSysServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/system/MenuSysServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/DeptServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/DeptServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/UserLoginRecordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/UserLoginRecordServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/impl/user/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/static/js/file/fileajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/static/js/file/fileajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/static/js/file/filejs.js" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/static/js/file/filejs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/2020/07/b097db50-734b-48c7-92d8-9b681952a5d7.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/adress/AdressService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/adress/AdressService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/attendce/AttendanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/attendce/AttendanceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/discuss/DiscussService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/discuss/DiscussService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/file/FileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/file/FileService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/note/NoteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/note/NoteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/process/ProcessService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/process/ProcessService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/system/MenuSysService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/system/MenuSysService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/DeptService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/DeptService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/UserLoginRecordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/UserLoginRecordService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/cn/oasys/web/service/inter/user/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaAttendsListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaAttendsListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaDiscussListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaDiscussListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaEvectionmoneyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaEvectionmoneyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaNotepaperMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaNotepaperMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaReviewedMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaReviewedMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaStayMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaStayMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaTrafficMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaTrafficMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaUserLoginRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/classes/mapping/AoaUserLoginRecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oasys-web/target/test-classes/cn/oasys/web/OasysApplicationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/oasys-web/target/test-classes/cn/oasys/web/OasysApplicationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,109 +372,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/file/FileController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="96" column="53" selection-start-line="96" selection-start-column="53" selection-end-line="96" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/file/FileServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="509" column="64" selection-start-line="509" selection-start-column="64" selection-end-line="509" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#pathreturnback#0;class#FileServiceImpl#0" />
-                <element signature="method#mcpathload#0;class#FileServiceImpl#0" />
-                <element signature="method#moveAndcopy#0;class#FileServiceImpl#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/fileajax.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/file/AoaFileListMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="40" column="61" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="61" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/filetypeload.html">
+        <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="311" selection-start-line="311" selection-end-line="311" />
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#th:block#1;n#th:block#0;n#th:block#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#span#0;n#form#0;n#div#1;n#div#0;n#th:block#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#th:block#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#th:block#1;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#th:block#1;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#10;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#11;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#12;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#9;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#10;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#11;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#12;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaFileListMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="69" column="102" selection-start-line="69" selection-start-column="102" selection-end-line="69" selection-end-column="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/controller/file/FileAjaxController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/model/dao/filedao/FilePathdao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/model/dao/filedao/FileListdao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="312">
+              <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -189,79 +390,82 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="JavaFXApplication" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>findlastest</find>
+      <find>type</find>
+      <find>&quot;type&quot;</find>
+      <find>yyyy</find>
+      <find>mont</find>
+      <find>$</find>
+      <find>findoneweek</find>
+      <find>ulist</find>
+      <find>attendce</find>
+      <find>week</find>
+      <find>首页</find>
+      <find>try</find>
+      <find>pis_show</find>
+      <find>findbyparentxianall</find>
+      <find>findByChil</find>
+      <find>findbyparentsxian</find>
+      <find>adminmanage</find>
+      <find>logins</find>
+      <find>deleteth</find>
+      <find>testsysmenu</find>
+      <find>checkMenu</find>
+      <find>开启权限</find>
+      <find>powerss</find>
+      <find>null</find>
+      <find>attendceatt</find>
       <find>insertSelective</find>
-      <find>nav nav-pills nav-stacked mm</find>
-      <find>filer</find>
-      <find>selectK</find>
-      <find>colle</find>
-      <find>BaseResultMap1</find>
-      <find>rep</find>
-      <find>path</find>
-      <find>findpathByparent</find>
-      <find>移动</find>
-      <find>jiajian</find>
-      <find>mcpaths</find>
-      <find>mic</find>
-      <find>mc</find>
-      <find>mctopathid</find>
-      <find>findByFilePath</find>
-      <find>fileloaddeletefile</find>
-      <find>findByPath</find>
-      <find>delete</find>
-      <find>查找</find>
-      <find>findfileandpathgo</find>
-      <find>trigger</find>
-      <find>查</find>
-      <find>loadfile</find>
-      <find>findfileandpath</find>
-      <find>findByUserAndContentTypeLikeAndFileIstrash</find>
-      <find>share</find>
-      <find>pid</find>
-      <find>loadFile</find>
-      <find>case</find>
+      <find>fileata</find>
+      <find>showata</find>
+      <find>转发</find>
+      <find>devtools</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>$('#container').html(dates);</replace>
+      <replace>newprocess</replace>
+      <replace>aoaProcessList</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\templates\process</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\model\pojo\discuss</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\model\dao\discuss</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\java</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\attendce</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\templates\chat</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\java\cn\gson\oasys\controller</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\service</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\controller</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\templates\address</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\static\js</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\static</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\address</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\templates\note</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\common</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\templates\common</dir>
       <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\note</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\templates</dir>
-      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\templates\file</dir>
       <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\static</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\common\Utils</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\common\intercepter</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\controller\attendance</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\controller\note</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\common</dir>
       <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\mapping</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\file</dir>
-      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\static\js\file</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\plan</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\common</dir>
+      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\java\cn\gson\oasys\controller\address</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\address</dir>
       <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\chat</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\model\dao</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\daymanage</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\user</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\task</dir>
+      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\resources\templates</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\mapping</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\process</dir>
+      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\java\cn\gson\oasys</dir>
+      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\java\cn\gson\oasys\controller\user</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\systemcontrol</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\model</dir>
+      <dir>C:\Users\wang\IdeaProjects\oa_system\src\main\java\cn\gson\oasys\controller</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\controller\menu</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\controller</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF</dir>
+      <dir>C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\mail</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -270,57 +474,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/adress/AdressService.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/note/AoaDirectorUsersMapper.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaDirectorUsersMapper.xml" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/address/sharemess.html" />
-        <option value="$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/model/dao/notedao/NoteService.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/notice/AoaNoticeListMapper.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/replaymanage.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/writechat.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/votetable.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/static/js/note/noteview.js" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/note/notepaging.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/note/AoaCatalogMapper.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/note/NoteService.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/note/NoteServiceImpl.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/note/AoaNoteListMapper.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaNoteListMapper.xml" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/recivers.html" />
-        <option value="$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/controller/note/NoteController.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/note/NoteController.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/notereciver.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/paging.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/noterecivers.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/common/notepaging.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/note/noteedit.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/note/notewrite.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/note/noteview.html" />
-        <option value="$PROJECT_DIR$/oasys-web/MG.xml" />
-        <option value="$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/services/file/FileServices.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/adress/AdressServiceImpl.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/filejs.js" />
-        <option value="$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/controller/file/FileController.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/menu/MenuSysController.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/recordInterceptor.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/process/audetail.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/daymanage/daycalendar.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/mailmanage.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/edituser.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/user/deptedit.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/statusedit.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/test/java/cn/oasys/web/OasysApplicationTest.java" />
         <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/process/ProcessController.java" />
+        <option value="$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/exception/WebControllerException.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Utils/application.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/login/login.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/common/Interceptor/recordInterceptor.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/chat/ChatManageController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/role/RoleController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/attendance/AttendanceController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/IntercepterConfig.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLogMapper.xml" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserService.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLogMapper.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/system/MenuSysService.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/system/MenuSysServiceImpl.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/system/AoaSysMenuMapper.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/user/AoaUserLog.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/recordInterceptor.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/400.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/404.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/500.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/aspect.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/aderss/AddrController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/inform/InformController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/plan/PlanController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/log/error.2020-11-08.log" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/OasysWebApplication.java" />
+        <option value="$PROJECT_DIR$/log/info.2020-11-08.log" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/WebLogAspect.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/WebLogAspect.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/inter/OperLog.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/annotation/OperLog.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/login/LoginController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/aspect/WebLogAspect.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/exception/WebControllerException.java" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/seemail.html" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/common/ConmmonController.java" />
+        <option value="$PROJECT_DIR$/oasys-web/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Common.java" />
         <option value="$PROJECT_DIR$/oasys-web/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/file/AoaFilePath.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/mcpathload.html" />
-        <option value="$PROJECT_DIR$/../oa_system/src/main/resources/templates/file/filemanage.ftl" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/filemanage.html" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/file/AoaFileList.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/file/FileService.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/file/FileController.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaFilePathMapper.xml" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/file/AoaFilePathMapper.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/file/FileServiceImpl.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/file/AoaFileListMapper.java" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaFileListMapper.xml" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/fileajax.js" />
-        <option value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/filetypeload.html" />
       </list>
     </option>
   </component>
@@ -345,8 +549,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="118" />
-    <option name="y" value="12" />
+    <option name="x" value="947" />
+    <option name="y" value="118" />
     <option name="width" value="960" />
     <option name="height" value="1001" />
   </component>
@@ -364,135 +568,6 @@
           <expand>
             <path>
               <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="address" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="mail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="attendce" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys (1) (cn" type="9c53a853:ProjectViewModuleGroupNode" />
-              <item name="oa_system" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
               <item name="oasys" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -512,100 +587,6 @@
               <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-              <item name="adress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
@@ -614,64 +595,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oasys" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oasys" type="462c0819:PsiDirectoryNode" />
-              <item name="oasys-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -682,33 +605,33 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1590909" />
     <property name="project.structure.side.proportion" value="0.19548133" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="cn.oasys.web.common.Utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\task" />
       <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\static" />
       <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\static\images" />
       <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources" />
       <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF" />
-      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\login" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.oasys.web" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\service\impl" />
-      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\java\cn\oasys\web\model\pojo" />
+      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\error" />
       <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF" />
-      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\common" />
-      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\note" />
+      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\systemcontrol" />
+      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\WEB-INF\user" />
+      <recent name="C:\Users\wang\IdeaProjects\oasys\oasys-web\src\main\resources\mapping" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.oasys.web.service.inter.note" />
@@ -776,7 +699,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OasysApplicationTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OasysApplicationTest.tyes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="oasysweb" />
       <extension name="coverage">
         <pattern>
@@ -786,7 +709,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="cn.oasys.web" />
       <option name="MAIN_CLASS_NAME" value="cn.oasys.web.OasysApplicationTest" />
-      <option name="METHOD_NAME" value="test3" />
+      <option name="METHOD_NAME" value="tyes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -811,10 +734,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.OasysWebApplication" />
+        <item itemvalue="JUnit.OasysApplicationTest.tyes" />
         <item itemvalue="Application.OasysApplication" />
         <item itemvalue="JUnit.OasysApplicationTest.oasysytest (1)" />
         <item itemvalue="JUnit.OasysApplicationTest.userTset" />
-        <item itemvalue="JUnit.OasysApplicationTest.test3" />
       </list>
     </recent_temporary>
   </component>
@@ -906,39 +829,81 @@
       <option name="project" value="LOCAL" />
       <updated>1595494912763</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ok">
+      <created>1596557918805</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1596557918806</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ok">
+      <created>1596644355636</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1596644355636</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ok">
+      <created>1602522566388</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1602522566389</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ok">
+      <created>1602785150891</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1602785150891</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ok">
+      <created>1603318970928</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1603318970928</updated>
+    </task>
+    <task id="LOCAL-00017" summary="ok">
+      <created>1603746530648</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1603746530649</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.06.30 at 16h 53m 19s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.10.27 at 13h 14m 23s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.06.30 at 16h 57m 11s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.10.27 at 13h 15m 37s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.07.01 at 20h 11m 11s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.10.27 at 13h 19m 15s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.07.01 at 20h 13m 49s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.10.27 at 13h 21m 03s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.07.02 at 01h 02m 14s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.10.27 at 13h 22m 13s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.07.02 at 01h 08m 00s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.11.07 at 16h 23m 10s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.07.10 at 07h 04m 17s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.11.07 at 16h 41m 04s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.07.10 at 07h 56m 18s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.11.07 at 16h 44m 07s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.07.10 at 07h 57m 20s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.11.07 at 16h 50m 56s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OasysApplicationTest_oasysytest_(1) - 2020.07.23 at 17h 03m 25s.xml">
-      <configuration name="OasysApplicationTest.oasysytest (1)" configurationId="JUnit" />
+    <history-entry file="OasysApplicationTest_tyes - 2020.11.08 at 01h 17m 55s.xml">
+      <configuration name="OasysApplicationTest.tyes" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -954,8 +919,8 @@
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49548534" visible="true" weight="0.17167382" />
-      <window_info id="Structure" order="1" sideWeight="0.5045147" side_tool="true" weight="0.15236051" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.64972776" visible="true" weight="0.31169528" />
+      <window_info id="Structure" order="1" sideWeight="0.35027224" side_tool="true" weight="0.22156653" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -963,16 +928,16 @@
       <window_info id="Favorites" order="6" sideWeight="0.5016835" side_tool="true" weight="0.24624464" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.44243792" />
-      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49785408" weight="0.3905192" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49785408" weight="0.38036117" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4967811" visible="true" weight="0.39277652" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295711" />
-      <window_info anchor="bottom" id="Problems" order="7" weight="0.3295711" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5032189" side_tool="true" weight="0.23702031" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.4819413" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3295711" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3295711" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.49302575" visible="true" weight="0.36568847" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5069742" side_tool="true" weight="0.39277652" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32392776" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49731758" weight="0.30248308" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295711" />
+      <window_info anchor="bottom" id="Problems" order="10" weight="0.3295711" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.3295711" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1034,7 +999,7 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.2.6.RELEASE/spring-webmvc-5.2.6.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class</url>
           <properties />
           <option name="timeStamp" value="1" />
@@ -1047,408 +1012,379 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/aderss/AddrController.java">
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/discuss/DiscussServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="178">
+          <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/services/address/AddressService.java">
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/systemcontrol/menutable.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/services/address/AddreddUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="12" selection-start-line="5" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/services/mail/MailServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="279" column="13" lean-forward="true" selection-start-line="279" selection-start-column="13" selection-end-line="279" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/adress/AdressServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="99" column="51" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/login/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="111" column="14" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/model/entity/file/FilePath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/model/entity/file/FileList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding>
-            <element signature="e#2806#2807#0" expanded="true" />
-            <element signature="e#2831#2832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/resources/templates/file/filetypeload.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="93" column="20" lean-forward="true" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/filejs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+        <state relative-caret-position="178">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/menu/MenuSysController.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/role/AoaRolePowerListMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/RoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+          <folding>
+            <element signature="e#1369#1370#0" expanded="true" />
+            <element signature="e#1422#1423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/RoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/role/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="74" column="126" selection-start-line="74" selection-start-column="122" selection-end-line="74" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/role/roleset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="50" column="4" lean-forward="true" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.35/tomcat-embed-core-9.0.35.jar!/javax/servlet/ServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="63" column="22" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/attendce/AttendanceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/attendce/AttendanceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/attendance/AttendanceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="180" column="80" selection-start-line="180" selection-start-column="80" selection-end-line="180" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.2.6.RELEASE/spring-tx-5.2.6.RELEASE.jar!/org/springframework/transaction/annotation/Transactional.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/IntercepterConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="118" selection-start-line="15" selection-start-column="118" selection-end-line="15" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/model/dao/user/UserLogDao.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="66" column="74" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
+          <caret line="17" column="139" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/system/AoaSysMenuMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="57" column="146" selection-start-line="57" selection-start-column="146" selection-end-line="57" selection-end-column="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/system/MenuSysServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="154" column="39" lean-forward="true" selection-start-line="154" selection-start-column="39" selection-end-line="154" selection-end-column="39" />
+          <folding>
+            <element signature="e#5554#5555#0" expanded="true" />
+            <element signature="e#5623#5624#0" expanded="true" />
+            <element signature="e#5650#5651#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/system/MenuSysService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="48" column="14" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/user/AoaUserLogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/user/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="127" column="80" selection-start-line="127" selection-start-column="80" selection-end-line="127" selection-end-column="80" />
+        <state relative-caret-position="202">
+          <caret line="173" column="34" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
+          <folding>
+            <element signature="e#5282#5283#0" expanded="true" />
+            <element signature="e#5336#5337#0" expanded="true" />
+            <element signature="e#5399#5400#0" expanded="true" />
+            <element signature="e#5450#5451#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/user/AoaUserLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/common/Interceptor/recordInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="99" column="14" lean-forward="true" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
+          <folding>
+            <element signature="method#preHandle#0;class#recordInterceptor#0" />
+            <marker date="1604775197168" expanded="true" signature="1155:2249" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="57" lean-forward="true" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/400.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="19" column="74" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="19" column="74" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/error/500.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="733">
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/aderss/AddrController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/inform/InformController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/plan/PlanController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../study/src/main/java/cn/study/StudyApplication.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/OasysWebApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#496#497#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/aspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/info.2020-11-08.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-370" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/error.2020-11-08.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/annotation/OperLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/login/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-384">
+          <caret line="55" column="56" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/aspect/WebLogAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/io/IOException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.35/tomcat-embed-core-9.0.35.jar!/org/apache/catalina/connector/ClientAbortException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/mailmanage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/mail/seemail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/common/ConmmonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="118" column="31" lean-forward="true" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/exception/WebControllerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/intercepter/recordInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="121" selection-start-line="10" selection-start-column="121" selection-end-line="10" selection-end-column="121" />
+        <state relative-caret-position="341">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#preHandle#0;class#recordInterceptor#0" />
+            <element signature="e#2556#2565#0" />
+            <element signature="method#afterCompletion#0;class#recordInterceptor#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/IndexController.java">
+    <entry file="file://$PROJECT_DIR$/oasys-web/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+        <state relative-caret-position="186">
+          <caret line="79" column="41" lean-forward="true" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/process/ProcessController.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+        <state relative-caret-position="67">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/services/file/FileTransactionalHandlerService.java">
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/common/Common.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="52" column="58" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="58" />
+        <state relative-caret-position="-2592">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="121" column="18" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.2.6.RELEASE/spring-beans-5.2.6.RELEASE.jar!/org/springframework/beans/factory/annotation/InjectionMetadata.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaUserLoginRecordMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaMailReciverMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaVoteListMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaSysMenuMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1968">
-          <caret line="82" column="11" lean-forward="true" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaReceiverNoteMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaPositionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaNoticeUserRelationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaDiscussListMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/OasysWebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/mcpathload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/resources/templates/file/filemanage.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="237" column="29" lean-forward="true" selection-start-line="183" selection-start-column="24" selection-end-line="237" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/file/AoaFilePath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-          <folding>
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1317#1318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/1.13.6.RELEASE/spring-data-commons-1.13.6.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/java/jdk/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="1032" column="19" selection-start-line="1032" selection-start-column="19" selection-end-line="1032" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/services/file/FileServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="223" column="47" selection-start-line="223" selection-start-column="47" selection-end-line="223" selection-end-column="47" />
-          <folding>
-            <element signature="e#2124#2125#0" expanded="true" />
-            <element signature="e#2186#2187#0" expanded="true" />
-            <element signature="e#2304#2305#0" expanded="true" />
-            <element signature="e#2363#2364#0" expanded="true" />
-            <element signature="e#17384#17385#0" expanded="true" />
-            <element signature="e#17430#17431#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/pojo/file/AoaFileList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#612#613#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/chat/chattable.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="84" selection-start-line="84" selection-end-line="84" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/filemanage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="203" column="66" selection-start-line="203" selection-start-column="66" selection-end-line="203" selection-end-column="66" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#span#1;n#div#0;n#div#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/controller/file/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1296">
-          <caret line="244" column="22" selection-start-line="244" selection-start-column="22" selection-end-line="244" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/inter/file/FileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="54" column="72" selection-start-line="54" selection-start-column="72" selection-end-line="54" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/controller/file/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="96" column="53" selection-start-line="96" selection-start-column="53" selection-end-line="96" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/model/dao/filedao/FileListdao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/model/dao/filedao/FilePathdao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../oa_system/src/main/java/cn/gson/oasys/controller/file/FileAjaxController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaFilePathMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/file/AoaFilePathMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/model/dao/file/AoaFileListMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="40" column="61" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/mapping/AoaFileListMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="69" column="102" selection-start-line="69" selection-start-column="102" selection-end-line="69" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/java/cn/oasys/web/service/impl/file/FileServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="509" column="64" selection-start-line="509" selection-start-column="64" selection-end-line="509" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#pathreturnback#0;class#FileServiceImpl#0" />
-            <element signature="method#mcpathload#0;class#FileServiceImpl#0" />
-            <element signature="method#moveAndcopy#0;class#FileServiceImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/static/js/file/fileajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oasys-web/src/main/resources/WEB-INF/file/filetypeload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="311" selection-start-line="311" selection-end-line="311" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#th:block#1;n#th:block#0;n#th:block#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#span#0;n#form#0;n#div#1;n#div#0;n#th:block#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#th:block#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#th:block#1;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#0;n#th:block#1;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#10;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#11;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#12;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#9;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#10;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#11;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#12;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1502,7 +1438,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>oasys (1) (cn.gson)</last-edited>
+          <last-edited>oasysweb</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

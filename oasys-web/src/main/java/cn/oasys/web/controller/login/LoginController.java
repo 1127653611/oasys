@@ -2,6 +2,7 @@ package cn.oasys.web.controller.login;
 
 import cn.oasys.web.common.Utils.MD5Util;
 import cn.oasys.web.common.Utils.VerifyCodeUtils;
+import cn.oasys.web.common.annotation.OperLog;
 import cn.oasys.web.model.pojo.user.AoaUser;
 import cn.oasys.web.model.pojo.user.AoaUserLoginRecord;
 import cn.oasys.web.service.inter.user.UserLoginRecordService;
@@ -50,6 +51,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "logins", method = RequestMethod.POST)
+    @OperLog(operModul = "用户登录")
     public String loginCheck(HttpServletRequest request, HttpSession session, Model model) throws UnknownHostException {
         String userName = request.getParameter("userName").trim();
         String password = request.getParameter("password");

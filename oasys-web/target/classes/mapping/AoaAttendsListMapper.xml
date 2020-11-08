@@ -41,7 +41,7 @@
     <select id="findlastest" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"></include>
-        from aoa_attends_list where DATE_format(attends_time,'%Y-%m-%d') like #{date} and attends_user_id = #{uid}
+        from aoa_attends_list where DATE_format(attends_time,'%Y-%m-%d') like #{date} and attends_user_id = #{uid} ORDER  BY attends_time DESC  LIMIT 1
     </select>
     <delete id="delete">
         delete from aoa_attends_list where attends_id =#{id}

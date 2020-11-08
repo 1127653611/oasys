@@ -1,5 +1,7 @@
 package cn.oasys.web.model.pojo.process;
 
+import cn.oasys.web.model.pojo.user.AoaUser;
+
 import java.util.Date;
 
 public class AoaStay {
@@ -20,6 +22,26 @@ public class AoaStay {
     private Long evemoneyId;
 
     private Long userName;
+
+    private String nameuser;
+
+    private AoaUser user;
+
+    public AoaUser getUser() {
+        return user;
+    }
+
+    public void setUser(AoaUser user) {
+        this.user = user;
+    }
+
+    public String getNameuser() {
+        return nameuser;
+    }
+
+    public void setNameuser(String nameuser) {
+        this.nameuser = nameuser;
+    }
 
     public Long getStayId() {
         return stayId;

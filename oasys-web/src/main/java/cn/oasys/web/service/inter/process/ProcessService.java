@@ -19,8 +19,6 @@ public interface ProcessService {
 
     void index6(Model model, Long userId, int page, int size);
 
-    void writefile(HttpServletResponse response, File file);
-
     void index5(AoaProcessList pro, String val, AoaUser lu, MultipartFile filePath, String userName) throws IOException;
 
     void saveburse(AoaProcessList pro, AoaBursement bu, List<AoaDetailsburse> mm);
@@ -30,7 +28,6 @@ public interface ProcessService {
     void saveEvection(AoaProcessList pro, AoaEvection eve);
 
     void index8(AoaProcessList pro, String val, AoaUser lu, String userName);
-
 
     void saveOvertime(AoaProcessList pro, AoaOvertime eve);
 
@@ -69,4 +66,6 @@ public interface ProcessService {
     void insertAtt(AoaAttendsList attend);
 
     void uodateObj(String typename, AoaProcessList pro, AoaUser shen, AoaUser me, AoaReviewed reviewed);
+
+    void saveEvectionMoney(AoaProcessList pro, AoaEvectionmoney eve, List<AoaTraffic> ss, List<AoaStay> mm);
 }

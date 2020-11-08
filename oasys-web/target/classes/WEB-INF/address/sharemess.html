@@ -31,7 +31,7 @@
                            data-th-thisrole="${du?.shareUser?.role?.roleName}"
                            data-th-thistel="${du?.shareUser?.userTel}"
                            data-th-thisemail="${du?.shareUser?.eamil}"
-                        > <img th:if="${not #strings.isEmpty(du?.shareUser?.imgPath)}" th:src="@{'/images/'+${du?.shareUser?.imgPath}}" class="img-circle"/>
+                        > <img th:if="${not #strings.isEmpty(du?.shareUser?.imgPath)}" th:src="@{${du?.shareUser?.imgPath}}" class="img-circle"/>
                             <img th:if="${#strings.isEmpty(du?.shareUser?.imgPath)}" src="/images/timg.jpg" class="img-circle"/>
                             <span> [[${du?.shareUser?.userName}]]</span></a>共享了以下联系人给你:
                     </div>

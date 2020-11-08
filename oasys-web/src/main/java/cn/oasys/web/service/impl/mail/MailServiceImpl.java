@@ -46,7 +46,7 @@ public class MailServiceImpl implements MailService {
     private AoaMailReciverMapper aoaMailReciverMapper;
     @Autowired
     private AoaInMailListMapper aoaInMailListMapper;
-    @Value("${img.rootpath}")
+    @Value("${attachment.roopath}")
     private String rootpath;
 
 
@@ -186,15 +186,15 @@ public class MailServiceImpl implements MailService {
                 default:
                     return aoaInMailListMapper.findByObjOrderByMailCreateTimeDesc(userId, null, typeid, true, false);
             }
-        }else {
+        } else {
             switch (title) {
                 case "发件箱":
-                    return aoaInMailListMapper.findByObjOrderByMailCreateTimeDesc(userId, "%"+key+"%", typeid, true, false);
+                    return aoaInMailListMapper.findByObjOrderByMailCreateTimeDesc(userId, "%" + key + "%", typeid, true, false);
 
                 case "草稿箱":
-                    return aoaInMailListMapper.findByObjOrderByMailCreateTimeDesc(userId, "%"+key+"%", typeid, false, false);
+                    return aoaInMailListMapper.findByObjOrderByMailCreateTimeDesc(userId, "%" + key + "%", typeid, false, false);
                 default:
-                    return aoaInMailListMapper.findByObjOrderByMailCreateTimeDesc(userId, "%"+key+"%", typeid, true, false);
+                    return aoaInMailListMapper.findByObjOrderByMailCreateTimeDesc(userId, "%" + key + "%", typeid, true, false);
             }
         }
     }
@@ -203,9 +203,9 @@ public class MailServiceImpl implements MailService {
     public List<Map<String, Object>> maillist(List<AoaInMailList> maillist) {
         List<Map<String, Object>> list = new ArrayList<>();
         for (int i = 0; i < maillist.size(); i++) {
-            Map<String,Object> result=new HashMap<>();
-            String typename=aoaTypeListMapper.findname(maillist.get(i).getMailType());
-            AoaStatusList status=aoaStatusListMapper.findOne(maillist.get(i).getMailStatusId());
+            Map<String, Object> result = new HashMap<>();
+            String typename = aoaTypeListMapper.findname(maillist.get(i).getMailType());
+            AoaStatusList status = aoaStatusListMapper.findOne(maillist.get(i).getMailStatusId());
             result.put("typename", typename);
             result.put("statusname", status.getStatusName());
             result.put("statuscolor", status.getStatusColor());
@@ -229,27 +229,27 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public AoaMailReciver findbyReciverIdAndmailId(Long userId, Long id) {
-        return aoaMailReciverMapper.findbyReciverIdAndmailId(userId,id);
+        return aoaMailReciverMapper.findbyReciverIdAndmailId(userId, id);
     }
 
     @Override
     public void save(AoaMailReciver mailr) {
-        if (StringUtils.isEmpty(mailr.getPkId())){
+        if (StringUtils.isEmpty(mailr.getPkId())) {
             aoaMailReciverMapper.insertSelective(mailr);
-        }else {
+        } else {
             aoaMailReciverMapper.updateByPrimaryKeySelective(mailr);
         }
     }
 
     @Override
     public List<AoaMailnumber> findByStatusAndMailUserId(long l, Long userId) {
-        return aoaMailnumberMapper.findByStatusAndMailUserId(l,userId);
+        return aoaMailnumberMapper.findByStatusAndMailUserId(l, userId);
     }
 
     @Override
     public AoaInMailList saveMail(AoaInMailList mail) {
-         aoaInMailListMapper.insertSelective(mail);
-         return mail;
+        aoaInMailListMapper.insertSelective(mail);
+        return mail;
     }
 
     @Override
@@ -264,10 +264,10 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public void pushmail(String account, String password, String reciver, String name, String title, String content, String affix, String filename) {
-        String file=null;
-        if(!StringUtil.isEmpty(affix)){
-            File root = new File(rootpath,affix);
-            file=root.getAbsolutePath();
+        String file = null;
+        if (!StringUtil.isEmpty(affix)) {
+            File root = new File(rootpath, affix);
+            file = root.getAbsolutePath();
         }
         // 发件人的 邮箱 和 密码（替换为自己的邮箱和密码）
         String myEmailAccount = account;
@@ -276,7 +276,8 @@ public class MailServiceImpl implements MailService {
         // 网易163邮箱的 SMTP 服务器地址为: smtp.163.com
         //qq  smtp.qq.com
         String myEmailSMTPHost = "smtp.163.com";
-
+        if (myEmailAccount.matches(".*@qq.com"))
+            myEmailSMTPHost = "smtp.qq.com";
         // 收件人邮箱（替换为自己知道的有效邮箱）
         //  String receiveMailAccount = "1533047354@qq.com";
 
@@ -304,7 +305,7 @@ public class MailServiceImpl implements MailService {
         // 3. 创建一封邮件
         MimeMessage message;
         try {
-            message = createMimeMessage(session, myEmailAccount, reciver,name ,title, content,file,filename);
+            message = createMimeMessage(session, myEmailAccount, reciver, name, title, content, file, filename);
 
             // 4. 根据 Session 获取邮件传输对象
             Transport transport = session.getTransport();
@@ -333,7 +334,7 @@ public class MailServiceImpl implements MailService {
 
     @Override
     public AoaInMailList findByMailUseridAndMailId(Long userId, long parseLong) {
-        return aoaInMailListMapper.findByMailUseridAndMailId(userId,parseLong);
+        return aoaInMailListMapper.findByMailUseridAndMailId(userId, parseLong);
     }
 
     @Override
@@ -362,7 +363,7 @@ public class MailServiceImpl implements MailService {
     }
 
     public static MimeMessage createMimeMessage(Session session, String sendMail, String receiveMail,
-                                                String name,String title,String content,String affix,String filename) throws Exception {
+                                                String name, String title, String content, String affix, String filename) throws Exception {
         // 1. 创建一封邮件
         MimeMessage message = new MimeMessage(session);
 
@@ -375,7 +376,7 @@ public class MailServiceImpl implements MailService {
         // 4. Subject: 邮件主题（标题有广告嫌疑，避免被邮件服务器误认为是滥发广告以至返回失败，请修改标题）
         message.setSubject(title, "UTF-8");
 
-        if(!StringUtil.isEmpty(affix)){
+        if (!StringUtil.isEmpty(affix)) {
 
             // 向multipart对象中添加邮件的各个部分内容，包括文本内容和附件
             Multipart multipart = new MimeMultipart();
@@ -391,12 +392,12 @@ public class MailServiceImpl implements MailService {
             // 添加附件的标题
             // 这里很重要，通过下面的Base64编码的转换可以保证你的中文附件标题名在发送时不会变成乱码
             sun.misc.BASE64Encoder enc = new sun.misc.BASE64Encoder();
-            messageBodyPart.setFileName("=?GBK?B?"+ enc.encode(filename.getBytes()) + "?=");
+            messageBodyPart.setFileName("=?GBK?B?" + enc.encode(filename.getBytes()) + "?=");
             multipart.addBodyPart(messageBodyPart);
 
             // 将multipart对象放到message中
-            message.setContent(multipart,"text/html;charset=UTF-8");
-        }else{
+            message.setContent(multipart, "text/html;charset=UTF-8");
+        } else {
             // 5. Content: 邮件正文（可以使用html标签）（内容有广告嫌疑，避免被邮件服务器误认为是滥发广告以至返回失败，请修改发送内容）
             message.setContent(content, "text/html;charset=UTF-8");
         }
@@ -405,7 +406,6 @@ public class MailServiceImpl implements MailService {
 
         // 7. 保存设置
         message.saveChanges();
-
 
 
         return message;

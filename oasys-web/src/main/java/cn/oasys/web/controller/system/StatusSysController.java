@@ -34,6 +34,10 @@ public class StatusSysController {
             req.setAttribute("errormess", "名字不能为空");
             return "systemcontrol/statusedit";
         }
+        if (aoaStatusList.getStatusId()<=29){
+            req.setAttribute("msgg", 1);
+            return "forward:/notlimit";
+        }
         statusService.save(aoaStatusList);
         req.setAttribute("success", "后台验证成功");
         return "systemcontrol/statusedit";
@@ -41,6 +45,10 @@ public class StatusSysController {
     @RequestMapping("deletestatus")
     public String deleteStatus(HttpServletRequest req){
         Long statusId=Long.parseLong(req.getParameter("id"));
+        if (statusId<=29){
+            req.setAttribute("msgg", 1);
+            return "forward:/notlimit";
+        }
         statusService.deleteStatus(statusId);
         return "forward:/testsysstatus";
     }

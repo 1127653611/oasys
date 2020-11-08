@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface FileService {
+    AoaAttachmentList upload(MultipartFile file, Long userId,String model,String type) throws IOException;
 
     AoaFilePath findByPathName(String userName);
 

@@ -48,4 +48,10 @@ public interface UserService {
     List<AoaUser> findByFatherId(Long userId);
 
     void update(AoaUser users);
+
+    List<AoaUserLog> ulogpaging(String basekey, long userid, String time);
+
+    void savelog(AoaUserLog uLog);
+
+    AoaUserLog findByUserlaset(long l);
 }

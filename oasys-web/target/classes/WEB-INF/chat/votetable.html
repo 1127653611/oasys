@@ -1,4 +1,4 @@
-<html th:fragment="votetable" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="votetable"><script type="text/javascript" src="js/usershow.js"></script>
 <div th:if="${not #lists.isEmpty(voteTitles)}" style="border: solid 1px #eee;">
     <table class="table" cellspacing="0" border="0"
            style="border-width: 0px; border-collapse: collapse; margin-bottom: 0px;">
@@ -8,8 +8,8 @@
             <td th:if="${dateType==2}">状态: <span class="label label-danger" style="background-color: #999;">已结束</span>
             </td>
             <td th:if="${dateType!=1 && dateType!=2}">状态: <span class="label label-success">进行中</span></td>
-            <td>开始时间: <span>[[${voteList?.startTime}]]</span>——
-                结束时间: <span>[[${voteList?.endTime}]]</span>
+            <td>开始时间: <span>[[${#dates.format(voteList?.startTime, 'yyyy-MM-dd HH:mm:ss')}]]</span>——
+                结束时间: <span>[[${#dates.format(voteList?.endTime, 'yyyy-MM-dd HH:mm:ss')}]]</span>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -52,7 +52,8 @@
 
 							</span>
                     </a>
-                    <a class="lianjie" th:href="@{'#vote'+${voteTitle?.titleId}}" data-toggle="collapse"/>
+                    <a class="lianjie" th:href="@{'#vote'+${voteTitle?.titleId}}" data-toggle="collapse">
+                    <span class="label label-primary"><i class="glyphicon glyphicon-list"></i> 投票详情</span>
                     </a>
                 </td>
             </tr>
@@ -70,7 +71,7 @@
                                            data-th-thistel="${user?.aoaUser?.userTel}"
                                            data-th-thisemail="${user?.aoaUser?.eamil}"
                                            href="javascript:void(0);" style="color: #888;font-size: 12px;"><img
-                                                th:src="@{'/images/'+${user?.aoaUser?.imgPath}}"
+                                                th:src="@{${user?.aoaUser?.imgPath}}"
                                                 data-th-title="${user?.aoaUser?.userName}"
                                                 data-th-alt="${user?.aoaUser?.userName}" class="small-img"/></a>
                         <span style="color: #888;font-size: 13px;">共[[${voteTitle?.users?.size()}]]人已投票</span>
@@ -97,12 +98,5 @@
 
     </script>
 </th:block>
-<script>
-    	$(function(){
-    	    var sp="<span class='label label-primary'><i class='glyphicon glyphicon-list'></i> 投票详情</span>";
-    	  $(".lianjie").each(function(){
-    	    $(this).append(sp);
-             });
-		});
-</script>
-<script type="text/javascript" src="js/usershow.js"></script>
+
+</th:block>

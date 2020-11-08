@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface MenuSysService  {
 
-    public void findMenuSys(HttpServletRequest request, AoaUser user);
+    void findMenuSys(HttpServletRequest request, AoaUser user);
 
     List <AoaSysMenu> findname(long roleid,boolean bo,boolean le,String val);
 
@@ -17,10 +17,6 @@ public interface MenuSysService  {
     AoaSysMenu findByChil(Long menuid, Long roleid, Boolean bo, Boolean le);
 
     void findAllMenuSys(HttpServletRequest request);
-
-    void changeSortId(Integer sortId, Integer arithNum, Long parentId);
-
-    void changeSortId2(Integer sortId, Integer arithNum, Long menuId);
 
     List<AoaSysMenu> findByParentIdOrderBySortId(long l);
 
@@ -37,4 +33,18 @@ public interface MenuSysService  {
     List<AoaSysMenu> findByRoleParentAll(Long id,Long roleid);
 
     void update(AoaSysMenu aoaSysMenu);
+
+    List<AoaSysMenu> findBySortIdlt(Long parentId, Integer sortId);
+
+    List<AoaSysMenu> findBySortIdgt(Long parentId, Integer sortId);
+
+    void upSort(List<AoaSysMenu> aoaSysMenus, Long menuId);
+
+    void downSort(List<AoaSysMenu> aoaSysMenus, Long menuId);
+
+    List<AoaSysMenu> findbyparentsxian(long l, Long roleId, boolean b, boolean b1);
+
+    List<AoaSysMenu> findAll();
+
+    AoaSysMenu findbyUrl(String servletPath);
 }

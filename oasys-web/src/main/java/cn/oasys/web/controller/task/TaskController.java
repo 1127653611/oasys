@@ -178,7 +178,7 @@ public class TaskController {
 
         // 查询部门下面的员工
         PageHelper.startPage(page, size);
-        List<AoaUser> emplist = userService.findByFatherId(user.getFatherId());
+        List<AoaUser> emplist = userService.findByFatherId(user.getUserId());
         PageInfo<AoaUser> userPageInfo = new PageInfo<>(emplist);
 
         // 查询部门表
@@ -248,7 +248,7 @@ public class TaskController {
         Iterable<AoaStatusList> statuslist = statusService.findAll();
         // 查询部门下面的员工
         PageHelper.startPage(page, size);
-        List<AoaUser> pagelist = userService.findByFatherId(user.getFatherId());
+        List<AoaUser> pagelist = userService.findByFatherId(user.getUserId());
         PageInfo<AoaUser> userPageInfo = new PageInfo<>(pagelist);
         // 查询部门表
         Iterable<AoaDept> deptlist = deptService.findAll();

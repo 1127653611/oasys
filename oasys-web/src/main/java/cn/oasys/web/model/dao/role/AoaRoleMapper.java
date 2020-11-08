@@ -32,4 +32,7 @@ public interface AoaRoleMapper {
 
     @Select(" select role_id,role_name , role_value from aoa_role_ where role_name like #{key}")
     List<AoaRole> findAllByLike(@Param("key") String key);
+
+    @Select("select role_id,role_name , role_value from aoa_role_ where role_value=#{value}")
+    List<AoaRole> findByValue(int rolevalue);
 }

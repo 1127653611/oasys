@@ -39,11 +39,9 @@ public class ChatManageController {
         AoaUser user = userService.findOne(userId);
         if (user.getSuperman() == 1) {
             issuperman = true;
-        }else {
-            return "redirect:/notlimit";
         }
         PageHelper.startPage(page, 10);
-        List<AoaDiscussList> list = discussService.paging(null, userId, 1, issuperman);
+        List<AoaDiscussList> list = discussService.paging(null, userId, 1, issuperman,null,null,null);
         PageInfo<AoaDiscussList> page2 = new PageInfo<>(list);
         model.addAttribute("list", discussService.packaging(list));
         model.addAttribute("page", page2);
@@ -53,36 +51,6 @@ public class ChatManageController {
         model.addAttribute("ro", 1);
         return "chat/chatmanage";
     }
-
-    @RequestMapping("chatmanage")
-    public String chatManage(@RequestParam(value = "page", defaultValue = "0") int page,
-                             @SessionAttribute("userId") Long userId, Model model, HttpSession session) {
-        PageHelper.startPage(page, 10);
-        List<AoaDiscussList> list = discussService.paging(null, userId, 2, false);
-        PageInfo<AoaDiscussList> page2 = new PageInfo<>(list);
-        model.addAttribute("list", discussService.packaging(list));
-        model.addAttribute("me", "me");
-        model.addAttribute("page", page2);
-        model.addAttribute("url", "/metable");
-        model.addAttribute("manage", "manage");
-        model.addAttribute("name", "我的管理");
-        model.addAttribute("ro", 2);
-        return "chat/chatmanage";
-    }
-
-    @RequestMapping("chatlist")
-    public String chatList(@RequestParam(value = "page", defaultValue = "0") int page, Model model) {
-        PageHelper.startPage(page, 10);
-        List<AoaDiscussList> list = discussService.paging(null, null, 3, false);
-        PageInfo<AoaDiscussList> page2 = new PageInfo<>(list);
-        model.addAttribute("list", discussService.packaging(list));
-        model.addAttribute("page", page2);
-        model.addAttribute("url", "/seetable");
-        model.addAttribute("name", "讨论列表");
-        model.addAttribute("ro", 3);
-        return "chat/chatmanage";
-    }
-
     @RequestMapping("chattable")
     public String chatTable(@RequestParam(value = "page", defaultValue = "0") int page,
                             @RequestParam(value = "baseKey", required = false) String baseKey,
@@ -91,8 +59,9 @@ public class ChatManageController {
                             @RequestParam(value = "visitnum", required = false) String visitnum,
                             @RequestParam(value = "icon", required = false) String icon,
                             @SessionAttribute("userId") Long userId, Model model) {
+        setSomething(baseKey, type, time, visitnum,  icon, model);
         PageHelper.startPage(page, 10);
-        List<AoaDiscussList> list = discussService.paging(baseKey, userId, 1, true);
+        List<AoaDiscussList> list = discussService.paging(baseKey, userId, 1, true,type,time,visitnum);
         PageInfo<AoaDiscussList> page2 = new PageInfo<>(list);
         model.addAttribute("list", discussService.packaging(list));
         model.addAttribute("page", page2);
@@ -102,31 +71,21 @@ public class ChatManageController {
         model.addAttribute("ro", 1);
         return "chat/chattable";
     }
-
-    /**
-     * 查看列表页面的controller，分页处理
-     *
-     * @return
-     */
-    @RequestMapping("seetable")
-    public String seeTable(@RequestParam(value = "page", defaultValue = "0") int page,
-                           @RequestParam(value = "baseKey", required = false) String baseKey,
-                           @RequestParam(value = "type", required = false) String type,
-                           @RequestParam(value = "time", required = false) String time,
-                           @RequestParam(value = "visitnum", required = false) String visitnum,
-                           @RequestParam(value = "icon", required = false) String icon,
-                           @SessionAttribute("userId") Long userId, Model model) {
+    @RequestMapping("chatmanage")
+    public String chatManage(@RequestParam(value = "page", defaultValue = "0") int page,
+                             @SessionAttribute("userId") Long userId, Model model, HttpSession session) {
         PageHelper.startPage(page, 10);
-        List<AoaDiscussList> list = discussService.paging(baseKey, null, 3, false);
+        List<AoaDiscussList> list = discussService.paging(null, userId, 2, false,null,null,null);
         PageInfo<AoaDiscussList> page2 = new PageInfo<>(list);
         model.addAttribute("list", discussService.packaging(list));
+        model.addAttribute("me", "me");
         model.addAttribute("page", page2);
-        model.addAttribute("url", "/seetable");
-        model.addAttribute("name", "讨论列表");
-        model.addAttribute("ro", 3);
-        return "chat/chattable";
+        model.addAttribute("url", "/metable");
+        model.addAttribute("manage", "manage");
+        model.addAttribute("name", "我的管理");
+        model.addAttribute("ro", 2);
+        return "chat/chatmanage";
     }
-
     @RequestMapping("metable")
     public String meTable(@RequestParam(value = "page", defaultValue = "0") int page,
                           @RequestParam(value = "baseKey", required = false) String baseKey,
@@ -135,8 +94,9 @@ public class ChatManageController {
                           @RequestParam(value = "visitnum", required = false) String visitnum,
                           @RequestParam(value = "icon", required = false) String icon,
                           @SessionAttribute("userId") Long userId, Model model) {
+        setSomething(baseKey, type, time, visitnum,  icon, model);
         PageHelper.startPage(page, 10);
-        List<AoaDiscussList> list = discussService.paging(baseKey, userId, 2, false);
+        List<AoaDiscussList> list = discussService.paging(baseKey, userId, 2, false,type,time,visitnum);
         PageInfo<AoaDiscussList> page2 = new PageInfo<>(list);
         model.addAttribute("list", discussService.packaging(list));
         model.addAttribute("page", page2);
@@ -147,6 +107,79 @@ public class ChatManageController {
         model.addAttribute("ro", 2);
         return "chat/chattable";
     }
+    @RequestMapping("chatlist")
+    public String chatList(@RequestParam(value = "page", defaultValue = "0") int page, Model model) {
+        PageHelper.startPage(page, 10);
+        List<AoaDiscussList> list = discussService.paging(null, null, 3, false,null,null,null);
+        PageInfo<AoaDiscussList> page2 = new PageInfo<>(list);
+        model.addAttribute("list", discussService.packaging(list));
+        model.addAttribute("page", page2);
+        model.addAttribute("url", "/seetable");
+        model.addAttribute("name", "讨论列表");
+        model.addAttribute("ro", 3);
+        return "chat/chatmanage";
+    }
+    @RequestMapping("seetable")
+    public String seeTable(@RequestParam(value = "page", defaultValue = "0") int page,
+                           @RequestParam(value = "baseKey", required = false) String baseKey,
+                           @RequestParam(value = "type", required = false) String type,
+                           @RequestParam(value = "time", required = false) String time,
+                           @RequestParam(value = "visitnum", required = false) String visitnum,
+                           @RequestParam(value = "icon", required = false) String icon,
+                           @SessionAttribute("userId") Long userId, Model model) {
+        setSomething(baseKey, type, time, visitnum,  icon, model);
+        PageHelper.startPage(page, 10);
+        List<AoaDiscussList> list = discussService.paging(baseKey, null, 3, false,type,time,visitnum);
+        PageInfo<AoaDiscussList> page2 = new PageInfo<>(list);
+        model.addAttribute("list", discussService.packaging(list));
+        model.addAttribute("page", page2);
+        model.addAttribute("url", "/seetable");
+        model.addAttribute("name", "讨论列表");
+        model.addAttribute("ro", 3);
+        return "chat/chattable";
+    }
+
+
+    private void setSomething(String baseKey, String type, String time, String visitnum,String icon,
+                              Model model) {
+        if(!StringUtils.isEmpty(icon)){
+            model.addAttribute("icon", icon);
+            if(!StringUtils.isEmpty(type)){
+                model.addAttribute("type", type);
+                if("1".equals(type)){
+                    model.addAttribute("sort", "&type=1&icon="+icon);
+                }else{
+                    model.addAttribute("sort", "&type=0&icon="+icon);
+                }
+            }
+            if(!StringUtils.isEmpty(visitnum)){
+                model.addAttribute("visitnum", visitnum);
+                if("1".equals(visitnum)){
+                    model.addAttribute("sort", "&visitnum=1&icon="+icon);
+                }else{
+                    model.addAttribute("sort", "&visitnum=0&icon="+icon);
+                }
+            }
+            if(!StringUtils.isEmpty(time)){
+                model.addAttribute("time", time);
+                if("1".equals(time)){
+                    model.addAttribute("sort", "&time=1&icon="+icon);
+                }else{
+                    model.addAttribute("sort", "&time=0&icon="+icon);
+                }
+            }
+        }
+        if(!StringUtils.isEmpty(baseKey)){
+            model.addAttribute("baseKey", baseKey);
+        }
+    }
+    /**
+     * 查看列表页面的controller，分页处理
+     *
+     * @return
+     */
+
+
 
     @RequestMapping("seediscuss")
     public String seeDiscuss(@RequestParam(value = "id") Long id, @RequestParam(value = "pageNumber") Integer pageNumber,

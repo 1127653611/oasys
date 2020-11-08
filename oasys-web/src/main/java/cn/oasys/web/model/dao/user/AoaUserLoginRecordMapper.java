@@ -15,4 +15,6 @@ public interface AoaUserLoginRecordMapper {
 
     @Select("select count(*) from aoa_user_login_record where DATE_FORMAT(login_time,'%Y-%m-%d') = #{format}")
     Integer countlog(String format);
+
+    List<AoaUserLoginRecord> getAllByIdAndkey(@Param("id") long userid, @Param("key") String s);
 }

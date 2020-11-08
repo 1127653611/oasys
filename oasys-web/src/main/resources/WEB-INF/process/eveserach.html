@@ -282,7 +282,7 @@ border-top: 1px solid #2196F3;
                                 <a th:if="${map?.name=='审核'}" class="btn btn-primary huifu"
                                    th:href="@{'auditing?id='+${map?.proId}}">
                                     <span class="glyphicon glyphicon-zoom-in"></span> 审核</a>
-                                <a th:if="map?.statusid==25" class="btn btn-primary huifu"
+                                <a th:if="${map?.statusid==25}" class="btn btn-primary huifu"
                                    th:href="@{'evemoney?id='+${map?.proId}}">
                                     <span class="glyphicon glyphicon-zoom-in"></span> 出差费用申请</a>
 

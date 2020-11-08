@@ -1,11 +1,13 @@
 package cn.oasys.web.controller.process;
 
+import cn.oasys.web.common.Common;
 import cn.oasys.web.common.Utils.User;
 import cn.oasys.web.exception.NameErrorException;
 import cn.oasys.web.model.pojo.attendce.AoaAttendsList;
 import cn.oasys.web.model.pojo.process.*;
 import cn.oasys.web.model.pojo.system.AoaStatusList;
 import cn.oasys.web.model.pojo.system.AoaTypeList;
+import cn.oasys.web.model.pojo.task.AoaTaskList;
 import cn.oasys.web.model.pojo.user.AoaDept;
 import cn.oasys.web.model.pojo.user.AoaPosition;
 import cn.oasys.web.model.pojo.user.AoaUser;
@@ -29,6 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
@@ -73,14 +76,18 @@ public class ProcessController {
     @RequestMapping("apply")
     public String apply(@RequestParam("filePath") MultipartFile filePath, HttpServletRequest req, AoaBursement bu,
                         @SessionAttribute("userId") Long userId) throws IllegalStateException, IOException, NameErrorException {
-
+        if (!StringUtils.isEmpty(filePath.getOriginalFilename())) {
+            if (!filePath.getOriginalFilename().matches(".*(.jpg|.gif|.bmp|.png)$")) {
+                req.setAttribute("errormess", "头像格式不对");
+                return "forward:/burse";
+            }
+        }
         AoaUser lu = userService.findOne(userId);//申请人
         AoaUser reuser;
         AoaUser zhuti;
-        try {
-            reuser = userService.findByname(req.getParameter("username"));//审核人
-            zhuti = userService.findByname(req.getParameter("namemoney"));//证明人
-        } catch (Exception e) {
+        reuser = userService.findByname(req.getParameter("username"));//审核人
+        zhuti = userService.findByname(req.getParameter("namemoney"));//证明人
+        if (reuser == null || zhuti == null) {
             throw new NameErrorException("人员数量错误");
         }
         Integer allinvoice = 0;
@@ -140,12 +147,10 @@ public class ProcessController {
                        @SessionAttribute("userId") Long userId) throws IllegalStateException, IOException, NameErrorException {
         AoaUser lu = userService.findOne(userId);//申请人
         AoaUser shen;
-        try {
-            shen = userService.findByname(eve.getNameuser());//审核人
-        } catch (Exception e) {
+        shen = userService.findByname(eve.getNameuser());//审核人
+        if (shen == null) {
             throw new NameErrorException("人员数量错误");
         }
-
         Long roleid = shen.getRole().getRoleId();//申请人角色id
         Long fatherid = lu.getFatherId();//申请人父id
         Long userid = shen.getUserId();//审核人userid
@@ -163,6 +168,52 @@ public class ProcessController {
 
         req.setAttribute("success", "后台验证成功");
         return "forward:/evection";
+    }
+
+    @RequestMapping("moneyeve")
+    public String moneyeve(@RequestParam("filePath") MultipartFile filePath, HttpServletRequest req, AoaEvectionmoney eve,
+                           @SessionAttribute("userId") Long userId, Model model) throws IllegalStateException, IOException, NameErrorException {
+        AoaUser lu = userService.findOne(userId);//申请人
+        AoaUser shen;
+        shen = userService.findByname(eve.getShenname());//审核人
+        if (shen == null) {
+            throw new NameErrorException("人员数量错误");
+        }
+        Long roleid = shen.getRole().getRoleId();//申请人角色id
+        Long fatherid = lu.getFatherId();//申请人父id
+        Long userid = shen.getUserId();//审核人userid
+        String val = req.getParameter("val");
+        Double allmoney = 0.0;
+        if (roleid <= 4L && Objects.equals(fatherid, userid)) {
+            List<AoaTraffic> ss = eve.getTraffic();
+            for (AoaTraffic traffic : ss) {
+                allmoney += traffic.getTrafficMoney();
+                AoaUser u = userService.findByname(traffic.getUsername());
+                traffic.setUserName(u.getUserId());
+                traffic.setEvectionId(eve.getEvectionmoneyId());
+
+            }
+            List<AoaStay> mm = eve.getStay();
+            for (AoaStay stay : mm) {
+                allmoney += stay.getStayMoney() * stay.getDay();
+                AoaUser u = userService.findByname(stay.getNameuser());
+                stay.setUserName(u.getUserId());
+                stay.setEvemoneyId(eve.getEvectionmoneyId());
+            }
+
+            eve.setMoney(allmoney);
+            //set主表
+            AoaProcessList pro = eve.getAoaProcessList();
+            processService.index5(pro, val, lu, filePath, shen.getUserName());
+            processService.saveEvectionMoney(pro, eve, ss, mm);
+            //存审核表
+            processService.saveReview(shen, pro);
+        } else {
+            return "common/proce";
+        }
+        req.setAttribute("success", "后台验证成功");
+        return "forward:/evemoney";
+
     }
 
     @RequestMapping("overtime")
@@ -192,13 +243,11 @@ public class ProcessController {
                        @SessionAttribute("userId") Long userId) throws IllegalStateException, IOException, NameErrorException {
         AoaUser lu;
         AoaUser shen;
-        try {
-            lu = userService.findOne(userId);//申请人
-            shen = userService.findByname(eve.getNameuser());//审核人
-        } catch (Exception e) {
+        lu = userService.findOne(userId);//申请人
+        shen = userService.findByname(eve.getNameuser());//审核人
+        if (shen == null || lu == null) {
             throw new NameErrorException("人员数量错误");
         }
-
         Long roleid = shen.getRole().getRoleId();//申请人角色id
         Long fatherid = lu.getFatherId();//申请人父id
         Long userid = shen.getUserId();//审核人userid
@@ -250,10 +299,9 @@ public class ProcessController {
                        @SessionAttribute("userId") Long userId, Model model) throws IOException, NameErrorException {
         AoaUser lu;
         AoaUser shen;
-        try {
-            lu = userService.findOne(userId);//申请人
-            shen = userService.findByname(eve.getNameuser());//审核人
-        } catch (Exception e) {
+        lu = userService.findOne(userId);//申请人
+        shen = userService.findByname(eve.getNameuser());//审核人
+        if (shen == null || lu == null) {
             throw new NameErrorException("人员数量错误");
         }
         Long roleid = shen.getRole().getRoleId();//申请人角色id
@@ -286,10 +334,9 @@ public class ProcessController {
                        @SessionAttribute("userId") Long userId, Model model) throws IllegalStateException, IOException, NameErrorException {
         AoaUser lu;
         AoaUser shen;
-        try {
-            lu = userService.findOne(userId);//申请人
-            shen = userService.findByname(eve.getNameuser());//审核人
-        } catch (Exception e) {
+        lu = userService.findOne(userId);//申请人
+        shen = userService.findByname(eve.getNameuser());//审核人
+        if (shen == null || lu == null) {
             throw new NameErrorException("人员数量错误");
         }
         Long roleid = shen.getRole().getRoleId();//申请人角色id
@@ -328,10 +375,9 @@ public class ProcessController {
         }
         AoaUser lu;
         AoaUser shen;
-        try {
-            lu = userService.findOne(userId);//申请人
-            shen = userService.findByname(eve.getNameuser());//审核人
-        } catch (Exception e) {
+        lu = userService.findOne(userId);//申请人
+        shen = userService.findByname(eve.getNameuser());//审核人
+        if (shen == null || lu == null) {
             throw new NameErrorException("人员数量错误");
         }
         Long roleid = shen.getRole().getRoleId();//申请人角色id
@@ -383,6 +429,7 @@ public class ProcessController {
         PageInfo<AoaProcessList> aoaProcessListPageInfo = new PageInfo<>(pagelist);
         model.addAttribute("page", aoaProcessListPageInfo);
         model.addAttribute("prolist", pagelist);
+
         model.addAttribute("url", "shenser");
         return "process/managetable";
     }
@@ -410,6 +457,20 @@ public class ProcessController {
             return url;
         }
         return "process/serch";
+    }
+
+    @RequestMapping("evemoney")
+    public String evemoney(Model model, @SessionAttribute("userId") Long userId, HttpServletRequest req,
+                           @RequestParam(value = "page", defaultValue = "0") int page,
+                           @RequestParam(value = "size", defaultValue = "10") int size) {
+        Long proid = Long.parseLong(req.getParameter("id"));//出差申请的id
+        AoaProcessList prolist = processService.findOne(proid);//找这个用户的出差申请
+        if (!prolist.getProcessUserId().equals(userId)) {
+            return "forward:/notlimit";
+        }
+        processService.index6(model, userId, page, size);
+        model.addAttribute("prolist", prolist);
+        return "process/evectionmoney";
     }
 
     @RequestMapping("audit")
@@ -489,6 +550,7 @@ public class ProcessController {
 
     @RequestMapping("susave")
     public String save(@SessionAttribute("userId") Long userId, Model model, HttpServletRequest req, AoaReviewed reviewed) {
+
         String name = null;
         String typename = req.getParameter("type");
         AoaProcessList pro = processService.findOne(reviewed.getProId());//找到该条流程
@@ -497,6 +559,10 @@ public class ProcessController {
             name = req.getParameter("liuzhuan");
         }
         if (!StringUtil.isEmpty(name)) {
+            if (StringUtils.isEmpty(req.getParameter("username"))) {
+                model.addAttribute("error", "请选择审核人");
+                return "common/proce";
+            }
             //审核并流转
             AoaUser u2 = userService.findByname(req.getParameter("username"));//找到下一个审核人
             if (("离职申请").equals(typename)) {
@@ -544,16 +610,26 @@ public class ProcessController {
             processService.updatePro(pro);
             if (("请假申请").equals(typename) || ("出差申请").equals(typename)) {
                 if (reviewed.getStatusId() == 25) {
-                    AoaAttendsList attend = new AoaAttendsList();
-                    attend.setHolidayDays(Double.valueOf(pro.getProcseeDays()));
-                    attend.setHolidayStart(pro.getStartTime());
-                    attend.setAttendsUserId(pro.getProcessUserId());
-                    if (("请假申请").equals(typename)) {
-                        attend.setStatusId(46L);
-                    } else if (("出差申请").equals(typename)) {
-                        attend.setStatusId(47L);
+                    int difdate = Common.differentDays(pro.getStartTime(), pro.getEndTime());
+                    Calendar cal1 = Calendar.getInstance();
+                    cal1.setTime(pro.getStartTime());
+                    SimpleDateFormat sdf3 = new SimpleDateFormat("EEEE");
+                    for (int i = 0; i < difdate; i++) {
+                        AoaAttendsList attend = new AoaAttendsList();
+                        attend.setHolidayDays(Double.valueOf(pro.getProcseeDays()));
+                        attend.setHolidayStart(pro.getStartTime());
+                        attend.setAttendsUserId(pro.getProcessUserId());
+                        attend.setAttendsTime(cal1.getTime());
+                        attend.setStatusId(10L);
+                        attend.setWeekOfday(sdf3.format(cal1.getTime()));
+                        if (("请假申请").equals("请假申请")) {
+                            attend.setTypeId(46L);
+                        } else if (("出差申请").equals("请假申请")) {
+                            attend.setTypeId(47L);
+                        }
+                        processService.insertAtt(attend);
+                        cal1.add(Calendar.DATE, 1);
                     }
-                    processService.insertAtt(attend);
                 }
             }
         }

@@ -24,7 +24,7 @@
   </select>
   <select id="findByReviewedTimeNotNullAndProId" resultMap="BaseResultMap">
     select <include refid="Base_Column_List"></include>
-    from aoa_reviewed where reviewed_time is not null and pro_id = #{pid}
+    from aoa_reviewed where  pro_id = #{pid}
   </select>
 <select id="findByUserIdAndSort" resultMap="BaseResultMap">
   select <include refid="Base_Column_List1"></include>

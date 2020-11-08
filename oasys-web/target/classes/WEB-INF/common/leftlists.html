@@ -8,33 +8,36 @@
     </div>
     <div class="panel-group" id="accordion"
          style="margin-top: 10px; margin-left: -12px;">
-        <div class="panel panel-default" th:each="one,status: ${#httpServletRequest?.getAttribute('oneMenuAll')}">
-            <div class="panel-heading">
-                <a class="open-menu green-left" data-arrow="true" th:href="@{'#collapse'+${one?.menuId}}"
-                   data-toggle="collapse"
-                   data-parent="#accordion"> <span
-                        class="glyphicon " th:classappend="${one?.menuIcon}"></span> <span>[[${one?.menuName}]]</span>
-                    <span
-                            th:id="${one?.menuId}" class="glyphicon glyphicon-menu-left pull-right"></span>
-                </a>
-            </div>
-            <div th:id="'collapse'+${one?.menuId}" class="panel-collapse collapse ">
-                <ul>
-                    <li th:if="${one?.menuId}==${two?.parentId}"
-                        th:each="two,status: ${#httpServletRequest?.getAttribute('twoMenuAll')}">
-                        <!--                    <a th:href="'javascript:changepath('+${two.menuUrl}+');'">-->
-                        <a th:if="${not #strings.isEmpty(two?.menuUrl)}"
-                           th:href="@{'javascript:changepath(\''+${two?.menuUrl}+'\');'}">
-                            <span class="glyphicon" th:classappend="${two?.menuIcon}"></span>
-                            <span>[[${two?.menuName}]]</span>
-                        </a>
-                        <a th:if="${#strings.isEmpty(two?.menuUrl)}" href="#">
-                            <span class="glyphicon" th:classappend="${two?.menuIcon}"></span>
-                            <span>[[${two?.menuName}]]</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="panel panel-default">
+            <th:block th:each="one,status: ${#httpServletRequest?.getAttribute('oneMenuAll')}">
+                <div class="panel-heading">
+                    <a class="open-menu green-left" data-arrow="true" th:href="@{'#collapse'+${one?.menuId}}"
+                       data-toggle="collapse"
+                       data-parent="#accordion"> <span
+                            class="glyphicon " th:classappend="${one?.menuIcon}"></span>
+                        <span>[[${one?.menuName}]]</span>
+                        <span
+                                th:id="${one?.menuId}" class="glyphicon glyphicon-menu-left pull-right"></span>
+                    </a>
+                </div>
+                <div th:id="'collapse'+${one?.menuId}" class="panel-collapse collapse ">
+                    <ul>
+                        <li th:if="${one?.menuId}==${two?.parentId}"
+                            th:each="two,status: ${#httpServletRequest?.getAttribute('twoMenuAll')}">
+                            <!--                    <a th:href="'javascript:changepath('+${two.menuUrl}+');'">-->
+                            <a th:if="${not #strings.isEmpty(two?.menuUrl)}"
+                               th:href="@{'javascript:changepath(\''+${two?.menuUrl}+'\');'}">
+                                <span class="glyphicon" th:classappend="${two?.menuIcon}"></span>
+                                <span>[[${two?.menuName}]]</span>
+                            </a>
+                            <a th:if="${#strings.isEmpty(two?.menuUrl)}" href="#">
+                                <span class="glyphicon" th:classappend="${two?.menuIcon}"></span>
+                                <span>[[${two?.menuName}]]</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </th:block>
         </div>
     </div>
     <script>
@@ -74,6 +77,7 @@
 				});
 
 	})
+
 
 
 

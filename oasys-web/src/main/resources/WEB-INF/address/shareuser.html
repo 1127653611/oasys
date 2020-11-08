@@ -29,7 +29,7 @@
 				<td class=" col-xs-1"><span class="imgs center-block"> <img
 						style="width: 24px; height: 24px;"
 						class="profile-user-img img-responsive img-circle"
-						th:src="@{'/images/'+${user?.imgPath}}">
+						th:src="@{${user?.imgPath}}">
 				</span></td>
 				<td class="col-xs-2">[[${user?.dept?.deptName}]]</td>
 				<td class=" col-xs-2">[[${user?.position?.name}]]</td>

@@ -11,6 +11,7 @@
     <result column="traffic_name" jdbcType="VARCHAR" property="trafficName" />
     <result column="evection_id" jdbcType="BIGINT" property="evectionId" />
     <result column="user_name" jdbcType="BIGINT" property="userName" />
+    <association property="user" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="user_name"></association>
   </resultMap>
 
   <sql id="Base_Column_List">

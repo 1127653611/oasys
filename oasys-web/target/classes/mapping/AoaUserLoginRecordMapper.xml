@@ -21,6 +21,12 @@
         where
         r.user_id=#{id} order by r.login_time DESC
     </select>
+    <select id="getAllByIdAndkey" resultMap="BaseResultMap">
+        select r.record_id, r.browser, r.ip_addr, r.login_time, r.session_id, r.user_id,u.user_name from aoa_user_login_record r
+        left join aoa_user u on r.user_id=u.user_id
+        where
+        r.user_id=#{id} and (DATE_format(login_time,'%Y-%m-%d') like #{key} or ip_addr like #{key}) order by r.login_time DESC
+    </select>
     <insert id="insertSelective" parameterType="cn.oasys.web.model.pojo.user.AoaUserLoginRecord">
         insert into aoa_user_login_record
         <trim prefix="(" suffix=")" suffixOverrides=",">

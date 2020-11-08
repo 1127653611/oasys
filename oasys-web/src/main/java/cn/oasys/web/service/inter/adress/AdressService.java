@@ -22,9 +22,6 @@ public interface AdressService {
 
     AoaDirectorUsers findOneDerectorUser(Long did);
 
-
-    AoaAttachmentList upload(MultipartFile file, Long userId,String model) throws IOException;
-
     void updatedirector(AoaDirector director, AoaDirectorUsers directorUser);
 
     void insertdirector(AoaDirector director, AoaDirectorUsers directorUser);

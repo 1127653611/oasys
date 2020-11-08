@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserLoginRecordService {
     public Integer save(AoaUserLoginRecord aoaUserLoginRecord);
 
-    List<AoaUserLoginRecord> getAll(long userid);
+    List<AoaUserLoginRecord> getAll(long userid,String basekey);
 
     Integer countlog(String format);
 }

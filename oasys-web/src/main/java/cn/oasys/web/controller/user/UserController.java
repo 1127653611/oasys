@@ -20,6 +20,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.util.StringUtil;
 import com.github.stuxuhai.jpinyin.PinyinException;
+import com.sun.mail.imap.protocol.ID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,8 +33,8 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -71,14 +72,15 @@ public class UserController {
     @RequestMapping("usermanagepaging")
     public String userPaging(Model model, @RequestParam(value = "page", defaultValue = "0") int page,
                              @RequestParam(value = "size", defaultValue = "10") int size,
-                             @RequestParam(value = "usersearch", required = false) String usersearch
+                             @RequestParam(value = "baseKey", required = false) String baseKey
     ) {
         PageHelper.startPage(page, size);
         List<AoaUser> users;
-        if (StringUtils.isEmpty(usersearch)) {
+        if (StringUtils.isEmpty(baseKey)) {
             users = userService.findByidLock(0);
         } else {
-            String key = "%" + usersearch + "%";
+            model.addAttribute("baseKey",baseKey);
+            String key = "%" + baseKey + "%";
             users = userService.findByidLockLike(0, key);
         }
         PageInfo<AoaUser> userspage = new PageInfo<>(users);
@@ -111,17 +113,14 @@ public class UserController {
                                Model model) throws PinyinException {
         AoaUser u1 = userService.findOne(user.getUserId());
         boolean istrue = false;
-        List<AoaPosition> aoaPositions = positionService.findByDeptid(user.getDeptId());
-        for (AoaPosition aoaPosition : aoaPositions) {
-            if (aoaPosition.getPositionId() == user.getPositionId()) {
-                istrue = true;
-            }
+        AoaPosition aoaPosition = positionService.findOne(user.getPositionId());
+        if (aoaPosition.getDeptid()==user.getDeptId()){
+            istrue=true;
         }
         if (!istrue) {
-            model.addAttribute("errormess", "部门不职位不匹配，修改失败");
+            model.addAttribute("errormess", "部门职位不匹配，修改失败");
             return "user/edituser";
         }
-        AoaPosition aoaPosition = positionService.findOne(user.getPositionId());
         AoaPosition aoaPosition1 = positionService.findOne(u1.getPositionId());
         if (u1.getPositionId() != user.getPositionId()) {
             if (aoaPosition.getName().endsWith("经理") || aoaPosition1.getName().endsWith("经理")) {
@@ -129,6 +128,7 @@ public class UserController {
                 return "user/edituser";
             }
         }
+        user.setRoleId(deptService.getRoleid(user));
         userService.saveUser(user, isbackpassword);
         model.addAttribute("success", 1);
         return "user/edituser";
@@ -186,7 +186,19 @@ public class UserController {
         model.addAttribute("url", "panel");
         return "user/panel";
     }
+    @RequestMapping("writep")
+    public String savepaper(AoaNotepaper npaper,@SessionAttribute("userId") Long userId,@RequestParam(value="concent",required=false)String concent){
+        AoaUser user=userService.findOne(userId);
+        npaper.setCreateTime(new Date());
+        npaper.setNotepaperUserId(userId);
+        if(npaper.getTitle()==null|| npaper.getTitle().equals(""))
+            npaper.setTitle("无标题");
+        if(npaper.getConcent()==null|| npaper.getConcent().equals(""))
+            npaper.setConcent(concent);
+        noteService.saveNotePaper(npaper);
 
+        return "redirect:/userpanel";
+    }
     @RequestMapping("saveuser")
     public String saveemp(@RequestParam("filePath") MultipartFile filePath, HttpServletRequest request, AoaUser user,
                           BindingResult br, @SessionAttribute("userId") Long userId) throws IllegalStateException, IOException {

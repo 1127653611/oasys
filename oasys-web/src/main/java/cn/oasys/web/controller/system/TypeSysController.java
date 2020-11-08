@@ -1,5 +1,6 @@
 package cn.oasys.web.controller.system;
 
+import cn.oasys.web.common.Msg;
 import cn.oasys.web.model.pojo.system.AoaTypeList;
 import cn.oasys.web.service.inter.system.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,10 @@ public class TypeSysController {
             req.setAttribute("errormess", "名字不能为空");
             return "systemcontrol/typeedit";
         }
+        if (aoaTypeList.getTypeId()<=47){
+            req.setAttribute("msgg", 1);
+            return "forward:/notlimit";
+        }
         typeService.save(aoaTypeList);
         req.setAttribute("success", "后台验证成功");
         return "systemcontrol/typeedit";
@@ -49,14 +54,19 @@ public class TypeSysController {
     @RequestMapping("deletetype")
     public String deleteThis(HttpServletRequest request) {
         Long typeId = Long.parseLong(request.getParameter("id"));
+        if (typeId<=47){
+            request.setAttribute("msgg", 1);
+            return "forward:/notlimit";
+        }
         typeService.deleteType(typeId);
         return "forward:/testsystype";
     }
 
     @RequestMapping("typetable")
     public String typetable(HttpServletRequest req) {
-        if (!StringUtils.isEmpty(req.getParameter("name"))) {
-            String name = "%" + req.getParameter("name") + "%";
+        if (!StringUtils.isEmpty(req.getParameter("baseKey"))) {
+            req.setAttribute("baseKey",req.getParameter("baseKey"));
+            String name = "%" + req.getParameter("baseKey") + "%";
             req.setAttribute("typeList", typeService.findByTypeNameLikeOrTypeModelLike(name));
         } else {
             Iterable<AoaTypeList> typeList = typeService.findAll();

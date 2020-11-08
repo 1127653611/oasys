@@ -14,13 +14,14 @@ a:hover {
 	background-color: #fff;
 }
 
+
 </style>
 <div class="row" style="padding-top: 10px;">
     <div class="col-md-2">
         <h1 style="font-size: 24px; margin: 0;" class="">类型管理</h1>
     </div>
     <div class="col-md-10 text-right">
-        <a href="/index"  target="_top"><span class="glyphicon glyphicon-home"></span> 首页</a> > <a
+        <a href="/index" target="_top"><span class="glyphicon glyphicon-home"></span> 首页</a> > <a
             disabled="disabled">类型管理</a>
     </div>
 </div>
@@ -38,7 +39,7 @@ a:hover {
                 </h3>
             </div>
             <!--盒子身体-->
-            <form method="post" action="typecheck"  onsubmit="return check();">
+            <form method="post" action="typecheck" onsubmit="return check();">
                 <div class="box-body no-padding">
                     <div class="box-body">
                         <div class="alert alert-danger alert-dismissable" role="alert"
@@ -73,7 +74,7 @@ a:hover {
                 <div class="box-footer">
                     <input class="btn btn-primary" id="save" type="submit" value="保存"/>
                     <input class="btn btn-default" id="cancel" type="button" value="取消"
-                           onclick="window.history.back();" />
+                           onclick="window.history.back();"/>
                 </div>
             </form>
         </div>
@@ -124,5 +125,6 @@ function check() {
 	}
 //	return false;
 }
+
 
 </script>

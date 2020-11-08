@@ -47,23 +47,23 @@ public class DiscussServiceImpl implements DiscussService {
     private AoaReplyListMapper aoaReplyListMapper;
 
     @Override
-    public List<AoaDiscussList> paging(String baseKey, Long userId ,int type,boolean superman) {
+    public List<AoaDiscussList> paging(String baseKey, Long userId ,int type,boolean superman,String type1, String time, String visitnum) {
         if (type==3) {
             if (!StringUtils.isEmpty(baseKey)) {
-                return aoaDiscussListMapper.findByTitleLike("%" + baseKey + "%");
+                return aoaDiscussListMapper.findByTitleLike("%" + baseKey + "%",type1,time,visitnum,null);
             }
-            return aoaDiscussListMapper.findAll();
+            return aoaDiscussListMapper.findByTitleLike(null,type1,time,visitnum,null);
         } else if (type==2){
             if (!StringUtils.isEmpty(baseKey)) {
-                return aoaDiscussListMapper.findByUserAndTitleLike(userId, "%" + baseKey + "%");
+                return aoaDiscussListMapper.findByTitleLike("%" + baseKey + "%",type1,time,visitnum,userId);
             }
-            return aoaDiscussListMapper.findByUser(userId);
+            return aoaDiscussListMapper.findByTitleLike(null,type1,time,visitnum,userId);
         }else {
             if (superman) {
                 if (!StringUtils.isEmpty(baseKey)) {
-                    return aoaDiscussListMapper.findByTitleLike("%" + baseKey + "%");
+                    return aoaDiscussListMapper.findByTitleLike("%" + baseKey + "%",type1,time,visitnum,null);
                 }
-                return aoaDiscussListMapper.findAll();
+                return aoaDiscussListMapper.findByTitleLike(null,type1,time,visitnum,null);
             }else {
                 return null;
             }

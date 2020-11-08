@@ -64,4 +64,16 @@ public class AoaUserLog {
     public void setUserId(Long userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "AoaUserLog{" +
+                "logId=" + logId +
+                ", ipAddr='" + ipAddr + '\'' +
+                ", logTime=" + logTime +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                ", userId=" + userId +
+                '}';
+    }
 }

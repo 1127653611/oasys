@@ -12,7 +12,7 @@ import java.util.Set;
 
 public interface DiscussService {
 
-    List<AoaDiscussList> paging( String baseKey, Long userId,int type,boolean superman);
+    List<AoaDiscussList> paging( String baseKey, Long userId,int type,boolean superman,String type1, String time, String visitnum);
 
     List<Map<String, Object>>  packaging(List<AoaDiscussList> list);
 

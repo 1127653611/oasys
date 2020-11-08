@@ -5,6 +5,7 @@ import cn.oasys.web.model.pojo.note.AoaDirector;
 import cn.oasys.web.model.pojo.note.AoaDirectorUsers;
 import cn.oasys.web.model.pojo.user.AoaUser;
 import cn.oasys.web.service.inter.adress.AdressService;
+import cn.oasys.web.service.inter.file.FileService;
 import cn.oasys.web.service.inter.user.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -15,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,7 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 import java.io.IOException;
 import java.util.*;
 
@@ -33,6 +32,8 @@ import java.util.*;
 public class AddrController {
     @Autowired
     private AdressService adressService;
+    @Autowired
+    private FileService fileService;
     @Autowired
     private UserService userService;
     @RequestMapping("addrmanage")
@@ -158,7 +159,7 @@ public class AddrController {
                 req.setAttribute("errormess","图片格式不对");
                 return "forward:/addaddress?did="+directorUser.getDirectorUsersId();
             }
-            AoaAttachmentList aoaAttachmentList=adressService.upload(file, userId,"aoa_bursement");
+            AoaAttachmentList aoaAttachmentList=fileService.upload(file, userId,"aoa_director","contact");
             director.setImagePath(Integer.parseInt(aoaAttachmentList.getAttachmentId()+""));
         }
         directorUser.setIsHandle(1);

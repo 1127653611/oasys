@@ -13,7 +13,7 @@
 		</h3>
 		<div class="box-tools">
 			<div class="input-group" style="width: 150px;">
-				<input id="find" type="text" class="form-control input-sm baseKey"
+				<input id="find" type="text" th:value="${baseKey}" class="form-control input-sm baseKey"
 					   placeholder="查找..." />
 				<div class="input-group-btn">
 					<a class="btn btn-sm btn-default baseKeySubmit" id="baseKeySubmit"><span
@@ -43,7 +43,7 @@
 							style="width: 25px; height: 25px;" /> -->
 								<img th:if="${not #strings.isEmpty(user?.imgPath)}" style="width: 25px;height: 25px;"
 									class="profile-user-img img-responsive img-circle"
-									 th:src="@{'/images/'+${user?.imgPath}}" />
+									 th:src="@{${user?.imgPath}}" />
 								<img  th:if="${#strings.isEmpty(user?.imgPath)}" style="width: 25px;height: 25px;"
 									class="profile-user-img img-responsive img-circle"
 									src="images/timg.jpg" alt="images"/>
@@ -75,8 +75,8 @@ $("#find").keydown(function () {
     	}
 	});
 	$('.baseKeySubmit').on('click',function(){
-		var usersearch=$('.baseKey').val();
-		$('.thistable').load("usermanagepaging?usersearch="+usersearch);
+		var baseKey=$('.baseKey').val();
+		$('.thistable').load("usermanagepaging?baseKey="+baseKey);
 	});
 
 </script>

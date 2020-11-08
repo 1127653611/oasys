@@ -11,6 +11,7 @@
     <result column="stay_time" jdbcType="TIMESTAMP" property="stayTime" />
     <result column="evemoney_id" jdbcType="BIGINT" property="evemoneyId" />
     <result column="user_name" jdbcType="BIGINT" property="userName" />
+    <association property="user" select="cn.oasys.web.model.dao.user.AoaUserMapper.findOneById" column="user_name"></association>
   </resultMap>
 
   <sql id="Base_Column_List">

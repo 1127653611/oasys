@@ -43,28 +43,26 @@
       <include refid="Base_Column_List"></include>
     ,
       <include refid="Blob_Column_List"></include>
-    from aoa_discuss_list where title like #{tittle} order by create_time DESC
-  </select>
-  <select id="findAll" resultMap="ResultMapWithBLOBs">
-      select
-      <include refid="Base_Column_List"></include>
-    ,
-      <include refid="Blob_Column_List"></include>
-    from aoa_discuss_list order by create_time DESC
-  </select>
-  <select id="findByUserAndTitleLike" resultMap="ResultMapWithBLOBs">
-      select
-      <include refid="Base_Column_List"></include>
-    ,
-      <include refid="Blob_Column_List"></include>
-    from aoa_discuss_list where title like #{tittle} and #{userid}= discuss_user_id order by create_time DESC
-  </select>
-  <select id="findByUser" resultMap="ResultMapWithBLOBs">
-      select
-      <include refid="Base_Column_List"></include>
-    ,
-      <include refid="Blob_Column_List"></include>
-    from aoa_discuss_list where #{userid}= discuss_user_id order by create_time DESC
+    from aoa_discuss_list where 1=1
+    <if test="uid != null">
+      and discuss_user_id = #{uid}
+    </if>
+    <if test="key != null">
+      and title like #{key}
+    </if>
+    order by
+    <if test="type!=null">
+      type_id ${type}
+    </if>
+    <if test="time!=null">
+      create_time ${time}
+    </if>
+    <if test="vi!=null">
+      visit_num ${vi}
+    </if>
+    <if test="type==null and vi==null and time==null">
+      create_time DESC
+    </if>
   </select>
   <select id="findOne"  resultMap="ResultMapWithBLOBs">
     select
